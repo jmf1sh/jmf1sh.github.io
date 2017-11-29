@@ -1,0 +1,5 @@
+baseURL = "http://https://jmf1sh.github.io/"
+languageCode = "en-us"
+title = "My New Hugo Site"
+theme = "kiera"
+
