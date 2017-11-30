@@ -4,4 +4,6 @@ date: 2017-11-29T09:21:03+01:00
 draft: false
 ---
 
-hello
+hello $$ \int_0^1 x dx $$ world.
+
+$$ \int_1^3 x^2 dx. $$
