@@ -1,8 +1,15 @@
 baseURL = "https://jmf1sh.github.io/"
-pygmentsCodeFences = true
+
 languageCode = "en-us"
-title = "My New Hugo Site"
+
+title = "jmf1sh's blog"
+
 theme = "kiera"
+paginate = 3
+summaryLength = 30
+enableEmoji = true
+pygmentsCodeFences = true
+canonifyurls = true
 
 disqusShortname = "jmf1sh"
 # googleAnalytics = ""
