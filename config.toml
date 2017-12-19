@@ -1,5 +1,22 @@
 baseURL = "https://jmf1sh.github.io/"
+pygmentsCodeFences = true
 languageCode = "en-us"
 title = "My New Hugo Site"
 theme = "kiera"
+
+disqusShortname = "jmf1sh"
+# googleAnalytics = ""
+
+[author]
+    name = "Jonathan Fisher"
+    github = "jmf1sh"
+    gitlab = "jmf1sh"
+    linkedin = "jonathanfisher10"
+
+[params]
+    tagline = "this is a pointless tagline"
+
+menu = "main"
+meta = "false"
+
 
