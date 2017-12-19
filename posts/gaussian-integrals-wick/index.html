@@ -1,0 +1,232 @@
+<!doctype html>
+
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jmf1sh&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.31.1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1>
+                <a href="https://jmf1sh.github.io/">jmf1sh&rsquo;s blog</a>
+            </h1>
+
+            <ul id="social-media">
+                
+        
+                
+                <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+                <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+                <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+        
+                
+            </ul>
+            
+            <p><em>this is a pointless tagline</em></p>
+            
+        </header>
+
+        
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+        
+        <main>
+
+
+
+
+<article>
+
+    <h1>Gaussian integrals and Wick&#39;s theorem</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2012-03-03T15:00:00Z">Mar 3, 2012</time>
+        </li>
+        
+        
+
+        
+
+        <li>2 min read</li>
+    </ul>
+</aside>
+    
+
+    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+
+<p>We saw in the last update that the generating function (Z[J]) can be expressed as</p>
+
+<p>[ Z[J] = e^{\frac{1}{2} J \cdot A^{-1} J} ]</p>
+
+<p>(at least as long as we've normalize things so that (Z[0] = 1). Now the wonderful thing is that this is something we can compute explicitly:</p>
+
+<p>[ Z[J] = \sum_{n = 0}^{\infty} \frac{(\frac{1}{2} A^{-1}_{ij} J^i J<sup>j)</sup>n}{n!}</p>
+
+<p>= \sum_^\infty \frac{(A^{-1}_{ij} J^i J<sup>j)</sup>n}{2^n n!} ]</p>
+
+<p>For example, in the one-dimensional case (taking (A = 1)) we get</p>
+
+<p>[ Z[J] = \sum_^\infty \frac{J<sup>{2n}}{2</sup>n n!} ]</p>
+
+<p>On the other hand, by the definition of the generating function we have</p>
+
+<p>[ Z[J] = \sum_^\infty \frac{\langle x^n \rangle}{n!} J^n ]</p>
+
+<p>Comparing coefficients, we find</p>
+
+<p>[ \frac{\langle x^{2n} \rangle}{(2n)!} = \frac{1}{2^n n!} ]</p>
+
+<p>so that</p>
+
+<p>[ \langle x^{2n} \rangle = \frac{(2n)!}{2^n n!}. ]</p>
+
+<p>Let's give a combinatorial description. Given (2n) objects, in how many ways can we divide them into pairs? If we care about the order in which we pick the pairs, then we have</p>
+
+<p>[ {2n \choose 2}{2n - 2 \choose 2} \cdots {2n-(2n-2) \choose 2} = \frac{(2n)!}{2^n} ]</p>
+
+<p>Of course, there are (n!) ways of ordering the (n) pairs, so after dividing by this (to account for the overcounting) we get exactly the expression for (\langle x^{2n} \rangle). This is the first case of Wick's theorem.</p>
+
+<p>Now consider the general multidimensional case. Given (I = (i<em>1, \cdots, i</em>{2n})), we define a contraction to be</p>
+
+<p>[ \langle x^{j_1} x^{k_1} \rangle \cdots \langle x^{j_n} x^{k_n} \rangle ]</p>
+
+<p>where (j_1, k_1, \cdots, j_n, k_n) is a choice of parition of (I) into pairs.</p>
+
+<p>Theorem (Wick's theorem, Isserlis' theorem) The expectation value</p>
+
+<p>[ \langle x^{i<em>1} \cdots x^{i</em>{2n}} \rangle ]</p>
+
+<p>is the sum over all full contractions. There are ((2n)!/ 2^n n!) terms in the sum.</p>
+
+<p>Proof This follows from our formula for the power series of the generating function. The reason is that the coefficient of  (J^I) in ((\frac{1}{2} A^{-1}<em>{ij} J^i J<sup>k)</sup>n) is exactly given by summing products of (A^{-1}</em>{ij}) over partitions of (I) into pairs, and the (n!) in the denominator takes care of the overcounting.</p>
+
+<p>Next up: perturbation theory and Feynman diagrams.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/introduction-to-gaussian/"><i class="fa fa-chevron-circle-left"></i> Introduction to Gaussian integrals</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/circle-diffeomorphisms-1/">Circle diffeomorphisms <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+</body>
+
+</html>

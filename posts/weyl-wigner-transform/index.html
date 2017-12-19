@@ -1,0 +1,278 @@
+<!doctype html>
+
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jmf1sh&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.31.1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1>
+                <a href="https://jmf1sh.github.io/">jmf1sh&rsquo;s blog</a>
+            </h1>
+
+            <ul id="social-media">
+                
+        
+                
+                <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+                <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+                <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+        
+                
+            </ul>
+            
+            <p><em>this is a pointless tagline</em></p>
+            
+        </header>
+
+        
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+        
+        <main>
+
+
+
+
+<article>
+
+    <h1>The Weyl and Wigner transforms</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2012-12-13T00:00:00Z">Dec 13, 2012</time>
+        </li>
+        
+        
+
+        
+
+        <li>4 min read</li>
+    </ul>
+</aside>
+    
+
+    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+
+<p>Today I'd like to try to understand better how deformation quantization is related to the usual canonical quantization, and especially how the latter might be used to deduce the former, i.e., given an honest quantization (in the sense of operators), how might be reproduce the formula for the Moyal star product?</p>
+
+<p>We'll fix our symplectic manifold once and for all to be (\mathbb{R}^2) with its standard symplectic structure, with Darboux coordinates (x) and (p). Let (\mathcal{A}) be the algebra of observables on (\mathbb{R}^2). For technical reasons, we'll restrict to those smooth functions that are polynomially bounded in the momentum coordinate (but of course the star product makes sense in general). Let (\mathcal{D}) be the algebra of pseudodifferential operators on (\mathbb{R}). We want to define a quantization map</p>
+
+<p>[ \Psi: \mathcal{A} \to \mathcal{D} ]</p>
+
+<p>such that</p>
+
+<p>[ \Psi(x) = x \in \mathcal{D} ]</p>
+
+<p>[ \Psi(p) = -i\hbar \partial ]</p>
+
+<p>Out of thin air, let us define</p>
+
+<p>[ \langle q| \Psi(f) |q' \rangle = \int e^{ik(q-q')} f(\frac{q+q'}{2}, k) dk ]</p>
+
+<p>This is the Weyl transform. Its inverse is the Wigner transform, given by</p>
+
+<p>[ \Phi(A, q, k) = \int e^{-ikq'} \left\langle q+\frac{q'}{2} \right| A \left| q - \frac{q'}{2} \right\rangle dq' ]</p>
+
+<p>Note: I am (intentionally) ignoring all factors of (2\pi) involved. It's not hard to work out what they are, but annoying to keep track of them in calculations, so I won't.</p>
+
+<p>Theorem For suitably well-behaved (f), we have ( \Phi(\Psi(f)) = f).</p>
+
+<p>Proof Using the &quot;ignore (2\pi)&quot; conventions, we have the formal identities</p>
+
+<p>[ \int e^{ikx} dx = \delta(k), \ \ \int e^{ikx} dk = \delta(x). ]</p>
+
+<p>The theorem is a formal result of these:</p>
+
+<p>\begin{align} \Phi(\Psi(f))(q, k) &amp;= \int e^{-ikq'} \left\langle q + \frac{q'}{2} \right| \Psi(f) \left| q - \frac{q'}{2} \right\rangle \</p>
+
+<p>&amp;= \int e^{-ikq'} e^{ik'q'} f(q, k) dk' dq' \</p>
+
+<p>&amp;= f(q,k).</p>
+
+<p>\end{align}</p>
+
+<p>One may easily check that (\Psi(x) = x) and (Psi(k) = -i\partial), so this certainly gives a quantization. But why is it particularly natural? To see this, let (Q) be the operator of multiplication by (x), and let (P) be the operator (-i\partial). We'd like to take (f(q,p)) and replace it by (f(Q, P)), but we can't literally substitute like this due to order ambiguity. However, we could work formally as follows:</p>
+
+<p>\begin{align}</p>
+
+<p>f(Q, P) &amp;= \int \delta(Q-q) \delta(P - p) f(q,p) dq dp \</p>
+
+<p>&amp;= \int e^{ik(Q-q) + iq'(P-p)} f(q,p) dq dq' dp dk.</p>
+
+<p>\end{align}</p>
+
+<p>In this last expression, there is no order ambiguity in the argument of the exponential (since it is a sum and not a product), and furthermore the expression itself make sense since it is the exponential of a skew-adjoint operator. So let's check that this agrees with the Weyl transform. Using a special case of the Baker-Campbell-Hausdorff formula for the Heisenberg algebra, we have</p>
+
+<p>[ e^{ik(Q-q) + iq'(P-p)} = e^{ik(Q-q)} e^{iq'(P-p)} e^{-ikq'/2} ]</p>
+
+<p>Let us compute the matrix element:</p>
+
+<p>\begin{align}</p>
+
+<p>\langle q_1 | P | q_2 \rangle &amp;= \int \langle q_1 | p_1 \rangle</p>
+
+<p>\langle p_1 | P | p_2 \rangle \langle p_2 | q_2 \rangle dp_1 dp_2 \</p>
+
+<p>&amp;= \int e^{iq_1p_1 - iq_2 p_2} p_2 \delta(p_2 - p_1) dp_1 dp_2 \</p>
+
+<p>&amp;= \int e^{i p(q_1-q_2)} p dp.</p>
+
+<p>\end{align}</p>
+
+<p>Hence we find that the matrix element for the exponential is</p>
+
+<p>\begin{align} \langle q_1 |e^{ik(Q-q) + iq'(P-p)} | q_2 \rangle</p>
+
+<p>&amp;= e^{-ikq'/2 + ik(q_1-q)} \langle q_1 | e^{iq'(P-p)} | q_2 \rangle \</p>
+
+<p>&amp;=  \int e^{-ikq'/2 + ik(q_1-q) -iq'p} e^{iq'p'' + ip''(q_1-q_2)} dp'' \</p>
+
+<p>&amp;= \delta(q' + q_1 - q_2)  e^{-ikq'/2 + ik(q_1-q) -iq'p}</p>
+
+<p>\end{align}</p>
+
+<p>Plugging this back into the expression for (f(Q, P)) we find</p>
+
+<p>\begin{align}</p>
+
+<p>\langle q_1 | f(Q. P) | q_2 \rangle &amp;= \int \delta(q' + q_1 - q_2)  e^{-ikq'/2 + ik(q_1-q) -iq'p}</p>
+
+<p>f(q,p) dq dq' dp dk \</p>
+
+<p>&amp;= \int  e^{ ik(q_1/2 +q_2/2-q) -ip(q_1-q_2)} f(q,p) dq dp dk \</p>
+
+<p>&amp;= \int e^{ip(q_1-q_2)} f(\frac{q_1+q_2}{2}, p) dp,</p>
+
+<p>\end{align}</p>
+
+<p>which is the original expression we gave for the Weyl transform.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/equations-of-motion-noether/"><i class="fa fa-chevron-circle-left"></i> Equations of motion and Noether&#39;s theorem in the functional formalism</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/fadeev-popoc-ghosts/">Fadeev-Popov ghosts <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+</body>
+
+</html>

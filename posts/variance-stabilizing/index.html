@@ -1,0 +1,200 @@
+<!doctype html>
+
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jmf1sh&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.31.1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1>
+                <a href="https://jmf1sh.github.io/">jmf1sh&rsquo;s blog</a>
+            </h1>
+
+            <ul id="social-media">
+                
+        
+                
+                <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+                <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+                <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+        
+                
+            </ul>
+            
+            <p><em>this is a pointless tagline</em></p>
+            
+        </header>
+
+        
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+        
+        <main>
+
+
+
+
+<article>
+
+    <h1>Variance Stabilizing Transformations</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2017-12-19T13:49:09&#43;01:00">Dec 19, 2017</time>
+        </li>
+        
+        
+
+        
+
+        <li>1 min read</li>
+    </ul>
+</aside>
+    
+
+    <p>I want to record here a very interesting thing which I recently discovered, <a href="https://en.wikipedia.org/wiki/Variance-stabilizing_transformation">variance-stabilizing transformations</a>. The idea is very simple: suppose we have a random variable <span  class="math">\(x\)</span>, which follows a probability distribution which is parametrized solely by its mean <span  class="math">\(\mu\)</span>, with variance <span  class="math">\(var(x) = g(\mu)\)</span> a known function of the mean.</p>
+
+<p>Now, suppose we take the new random variable <span  class="math">\(y = f(x)\)</span>, for some yet-to-be-determined function <span  class="math">\(f\)</span>. Assuming that <span  class="math">\(x\)</span> is reasonably localized about its mean, we can make the approximation</p>
+
+<p><span  class="math">\[ f(x) = f(\mu + (x-\mu)) \approx f(\mu) + f'(\mu)(x-\mu). \]</span></p>
+
+<p>Then we have</p>
+
+<p>
+\begin{align}
+E[y] &\approx f(\mu) \\
+var(y) &\approx f'(\mu)^2 var(x) \\
+ &= f'(\mu)^2 g(\mu)
+\end{align}
+</p>
+
+<p>Now, suppose we want to choose <span  class="math">\(f(x)\)</span> so that <span  class="math">\(var(y) \approx 1\)</span>. Using the above approximation, we have <span  class="math">\( f'(\mu) = \frac{1}{\sqrt{g(\mu)}} \)</span>, which we can solve as</p>
+
+<p><span  class="math">\[ f(\mu) = \int \frac{1}{\sqrt{g(\mu)}} d\mu\]</span></p>
+
+<p>Now let's take the special case of the Poisson distrubution, where <span  class="math">\(var(x) = \mu\)</span>. Then <span  class="math">\(f(\mu) = \int \frac{1}{\sqrt \mu} d\mu = 2\sqrt{\mu}\)</span>. This is very nearly the <a href="https://en.wikipedia.org/wiki/Anscombe_transform">Anscombe transform</a> <span  class="math">\(x \mapsto 2\sqrt{x+3/8}\)</span>. The additional shift by <span  class="math">\(3/8\)</span> can be understood by doing a more careful analysis of the variance under the transformation.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/santalo-formula/"><i class="fa fa-chevron-circle-left"></i> Santalo Formula</a>
+        </li>
+        
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+</body>
+
+</html>

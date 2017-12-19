@@ -1,0 +1,280 @@
+<!doctype html>
+
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jmf1sh&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.31.1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1>
+                <a href="https://jmf1sh.github.io/">jmf1sh&rsquo;s blog</a>
+            </h1>
+
+            <ul id="social-media">
+                
+        
+                
+                <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+                <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+                <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+        
+                
+            </ul>
+            
+            <p><em>this is a pointless tagline</em></p>
+            
+        </header>
+
+        
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+        
+        <main>
+
+
+
+
+<article>
+
+    <h1>The Index Form</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2015-09-11T00:00:00Z">Sep 11, 2015</time>
+        </li>
+        
+        
+
+        
+
+        <li>3 min read</li>
+    </ul>
+</aside>
+    
+
+    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+
+<p>Let $f: [0,T] \times (-\epsilon, \epsilon) \to M$ be a family of parametrized curves in a Riemannian manifold $(M, g)$. To simplify this calculation, we assume that $f(0,s) = p, f(T, s) = q$ for some $p,q \in M$ and all $s \in (-\epsilon, \epsilon)$. (This assumption is not necessary, but without it our variational formulae will have additional boundary terms.)</p>
+
+<p>For convenience, set $\dot f = \partial f / \partial t$ and $f' = \partial f / \partial s$. For each $s \in (-\epsilon, \epsilon)$ we define the energy functional $E = E(s)$ to be</p>
+
+<p>[ E(s) = \frac{1}{2} \int_0^T |\dot f|^2 dt. ]</p>
+
+<p>The first variation is</p>
+
+<p>\begin{align}</p>
+
+<p>\frac{dE}{ds} &amp;= \int<em>0^T \langle \nabla</em>{f'} \dot f, \dot f \rangle dt \</p>
+
+<p>&amp;= \int<em>0^T \langle \nabla</em>{\dot f} f', \dot f \rangle dt \</p>
+
+<p>&amp;= -\int<em>0^T \langle f', \nabla</em>{\dot f}\dot f \rangle dt</p>
+
+<p>\end{align}</p>
+
+<p>Set $\gamma(t) := f(t,0)$ and $X(t) = f'(t)$ (thought of as a vector field supported on $\gamma$). Evaluating the above at $s=0$ we obtain</p>
+
+<p>[ \left.\frac{dE}{ds}\right|_ = -\int<em>0^T \langle X, \nabla</em>{\dot \gamma} \dot \gamma \rangle dt, ]</p>
+
+<p>which shows immediately that</p>
+
+<p>Theorem. $\gamma$ is a critical point of the energy functional if and only if $\nabla_{\dot \gamma} \dot \gamma = 0$.</p>
+
+<p>The second variation is</p>
+
+<p>\begin{align}</p>
+
+<p>\frac{d^2 E}{ds^2}</p>
+
+<p>&amp;= -\int<em>0^T \langle \nabla</em>{f'}f', \nabla_{\dot f}\dot f \rangle</p>
+
+<ul>
+<li>\langle f', \nabla_{f'}\nabla_{\dot f}\dot f \rangle dt \<br></li>
+</ul>
+
+<p>&amp;= -\int<em>0^T \langle \nabla</em>{f'}f', \nabla_{\dot f}\dot f \rangle</p>
+
+<ul>
+<li><p>\langle f', \nabla_{\dot f}\nabla_{f'}\dot f \rangle dt</p></li>
+
+<li><p>\langle f', R(f', \dot f)\dot f \rangle dt \</p></li>
+</ul>
+
+<p>&amp;= -\int<em>0^T \langle \nabla</em>{f'}f', \nabla_{\dot f}\dot f \rangle</p>
+
+<ul>
+<li><p>\langle \nabla_{\dot f}f', \nabla_{f'}\dot f \rangle dt</p></li>
+
+<li><p>\langle f', R(f', \dot f)\dot f \rangle dt \\ &amp;= -\int<em>0^T \langle \nabla</em>{f'}f', \nabla_{\dot f}\dot f \rangle</p></li>
+
+<li><p>\langle \nabla_{\dot f} f', \nabla_{\dot f} f'\rangle dt</p></li>
+
+<li><p>\langle f', R(f', \dot f)\dot f \rangle dt</p></li>
+</ul>
+
+<p>\end{align}</p>
+
+<p>Assume now that $\gamma$ is a geodesic, i.e. $\nabla_{\dot \gamma} \dot \gamma = 0$. Then evaluating the above at $s=0$, we obtain</p>
+
+<p>[ \frac{d^2 E}{ds^2} = \int<em>0^T |\nabla</em>{\dot \gamma} X|^2 - \langle X, R(X, \dot \gamma) \dot \gamma \rangle dt. ]</p>
+
+<p>Definition. Let $\gamma$ be a geodesic. The index form associated to variations $X,Y$ of $\gamma$ is</p>
+
+<p>\begin{align} I(X,Y) &amp;= \int<em>0^T \langle \nabla</em>{\dot \gamma} X, \nabla_{\dot \gamma} Y \rangle dt</p>
+
+<ul>
+<li>\langle Y, R(X, \dot \gamma) \dot \gamma \rangle \<br></li>
+</ul>
+
+<p>&amp;= -\int<em>0^T \langle Y, \nabla</em>{\dot \gamma}^2 X + R(X, \dot\gamma)\dot \gamma \rangle</p>
+
+<p>\end{align}</p>
+
+<p>It follows from symmetries of the Riemann tensor that $I(X,Y) = I(Y, X)$ and also $I(X,X) = E''$ as above.</p>
+
+<p>Theorem. Suppose that $X$ is the infinitesimal variation of a family of affine geodesics about a fixed geodesic $\gamma$. Then</p>
+
+<p>[ \nabla_{\dot \gamma}^2 X + R(X, \dot\gamma)\dot\gamma = 0. ]</p>
+
+<p>In particular, $I(X, -) = 0$.</p>
+
+<p>Proof. Let $f(t,s)$ denote the family as above. By hypothesis, we have that $\nabla_{\dot f} \dot f = 0$ for all $s$, so that</p>
+
+<p>[ \nabla_{f'} \nabla_{\dot f} \dot f = 0. ]</p>
+
+<p>Commuting the derivatives using the curvature tensor, we have</p>
+
+<p>[ 0 = \nabla_{\dot f} \nabla_{f'} \dot f + R(f', \dot f) \dot f. ]</p>
+
+<p>Now use $\nabla_{\dot f} f' = \nabla_{f'} \dot f$ and evaluate at $s=0$ to obtain</p>
+
+<p>[ 0 = \nabla_{\dot \gamma}^2 X + R(X, \dot \gamma)\dot\gamma. ]</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/boundary-distance/"><i class="fa fa-chevron-circle-left"></i> Boundary Distance</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/santalo-formula/">Santalo Formula <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+</body>
+
+</html>

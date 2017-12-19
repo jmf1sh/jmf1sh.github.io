@@ -1,0 +1,240 @@
+<!doctype html>
+
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jmf1sh&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.31.1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1>
+                <a href="https://jmf1sh.github.io/">jmf1sh&rsquo;s blog</a>
+            </h1>
+
+            <ul id="social-media">
+                
+        
+                
+                <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+                <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+                <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+        
+                
+            </ul>
+            
+            <p><em>this is a pointless tagline</em></p>
+            
+        </header>
+
+        
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+        
+        <main>
+
+
+
+
+<article>
+
+    <h1>Classical partition function</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2015-08-18T00:00:00Z">Aug 18, 2015</time>
+        </li>
+        
+        
+
+        
+
+        <li>3 min read</li>
+    </ul>
+</aside>
+    
+
+    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+
+<p>Let $(M, \omega)$ be a symplectic manifold of dimension $2n$, and let $H: M \to \mathbf{R}$ be a classical Hamiltonian. The symplectic form $\omega$ allows us to define a measure on $M$, given by integration against the top form $\omega^n / n!$. We will denote this measure by $d\mu$.</p>
+
+<p>We imagine that $(M, \omega, H)$ represents some classical mechanical system. We suppose that the dynamics of this dynamical system are very complicated, e.g. some system of $10^{23}$ particles. The system is so complicated that not only can we not solve the equations of motion exactly, and even if we could, their solutions might be so complicated that we can't expect to learn very much from them.</p>
+
+<p>So instead, we ask statistical questions. Imagine that we cannot measure the state of the system exactly (e.g. particles in a box), so we try to guess a probability distribution $\rho(x,p,t)$ on $M$ indicating that at time $t$ the system has probability $\rho(x,p,t) d\mu$ of being in the state $(x,p)$. Obviously, $\rho$ should satisfy the constraint $\int_M \rho d\mu = 1$.</p>
+
+<p>How does $\rho$ evolve in time? We know that the system obeys Hamilton's equations,</p>
+
+<p>[ (\dot x, \dot p) = X_H = (\partial H / \partial p, -\partial H / \partial x) ]</p>
+
+<p>in local Darboux coordinates. Therefore, a particle located at $(x,p)$ in phase space at time $t$ will be located at $(x,p)+X_H dt$ in phase space at time $t+dt$. Therefore, the probability that a particle is at point $(x,p)$ at time $t+dt$, should be equal to the probability that the particle is at point $(x,p)-X_H dt$ at time $t$. Therefore, we have</p>
+
+<p>[ \frac{\partial \rho}{\partial t} = \frac{\partial H}{\partial x} \frac{\partial \rho}{\partial p} - \frac{\partial H}{\partial p} \frac{\partial \rho}{\partial x} = {H, \rho} ]</p>
+
+<p>Given a probability distribution $\rho$, the entropy is defined to be</p>
+
+<p>[ S[\rho] = -\int_M  \rho \log \rho d\mu. ]</p>
+
+<p>(A version of) the second law of thermodynamics. For a given average energy $U$, the system assumes a distribution of maximal possible entropy at thermodynamic equilibrium.</p>
+
+<p>The goal now, is to determine what distribution $\rho$ will maximize the entropy, subject to the constraints (for fixed $U$)</p>
+
+<p>\begin{align*} \int_M H \rho d\mu &amp;= U \</p>
+
+<p>\int_M \rho d\mu &amp;= 1 \end{align*}</p>
+
+<p>Setting aside technical issues of convergence, etc., this variational problem is easily solved using the method of Lagrange multipliers. Introducing parameters $\lambda_1, \lambda_2$, we consider the modified functional</p>
+
+<p>[ S[\rho, \lambda_1, \lambda_2, U] = \int_M\left(-\rho \log \rho +\lambda_1\rho +\lambda_2(H\rho)\right)d\mu -\lambda_1-\lambda_2 U. ]</p>
+
+<p>Note that $\partial S / \partial U = -\lambda_2$, and this is conventionally identified with (minus) the inverse temperature.</p>
+
+<p>Taking the variation with respect to $\rho$, we find</p>
+
+<p>[ 0= \frac{\delta S}{\delta \rho} = -\log \rho-1+\lambda_1+H\lambda_2]</p>
+
+<p>Therefore, $rho$ is proportional to $e^{-\beta H}$ where we have set $\beta=-\lambda_2$. Define the partition function $Z$ to be</p>
+
+<p>[ Z = \int_M e^{-\beta H} d\mu. ]</p>
+
+<p>We therefore have proved (formally and heuristically only!):</p>
+
+<p>Theorem. The probability distribution $\rho$ assumed by the system at thermodynamic equilibrium is given by</p>
+
+<p>[  \rho = \frac{e^{-\beta H}}{Z} ]</p>
+
+<p>where $\beta &gt; 0$ is a real parameter, called the inverse temperature.</p>
+
+<p>Corollary. At thermodynamic equilibrium, the average energy is given by</p>
+
+<p>[ U = -\frac{\partial \log Z}{\partial \beta} , ]</p>
+
+<p>and the entropy is given by</p>
+
+<p>[ S = \beta U + \log Z.]</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/generalized-geometry/"><i class="fa fa-chevron-circle-left"></i> What is generalized geometry?</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/hamilton-jacobi-distance/">Hamilton-Jacobi equation and Riemannian distance <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+</body>
+
+</html>

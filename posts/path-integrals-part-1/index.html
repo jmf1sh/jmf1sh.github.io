@@ -1,0 +1,274 @@
+<!doctype html>
+
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jmf1sh&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.31.1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1>
+                <a href="https://jmf1sh.github.io/">jmf1sh&rsquo;s blog</a>
+            </h1>
+
+            <ul id="social-media">
+                
+        
+                
+                <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+                <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+                <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+        
+                
+            </ul>
+            
+            <p><em>this is a pointless tagline</em></p>
+            
+        </header>
+
+        
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+        
+        <main>
+
+
+
+
+<article>
+
+    <h1>Path integrals, part 1</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2012-01-16T00:00:00Z">Jan 16, 2012</time>
+        </li>
+        
+        
+
+        
+
+        <li>3 min read</li>
+    </ul>
+</aside>
+    
+
+    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+
+<p>Consider the Hilbert space (\mathcal{H} = L^2(\mathbb{R})) with Lebesgue measure and a Hamiltonian (H = T(k) + V(x)) (a sum of kinetic and potential energy). Then the quantum hamiltonian (\hat{H}) acts as</p>
+
+<p>\begin{align}</p>
+
+<p>(\hat{H}\psi)(y) &amp;= \frac{1}{2\pi} \int e^{ik(y-x)} T(k) \psi(x) dx dk + V(y)\psi(y) \</p>
+
+<p>&amp;= \frac{1}{2\pi}\int e^{ik(y-x)} H(k,x) \psi(x) dx dk \</p>
+
+<p>\end{align}</p>
+
+<p>Now consider the Schrodinger equation</p>
+
+<p>[ \frac{\partial \psi}{\partial t} = i \hat{H} \psi. ]</p>
+
+<p>We would like to obtain a formula for the solution operator (U_t = e^{-i \hat{H} t}). Let us consider its Schwartz kernel (\langle{y}|U_t|{x}\rangle). Let (N) be a large integer so that (\Delta t = t/N) is &quot;small&quot;. Then we can write</p>
+
+<p>[ U<em>t = U</em>{\Delta t}^N, ]</p>
+
+<p>Now consider a single term:</p>
+
+<p>\begin{align}</p>
+
+<p>\langle{y}|U_{\Delta t}|x\rangle &amp;\simeq \langle{y}|1-i\Delta{t}\hat{H}|x\rangle \</p>
+
+<p>&amp;= \delta(y-x) -i \Delta t \langle x|\hat{H}|y\rangle \</p>
+
+<p>&amp;= \frac{1}{2\pi}\int e^{ik(y-x)}( 1 - i \Delta t H(k,x)) dk \</p>
+
+<p>&amp;\simeq \frac{1}{2\pi}\int e^{ik(y-x) - i \Delta t H(k,x)} dk\</p>
+
+<p>\end{align}</p>
+
+<p>Now we have (taking (x_0 = x) and (x_N = y))</p>
+
+<p>\begin{align}</p>
+
+<p>\langle y|U_t|x\rangle &amp;= \int dx<em>1 \cdots dx</em>{N-1} \</p>
+
+<p>&amp; \ \times \langle x<em>N|U</em>{\Delta t}|x_{N-1}\rangle \cdots \langle x<em>1|U</em>{\Delta t}|x_0\rangle \</p>
+
+<p>&amp;= \frac{1}{(2\pi)^N} \int dx<em>1 \cdots dx</em>{N-1} dk<em>0 \cdots dk</em>{N-1} \</p>
+
+<p>&amp; \ \times \ e^{ik_N(x<em>N-x</em>{N-1}) - i \Delta t H(k_{N-1},x_{N-1})} \cdots</p>
+
+<p>e^{-ik_N(x_1-x_0) - i \Delta t H(k_0,x_0)} \</p>
+
+<p>&amp;= \frac{1}{(2\pi)^N} \int dx<em>1 \cdots dx</em>{N-1} dk<em>0 \cdots dk</em>{N-1} \</p>
+
+<p>&amp; \ \times \ \exp \sum_^{N-1} ik<em>j(x</em>{j+1} - x_j) - i \Delta t H(k_j,x_j)</p>
+
+<p>\end{align}</p>
+
+<p>Note this kind of integral seems like it should have a natural interpretation in symplectic or contact geometry, since the expression (dxdk/(2\pi)^N) is very nealy the Liouville measure. This is the most general form of the path integral.</p>
+
+<p>Now assume that (H(k,x) = k^2/2m + V(x)). Then the (k)-dependent terms have the form</p>
+
+<p>[ \int e^{ik(y-x) - i\Delta t k^2/2m}. ]</p>
+
+<p>Complete the square</p>
+
+<p>\begin{align}</p>
+
+<p>ik(y-x) -i\Delta t k^2/2m &amp;= -\frac{i \Delta t}{2m} (k^2 - \frac{2m}{\Delta t}k(y-x)) \</p>
+
+<p>&amp;= -\frac{i \Delta t}{2m} (k^2 - \frac{2m}{\Delta t}k(y-x) + \frac{m^2}{\Delta t<sup>2}(y-x)</sup>2 -\frac{m^2}{\Delta t<sup>2}(y-x)</sup>2) \</p>
+
+<p>&amp;= -\frac{i \Delta t}{2m}(k - \frac{m}{\Delta t}(y-x))^2 + \frac{i m}{2 \Delta t}(y-x)^2</p>
+
+<p>\end{align}</p>
+
+<p>Now, using that</p>
+
+<p>[ \int e<sup>{-ak</sup>2} = \sqrt{\frac{\pi}{a}} ]</p>
+
+<p>We have</p>
+
+<p>[ \int e^{-\frac{i \Delta t}{2m}(k-\frac{m}{\Delta t}(y-x))^2} = \sqrt{\frac{2\pi m}{i \Delta t}} ]</p>
+
+<p>Putting it altogether, we get the more familiar version of the path integral,</p>
+
+<p>\begin{align} \langle y|U_t|x\rangle &amp;\simeq C^N \int dx<em>1 \cdots dx</em>{N-1} \</p>
+
+<p>&amp; \ \times \ \exp i\sum_^{N-1} \frac{m}{2\Delta t}(x_{j+1}-x_j)^2 - V(x_j) \Delta t</p>
+
+<p>\end{align}</p>
+
+<p>where</p>
+
+<p>[ C = \frac{1}{2\pi} \sqrt{\frac{2 \pi m}{i \Delta t}} = \sqrt{\frac{m}{2\pi i \Delta t}} ]</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/lattice-quantum-mechanics-1d/"><i class="fa fa-chevron-circle-left"></i> Lattice quantum mechanics in 1d</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/geometry-of-spacetime-part-1/">Geometry of curved spacetime, part 1 <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+</body>
+
+</html>

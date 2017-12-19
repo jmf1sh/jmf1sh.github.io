@@ -1,33 +1,570 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
+    <title>jmf1sh&#39;s blog</title>
     <link>https://jmf1sh.github.io/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <description>Recent content on jmf1sh&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Dec 2017 13:24:43 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 19 Dec 2017 13:43:10 +0100</lastBuildDate>
     
 	<atom:link href="https://jmf1sh.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>My Second Post</title>
-      <link>https://jmf1sh.github.io/posts/my-second-post/</link>
-      <pubDate>Tue, 19 Dec 2017 13:24:43 +0100</pubDate>
+      <title>About</title>
+      <link>https://jmf1sh.github.io/about/</link>
+      <pubDate>Tue, 19 Dec 2017 13:43:10 +0100</pubDate>
       
-      <guid>https://jmf1sh.github.io/posts/my-second-post/</guid>
-      <description>Testing</description>
+      <guid>https://jmf1sh.github.io/about/</guid>
+      <description>blah blah blah</description>
     </item>
     
     <item>
-      <title>My First Post</title>
-      <link>https://jmf1sh.github.io/posts/my-first-post/</link>
-      <pubDate>Wed, 29 Nov 2017 09:21:03 +0100</pubDate>
+      <title>Variance Stabilizing Transformations</title>
+      <link>https://jmf1sh.github.io/posts/variance-stabilizing/</link>
+      <pubDate>Tue, 19 Dec 2017 13:49:09 +0100</pubDate>
       
-      <guid>https://jmf1sh.github.io/posts/my-first-post/</guid>
-      <description>hello \( \int_0^1 x dx \) world.
-\[ \int_1^3 x^2 dx. \]</description>
+      <guid>https://jmf1sh.github.io/posts/variance-stabilizing/</guid>
+      <description>I want to record here a very interesting thing which I recently discovered, variance-stabilizing transformations. The idea is very simple: suppose we have a random variable \(x\), which follows a probability distribution which is parametrized solely by its mean \(\mu\), with variance \(var(x) = g(\mu)\) a known function of the mean.</description>
+    </item>
+    
+    <item>
+      <title>Santalo Formula</title>
+      <link>https://jmf1sh.github.io/posts/santalo-formula/</link>
+      <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/santalo-formula/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Let \(M\) be a simple Riemannian manifold with boundary $\partial M$. For $(x,v) \in SM$, let $\tau(x,v)$ denote the exit time of the geodesic starting at $x$ with tangent vector $v$, i.</description>
+    </item>
+    
+    <item>
+      <title>The Index Form</title>
+      <link>https://jmf1sh.github.io/posts/index-form/</link>
+      <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/index-form/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Let $f: [0,T] \times (-\epsilon, \epsilon) \to M$ be a family of parametrized curves in a Riemannian manifold $(M, g)$.</description>
+    </item>
+    
+    <item>
+      <title>Boundary Distance</title>
+      <link>https://jmf1sh.github.io/posts/boundary-distance/</link>
+      <pubDate>Thu, 03 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/boundary-distance/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Recently, I&#39;ve been learning some topics related to machine learning, and especially manifold learning. These both fall under the general notion of inverse problems: given some mathematical object $X$ (it could be a function $f: A \to B$, or a Riemannian manifold $(M,g)$, or a probability measure $d\mu$ on a space $X$, etc.</description>
+    </item>
+    
+    <item>
+      <title>Hamilton-Jacobi equation and Riemannian distance</title>
+      <link>https://jmf1sh.github.io/posts/hamilton-jacobi-distance/</link>
+      <pubDate>Mon, 31 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/hamilton-jacobi-distance/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Consider the cotangent bundle $T^\ast X$ as a symplectic manifold with canonical symplectic form $\omega$. Consider the Hamilton-Jacobi equation</description>
+    </item>
+    
+    <item>
+      <title>Classical partition function</title>
+      <link>https://jmf1sh.github.io/posts/classical-partition-function/</link>
+      <pubDate>Tue, 18 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/classical-partition-function/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Let $(M, \omega)$ be a symplectic manifold of dimension $2n$, and let $H: M \to \mathbf{R}$ be a classical Hamiltonian.</description>
+    </item>
+    
+    <item>
+      <title>What is generalized geometry?</title>
+      <link>https://jmf1sh.github.io/posts/generalized-geometry/</link>
+      <pubDate>Thu, 29 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/generalized-geometry/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+The following are my notes for a short introductory talk. References below are not intended to be comprehensive!</description>
+    </item>
+    
+    <item>
+      <title>Virasoro algebra from the free boson</title>
+      <link>https://jmf1sh.github.io/posts/virasoro-algebra-free-boson/</link>
+      <pubDate>Thu, 11 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/virasoro-algebra-free-boson/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Usual physics derivations of the Virasoro algebra from the free boson in two dimensions usually use some sort of regularization procedure to compute the central charge.</description>
+    </item>
+    
+    <item>
+      <title>The basic idea of the quantum BV complex</title>
+      <link>https://jmf1sh.github.io/posts/quantum-bv-complex/</link>
+      <pubDate>Wed, 14 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/quantum-bv-complex/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar. This post was originally written by Dylan Butson.
+$ \newcommand{\h}{\hbar} \newcommand{\X}{\mathfrak{X}} \newcommand{\PV}{\text{PV}} \newcommand{\K}{{\mathbb K}} \newcommand{\R}{{\mathbb R}} \newcommand{\too}{\xrightarrow} \newcommand{\im}{\text{Im }} $ Let $M$ be an oriented $n$-dimensional manifold and $\X\bullet(M):=\Gamma(M,\wedge{-\bullet} TM)$, so that $\X^\bullet(M)$ is concentrated in non-positive degree.</description>
+    </item>
+    
+    <item>
+      <title>Clifford algebras and spinors part 3: Bochner identity</title>
+      <link>https://jmf1sh.github.io/posts/clifford-algebras-part-3/</link>
+      <pubDate>Tue, 18 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/clifford-algebras-part-3/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Let $M$ be a Riemannian manifold, and let $Cl(M)$ be its Clifford bundle. Let $E \to M$ be any vector bundle with connection, and assume that $C^\infty(M, E)$ is a $Cl(M)$-module.</description>
+    </item>
+    
+    <item>
+      <title>Clifford algebras and spinors, part 2: spin structures and Dirac operators</title>
+      <link>https://jmf1sh.github.io/posts/clifford-algebras-part-2/</link>
+      <pubDate>Thu, 06 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/clifford-algebras-part-2/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+A very good reference for today&#39;s material is Dan Freed&#39;s (unpublished) notes on Dirac operators, available here.</description>
+    </item>
+    
+    <item>
+      <title>Clifford algebras and spinors</title>
+      <link>https://jmf1sh.github.io/posts/clifford-algebras-part-1/</link>
+      <pubDate>Wed, 05 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/clifford-algebras-part-1/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Clifford Algebras
+Today I&#39;d like to write some brief notes about Clifford algebras and spinors. A classic reference is the paper &amp;quot;Clifford Modules&amp;quot; by Atiyah-Bott-Shapiro.</description>
+    </item>
+    
+    <item>
+      <title>Virasoro algebra</title>
+      <link>https://jmf1sh.github.io/posts/virasoro-algebra/</link>
+      <pubDate>Sun, 23 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/virasoro-algebra/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Conformal Invariance in 2D
+To begin, recall that in two dimensions, the conformal transformations are generated by holomorphic and anti-holomorphic transformations.</description>
+    </item>
+    
+    <item>
+      <title>BRST and Lie algebra cohomology</title>
+      <link>https://jmf1sh.github.io/posts/brst-lie-algebra/</link>
+      <pubDate>Fri, 28 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/brst-lie-algebra/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+We saw in previous posts that gauge-fixing is intimately related to BRST cohomology. Today I want to explain the underlying mathematical formalism, as it is actually something very well-known: Lie algebra cohomology.</description>
+    </item>
+    
+    <item>
+      <title>BRST</title>
+      <link>https://jmf1sh.github.io/posts/brst/</link>
+      <pubDate>Sun, 23 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/brst/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Finally, I want to discuss gauge-invariant of the gauge-fixed theory. (!?) We saw in the previous posts that if we have a gauge theory with connection (A) and matter fields (\psi), in order to derive sensible Feynman rules we have to introduce a gauge-fixing function (G) as well as Fermionic fields (c, \bar{c}), the ghosts.</description>
+    </item>
+    
+    <item>
+      <title>Fadeev-Popov ghosts, continued</title>
+      <link>https://jmf1sh.github.io/posts/fadeev-popoc-ghosts-continued/</link>
+      <pubDate>Sun, 23 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/fadeev-popoc-ghosts-continued/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Last time I sketched how we can represent an integral over a submanifold (M \subset \mathbb{R}^n) by an integral of the form</description>
+    </item>
+    
+    <item>
+      <title>Fadeev-Popov ghosts</title>
+      <link>https://jmf1sh.github.io/posts/fadeev-popoc-ghosts/</link>
+      <pubDate>Fri, 21 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/fadeev-popoc-ghosts/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Today I want to review the Fadeev-Popov procedure, with a view toward BRST and eventually BV.
+Gauge-Invariance and Gauge-Fixing</description>
+    </item>
+    
+    <item>
+      <title>The Weyl and Wigner transforms</title>
+      <link>https://jmf1sh.github.io/posts/weyl-wigner-transform/</link>
+      <pubDate>Thu, 13 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/weyl-wigner-transform/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Today I&#39;d like to try to understand better how deformation quantization is related to the usual canonical quantization, and especially how the latter might be used to deduce the former, i.</description>
+    </item>
+    
+    <item>
+      <title>Equations of motion and Noether&#39;s theorem in the functional formalism</title>
+      <link>https://jmf1sh.github.io/posts/equations-of-motion-noether/</link>
+      <pubDate>Thu, 29 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/equations-of-motion-noether/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+First, let us recall the derivation of the equations of motion and Noether&#39;s theorem in classical field theory.</description>
+    </item>
+    
+    <item>
+      <title>The Moyal product</title>
+      <link>https://jmf1sh.github.io/posts/moyal-product/</link>
+      <pubDate>Sat, 24 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/moyal-product/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Today I want to understand the Moyal product, as we will need to understand it in order to construct quantizations of symplectic quotients.</description>
+    </item>
+    
+    <item>
+      <title>An exercise in quantum Hamiltonian reduction</title>
+      <link>https://jmf1sh.github.io/posts/quantum-hamiltonian-reduction/</link>
+      <pubDate>Thu, 22 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/quantum-hamiltonian-reduction/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Semiclassical Setup
+Let the group (GL(2)) act on (V = \mathrm{Mat}_{2\times n}) and consider the induced symplectic action on (T^\ast V).</description>
+    </item>
+    
+    <item>
+      <title>The 1PI effective action</title>
+      <link>https://jmf1sh.github.io/posts/1pi-effective-action/</link>
+      <pubDate>Wed, 07 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/1pi-effective-action/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+In this post I&#39;d like to try to understand the 1PI effective action that is often of interest.</description>
+    </item>
+    
+    <item>
+      <title>Spontaneous symmetry breaking in QFT</title>
+      <link>https://jmf1sh.github.io/posts/spontaneous-symmetry-breaking-qft/</link>
+      <pubDate>Mon, 05 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/spontaneous-symmetry-breaking-qft/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+In this post I want to try to understand symmetry breaking and the origin of the moduli space of vacua.</description>
+    </item>
+    
+    <item>
+      <title>Seiberg-Witten theory and the Riemann-Hilbert problem</title>
+      <link>https://jmf1sh.github.io/posts/seiberg-witten-riemann-hilbert/</link>
+      <pubDate>Sun, 04 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/seiberg-witten-riemann-hilbert/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+References:
+Introduction to Seiberg-Witten theory and its stringy origin Seiberg-Witten and follow-up  The Classical Moduli Space of Vacua</description>
+    </item>
+    
+    <item>
+      <title>BPS states and wall-crossing</title>
+      <link>https://jmf1sh.github.io/posts/bps-wall-crossing/</link>
+      <pubDate>Mon, 29 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/bps-wall-crossing/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+This is the first in what I hope will become a series of posts on BPS state counting and wall-crossing.</description>
+    </item>
+    
+    <item>
+      <title>Seiberg-Witten theory video lectures</title>
+      <link>https://jmf1sh.github.io/posts/seiberg-witten-video-lectures/</link>
+      <pubDate>Mon, 22 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/seiberg-witten-video-lectures/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+I found some lectures by Sara Pasquetti on Seiberg-Witten theory here:
+Lecture 1 Lecture 2 Lecture 3</description>
+    </item>
+    
+    <item>
+      <title>A toy model for effective theory from extra dimensions</title>
+      <link>https://jmf1sh.github.io/posts/toy-model-extra-dimensions/</link>
+      <pubDate>Mon, 27 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/toy-model-extra-dimensions/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+I wanted to see how the Fourier transform can turn field theory into many-particle mechanics. This is just silly fooling around, so you shouldn&#39;t take what follows too seriously (there are much better models of extra dimensions, to be sure!</description>
+    </item>
+    
+    <item>
+      <title>Generating functions</title>
+      <link>https://jmf1sh.github.io/posts/generating-functions/</link>
+      <pubDate>Thu, 26 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/generating-functions/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Method of Generating Functions
+Let (X) and (Y) be two smooth manifolds, and let (M = T^\ast X, N = T^\ast Y) with corresponding symplectic forms (\omega_M) and (\omega_N).</description>
+    </item>
+    
+    <item>
+      <title>KAM</title>
+      <link>https://jmf1sh.github.io/posts/kam-1/</link>
+      <pubDate>Mon, 23 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/kam-1/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+In this post I want to sketch the idea of KAM, following these lecture notes.
+Integrable Systems</description>
+    </item>
+    
+    <item>
+      <title>Circle diffeomorphisms</title>
+      <link>https://jmf1sh.github.io/posts/circle-diffeomorphisms-1/</link>
+      <pubDate>Fri, 13 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/circle-diffeomorphisms-1/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+This is the first of a series of posts based on these lecture notes on KAM theory. For now I just want to outline section 2, which is a toy model of KAM thoery.</description>
+    </item>
+    
+    <item>
+      <title>Gaussian integrals and Wick&#39;s theorem</title>
+      <link>https://jmf1sh.github.io/posts/gaussian-integrals-wick/</link>
+      <pubDate>Sat, 03 Mar 2012 15:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/gaussian-integrals-wick/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+We saw in the last update that the generating function (Z[J]) can be expressed as
+[ Z[J] = e^{\frac{1}{2} J \cdot A^{-1} J} ]</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Gaussian integrals</title>
+      <link>https://jmf1sh.github.io/posts/introduction-to-gaussian/</link>
+      <pubDate>Sat, 03 Mar 2012 09:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/introduction-to-gaussian/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+As a warm-up for more serious stuff, I&#39;d like to discuss Gaussian integrals over (\mathbb{R}^d). Gaussian integrals are the main tool for perturbative quantum field theory, and I find that understanding Gaussian integrals in finite dimensions is an immense aid to understanding how perturbative QFT works.</description>
+    </item>
+    
+    <item>
+      <title>Geometry of curved spacetime, part 5</title>
+      <link>https://jmf1sh.github.io/posts/geometry-of-spacetime-part-5/</link>
+      <pubDate>Sat, 25 Feb 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/geometry-of-spacetime-part-5/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Background
+Following last time, we are almost ready to write down the Einstein equations. Before doing any math, let&#39;s understand what we&#39;re trying to do.</description>
+    </item>
+    
+    <item>
+      <title>Geometry of curved spacetime, part 4</title>
+      <link>https://jmf1sh.github.io/posts/geometry-of-spacetime-part-4/</link>
+      <pubDate>Mon, 06 Feb 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/geometry-of-spacetime-part-4/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Today I had to try to explain connections and curvature in local frames (as opposed to coordinates), and I really feel that Wald&#39;s treatment of this is just awful (this is one of the few complaints I have with an otherwise classic textbook).</description>
+    </item>
+    
+    <item>
+      <title>Geometry of curved spacetime, part 3</title>
+      <link>https://jmf1sh.github.io/posts/geometry-of-spacetime-part-3/</link>
+      <pubDate>Sat, 04 Feb 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/geometry-of-spacetime-part-3/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Today, some numerology. The Riemann curvature tensor is a tensor (R_{abcd}) satisfying the identities:
+ (R_{abcd} = -R_{bacd}.</description>
+    </item>
+    
+    <item>
+      <title>Path integrals, part 3</title>
+      <link>https://jmf1sh.github.io/posts/path-integrals-part-2/</link>
+      <pubDate>Sat, 04 Feb 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/path-integrals-part-2/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Consider the heat equation
+[ \frac{\partial \psi}{\partial t} = -\hat{H} \psi ]
+We find similarly
+[ \langle x_N|U_t|x0\rangle = \int \exp \sum^{N-1} ik_j(xj - x{j+1}) -\Delta t H(x_j, k_j) dx dk.</description>
+    </item>
+    
+    <item>
+      <title>Path integrals, part 3</title>
+      <link>https://jmf1sh.github.io/posts/path-integrals-part-3/</link>
+      <pubDate>Sat, 04 Feb 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/path-integrals-part-3/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+In my previous posts on path integrals, I described (rather tersely) how the path integral, suitably defined and interpreted, can be used to compute the Schwartz kernel of the operators (e^{iHt}) (Lorentzian signature) and (e^{-Ht}) (Euclidean signature).</description>
+    </item>
+    
+    <item>
+      <title>Geometry of curved spacetime, part 2</title>
+      <link>https://jmf1sh.github.io/posts/geometry-of-spacetime-part-2/</link>
+      <pubDate>Thu, 26 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/geometry-of-spacetime-part-2/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Disclaimer: as before, these are (incredibly) rough notes intended for a tutorial. I may clean them up a bit later but for now it will seem like a lot of unmotivated equations (with typos!</description>
+    </item>
+    
+    <item>
+      <title>Geometry of curved spacetime, part 1</title>
+      <link>https://jmf1sh.github.io/posts/geometry-of-spacetime-part-1/</link>
+      <pubDate>Thu, 19 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/geometry-of-spacetime-part-1/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+I&#39;m TAing a course on general relativity this semester, and I&#39;m covering some of the geometry background in tutorials.</description>
+    </item>
+    
+    <item>
+      <title>Path integrals, part 1</title>
+      <link>https://jmf1sh.github.io/posts/path-integrals-part-1/</link>
+      <pubDate>Mon, 16 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/path-integrals-part-1/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Consider the Hilbert space (\mathcal{H} = L^2(\mathbb{R})) with Lebesgue measure and a Hamiltonian (H = T(k) + V(x)) (a sum of kinetic and potential energy).</description>
+    </item>
+    
+    <item>
+      <title>Lattice quantum mechanics in 1d</title>
+      <link>https://jmf1sh.github.io/posts/lattice-quantum-mechanics-1d/</link>
+      <pubDate>Sat, 12 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/lattice-quantum-mechanics-1d/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+For some reason I&#39;ve been interested in lattice QFT recently, especially lattice gauge theory (note to self: a miniproject for the Christmas break is to understand the paper by Kogut and Susskind http://prd.</description>
+    </item>
+    
+    <item>
+      <title>Susskind on string theory</title>
+      <link>https://jmf1sh.github.io/posts/susskind-string-theory/</link>
+      <pubDate>Wed, 05 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/susskind-string-theory/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Found this and thought I&#39;d share:
+Lectures on String Theory by Susskind
+This is a series of introductory lectures on string theory by cofounder Leonard Susskind.</description>
+    </item>
+    
+    <item>
+      <title>Classical mechanics, part 6</title>
+      <link>https://jmf1sh.github.io/posts/classical-mechanics-part-6/</link>
+      <pubDate>Thu, 01 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/classical-mechanics-part-6/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Last time we saw that a classical mechanical system which has a Lagrangian formulation can (under some mild assumptions) be repackaged as a symplectic manifold ((M, \omega)) together with a smooth function (H) called the Hamiltonian.</description>
+    </item>
+    
+    <item>
+      <title>Classical mechanics, part 5</title>
+      <link>https://jmf1sh.github.io/posts/classical-mechanics-part-5/</link>
+      <pubDate>Thu, 25 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/classical-mechanics-part-5/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+As we saw in the previous post, the equations of motion for a mechanical system can be cast into a 1st order form called Hamilton&#39;s equations, which are naturally interpreted as describing a path in the phase space (T^\ast M) associated to the configuration space (M).</description>
+    </item>
+    
+    <item>
+      <title>Classical mechanics, part 4</title>
+      <link>https://jmf1sh.github.io/posts/classical-mechanics-part-4/</link>
+      <pubDate>Tue, 23 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/classical-mechanics-part-4/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Recall from last time that a classical mechanical system consists of a manifold (M) (the configuration space) and a function (L) on the tangent bundle (TM).</description>
+    </item>
+    
+    <item>
+      <title>Classical mechanics, part 3</title>
+      <link>https://jmf1sh.github.io/posts/classical-mechanics-part-3/</link>
+      <pubDate>Fri, 19 Aug 2011 21:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/classical-mechanics-part-3/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+We saw before that Newton&#39;s 2nd law can be written in a more general form as
+[ \frac{d}{dt} \frac{\partial L}{\partial v}(x, \dot{x}) = \frac{\partial L}{\partial x}(x, \dot{x}), ]</description>
+    </item>
+    
+    <item>
+      <title>Classical mechanics, part 2</title>
+      <link>https://jmf1sh.github.io/posts/classical-mechanics-part-2/</link>
+      <pubDate>Fri, 19 Aug 2011 15:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/classical-mechanics-part-2/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+After the previous post, we are now familiar with Newton&#39;s 2nd law
+[ \mathbf{F} = m\mathbf{a}, ]</description>
+    </item>
+    
+    <item>
+      <title>Classical mechanics, part 1</title>
+      <link>https://jmf1sh.github.io/posts/classical-mechanics-part-1/</link>
+      <pubDate>Fri, 19 Aug 2011 09:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/classical-mechanics-part-1/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+This is a surpisingly hard topic, and someday I would like to make an honest attempt at it.</description>
+    </item>
+    
+    <item>
+      <title>Updated outline</title>
+      <link>https://jmf1sh.github.io/posts/updated-outline/</link>
+      <pubDate>Wed, 17 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/updated-outline/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+I was thinking about how to put this blog to use, and especially how to make it worthwhile for myself.</description>
+    </item>
+    
+    <item>
+      <title>Legendre transform</title>
+      <link>https://jmf1sh.github.io/posts/legendre-transform/</link>
+      <pubDate>Wed, 27 Jan 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/legendre-transform/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Yesterday, I gave an introductory talk on Hamiltonian mechanics and symplectic geometry. The starting point is the Legendre transform.</description>
+    </item>
+    
+    <item>
+      <title>Hyperkahler reduction</title>
+      <link>https://jmf1sh.github.io/posts/hyperkaehler-reduction/</link>
+      <pubDate>Fri, 08 Jan 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/hyperkaehler-reduction/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Yesterday I gave a talk on hyperkahler reduction--my first invited talk ever. I thought I should summarize it here.</description>
+    </item>
+    
+    <item>
+      <title>Fist day of 2010</title>
+      <link>https://jmf1sh.github.io/posts/first-day-of-2010/</link>
+      <pubDate>Mon, 04 Jan 2010 09:26:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/first-day-of-2010/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+It&#39;s the first (academic) day of 2010. I figured that the best use of this blog is as a log--that is, to log and plan my work for the semester/year/life.</description>
+    </item>
+    
+    <item>
+      <title>In the beginning...</title>
+      <link>https://jmf1sh.github.io/posts/in-the-beginning/</link>
+      <pubDate>Sat, 09 Aug 2008 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/in-the-beginning/</guid>
+      <description>This post has been migrated from my old blog, the math-physics learning seminar.
+Well this is the first post. I&#39;m on the tail end of a MSc right now, and set to start my PhD in the fall, so I thought it might be interesting to document my (probable) descent into madness.</description>
     </item>
     
   </channel>

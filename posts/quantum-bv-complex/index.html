@@ -1,0 +1,198 @@
+<!doctype html>
+
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jmf1sh&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.31.1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1>
+                <a href="https://jmf1sh.github.io/">jmf1sh&rsquo;s blog</a>
+            </h1>
+
+            <ul id="social-media">
+                
+        
+                
+                <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+                <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+                <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+        
+                
+            </ul>
+            
+            <p><em>this is a pointless tagline</em></p>
+            
+        </header>
+
+        
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+        
+        <main>
+
+
+
+
+<article>
+
+    <h1>The basic idea of the quantum BV complex</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2014-05-14T00:00:00Z">May 14, 2014</time>
+        </li>
+        
+        
+
+        
+
+        <li>4 min read</li>
+    </ul>
+</aside>
+    
+
+    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>. This post was originally written by Dylan Butson.</p>
+
+<p>$ \newcommand{\h}{\hbar} \newcommand{\X}{\mathfrak{X}} \newcommand{\PV}{\text{PV}} \newcommand{\K}{{\mathbb K}} \newcommand{\R}{{\mathbb R}} \newcommand{\too}{\xrightarrow} \newcommand{\im}{\text{Im }} $ Let $M$ be an oriented $n$-dimensional manifold and $\X<sup>\bullet(M):=\Gamma(M,\wedge</sup>{-\bullet} TM)$, so that $\X^\bullet(M)$ is concentrated in non-positive degree. Let $\mu\in \Omega^n(M)$ a volume form on $M$. Then interior product with $\mu$ gives an isomorphism $\vee\mu: \X<sup>k(M)\too{\cong}\Omega</sup>{n-k}(M)$. From this, we induce a degree 1 differential $\Delta_\mu$ on $\X^\bullet(M)$ from the de Rham differential $d$ on $\Omega^\bullet(M)$, defined by $\Delta_\mu= (\vee\mu)^{-1}\circ d\circ\vee\mu$, making $\X^\bullet(M)$ into a cochain complex isomorphic to $\Omega^\bullet(M)[k]$; in particular $H<sup>k(\X)=H</sup>{n+k}(\Omega)$.</p>
+
+<p>If $M$ is compact and connected, then $H<sup>0(\X)=H</sup>n(\Omega)$ is one dimensional, and upon fixing a basis to identify $H^0(\X)\too{\cong}\R$, the quotient map gives a map $\pi:C^\infty(M)\to \R$. We have the following:</p>
+
+<p>Proposition Let $1\in C^\infty(M)$ be the constant function taking the value $1$. Then $[1]\in H^0(\X)$ is nontrivial and after choosing it as a basis the resulting map $\pi:C^\infty(M)\to \R$ is given by <span  class="math">\( f\mapsto\frac{ \int_M f\mu}{\int_M \mu}\)</span> Proof Let $f\in C^\infty(M)$ and suppose $f=\Delta_\mu(X)$ for $X\in\X^1(M)$. Then <span  class="math">\(f\mu = f\vee \mu = \Delta_\mu(X)\vee\mu= d(X\vee \mu)\)</span> so that $f\mu$ is exact and by Stokes' theorem integrates to $0$ on $M$. Thus all $f\in \im \Delta_\mu$ integrate to zero against $\mu$ on $M$, so that the above map indeed descends to the quotient.</p>
+
+<p>The above arguement also implies that were $1\in\im\Delta_\mu$ then $\mu$ would integrate to zero, contradicting that $\mu$ is a volume form, so that $[1]\in H^0(\X)$ is indeed nontrivial. The map is thus well-defined, linear, and has the appropriate action on a basis so that it is correct as claimed. $\square$</p>
+
+<p>This recovers the standard definition of the expectation of an observable in the path integral picture of quantum field theory. The upshot is that having formulated the integration homologically, we can hope to extend this homological definition of expectation to situations where the integral itself is not well defined.</p>
+
+<p>Consider the case $M=V$ a vector space, which in particular described the situation in coordinates on $M$. We are interested in measures of the form $\mu=e^{-S/\h}\mu_0$ where $\mu_0$ is the Lesbesgue measure on $V$, given by $\mu_0=dx^1\wedge ...\wedge dx^n$. Let $X\in \X^k(M)$, we have: \begin{align*} d(X\vee \mu) &amp; = d(e^{-S/\h}(X\vee\mu_0)) \ &amp; = de^{-S/\h}\wedge (X\vee \mu_0)+e^{-S/\h}d(X\vee \mu_0)\ &amp; = -\frac{1}{\h}e^{-S/\h} dS\wedge (X\vee \mu<em>0) + e^{-S/\h} (\Delta</em>{\mu_0}X)\vee \mu_0 \ &amp; = -\frac{1}{\h}e^{-S/\h} (dS\vee X)\vee \mu<em>0 + (\Delta</em>{\mu<em>0}X)\vee \mu\ &amp; = \left(-\frac{1}{\h}dS\vee X + \Delta</em>{\mu<em>0}X \right)\vee \mu \end{align*} so that $$\Delta</em>\mu=\Delta_{\mu<em>0}-\frac{1}{\h}\iota</em>{dS}<span  class="math">\( Further, we can explicitly compute $\Delta_{\mu_0}$: for $X\in\X^k(M)$ we have that $X=\sum_I X^I \partial_I$, where the sum is over increasing $k$-tuples $I\subset\{1,...,n\}$. We have \begin{align*} d(X\vee \mu_0) &amp; = d\left( \sum_I X^I \partial_I\vee(dx^1\wedge ...\wedge dx^n)\right)\\ &amp; = d\left( \sum_I X^I (-1)^?dx^1\wedge ...\wedge \hat{dx^I} \wedge ...\wedge dx^n \right)\\ &amp; = \sum_I \sum_{i\in I} \partial_{x^i} X^I (-1)^?dx^i\wedge dx^1\wedge ...\wedge \hat{ dx^I}\wedge ...\wedge dx^n\\ &amp; = \left( \sum_i \partial_{x^i} (dx^i\vee X) \right) \vee \mu \end{align*} so that \)</span>\Delta_{\mu_0} = \sum<em>i \partial</em>{x^i} \iota_{dx^i}<span  class="math">\( To be slightly more careful about the formal variable $\h$ and allow the $\h\to 0$ limit to be more clear, we refine our complex to be: \)</span> \X^\bullet(M)[[\h]] \quad\quad\text{equipped with}\quad\quad \h \Delta_\mu= \h\Delta_{\mu<em>0} -\iota</em>{dS}$$ Next, we restrict consideration only to polynomial observables (functions), and vector fields with polynomial coefficients, denoting the resulting complex $\PV^\bullet$. One can check that $H^0(\PV)$ is still one dimensional, so that the above proposition holds and we maintain the integral intepretation of this cohomology.</p>
+
+<p>Now, we can identify $\PV^\bullet[[\h]]$ with the graded-commutative graded algebra $\K[[x<sup>1,...,x</sup>n,\xi_1,...,\xi_n,\h]]$ where $x<sup>1,...,x</sup>n,\h$ are in degree 0 and $\xi_1,...,\xi_n$ are in degree -1 as follows: <span  class="math">\( x^i \mapsto x^i \quad\quad \partial_i\mapsto \xi_i\quad\quad \partial_i\wedge\partial_j\mapsto \xi_i\xi_j \quad\quad \h\mapsto \h\)</span> Under this identification, the map $\iota_{dx<sup>i}:PV</sup>k(M)\to \PV^{k-1}(M)$ is identified with $\partial_{\xi<em>i}$. Now, we require our action function $S:M\to \R$ also be polynomial, and further, that $$S(x)=\frac{1}{2}\sum</em>{i,j} a_{ij}x<sup>ix</sup>j- b(x)<span  class="math">\( for $a_{ij}$ symmetric and non-degenerate and for $b\in I^3$ where $I=(x^1,...,x^n)\subset \K[[x^1,...,x^n]]$, that is, $b(x)$ a polynomial with no terms of degree less than 3. This implies that \begin{align*} \h\Delta_\mu &amp; = \h\Delta_{\mu_0} -\iota_{dS} \\ &amp; = \h \sum_i \partial_{x^i} \iota_{dx^i} - \sum_i (\partial_{x^i}S) \iota_{dx^i} \\ &amp; = \h \sum_i \partial_{x^i} \iota_{dx^i} + \sum_i (\partial_{x^i}b) \iota_{dx^i} - \sum_{i,j}a_{ij}x^i\iota_{dx^j}\\ \end{align*} and under our identification this becomes \)</span>\h\Delta_\mu = \h \sum<em>i \partial</em>{x^i}\partial_{\xi_i} + \sum<em>i (\partial</em>{x^i}b)\partial_{\xi<em>i} - \sum</em>{i,j}a_{ij}x^i\partial_{\xi_j}$$ The computation of the degree 0 cohomology of a given polynomial $f\in\K[[x_1,...,x_n]]$ under this differential is taken up in Gwilliam, Johnson-Freyd where it is shown the answer is precisely the Feynman diagram expansion for the expectation of $f$ which we expect.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/clifford-algebras-part-3/"><i class="fa fa-chevron-circle-left"></i> Clifford algebras and spinors part 3: Bochner identity</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/virasoro-algebra-free-boson/">Virasoro algebra from the free boson <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+</body>
+
+</html>

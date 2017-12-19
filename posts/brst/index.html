@@ -1,0 +1,293 @@
+<!doctype html>
+
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jmf1sh&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.31.1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1>
+                <a href="https://jmf1sh.github.io/">jmf1sh&rsquo;s blog</a>
+            </h1>
+
+            <ul id="social-media">
+                
+        
+                
+                <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+                <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+                <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+                
+        
+                
+        
+                
+            </ul>
+            
+            <p><em>this is a pointless tagline</em></p>
+            
+        </header>
+
+        
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+        
+        <main>
+
+
+
+
+<article>
+
+    <h1>BRST</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2012-12-23T00:00:00Z">Dec 23, 2012</time>
+        </li>
+        
+        
+
+        
+
+        <li>4 min read</li>
+    </ul>
+</aside>
+    
+
+    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+
+<p>Finally, I want to discuss gauge-invariant of the gauge-fixed theory. (!?) We saw in the previous posts that if we have a gauge theory with connection (A) and matter fields (\psi), in order to derive sensible Feynman rules we have to introduce a gauge-fixing function (G) as well as Fermionic fields (c, \bar{c}), the ghosts. (Note: last time I used (\eta, \bar{\eta}) for the ghosts but I want to match the more standard notation, so I've switched to (c, \bar{c})).</p>
+
+<p>Usually it is convenient to use the gauge-fixing function (G(A) = \partial^\mu A_\mu). Under an infinitesimal gauge-transformation (\lambda), (A) transforms as</p>
+
+<p>[ A \mapsto -\nabla \lambda, ]</p>
+
+<p>so (G(A)) transforms as</p>
+
+<p>[ G(A) \mapsto G(A) - \partial^\mu \nabla_\mu \lambda. ]</p>
+
+<p>Hence the term in the Lagrangian involving the ghosts is</p>
+
+<p>[ -\bar{c}^a \partial^\mu \nabla_\mu^{ab} c^b, ]</p>
+
+<p>and our gauge-fixed Lagrangian is</p>
+
+<p>[ \mathcal{L} = -\frac{1}{4} |F|^2 + \bar{\psi}(iD!!!/-m)\psi + -\frac{|\partial^\mu A_\mu|^2}{2\xi}</p>
+
+<ul>
+<li>\bar{c}^a \nabla_\mu^{ab} c^b ]</li>
+</ul>
+
+<p>Introducing an auxiliary filed (B^a), this is of course equivalent to</p>
+
+<p>[ \mathcal{L} = -\frac{1}{4} |F|^2 + \bar{\psi}(iD!!!/-m)\psi + \frac{\xi}{2} B^a B_a</p>
+
+<ul>
+<li>B^a \partial^\mu A_{\mu a} - \bar{c}^a \nabla_\mu^{ab} c^b. ]</li>
+</ul>
+
+<p>Now, there are two questions one might ask: (1) how can we tell that this is a gauge-theory? i.e., what remains of the original gauge symmetry? and (2) does the resulting theory depend in any way on the choice of gauge-fixing function?</p>
+
+<p>The answer to both of these questions is BRST symmetry. The field (c) is Lie-algebra valued, so we could think of it as being an infinitesimal gauge transformation. Rather, for (\epsilon) a constant odd variable, (\epsilon c) is even and an honest infinitesimal gauge transformation. Under this transformation, we have</p>
+
+<p>[ \delta_\epsilon A = -\nabla (\epsilon c) = -\epsilon \nabla c. ]</p>
+
+<p>Then we define a graded derivation (\delta) by</p>
+
+<p>[ \delta A = - \nabla c. ]</p>
+
+<p>We have a grading by ghost number, where (\mathrm{gh}(A) = 0, \mathrm{gh}(\psi) = 0, \mathrm{gh}(c) = 1, \mathrm{gh}(\bar{c}) = -1). We would like to extend (\delta) to a derivation of degree (+1) that squares to 0. First, we should figure out what (\delta c) is. We compute:</p>
+
+<p>\begin{align}</p>
+
+<p>0 &amp;= \delta^2 A \</p>
+
+<p>&amp;= \delta(-\nabla c) \</p>
+
+<p>&amp;= -\partial \delta c - (\delta A) c - A (\delta c) + (\delta c) A - c (\delta A) \</p>
+
+<p>&amp;= -\partial \delta c + (\nabla c) c + c (\nabla c) - [A, \delta c] \</p>
+
+<p>&amp;= -\nabla(\delta c) + \nabla(c^2).</p>
+
+<p>\end{align}</p>
+
+<p>From this, we see that (\nabla(\delta c) = \nabla(c^2)), so we can set</p>
+
+<p>[ \delta c = c^2 = \frac{1}{2}[c, c]. ]</p>
+
+<p>Then (\delta^2 c = 0) is just the Jacobi identity for the group's Lie algebra! Finally, we would like to extend (\delta) to act on (\psi), (B), and (\bar{c}) so that (\delta \mathcal{L} = 0), and (\delta^2 = 0). Since the action on (A) is by infinitesimal gauge transformation, this leaves the curvature term of (\mathcal{L}) invariant. Similarly, the (\psi) term is invariant if we simply take</p>
+
+<p>[ \delta \psi = c \cdot \psi ]</p>
+
+<p>where dot denotes the infinitesimal gauge transformation. Using the known rules for (\delta), we find that</p>
+
+<p>[ \delta \mathcal{L} = \frac{\xi}{2} \left(\delta B B + B \delta B \right) + \delta B \cdot \partial^\mu A_\mu</p>
+
+<ul>
+<li>B \cdot \partial^\mu \nabla_\mu c - \delta\bar{c} \cdot \partial^\mu \nabla_\mu c ]</li>
+</ul>
+
+<p>By comparing coefficients, we find (together with what we've already computed)</p>
+
+<p>\begin{align}</p>
+
+<p>\delta A &amp;= -\nabla c \</p>
+
+<p>\delta \psi &amp;= c \cdot \psi \</p>
+
+<p>\delta c &amp;= \frac{1}{2}[c,c] \</p>
+
+<p>\delta \bar{c} &amp;= B \</p>
+
+<p>\delta B &amp;= 0.</p>
+
+<p>\end{align}</p>
+
+<p>This is the BRST differential. Now, suppose that (\mathcal{O}(A, \psi)) is a local operator involving the physical fields (A) and (psi). Then by construction,(delta O) is the change of (O) under an infinitesimal gauge transformation. Hence, we find</p>
+
+<pre><code>An operator \(\mathcal{O}\) is gauge invariant \(\iff \delta\mathcal{O} = 0\).
+</code></pre>
+
+<p>Now, suppose the functional measure (\mathcal{D}A \mathcal{D}\psi \mathcal{D}B \mathcal{D}c \mathcal{D}\bar{c}) is gauge-invariant, i.e. is BRST closed. (This assumption is equivalent to the absence of anomalies, but we'll completely ignore this in today's post.) Then we have</p>
+
+<p>[ \langle \delta \mathcal{O} \rangle = 0 ]</p>
+
+<p>for any local observable (\mathcal{O}). This just follows from integration by parts (this is where we have to assume the measure is (\delta)-closed). Now, why is this significant? First, this tells us that the space of physical observables is</p>
+
+<p>[ H<sup>0(C</sup>\ast_{\mathrm{BRST}}, \delta) ]</p>
+
+<p>where (C^\ast_{\mathrm{BRST}}) is the cochain complex of local observables, graded by ghost number.</p>
+
+<p>Now, the real power of the BRST formalism is the following. We find that the gauge-fixed Lagrangian can be written as</p>
+
+<p>[ \mathcal{L}_{gf} = \mathcal{L}_0 +\delta \left(\bar{c} \frac{B}{2} + \bar{c}\Lambda\right) ]</p>
+
+<p>where ( \Lambda = \partial^\mu \nabla_\mu A ) is our gauge-fixing function, and (\mathcal{L}_0) is the original Lagrangian without gauge-fixing. Now the point is, any two choices of gauge fixing differ by terms which are BRST exact, and hence give the same expectation values on the physical observables (H^0). So we have restored gauge invariance, while obtaining a gauge-fixed perturbation theory!</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/fadeev-popoc-ghosts-continued/"><i class="fa fa-chevron-circle-left"></i> Fadeev-Popov ghosts, continued</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/brst-lie-algebra/">BRST and Lie algebra cohomology <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+</body>
+
+</html>
