@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>jmf1sh&#39;s blog</title>
+    <title>jonathan&#39;s blog</title>
     <link>https://jmf1sh.github.io/</link>
-    <description>Recent content on jmf1sh&#39;s blog</description>
+    <description>Recent content on jonathan&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 19 Dec 2017 13:43:10 +0100</lastBuildDate>
@@ -17,7 +17,16 @@
       <pubDate>Tue, 19 Dec 2017 13:43:10 +0100</pubDate>
       
       <guid>https://jmf1sh.github.io/about/</guid>
-      <description>blah blah blah</description>
+      <description>My name is Jonathan Fisher. After completing a PhD in mathematics at the University of Toronto and spending a little more than a year in GRK 1670 at Universität Hambug, I am now a member of the scientific computing group at the Jülich Center for Neutron Science, outstation at Garching (Munich metro area).</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Reinforcement Learning</title>
+      <link>https://jmf1sh.github.io/posts/reinforcement-learning/</link>
+      <pubDate>Sun, 14 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/reinforcement-learning/</guid>
+      <description>I would like to record the basic formalism of reinforcement learning. Hopefully, this will lead to a post or series of posts giving a basic tensorflow implementation of a simple deep reinforcement learning model.</description>
     </item>
     
     <item>

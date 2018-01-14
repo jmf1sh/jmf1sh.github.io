@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on jmf1sh&#39;s blog</title>
+    <title>Posts on jonathan&#39;s blog</title>
     <link>https://jmf1sh.github.io/posts/</link>
-    <description>Recent content in Posts on jmf1sh&#39;s blog</description>
+    <description>Recent content in Posts on jonathan&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Dec 2017 13:49:09 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jmf1sh.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Introduction to Reinforcement Learning</title>
+      <link>https://jmf1sh.github.io/posts/reinforcement-learning/</link>
+      <pubDate>Sun, 14 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/reinforcement-learning/</guid>
+      <description>I would like to record the basic formalism of reinforcement learning. Hopefully, this will lead to a post or series of posts giving a basic tensorflow implementation of a simple deep reinforcement learning model.</description>
+    </item>
     
     <item>
       <title>Variance Stabilizing Transformations</title>
