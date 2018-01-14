@@ -2,7 +2,7 @@ baseURL = "https://jmf1sh.github.io/"
 
 languageCode = "en-us"
 
-title = "jmf1sh's blog"
+title = "jonathan's blog"
 
 theme = "kiera"
 paginate = 3
@@ -21,7 +21,7 @@ disqusShortname = "jmf1sh"
     linkedin = "jonathanfisher10"
 
 [params]
-    tagline = "this is a pointless tagline"
+    tagline = "mathematics, physics, programming, and machine learning"
 
 menu = "main"
 meta = "false"
