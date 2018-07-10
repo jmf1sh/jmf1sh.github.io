@@ -74,13 +74,13 @@
 
 <article>
 
-    <h1>Geometry of curved spacetime, part 3</h1>
+    <h1>Euler beta function and Dirichlet distribution</h1>
 
     
         <aside>
     <ul>
         <li>
-            <time class="post-date" datetime="2012-02-04T00:00:00Z">Feb 4, 2012</time>
+            <time class="post-date" datetime="2018-07-10T00:00:00Z">Jul 10, 2018</time>
         </li>
         
         
@@ -92,47 +92,67 @@
 </aside>
     
 
-    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+    <p>Let's remind ourselves how about the Euler beta function, defined as</p>
 
-<p>Today, some numerology. The Riemann curvature tensor is a tensor (R_{abcd}) satisfying the identities:</p>
+<p><span  class="math">\[ B(x,y) = \int_0^1 t^{x-1} (1-t)^{y-1} dt. \]</span></p>
 
-<ol>
-<li><p>(R_{abcd} = -R_{bacd}.)</p></li>
+<p>First, we will express <span  class="math">\(B(x,y)\)</span> in terms of the more familiar Gamma function,
+defined as</p>
 
-<li><p>(R_{abcd} = R_{cdba}. )</p></li>
+<p><span  class="math">\[ \Gamma(x) = \int_0^\infty t^{x-1} e^{-t} dt. \]</span></p>
 
-<li><p>(R_{abcd} + R_{acdb} + R_{adbc} = 0. ) (First Bianchi)</p></li>
+<p>First, we have</p>
 
-<li><p>(R_{abcd|e} + R_{acec|d} + R_{abde|c} = 0. ) (Second Bianchi)</p></li>
-</ol>
+<p><span  class="math">\[ \Gamma(x) \Gamma(y) = \int_0^\infty \int_0^\infty s^{x-1} t^{y-1} e^{-s-t} ds dt \]</span></p>
 
-<p>By 1, the number of independent (ab) indices is (N = n(n-1)/2), and similarly for (cd). By 2, the number of independent pairs of indices is (N(N+1)/2). Now the cyclic constraint 3 can be written as</p>
+<p>Now, suppose we have a multinomial distribution over <span  class="math">\(k\)</span> classes with probabilites <span  class="math">\(p_1, \ldots, p_k\)</span>. In for $n$ trials, the probability of observing <span  class="math">\(k_i\)</span> instances of class <span  class="math">\(i\)</span> is given by</p>
 
-<p>[ R_{[abcd]} = 0, ]</p>
+<p><span  class="math">\[ P(n_1, \ldots, n_k) = {n \choose n_1, \ldots, n_k} \prod_i p_i^{n_i} \]</span></p>
 
-<p>and thus constitutes ({n \choose 4}) equations. So the number of independent components is</p>
+<p>Suppose that initially the probabilities $p_i$ are unknown, and we wish to infer them from
+a given observation of $n$ trials. Using a conjugate prior, we can take the unknown probabilites
+to follow the Dirichlet distribution</p>
 
-<p>\begin{align}</p>
+<p><span  class="math">\[ P(p_1, \ldots, p_k) = C_\alpha \prod_i p_i^{\alpha_i-1} \]</span></p>
 
-<p>N(N+1)/2 - {n \choose 4} &amp;= \frac{n(n-1)((n(n-1)/2+1)}{4} - \frac{n(n-1)(n-2)(n-3)}{24} \</p>
+<p>(where the normalization constant <span  class="math">\(C_\alpha\)</span> can be computed explicitly in terms of the
+generalized beta function, or equivalently in terms of the Gamma function).
+Using Bayes' theorem we have</p>
 
-<p>&amp;= \frac{(n<sup>2-n)(n</sup>2-n+2)}{8} - \frac{(n<sup>2-n)(n</sup>2-5n+6}{24} \</p>
+<p>
+\begin{align*}
+P(\alpha | n_1, \ldots, n_k) &= C P(n_1, \ldots, n_k | \alpha) P(\alpha) \\
+&= C' \prod_i p_i^{n_i+\alpha_i-1}
+\end{align*}
+</p>
 
-<p>&amp;= \frac{n<sup>4-2n</sup>3+3n^2+2n}{8} - \frac{n<sup>4-6n</sup>3+11n^2-6n}{24} \</p>
+<p>This gives a new Dirichlet distribution with <span  class="math">\(\alpha_i\)</span> replaced by <span  class="math">\(\alpha_i+n_i\)</span>.
+Taking expectation values of the posterior we have</p>
 
-<p>&amp;= \frac{2n<sup>4-2n</sup>2}{24} \</p>
+<p><span  class="math">\(E[p_i] = \frac{n_i+\alpha_i}{n+\sum_i \alpha_i}\)</span>.</p>
 
-<p>&amp;= \frac{n<sup>4-n</sup>2}{12} \</p>
+<p>Taking the Jeffreys prior <span  class="math">\(\alpha_i = 1/2\)</span>, we have finally</p>
 
-<p>&amp;= \frac{n<sup>2(n</sup>2-1)}{12}</p>
+<p><span  class="math">\(E[p_i] = \frac{n_i+1/2}{n+n/2}\)</span>.</p>
 
-<p>\end{align}</p>
+<p>Note that this assigns a non-zero value to <span  class="math">\(p_i\)</span> even in the case that <span  class="math">\(n_i = 0\)</span>!</p>
 
-<p>Now consider the Weyl tensor (C_{abcd}) which is defined as the completely trace-free part of the Rienmann tensor. The trace is determined by the Ricci tensor (R_{ab}) which as (n(n+1)/2) indepdendent components, so the Weyl tensor has</p>
+<p>For comparison, consider taking instead the estimate from maximum likelihood. We have</p>
 
-<p>[ \frac{n<sup>2(n</sup>2-1)}{12} - \frac{n^2-n}{2} = \frac{n<sup>4-7n</sup>2+6n}{12} ]</p>
+<p><span  class="math">\[ \log L(p, n) = C + \sum_i n_i \log p_i. \]</span></p>
 
-<p>independent components. Now, for (n = 1) we see that (R_{abcd}) has no independent components, i.e. it vanishes identically. In (n=2), it has only 1 independent component, and so the scalar curvature determines everything. In (n=3), it has 6 independent components. Note that in this case, the Weyl tensor has no independent components, i.e. it is identically 0. So we see that in (n = 2, 3) every Riemannian manifold is conformally flat. So things only start to get really interesting in (n=4), where the Riemann tensor has 20 independent components, and the Weyl tensor has 10.</p>
+<p>Maximizing subject to the constraints <span  class="math">\(\sum_i p_i = 1\)</span>, we have</p>
+
+<p><span  class="math">\[ n_i / p_i = \lambda \]</span></p>
+
+<p>for some Lagrange multiplier <span  class="math">\(\lambda\)</span>, for all <span  class="math">\(i\)</span>. Hence we obtain</p>
+
+<p><span  class="math">\[ p_i = n_i / n \]</span></p>
+
+<p>and note that in this case, we assign zero probability to any class which is not observed.
+So we see that the expected distribution derived though Bayesian inference is more
+conservative than maximum likelihood, in the sense that zero probabilities are assigned
+only in the limit of infinitely many trials.</p>
 
 
 </article>
@@ -142,13 +162,9 @@
     <ul>
         
         <li>
-            <a href="https://jmf1sh.github.io/posts/path-integrals-part-2/"><i class="fa fa-chevron-circle-left"></i> Path integrals, part 3</a>
+            <a href="https://jmf1sh.github.io/posts/reinforcement-learning/"><i class="fa fa-chevron-circle-left"></i> Introduction to Reinforcement Learning</a>
         </li>
         
-        
-        <li>
-            <a href="https://jmf1sh.github.io/posts/geometry-of-spacetime-part-4/">Geometry of curved spacetime, part 4 <i class="fa fa-chevron-circle-right"></i> </a>
-        </li>
         
     </ul>
 </section>

@@ -21,6 +21,17 @@
     </item>
     
     <item>
+      <title>Euler beta function and Dirichlet distribution</title>
+      <link>https://jmf1sh.github.io/posts/beta-function/</link>
+      <pubDate>Tue, 10 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/beta-function/</guid>
+      <description>Let&#39;s remind ourselves how about the Euler beta function, defined as
+\[ B(x,y) = \int_0^1 t^{x-1} (1-t)^{y-1} dt. \]
+First, we will express \(B(x,y)\) in terms of the more familiar Gamma function, defined as</description>
+    </item>
+    
+    <item>
       <title>Introduction to Reinforcement Learning</title>
       <link>https://jmf1sh.github.io/posts/reinforcement-learning/</link>
       <pubDate>Sun, 14 Jan 2018 00:00:00 +0000</pubDate>
