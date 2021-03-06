@@ -9,12 +9,14 @@ This post has been migrated from my old blog, the [math-physics learning seminar
 
 After the previous post, we are now familiar with Newton's 2nd law
 
-\[ \mathbf{F} = m\mathbf{a}, \]
+$$
+\mathbf{F} = m\mathbf{a},
+$$
 
-which (suitably interpreted) holds for any system of \(N\) particles. However, this equation requires the use of cartesian coordinates, which for many systems may not be the most convenient choice. Suppose we have some other coordinates \(q^i = q^i(x^j)\). What is the correct analogue of Newton's 2nd law for the \(q\)-coordinates?
+which (suitably interpreted) holds for any system of $N$ particles. However, this equation requires the use of cartesian coordinates, which for many systems may not be the most convenient choice. Suppose we have some other coordinates $q^i = q^i(x^j)$. What is the correct analogue of Newton's 2nd law for the \(q\)-coordinates?
 
 
-To make life easier, we will assume for now that the force \(\mathbf{F}\) is conservative; i.e. 
+To make life easier, we will assume for now that the force \(\mathbf{F}\) is conservative; i.e.
 
 \[ \mathbf{F} = -\nabla V(x) \]
 
@@ -50,10 +52,10 @@ The proof of this theorem is a straightforward calculation using the chain rule.
 
 \[ w = dY_x(v)  = Jv \]
 
-where \(y,w\) are coordinates on the target \(TM\). 
+where \(y,w\) are coordinates on the target \(TM\).
 
 
-Now we need to compute the derivatives of \(\tilde{L}\). 
+Now we need to compute the derivatives of \(\tilde{L}\).
 
 
 \[ \frac{\partial L}{\partial x} = \frac{\partial \tilde{L}}{\partial y}\frac{\partial y}{\partial x} + \frac{\partial \tilde{L}}{\partial w}\frac{\partial w}{\partial x} = \tilde{L}_y J + \tilde{L}_w H v \]
