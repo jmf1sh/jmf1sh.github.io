@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on jonathan&#39;s blog</title>
@@ -6,10 +6,16 @@
     <description>Recent content in Posts on jonathan&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Jul 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://jmf1sh.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Mon, 24 Dec 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://jmf1sh.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Variational autoencoders</title>
+      <link>https://jmf1sh.github.io/posts/vae/</link>
+      <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jmf1sh.github.io/posts/vae/</guid>
+      <description>See Autoencoding variational Bayes
+Suppose we have set \(X\) with (a priori unknown) probability density function \(p(x)\). We would like to find a lower-dimensional representation of \(X\) in some latent space \(Z\) by imposing a joint probability density \(p(x, z)\).</description>
+    </item>
     
     <item>
       <title>Euler beta function and Dirichlet distribution</title>
@@ -272,7 +278,7 @@ In this post I want to try to understand symmetry breaking and the origin of the
       <guid>https://jmf1sh.github.io/posts/seiberg-witten-riemann-hilbert/</guid>
       <description>This post has been migrated from my old blog, the math-physics learning seminar.
 References:
-Introduction to Seiberg-Witten theory and its stringy origin Seiberg-Witten and follow-up  The Classical Moduli Space of Vacua</description>
+Introduction to Seiberg-Witten theory and its stringy origin Seiberg-Witten and follow-up The Classical Moduli Space of Vacua</description>
     </item>
     
     <item>

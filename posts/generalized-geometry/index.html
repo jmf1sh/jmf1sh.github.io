@@ -8,7 +8,7 @@
     <title>jonathan&#39;s blog</title>
     <meta name="description" content="The HTML5 Herald">
     <meta name="author" content="Jonathan Fisher">
-    <meta name="generator" content="Hugo 0.42.2" />
+    <meta name="generator" content="Hugo 0.81.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
@@ -97,21 +97,15 @@
 <p>The following are my notes for a short introductory talk. References below are not intended to be comprehensive!</p>
 
 <p>Math references:</p>
-
 <pre><code>Courant,  Dirac manifolds
 Hitchin, Generalized Calabi-Yau manifolds
 Gualtieri, Generalized complex geometry 
 Cavalcanti, New aspects of the ddc-lemma 
 Cavalcanti and Gualtieri, Generalized complex geometry and T-duality 
-Bailey and Gualtieri, Local analytic geometry of generalized complex structures
-</code></pre>
-
+Bailey and Gualtieri, Local analytic geometry of generalized complex structures</code></pre>
 <p>Physics references:</p>
-
 <pre><code>Dijkgraaf, Gukov, Neitzke, Vafa, Topological M-theory as unification of form theories of gravity
-Grana, Flux compactifications in string theory: a comprehensive review
-</code></pre>
-
+Grana, Flux compactifications in string theory: a comprehensive review</code></pre>
 <p>What is geometry?</p>
 
 <p>Before trying to define generalized geometry, we should first decide what we mean by ordinary geometry. Of course, this question doesn't have a unique answer, so there are many ways to generalize the classical notions of manifolds and varieties. The viewpoint taken in generalized geometry is the following: the distinguishing feature of smooth manifolds is the existence of a tangent bundle</p>
@@ -121,11 +115,8 @@ Grana, Flux compactifications in string theory: a comprehensive review
 <p>which satisfies some nice axioms. The basic idea of generalized geometry is to replace the tangent bundle with some other vector bundle $L \to M$, again satisfying some nice axioms. Different generalized geometries on $M$ will correspond to different choices of bundle $L \to M$, as well as auxiliary data compatible with $L$ in some appropriate sense.</p>
 
 <p>Definition. A Lie algebroid over $M$ is a smooth vector bundle $L \to M$ together with a vector bundle map $a: L \to TM$ called the anchor map and a bracket $[\cdot, \cdot]: H^0(M, L) \otimes H^0(M, L) \to H^0(M, L)$ satisfying the following axioms:</p>
-
 <pre><code>$[\cdot,\cdot]$ is  a Lie bracket on $H^0(M, L)$
-$[X, fY] = f[X,Y] + a(X)f \cdot Y$ for $X,Y \in H^0(M,L)$ and $f \in H^0(M, \mathcal{O}_M)$
-</code></pre>
-
+$[X, fY] = f[X,Y] + a(X)f \cdot Y$ for $X,Y \in H^0(M,L)$ and $f \in H^0(M, \mathcal{O}_M)$</code></pre>
 <p>Note that we can take $L$ to be either a real or complex vector bundle. In the latter case the anchor map should map to the complexified tangent bundle.</p>
 
 <p>Example 1. We can take $L$ to be $TM$ with anchor map the identity.</p>
