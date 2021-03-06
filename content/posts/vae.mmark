@@ -1,0 +1,49 @@
+---
+title: "Variational autoencoders"
+date: 2018-12-24
+draft: false
+---
+
+
+See [Autoencoding variational Bayes](https://arxiv.org/abs/1312.6114)
+
+Suppose we have set $$X$$ with (_a priori_ unknown) probability density function $$p(x)$$.
+We would like to find a lower-dimensional representation of $$X$$ in some latent space
+$$Z$$ by imposing a joint probability density $$p(x, z)$$.
+
+*Assumptions.*
+ 1. The marginal $$p(x)$$ is unknown but we can sample from $$X$$.
+ 2. We are free to choose the marginal $$p(z)$$.
+ 3. We are free to choose the _decoder_ $$p(x|z)$$.
+
+The relationship between $$X$$ and $$Z$$ is encoded in the conditional probability
+densities $$p(x|z)$$ (the decoder) and $$p(z|x)$$ (the encoder). From Bayes' theorem,
+
+$$ p(z|x) = \frac{p(x|z) p(z)}{p(x)} $$
+
+So once we have specified the prior $$p(z)$$ and the decoder $$p(x|z)$$, we have no freedom
+to choose $$p(z|x)$$. Furthermore, without access to $$p(x)$$, we have no way to recover
+$$p(x|z)$$ analytically. To get around this problem, we introduce another probability
+density $$q(z|x)$$, the _approximate posterior_, which is intended to be a tractable
+approximation to the intractable $$p(z|x)$$. We can quantify the difference between
+the true posterior and approximate posterior with the Kullback-Leiber divergence,
+
+<p>
+\begin{align*}
+D_{KL}(q(z|x)||p(z|x))
+&= E_{z \sim q(z|x)}\left(\frac{\log q(z|x)}{\log p(z|x)}\right) \\
+&=E_{z \sim q(z|x)}\left(\log q(z|x)-\log p(z|x)\right) \\
+&=E_{z \sim q(z|x)}\left(\log q(z|x)-\log p(x,z)+\log p(x)\right) \\
+&=E_{z \sim q(z|x)}\left(\log q(z|x)-\log p(x|z) - \log p(z) +\log p(x)\right) \\
+&=\log p(x)  + D_{KL}(q(z|x)||p(z)) - E_{z \sim q(z|x)}\left(\log p(x|z) \right)
+\end{align*}
+</p>
+
+Rearranging this expression, we have
+
+$$ \log p(x) = D_{KL}(q(z|x)||p(z|x)) + L $$
+
+where $$L$$ is the _variational lower bound_,
+
+$$ L = -D_{KL}(q(z|x)||p(z)) + E_{z \sim q(z|x)}(\log p(x|z)) $$
+
