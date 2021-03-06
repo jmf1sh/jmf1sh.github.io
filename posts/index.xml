@@ -2198,8 +2198,10 @@ Origins from the Action Principle, and Hamilton-Jacobi&lt;/p&gt;
          <guid>https://jmf1sh.github.io/posts/2011-08-19-classical-mechanics-part-2/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;After the previous post, we are now familiar with Newton&amp;rsquo;s 2nd law&lt;/p&gt;
-&lt;p&gt;[ \mathbf{F} = m\mathbf{a}, ]&lt;/p&gt;
-&lt;p&gt;which (suitably interpreted) holds for any system of (N) particles. However, this equation requires the use of cartesian coordinates, which for many systems may not be the most convenient choice. Suppose we have some other coordinates (q^i = q^i(x^j)). What is the correct analogue of Newton&amp;rsquo;s 2nd law for the (q)-coordinates?&lt;/p&gt;
+&lt;p&gt;$$
+\mathbf{F} = m\mathbf{a},
+$$&lt;/p&gt;
+&lt;p&gt;which (suitably interpreted) holds for any system of $N$ particles. However, this equation requires the use of cartesian coordinates, which for many systems may not be the most convenient choice. Suppose we have some other coordinates $q^i = q^i(x^j)$. What is the correct analogue of Newton&amp;rsquo;s 2nd law for the (q)-coordinates?&lt;/p&gt;
 &lt;p&gt;To make life easier, we will assume for now that the force (\mathbf{F}) is conservative; i.e.&lt;/p&gt;
 &lt;p&gt;[ \mathbf{F} = -\nabla V(x) ]&lt;/p&gt;
 &lt;p&gt;for some potential function (V(x)). Under this assumption, Newton&amp;rsquo;s 2nd law is&lt;/p&gt;
@@ -2237,7 +2239,16 @@ Origins from the Action Principle, and Hamilton-Jacobi&lt;/p&gt;
          <pubDate>Fri, 19 Aug 2011 09:00:00 +0000</pubDate>
          
          <guid>https://jmf1sh.github.io/posts/2011-08-19-classical-mechanics-part-1/</guid>
-         <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
+         <description>&lt;p&gt;Articles in this series&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://jmf1sh.github.io/posts/2011-08-19-classical-mechanics-part-1/&#34;&gt;Part 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jmf1sh.github.io/posts/2011-08-19-classical-mechanics-part-2/&#34;&gt;Part 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jmf1sh.github.io/posts/2011-08-19-classical-mechanics-part-3/&#34;&gt;Part 3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jmf1sh.github.io/posts/2011-08-23-classical-mechanics-part-4/&#34;&gt;Part 4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jmf1sh.github.io/posts/2011-08-25-classical-mechanics-part-5/&#34;&gt;Part 5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jmf1sh.github.io/posts/2011-09-01-classical-mechanics-part-6/&#34;&gt;Part 6&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;This is a surpisingly hard topic, and someday I would like to make an honest attempt at it. But Feynman did it better than I ever could! See &amp;ldquo;What is a Force?&amp;rdquo; from the Feynman Lectures on Physics, available here: here &lt;a href=&#34;http://strangebeautiful.com/other-texts/feynman-phys-lects-1_12.pdf&#34;&gt;pdf&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I promise to update eventually.&lt;/p&gt;
 </description>
