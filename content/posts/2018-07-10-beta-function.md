@@ -28,15 +28,15 @@ to follow the Dirichlet distribution
 $$ P(p_1, \ldots, p_k) = C_\alpha \prod_i p_i^{\alpha_i-1} $$
 
 (where the normalization constant $$C_\alpha$$ can be computed explicitly in terms of the
-generalized beta function, or equivalently in terms of the Gamma function). 
+generalized beta function, or equivalently in terms of the Gamma function).
 Using Bayes' theorem we have
 
-<p>
+$$
 \begin{align*}
-P(\alpha | n_1, \ldots, n_k) &= C P(n_1, \ldots, n_k | \alpha) P(\alpha) \\
+P(\alpha | n_1, \ldots, n_k) &= C P(n_1, \ldots, n_k | \alpha) P(\alpha) \\\\\\
 &= C' \prod_i p_i^{n_i+\alpha_i-1}
 \end{align*}
-</p>
+$$
 
 This gives a new Dirichlet distribution with $$\alpha_i$$ replaced by $$\alpha_i+n_i$$.
 Taking expectation values of the posterior we have
@@ -64,4 +64,4 @@ $$ p_i = n_i / n $$
 and note that in this case, we assign zero probability to any class which is not observed.
 So we see that the expected distribution derived though Bayesian inference is more
 conservative than maximum likelihood, in the sense that zero probabilities are assigned
-only in the limit of infinitely many trials. 
+only in the limit of infinitely many trials.

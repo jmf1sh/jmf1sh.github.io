@@ -6,7 +6,7 @@ draft: false
 
 This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
 
-Let $$M$$ be a simple Riemannian manifold with boundary $$\partial M$$. For $$(x,v) \in SM$$, let $$\tau(x,v)$$ denote the exit time of the geodesic starting at $$x$$ with tangent vector $$v$$, i.e. $$\tau(x,v)$$ is the (necessarily unique, and finite) time at which $$\exp_x(tv) \in \partial M$$.
+Let $M$ be a simple Riemannian manifold with boundary $\partial M$. For $(x,v) \in SM$, let $\tau(x,v)$ denote the exit time of the geodesic starting at $x$ with tangent vector $v$, i.e. $\tau(x,v)$ is the (necessarily unique, and finite) time at which $\exp_x(tv) \in \partial M$.
 
 
 We let $\partial_+(SM)$ denote the set
