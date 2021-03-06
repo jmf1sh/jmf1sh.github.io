@@ -1,0 +1,244 @@
+<!doctype html>
+
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jonathan&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.81.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
+
+        <ul id="social-media">
+          
+
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
+        
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+      <main>
+
+
+
+
+<article>
+
+    <h1>Hamilton-Jacobi equation and Riemannian distance</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2015-08-31T00:00:00Z">Aug 31, 2015</time>
+        </li>
+        
+
+        
+
+        <li>4 minutes read</li>
+    </ul>
+</aside>
+
+    
+
+    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+<p>Consider the cotangent bundle $T^\ast X$ as a symplectic manifold with canonical symplectic form $\omega$. Consider the Hamilton-Jacobi equation</p>
+<p>[ \frac{\partial S}{\partial t} + H(x, \nabla S) = 0, ]</p>
+<p>for the classical Hamilton function $S(x,t)$. Setting $x=x(t), p(t) = (\nabla S)(x(t), t)$ one sees immediately from the method of characteristics that this PDE is solved by the classical action</p>
+<p>[ S(x,t) = \int_0^t (p \dot{x} - H) ds, ]</p>
+<p>where the integral is taken over the solution $(x(s),p(s))$ of Hamilton&rsquo;s equations with $x(0)=x_0$ and $x(t) = x$. The choice of basepoint $x_0$ involves an overall additive constant of $S$, and really this solution is only valid in some neighbourhood $U$ of $x_0$. (Reason: $S$ is in general multivalued, as the differential &ldquo;$dS$&rdquo; is closed but not necessarily exact.)</p>
+<p>Now consider the case where $X$ is Riemannian, with Hamiltonian $H(x,p) = \frac{1}{2} |p|^2$. The solutions to Hamilton&rsquo;s equations are affinely parametrized geodesics, and by a simple Legendre transform we have</p>
+<p>[ S(x, t) = \frac{1}{2} \int_0^t |\dot x|^2 ds ]</p>
+<p>where the integral is along the affine geodesic with $x(0) = x_0$ and $x(t) = x$. Since $x(s)$ is a geodesic, $|\dot x(s)|$ is a constant (in $s$) and therefore</p>
+<p>[ S(x, t) = \frac{t}{2} |\dot x(0)|^2. ]</p>
+<p>Now consider the path $\gamma(s) = x($|\dot x(0)|^{-1}$s)$. This is an affine geodesic with $\gamma(0) = x_0$, $\gamma(|\dot x(0)|t) = x$ and $|\dot \gamma| = 1$. Therefore, the Riemannian distance between $x_0$ and $x$ (provided $x$ is sufficiently close to $x_0$) is</p>
+<p>[ d(x_0, x) = |\dot x(0)| t. ]</p>
+<p>Combining this with the previous calculation, we see that</p>
+<p>[ S(x, t) = \frac{1}{2t} d(x_0, x)^2. ]</p>
+<p>Now insert this back into the Hamilton-Jacobi equation above. With a bit of rearranging, we have the following.</p>
+<p>Theorem. Let $x_0$ denote a fixed basepoint of $X$. Then for all $x$ in a sufficiently small neighborhood $U$ of $x_0$, the Riemannian distance function satisfies the Eikonal equation</p>
+<p>[ |\nabla_x d(x_0, x)|^2 = 1. ]</p>
+<p>Now, for convenience set $r(x) = d(x_0, x)$. Then $|\nabla r|^2 = 1$, from which we obtain (by differentiating twice and contracting)</p>
+<p>[ g^{ij} g^{kl}\left(\nabla_{lki} r \nabla_j r + \nabla_{ki}r \nabla_{lj} r\right) = 0.]</p>
+<p>Quick calculation shows that</p>
+<p>[ \nabla_{lki} r = \nabla_{ilk} r - \left.R_{li}\right.^{b}_k \nabla_b r ]</p>
+<p>Therefore, tracing over $l$ and $k$ we obtain</p>
+<p>[ g^{lk} \nabla_{lki} r = \nabla_i ( \Delta r) + Rc(\nabla r, -) ]</p>
+<p>Plugging this back into the equation derived above, we have</p>
+<p>[ \nabla r \cdot \nabla(\Delta r) + Rc(\nabla r, \nabla r) + |Hr|^2 = 0, ]</p>
+<p>where $Hr$ denotes the Hessian of $r$ regarded as a 2-tensor. Now, using $r$ as a local coordinate, it is easy to see that $\partial_r = \nabla r$ (as vector fields). So we can rewrite this identity as</p>
+<p>[ \partial_r (\Delta r) + Rc(\partial_r, \partial_r) + |Hr|^2 = 0. ]</p>
+<p>Now, we can get a nice result out of this. First, note that the Hessian $Hr$ always has at least one eigenvalue equal to zero, because the Eikonal equation implies that $Hr(\partial_r, -)=0$. Let $\lambda_2, \dots, \lambda_n$ denote the non-zero eigenvalues of $Hr$. We have</p>
+<p>[ |Hr|^2 = \lambda_2^2 + \dots + \lambda_n^2, ]</p>
+<p>while on the other hand</p>
+<p>[ |\Delta r|^2 = (\lambda_2 + \dots + \lambda_n)^2 ]</p>
+<p>By Cauchy-Schwarz, we have</p>
+<p>[ |\Delta r|^2 \leq (n-1)|Hr|^2 ]</p>
+<p>Proposition. Suppose that the Ricci curvature of $X$ satisfies $Rc \geq (n-1)\kappa$, and let $u = (n-1)(\Delta r)^{-1}$. Then</p>
+<p>[ u' \geq 1 + \kappa u^2. ]</p>
+<p>Proof. From preceding formulas, $|Hr|^2$ can be expressed in terms of the Ricci curvature and the radial derivative of $\Delta r$. On the other hand, $|\Delta|^2$ is bounded above by $(n-1) |Hr|^2$. The claimed inequality then follows from simple rearrangement.</p>
+<p>Now, the amazing thing is that this deceptively simple inequality is the main ingredient of the Bishop-Gromov comparison theorem. The Bishop-Gromov comparison theorem, in turn, is the main ingredient of the proof of Gromov(-Cheeger) precompactness. I hope to discuss these topics in a future post.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2015-08-18-classical-partition-function/"><i class="fa fa-chevron-circle-left"></i> Classical partition function</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2015-09-03-boundary-distance/">Boundary Distance <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
+</body>
+
+</html>

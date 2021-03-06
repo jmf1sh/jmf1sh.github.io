@@ -1,0 +1,280 @@
+<!doctype html>
+
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jonathan&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.81.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
+
+        <ul id="social-media">
+          
+
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
+        
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+      <main>
+
+
+
+
+<article>
+
+    <h1>Geometry of curved spacetime, part 2</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2012-01-26T00:00:00Z">Jan 26, 2012</time>
+        </li>
+        
+
+        
+
+        <li>5 minutes read</li>
+    </ul>
+</aside>
+
+    
+
+    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+<p>Disclaimer: as before, these are (incredibly) rough notes intended for a tutorial. I may clean them up a bit later but for now it will seem like a lot of unmotivated equations (with typos!!).</p>
+<p>The Energy Functional</p>
+<p>[ S = \int_0^T |\dot{\gamma}|^2 dt ]</p>
+<p>Letting (V^i = \dot{\gamma}^i), this is</p>
+<p>[ S = \int_0^T g_{ij}(\gamma(t)) V^i V^j dt = \int_0^T L dt ]</p>
+<p>where the Lagrangian (L) is</p>
+<p>[ L = g_{ij} V^i V^j ]</p>
+<p>Now,</p>
+<p>[ \frac{\partial L}{\partial x^k} = (\partial_k g_{ij}) V^i V^j ]</p>
+<p>and</p>
+<p>[ \frac{\partial L}{\partial V^k} = g_{ij} \delta^i_k V^j + g_{ij} V^i \delta^i_k = 2 g_{jk} V^j ]</p>
+<p>Now,</p>
+<p>[ \frac{d}{dt} \frac{\partial L}{\partial V^k} = 2 (\partial_i g_{jk}) V^i V^j + 2 g_{jk} \dot{V}^j ]</p>
+<p>Plugging these expressions into the Euler-Lagrange equations, we have</p>
+<p>[ 2 g_{jk} \dot{V}^j + \left(\partial_i g_{jk} + \partial_j g_{ik}- \partial_k g_{ij}\right) V^i V^j = 0 ]</p>
+<p>Multiplying by the inverse metric, we have</p>
+<p>[ \dot{V}^k + \frac{g^{kl}}{2} \left( \partial_i g_{jl} + \partial_j g_{il} - \partial_l g_{ij} \right) V^i V^j = 0 ]</p>
+<p>Which is the geodesic equation (recall the formula for the Christoffel symbols).</p>
+<p>Orthonormal Frames (Lorentzian and Riemannian) (tetrads, vielbeins, vierbeins, &hellip;)</p>
+<p>Locally, we can find an orthonormal basis of vector fields (e^\mu_i). Greek indicates coordinates, whereas Latin indicates label in the basis. These necessarily satisfy</p>
+<p>[ g_{\mu\nu} e^\mu_i e^\nu_j = \eta_{ij} ]</p>
+<p>where (\eta_{ij}) is the flat/constant metric (of whatever signature we are working in).</p>
+<p>Methods for Computing Curvature (from Wald)</p>
+<ol start="0">
+<li>Getting the Christoffel symbols from the geodesic equation.</li>
+</ol>
+<p>See e.g. sphere or spherical coordinates.</p>
+<ol>
+<li>Coordinates. By definition,</li>
+</ol>
+<p>[ \nabla_a \nabla_b \omega_c = \nabla_b \nabla_a \omega_c + {R_{abc}}^d \omega_d ]</p>
+<p>Writing things explicitly, this gives</p>
+<p>[ R_{abc}^d = \partial_b \Gamma^d_{ac} - \partial_a \Gamma^d_{bc}]</p>
+<p>[+\Gamma^e_{ac}\Gamma^d_{be} - \Gamma^e_{bc}\Gamma^d_{ae}]</p>
+<p>(todo: fix typesetting.)</p>
+<p>Do this for eg unit sphere in (\mathbb{R}^3).</p>
+<ol start="2">
+<li>Curvature in Frames (equivalent to coordinates but totally different flavor)</li>
+</ol>
+<p>(note: Misner-Thorne-Wheeler seems much better than Wald for this stuff).</p>
+<p>Using MTW notation. Fix a frame (\mathbf{e_\mu}) and a dual frame (\omega^\mu). The connection 1-forms are defined by</p>
+<p>[ 0 = d\omega^\mu + \alpha^\mu_\nu \wedge \omega^\nu ]</p>
+<p>We also have</p>
+<p>[ dg_{\mu\nu} = \omega_{\mu\nu} + \omega_{\nu\mu}]</p>
+<p>So metric compatibility yields</p>
+<p>[ \omega_{\mu\nu} = -\omega_{\nu\mu}]</p>
+<p>Antisymmetry means fewer independent components. In this language, the curvature 2-form is given by</p>
+<p>[ R^\mu_\nu = d\alpha^\mu_\nu + \alpha^\mu_\sigma \wedge \alpha^\sigma_\nu ]</p>
+<p>Gaussian Coordinates</p>
+<p>Via Wald. Suppose (S \subset M) is a codimension 1 submanifold. If (S) is not null, we can find a normal vector field (n^a) which is everywhere orthogonal to (S) and has unit length. (Probably also need orientation to make it unique!) We can pick any coordinates (x^1, \cdots, x^{n-1}) on (S), and we pick the last coordinate to be the distance to (S), measured along a geodesic with initial tangent vector (n^a) (i.e. we use exponential coordinates in the normal direction).</p>
+<p>Once we pick these coordinates, we obtain a family of hypersurfaces (S_t) given by</p>
+<p>(x^n = t). These have the property that they are orthogonal to the normal geodesics through (S). Proof: (X are vector fields which are tangent to (S_t))</p>
+<p>[ n^b \nabla_b (n_a X^a) = n_a n^b \nabla_b X^a ]</p>
+<p>[= n_a X^b \nabla_b n^a ]</p>
+<p>[= \frac{1}{2}X^b \nabla_b (n^a n_a) = 0 ]</p>
+<p>(first: geodesic, second: they lie-commute since they are coordinate vector fields).</p>
+<p>Jacobi Fields, Focusing and Growth, Conjugate Points</p>
+<p>Geodesic deviation. Suppose we have a 1-parameter family of geodesics (\gamma_s) with tangent (T^a) and deviation (X^a). (draw pictures!) By the geodesic equation, we have</p>
+<p>[ T^a \nabla_a T^b = 0 ]</p>
+<p>What can we say about (X^a)? By change of affine parameter if necessary, we can assume that (T^a) and (X^a) are coordinate vector fields, and in particular they commute. So</p>
+<p>[ X^a \nabla_a T^b = T^a \nabla_a X^b ]</p>
+<p>Then it is easy to see that (X^a T_a) is constant, and so (again by change of parameter if necessary) we can assume that it is 0. Now set (v^a = T^b \nabla_b X^a). We interpret this as the relative velocity of nearby geodesics. Similarly, we have the acceleration</p>
+<p>[ a^a = T^c \nabla_c v^a = T^b \nabla_b (T^c \nabla_c X^a) ]</p>
+<p>Some manipulation shows that</p>
+<p>[ a^a = -R_{cbd}^a X^b T^c T^d ]</p>
+<p>This is the geodesic deviation equation. (Positive curvature -&gt; focus, negative curvature -&gt;growth.)</p>
+<p>Now we can work this in reverse. Suppose I have a single geodesic with tangent (T^a). If I have some vector field (X^a) on the geodesic, under what conditions will it integrate to give me a family of geodesics? The above shows that we must have</p>
+<p>[ T^a \nabla_a (T^b \nabla_b X^c) = -R_{abd}^c X^b T^a T^d ]</p>
+<p>Solutions to this equation are called Jacobi vector fields.</p>
+<p>Definition Points p, q on a geodesic are said to be conjugate if there exists a Jacobi field on the geodesics which vanishes at p and q. (Picture time!)</p>
+<p>Definition (Cut Locus in Riemannian Signature) For (p \in M), we define the cut locus in (T_p M) to be those vectors (v \in T_p M) for which (\exp(tv)) is length minimizing on ([0,1]) but fails to be length-minimizing on ([0,1+\epsilon]) for and (\epsilon). The cut locus in M is the image of the cut locus in (T_p M) under the exponential map.</p>
+<p>eg. Sphere, antipodes.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2012-01-19-geometry-of-spacetime-part-1/"><i class="fa fa-chevron-circle-left"></i> Geometry of curved spacetime, part 1</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2012-02-04-path-integrals-part-3/">Path integrals, part 3 <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
+</body>
+
+</html>

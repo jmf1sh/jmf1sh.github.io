@@ -1,0 +1,287 @@
+<!doctype html>
+
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jonathan&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.81.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
+
+        <ul id="social-media">
+          
+
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
+        
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+      <main>
+
+
+
+
+<article>
+
+    <h1>What is generalized geometry?</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2015-01-29T00:00:00Z">Jan 29, 2015</time>
+        </li>
+        
+
+        
+
+        <li>7 minutes read</li>
+    </ul>
+</aside>
+
+    
+
+    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+<p>The following are my notes for a short introductory talk. References below are not intended to be comprehensive!</p>
+<p>Math references:</p>
+<pre><code>Courant,  Dirac manifolds
+Hitchin, Generalized Calabi-Yau manifolds
+Gualtieri, Generalized complex geometry 
+Cavalcanti, New aspects of the ddc-lemma 
+Cavalcanti and Gualtieri, Generalized complex geometry and T-duality 
+Bailey and Gualtieri, Local analytic geometry of generalized complex structures
+</code></pre>
+<p>Physics references:</p>
+<pre><code>Dijkgraaf, Gukov, Neitzke, Vafa, Topological M-theory as unification of form theories of gravity
+Grana, Flux compactifications in string theory: a comprehensive review
+</code></pre>
+<p>What is geometry?</p>
+<p>Before trying to define generalized geometry, we should first decide what we mean by ordinary geometry. Of course, this question doesn&rsquo;t have a unique answer, so there are many ways to generalize the classical notions of manifolds and varieties. The viewpoint taken in generalized geometry is the following: the distinguishing feature of smooth manifolds is the existence of a tangent bundle</p>
+<p>[ TM \to M ]</p>
+<p>which satisfies some nice axioms. The basic idea of generalized geometry is to replace the tangent bundle with some other vector bundle $L \to M$, again satisfying some nice axioms. Different generalized geometries on $M$ will correspond to different choices of bundle $L \to M$, as well as auxiliary data compatible with $L$ in some appropriate sense.</p>
+<p>Definition. A Lie algebroid over $M$ is a smooth vector bundle $L \to M$ together with a vector bundle map $a: L \to TM$ called the anchor map and a bracket $[\cdot, \cdot]: H^0(M, L) \otimes H^0(M, L) \to H^0(M, L)$ satisfying the following axioms:</p>
+<pre><code>$[\cdot,\cdot]$ is  a Lie bracket on $H^0(M, L)$
+$[X, fY] = f[X,Y] + a(X)f \cdot Y$ for $X,Y \in H^0(M,L)$ and $f \in H^0(M, \mathcal{O}_M)$
+</code></pre>
+<p>Note that we can take $L$ to be either a real or complex vector bundle. In the latter case the anchor map should map to the complexified tangent bundle.</p>
+<p>Example 1. We can take $L$ to be $TM$ with anchor map the identity.</p>
+<p>Example 2. Let $\sigma$ be a Poisson tensor on $M$. Then we define a bracket by $[X,Y] = \sigma(X,Y)$ and an anchor by $X \mapsto \sigma(X, \cdot)$. This makes $T^\ast M$ into a Lie algebroid.</p>
+<p>Example 3. Let $M$ be a complex manifold of and let $L \subset TM \otimes \mathbf{C}$ be the sub-bundle of vectors spanned by ${\partial / \partial z_1, \dots, \partial / \partial z_n}$ in local holomorphic coordinates. Then $L \to M$ is a (complex) Lie algebroid.</p>
+<p>Courant Bracket</p>
+<p>We&rsquo;d like to try to fit the preceding examples into a common framework. Let $\mathbf{T}M = TM \oplus T^\ast M$. This bundle has a natural symmetric bilinear pairing given by</p>
+<p>[ \langle X \oplus \alpha, Y \oplus \beta \rangle = \frac{1}{2} \alpha(Y) + \frac{1}{2} \beta(X) ]</p>
+<p>Note that this bilinear form is of split signature $(n,n)$. We define a bracket on sections of $\mathbf{T}M$ by</p>
+<p>[ [X\oplus \alpha, Y\oplus \beta] = [X,Y] \oplus \left(L_X \beta + \frac{1}{2}(d \alpha(Y))- L_Y \alpha -\frac{1}{2} d( \beta(X)) \right ) ]</p>
+<p>Note that this bracket is not a Lie bracket. We also have an anchor map $a: \mathbf{T}M \to TM$ which is just the projection.</p>
+<p>Let $B$ be a 2-form on $M$. Define an action of $B$ on sections of $\mathbf TM$ by</p>
+<p>[ X + \alpha \mapsto X + \alpha + i_X B ]</p>
+<p>Proposition. This action preserves the Courant bracket if and only if $B$ is closed.</p>
+<p>This shows that the diffeomorphisms of $M$ as a generalized manifold are large than the ordinary diffeomorphisms of $M$. In fact is is the semidirect product of the diffeomorphism group of $M$ with the vector space of closed 2-forms.</p>
+<p>Dirac Structures</p>
+<p>Definition. A Dirac structure on $M$ is an Lagrangian sub-bundle $L \subset \mathbf{T}M$ which is closed under the Courant bracket.</p>
+<p>Theorem (Courant). A Lagrangian sub-bundle $L \subset \mathbf{T} M$ is a Dirac structure if and only if $L \to M$ is a Lie algebroid over $M$, with bracket induced by the Courant bracket and anchor given by projection.</p>
+<p>Example 1. $TM \subset \mathbf{T}M$.</p>
+<p>Example 2. Take $L$ to be the graph of a Poisson tensor.</p>
+<p>Example 3. Take $L$ to be the graph of a closed 2-form.</p>
+<p>Admissible Functions</p>
+<p>We now let $L \to M$ be a Dirac structure on $M$.</p>
+<p>Definition. A smooth function $f$ on $M$ is called admissible if there exists a vector field $X_f$ such that $(X_f, df)$ is a section of $L$.</p>
+<p>The Poisson bracket is defined as follows. If $f,g$ are admissible, then define</p>
+<p>[ {f, g} = X_f g. ]</p>
+<p>It is easy to check from the definitions that the bracket on admissible functions is well-defined (independent of choice of $X_f$) and skew-symmetric. With a little bit of calculation, we find the following.</p>
+<p>Proposition. The vector space of admissible functions is naturally a Poisson algebra, and moreover the natural bracket satisfies the Leibniz rule.</p>
+<p>Generalized Complex Structures</p>
+<p>Definition. A generalized complex structure is a skew endomorphism $J$ of $\mathbf T M$ such that $J^2 = -1$ and such that the $+i$-eigenbundle is involutive under the Courant bracket.</p>
+<p>Equivalently: A generalized complex structure is a (complex) Dirac structure $L \subset \mathbf TM$ satisfying the condition $L \cap \overline L = 0$.</p>
+<p>Example 1. Let $J$ be an ordinary complex structure on $M$. Then the endomorphism</p>
+<p>[ \begin{bmatrix} -J &amp; 0 \ 0 &amp; J^\ast \end{bmatrix} ]</p>
+<p>defines a generalized complex structure on $M$.</p>
+<p>Example 2. Let $\omega$ be a symplectic form on $M$. Then the endomorphism</p>
+<p>[ \begin{bmatrix} 0 &amp; -\omega^{-1} \ \omega &amp; 0 \end{bmatrix} ]</p>
+<p>defines a generalized complex structure on $M$.</p>
+<p>Thus, generalized geometry gives a common framework for both complex geometry and symplectic geometry. Such a connection is exactly what is conjectured by mirror symmetry.</p>
+<p>Example 3. Let $J$ be a complex structure on $M$ and let $\sigma$ be a holomorphic Poisson tensor. Consider the subbundle $L \subset \mathbf TM$ defined as the span of</p>
+<p>[ \frac{\partial}{\partial \bar z_1}, \dots, \frac{\partial}{\partial \bar z_n}, dz_1 - \sigma(dz_1), \dots, dz_n - \sigma(dz_n) ]</p>
+<p>Then $L$ defines a generalized complex structure on $M$.</p>
+<p>The last example shows that deformations of $M$ as a generalized  complex manifold contain non-commutative deformations of the structure sheaf.  We also have the following theorem, which shows that there is an intimate relation between generalized complex geometry and holomorphic Poisson geometry.</p>
+<p>Theorem (Bailey). Near any point of a generalized complex manifold, $M$ is locally isomorphic to the product of a holomorphic Poisson manifold with a symplectic manifold.</p>
+<p>Generalized Kähler Manifolds</p>
+<p>Let $(g, J, \omega)$ be a Kähler triple. The Kähler property requires that</p>
+<p>[ \omega = g J. ]</p>
+<p>Let $I_1$ denote the generalized complex structure induced by $J$, and let $I_1$ denote the generalized complex structure induced by the symplectic form $\omega$. We have</p>
+<p>[ I_1 I_2 = \begin{bmatrix} - J &amp; 0 \ 0 &amp; J^\ast \end{bmatrix} \begin{bmatrix} 0 &amp; -\omega^{-1} \ \omega &amp; 0 \end{bmatrix} = \begin{bmatrix} 0 &amp; g^{-1} \ g &amp; 0 \end{bmatrix} = I_2 I_1 ]</p>
+<p>Definition. A generalized Kähler manifold is a manifold with two commuting generalized complex structure $I_1, I_2$ such that the bilinear pairing $(I_1 I_2 u, v)$ is positive definite.</p>
+<p>Theorem (Gualtieri). A generalized Kähler structure on $M$ induces a Riemannian metric $g$, two integrable almost complex structures $J_\pm$ Hermitian with respect to $g$, and two affine connections $\nabla_\pm$ with skew-torsion $\pm H$ which preserve the metric and complex structure $J_\pm$. Conversely, these data determine a generalized Kähler structure which is unique up to a B-field transformation.</p>
+<p>Thus the notion of generalized Kähler manifold recovers the bihermitian geometry investigated by physicists in the context of susy non-linear $\sigma$-models.</p>
+<p>Generalized Calabi-Yau Manifolds</p>
+<p>Definition. A generalized Calabi-Yau manifold is a manifold $M$ together with a complex-valued differential form $\phi$, which is either purely even or purely odd, which is a pure spinor for the action of $Cl(\mathbf TM)$ and satisfies the non-degeneracy condition $(\phi, \bar \phi) \neq 0$.</p>
+<p>Note that (by definition) $\phi$ is pure if its annihilator is a maximal isotropic subspace. Let $L \subset \mathbf TM$ be its annihilator. Then it is not hard to see that $L$ defines a generalized complex structure on $M$, so indeed a generalized Calabi-Yau manifold is in particular a generalized complex manifold.</p>
+<p>Example. If $M$ is a complex manifold with a nowhere vanishing holomorphic $(n,0)$ form, then it is generalized Calabi-Yau.</p>
+<p>Example. If $M$ is symplectic with symplectic form $\omega$, then $\phi = \exp(i\omega)$ gives $M$ the structure of a generalized Calabi-Yau manifold.</p>
+<p>If $(M, \phi)$ is generalized Calabi-Yau, then so is $(M, \exp(B) \phi)$ for any closed real 2-form $B$. In the symplectic case, we obtain</p>
+<p>[ \phi = \exp(B+i\omega) ]</p>
+<p>This explains the appearance of the $B$-field (or &ldquo;complexified Kähler form&rdquo;) in discussions of mirror symmetry.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2014-12-11-virasoro-algebra-free-boson/"><i class="fa fa-chevron-circle-left"></i> Virasoro algebra from the free boson</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2015-08-18-classical-partition-function/">Classical partition function <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
+</body>
+
+</html>

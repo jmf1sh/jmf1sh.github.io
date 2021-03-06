@@ -1,0 +1,223 @@
+<!doctype html>
+
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jonathan&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.81.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
+
+        <ul id="social-media">
+          
+
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
+        
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+      <main>
+
+
+
+
+<article>
+
+    <h1>Legendre transform</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2010-01-27T00:00:00Z">Jan 27, 2010</time>
+        </li>
+        
+
+        
+
+        <li>2 minutes read</li>
+    </ul>
+</aside>
+
+    
+
+    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+<p>Yesterday, I gave an introductory talk on Hamiltonian mechanics and symplectic geometry. The starting point is the Legendre transform. First, begin with a configuration space (Q). The Lagrangian (\mathcal{L}) is a smooth function on (TQ). In local coordinates (q^i) on (Q), we have coordinates ((q_i, v_i)) on (TQ), where the (v^i) are the components of the tangent vector</p>
+<p>(v = v_i \partial_i \in T_q Q). Typically, the Lagrangian will be of the form</p>
+<p>[ \mathcal{L}(q,v) = \frac{1}{2} g(v,v) - V(q), ]</p>
+<p>where (g) is some metric on (Q). Now we introduce new coordinates (p_i) defined by</p>
+<p>[ p_i = \frac{\partial \mathcal{L}}{\partial v^i}. ]</p>
+<p>If (\mathcal{L}) is (strictly?) convex in (v) then we can solve for (v^i) as a function of ((q^i, p_j)). It is easy to check that the (p_i) transform as covectors, and so this gives a diffeomorphism (TQ \to T^\ast Q)(which depends on (\mathcal{L})). For example, in the above Lagrangian,</p>
+<p>[ \frac{\partial \mathcal{L}}{\partial v} = g(v, -), ]</p>
+<p>which is just the dual of (v) with respect to the metric (g). So for Lagrangians of this form, the map (TQ \to T^\ast Q) is just the one given by the metric.</p>
+<p>Now comes the interesting part. There is a natural way to turn (\mathcal{L}), which is a function on (TQ), into a function (H) on (T^\ast Q), in such a way that if we repeat this process, we will get back the original function (\mathcal{L}) on (TQ). This is the Legendre transform:</p>
+<p>[ \mathcal{H} = pv - L. ]</p>
+<p>Now suppose we have a curve (q(t), \dot{q}(t) \in TQ) that satisfies the Euler-Lagrange equations. Then by the identification (TQ = T^\ast Q), this gives a curve ((q(t), p(t)) \in T^\ast Q). What equation does it satisfy? We have</p>
+<p>[ \frac{d}{dt} p = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial v} = \frac{\partial \mathcal{L}}{\partial q} = -\frac{\partial H}{\partial q}, ]</p>
+<p>and</p>
+<p>[ \frac{d}{dt}q = v = \frac{\partial H}{\partial p}. ]</p>
+<p>These are Hamilton&rsquo;s equations, and they say that the curve (\gamma = (q(t), p(t)) \in T^\ast Q) is just an integral curve of the symplectic gradient of (H)! So classical mechanics is really just about flows of Hamiltonian vector fields on symplectic manifolds.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2010-01-08-hyperkaehler-reduction/"><i class="fa fa-chevron-circle-left"></i> Hyperkahler reduction</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2011-08-17-updated-outline/">Updated outline <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
+</body>
+
+</html>

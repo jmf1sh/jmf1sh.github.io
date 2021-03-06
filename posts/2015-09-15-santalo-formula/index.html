@@ -1,0 +1,228 @@
+<!doctype html>
+
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jonathan&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.81.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
+
+        <ul id="social-media">
+          
+
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
+        
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+      <main>
+
+
+
+
+<article>
+
+    <h1>Santalo Formula</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2015-09-15T00:00:00Z">Sep 15, 2015</time>
+        </li>
+        
+
+        
+
+        <li>2 minutes read</li>
+    </ul>
+</aside>
+
+    
+
+    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+<p>Let $M$ be a simple Riemannian manifold with boundary $\partial M$. For $(x,v) \in SM$, let $\tau(x,v)$ denote the exit time of the geodesic starting at $x$ with tangent vector $v$, i.e. $\tau(x,v)$ is the (necessarily unique, and finite) time at which $\exp_x(tv) \in \partial M$.</p>
+<p>We let $\partial_+(SM)$ denote the set</p>
+<p>$$ \partial_+(SM) = { (x,v) \in SM \ | \ x \in \partial M, \langle v, \nu\rangle &gt; 0 } $$</p>
+<p>where $\nu$ denotes the inward unit normal to $\partial M$ in $M$. The exponential map identifies $SM$ with the set</p>
+<p>$$ \Omega = { (x,v,t) \in \partial_+(SM) \times \mathbf{R} \ | \ 0 \leq t \leq \tau(x,v)  }, $$</p>
+<p>via $(x,v,t) \mapsto \exp_x(tv)$. Let $\Phi: \Omega \to M$ denote this diffeomorphism. Then we have, for all $f \in C^\infty(SM)$</p>
+<p>\begin{align}</p>
+<p>\int_{SM} f dvol(SM) &amp;= \int_\Omega (\Phi^\ast f) (\Phi^\ast dvol(SM)) \</p>
+<p>&amp;= \int_{\partial_+(SM)} \int_0^{\tau(x,v)} f(\phi_t(x,v)) \Phi^\ast dvol(SM).</p>
+<p>\end{align}</p>
+<p>Therefore, we can compute integrals of functions over $SM$ by integrating along geodesics, provided that we can cmopute $\Phi^\ast dvol(SM)$. This is the content of the Santalo formula.</p>
+<p>Theorem (Santalo formula). For all $f \in C^\infty(SM)$, we have</p>
+<p>[ \int_{SM} f dvol(SM) = \int_{\partial_+(SM)} \int_0^{\tau(x,v)} f(\phi_t(x,v)) \langle v, \nu\rangle dt dvol(\partial(SM)) ]</p>
+<p>Proof. Necessarily, we must have</p>
+<p>[ \Phi^\ast(dvol(SM)) = a(x,v) dt \wedge dvol(\partial(SM))), ]</p>
+<p>for some function $a(x,v)$. The reason we can assume that $a$ is independent of $t$ is that $\Phi$ is defined via geodesic flow, and geodesic flow preserves the volume form on $SM$. To compute the factor $a(x,v)$, we just need to compute</p>
+<p>[ i_{\partial / \partial t} \Phi^\ast(dvol(SM)) = \Phi^\ast(i_{\Phi_\ast(\partial / \partial t)} dvol(SM)) ]</p>
+<p>From the definition of $\Phi$, we have that $\Phi_\ast(\partial / \partial t)$ is the Reeb vector field on $SM$, i.e. the vector field generating geodesic flow. Therefore, $\Phi_\ast(\partial / \partial t)$ is equal, at a point $(x,v)$ to the horizontal lift of the vector $v$. Therefore, using the definition of the induced volume form on a hypersurface of a Riemannian manifold, we find</p>
+<p>$$ i_{\partial / \partial t} \Phi^\ast(dvol(SM)) = \langle v, \nu \rangle dvol(\partial(SM)) $$</p>
+<p>where $\nu$ is the inward pointing unit normal to $\partial(SM)$ in $SM$. This shows that $a(x,v) = \langle v, \nu \rangle$ and completes the proof.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2015-09-11-index-form/"><i class="fa fa-chevron-circle-left"></i> The Index Form</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2017-12-19-variance-stabilizing/">Variance Stabilizing Transformations <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
+</body>
+
+</html>

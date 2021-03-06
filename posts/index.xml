@@ -6,17 +6,27 @@
        <description>Recent content in Posts on jonathan&#39;s blog</description>
        <generator>Hugo -- gohugo.io</generator>
        <language>en-us</language>
-       <lastBuildDate>Mon, 24 Dec 2018 00:00:00 +0000</lastBuildDate>
+       <lastBuildDate>Sat, 06 Mar 2021 00:00:00 +0000</lastBuildDate>
        
            <atom:link href="https://jmf1sh.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
        
        
        <item>
+         <title>Test</title>
+         <link>https://jmf1sh.github.io/posts/test/</link>
+         <pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate>
+         
+         <guid>https://jmf1sh.github.io/posts/test/</guid>
+         <description>&lt;p&gt;&lt;a href=&#34;https://jmf1sh.github.io/posts/2018-12-24-vae/&#34;&gt;About&lt;/a&gt;&lt;/p&gt;
+</description>
+       </item>
+       
+       <item>
          <title>Variational autoencoders</title>
-         <link>https://jmf1sh.github.io/posts/vae/</link>
+         <link>https://jmf1sh.github.io/posts/2018-12-24-vae/</link>
          <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/vae/</guid>
+         <guid>https://jmf1sh.github.io/posts/2018-12-24-vae/</guid>
          <description>&lt;p&gt;See &lt;a href=&#34;https://arxiv.org/abs/1312.6114&#34;&gt;Autoencoding variational Bayes&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Suppose we have set $X$ with (&lt;em&gt;a priori&lt;/em&gt; unknown) probability density function $p(x)$.
 We would like to find a lower-dimensional representation of $X$ in some latent space
@@ -36,7 +46,16 @@ $p(x|z)$ analytically. To get around this problem, we introduce another probabil
 density $q(z|x)$, the &lt;em&gt;approximate posterior&lt;/em&gt;, which is intended to be a tractable
 approximation to the intractable $p(z|x)$. We can quantify the difference between
 the true posterior and approximate posterior with the Kullback-Leiber divergence,&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;$$
+\begin{align*}
+D_{KL}(q(z|x)||p(z|x))
+&amp;amp;= E_{z \sim q(z|x)}\left(\frac{\log q(z|x)}{\log p(z|x)}\right) \\\&lt;br&gt;
+&amp;amp;=E_{z \sim q(z|x)}\left(\log q(z|x)-\log p(z|x)\right) \\\&lt;br&gt;
+&amp;amp;=E_{z \sim q(z|x)}\left(\log q(z|x)-\log p(x,z)+\log p(x)\right) \\\&lt;br&gt;
+&amp;amp;=E_{z \sim q(z|x)}\left(\log q(z|x)-\log p(x|z) - \log p(z) +\log p(x)\right) \\\&lt;br&gt;
+&amp;amp;=\log p(x)  + D_{KL}(q(z|x)||p(z)) - E_{z \sim q(z|x)}\left(\log p(x|z) \right)
+\end{align*}
+$$&lt;/p&gt;
 &lt;p&gt;Rearranging this expression, we have&lt;/p&gt;
 &lt;p&gt;$ \log p(x) = D_{KL}(q(z|x)||p(z|x)) + L $&lt;/p&gt;
 &lt;p&gt;where $L$ is the &lt;em&gt;variational lower bound&lt;/em&gt;,&lt;/p&gt;
@@ -46,10 +65,10 @@ the true posterior and approximate posterior with the Kullback-Leiber divergence
        
        <item>
          <title>Euler beta function and Dirichlet distribution</title>
-         <link>https://jmf1sh.github.io/posts/beta-function/</link>
+         <link>https://jmf1sh.github.io/posts/2018-07-10-beta-function/</link>
          <pubDate>Tue, 10 Jul 2018 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/beta-function/</guid>
+         <guid>https://jmf1sh.github.io/posts/2018-07-10-beta-function/</guid>
          <description>&lt;p&gt;Let&amp;rsquo;s remind ourselves how about the Euler beta function, defined as&lt;/p&gt;
 &lt;p&gt;$$ B(x,y) = \int_0^1 t^{x-1} (1-t)^{y-1} dt. $$&lt;/p&gt;
 &lt;p&gt;First, we will express $$B(x,y)$$ in terms of the more familiar Gamma function,
@@ -66,7 +85,12 @@ to follow the Dirichlet distribution&lt;/p&gt;
 &lt;p&gt;(where the normalization constant $$C_\alpha$$ can be computed explicitly in terms of the
 generalized beta function, or equivalently in terms of the Gamma function).
 Using Bayes&#39; theorem we have&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;$$
+\begin{align*}
+P(\alpha | n_1, \ldots, n_k) &amp;amp;= C P(n_1, \ldots, n_k | \alpha) P(\alpha) \\\&lt;br&gt;
+&amp;amp;= C&#39; \prod_i p_i^{n_i+\alpha_i-1}
+\end{align*}
+$$&lt;/p&gt;
 &lt;p&gt;This gives a new Dirichlet distribution with $$\alpha_i$$ replaced by $$\alpha_i+n_i$$.
 Taking expectation values of the posterior we have&lt;/p&gt;
 &lt;p&gt;$$E[p_i] = \frac{n_i+\alpha_i}{n+\sum_i \alpha_i}$$.&lt;/p&gt;
@@ -88,10 +112,10 @@ only in the limit of infinitely many trials.&lt;/p&gt;
        
        <item>
          <title>Introduction to Reinforcement Learning</title>
-         <link>https://jmf1sh.github.io/posts/reinforcement-learning/</link>
+         <link>https://jmf1sh.github.io/posts/2018-01-14-reinforcement-learning/</link>
          <pubDate>Sun, 14 Jan 2018 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/reinforcement-learning/</guid>
+         <guid>https://jmf1sh.github.io/posts/2018-01-14-reinforcement-learning/</guid>
          <description>&lt;p&gt;I would like to record the basic formalism of reinforcement learning. Hopefully, this will lead to a post or series of posts giving a basic tensorflow implementation of a simple deep reinforcement learning model. But first, we have to know what problem we are trying to solve.&lt;/p&gt;
 &lt;p&gt;To begin, we have the following data (which are considered to be given as part of the problem):&lt;/p&gt;
 &lt;ul&gt;
@@ -111,7 +135,13 @@ only in the limit of infinitely many trials.&lt;/p&gt;
 &lt;p&gt;$$ Q(s, a) = \max_{\pi} \mathbb{E}_\pi[r_{\mathrm{total}}] $$&lt;/p&gt;
 &lt;p&gt;From the definition, we see that $$Q$$ measures the maximum possible expected reward starting from the initial state $$s$$ and action $$a$$. The importance of $$Q$$ is clear&amp;ndash;if we know $$Q$$, then we can find the best sequence of actions greedily: at each state $$s$$, we simply choose an action $$a$$ that maximizes $$Q(s,a)$$.&lt;/p&gt;
 &lt;p&gt;Now comes the magic. From the definition of $$r_{\mathrm{total}}$$ above, we have&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;$$
+\begin{align*}
+Q(s,a) &amp;amp;= \max_{\pi} \mathbb{E}_\pi[r(s,a) + \gamma r(s_1, a_1) + \cdots] \\\&lt;br&gt;
+&amp;amp;= r(s,a) + \gamma \max_\pi \mathbb{E}_\pi[r(s_1, a_1) + \gamma r(s_2, a_2) + \cdots] \\\&lt;br&gt;
+&amp;amp;= r(s,a) + \gamma \max_{a&#39;} Q(t(a), a&#39;)
+\end{align*}
+$$&lt;/p&gt;
 &lt;p&gt;This recursive relation is known as the &lt;em&gt;Bellman equation&lt;/em&gt;. To understand how to solve this equation, let us introduce the space $$\mathcal{F}$$ as follows:&lt;/p&gt;
 &lt;p&gt;$$ \mathcal{F} = { (s,a) \ | \ s \in \mathcal{S}, a \in \mathcal{A}_s } $$&lt;/p&gt;
 &lt;p&gt;Using the sup-norm, we obtain a Banach space of functions $$\mathcal{F} \to \mathbb{R}$$. Let $$B$$ be the (non-linear) operator on this space defined by&lt;/p&gt;
@@ -132,29 +162,35 @@ $$ Q_{n+1} = B(Q_n). $$&lt;/p&gt;
        
        <item>
          <title>Variance Stabilizing Transformations</title>
-         <link>https://jmf1sh.github.io/posts/variance-stabilizing/</link>
+         <link>https://jmf1sh.github.io/posts/2017-12-19-variance-stabilizing/</link>
          <pubDate>Tue, 19 Dec 2017 13:49:09 +0100</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/variance-stabilizing/</guid>
-         <description>&lt;p&gt;I want to record here a very interesting thing which I recently discovered, &lt;a href=&#34;https://en.wikipedia.org/wiki/Variance-stabilizing_transformation&#34;&gt;variance-stabilizing transformations&lt;/a&gt;. The idea is very simple: suppose we have a random variable $$x$$, which follows a probability distribution which is parametrized solely by its mean $$\mu$$, with variance $$var(x) = g(\mu)$$ a known function of the mean.&lt;/p&gt;
-&lt;p&gt;Now, suppose we take the new random variable $$y = f(x)$$, for some yet-to-be-determined function $$f$$. Assuming that $$x$$ is reasonably localized about its mean, we can make the approximation&lt;/p&gt;
-&lt;p&gt;$$ f(x) = f(\mu + (x-\mu)) \approx f(\mu) + f&#39;(\mu)(x-\mu). $$&lt;/p&gt;
+         <guid>https://jmf1sh.github.io/posts/2017-12-19-variance-stabilizing/</guid>
+         <description>&lt;p&gt;I want to record here a very interesting thing which I recently discovered, &lt;a href=&#34;https://en.wikipedia.org/wiki/Variance-stabilizing_transformation&#34;&gt;variance-stabilizing transformations&lt;/a&gt;. The idea is very simple: suppose we have a random variable $x$, which follows a probability distribution which is parametrized solely by its mean $\mu$, with variance $var(x) = g(\mu)$ a known function of the mean.&lt;/p&gt;
+&lt;p&gt;Now, suppose we take the new random variable $y = f(x)$, for some yet-to-be-determined function $f$. Assuming that $x$ is reasonably localized about its mean, we can make the approximation&lt;/p&gt;
+&lt;p&gt;$ f(x) = f(\mu + (x-\mu)) \approx f(\mu) + f&#39;(\mu)(x-\mu). $&lt;/p&gt;
 &lt;p&gt;Then we have&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;Now, suppose we want to choose $$f(x)$$ so that $$var(y) \approx 1$$. Using the above approximation, we have $$ f&#39;(\mu) = \frac{1}{\sqrt{g(\mu)}} $$, which we can solve as&lt;/p&gt;
-&lt;p&gt;$$ f(\mu) = \int \frac{1}{\sqrt{g(\mu)}} d\mu$$&lt;/p&gt;
-&lt;p&gt;Now let&amp;rsquo;s take the special case of the Poisson distrubution, where $$var(x) = \mu$$. Then $$f(\mu) = \int \frac{1}{\sqrt \mu} d\mu = 2\sqrt{\mu}$$. This is very nearly the &lt;a href=&#34;https://en.wikipedia.org/wiki/Anscombe_transform&#34;&gt;Anscombe transform&lt;/a&gt; $$x \mapsto 2\sqrt{x+3/8}$$. The additional shift by $$3/8$$ can be understood by doing a more careful analysis of the variance under the transformation.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+E[y] &amp;amp;\approx f(\mu) \\\&lt;br&gt;
+var(y) &amp;amp;\approx f&#39;(\mu)^2 var(x) \\\&lt;br&gt;
+&amp;amp;= f&#39;(\mu)^2 g(\mu)
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;Now, suppose we want to choose $f(x)$ so that $var(y) \approx 1$. Using the above approximation, we have $ f&#39;(\mu) = \frac{1}{\sqrt{g(\mu)}} $, which we can solve as&lt;/p&gt;
+&lt;p&gt;$ f(\mu) = \int \frac{1}{\sqrt{g(\mu)}} d\mu$&lt;/p&gt;
+&lt;p&gt;Now let&amp;rsquo;s take the special case of the Poisson distrubution, where $var(x) = \mu$. Then $f(\mu) = \int \frac{1}{\sqrt \mu} d\mu = 2\sqrt{\mu}$. This is very nearly the &lt;a href=&#34;https://en.wikipedia.org/wiki/Anscombe_transform&#34;&gt;Anscombe transform&lt;/a&gt; $x \mapsto 2\sqrt{x+3/8}$. The additional shift by $3/8$ can be understood by doing a more careful analysis of the variance under the transformation.&lt;/p&gt;
 </description>
        </item>
        
        <item>
          <title>Santalo Formula</title>
-         <link>https://jmf1sh.github.io/posts/santalo-formula/</link>
+         <link>https://jmf1sh.github.io/posts/2015-09-15-santalo-formula/</link>
          <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/santalo-formula/</guid>
+         <guid>https://jmf1sh.github.io/posts/2015-09-15-santalo-formula/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Let $$M$$ be a simple Riemannian manifold with boundary $$\partial M$$. For $$(x,v) \in SM$$, let $$\tau(x,v)$$ denote the exit time of the geodesic starting at $$x$$ with tangent vector $$v$$, i.e. $$\tau(x,v)$$ is the (necessarily unique, and finite) time at which $$\exp_x(tv) \in \partial M$$.&lt;/p&gt;
+&lt;p&gt;Let $M$ be a simple Riemannian manifold with boundary $\partial M$. For $(x,v) \in SM$, let $\tau(x,v)$ denote the exit time of the geodesic starting at $x$ with tangent vector $v$, i.e. $\tau(x,v)$ is the (necessarily unique, and finite) time at which $\exp_x(tv) \in \partial M$.&lt;/p&gt;
 &lt;p&gt;We let $\partial_+(SM)$ denote the set&lt;/p&gt;
 &lt;p&gt;$$ \partial_+(SM) = { (x,v) \in SM \ | \ x \in \partial M, \langle v, \nu\rangle &amp;gt; 0 } $$&lt;/p&gt;
 &lt;p&gt;where $\nu$ denotes the inward unit normal to $\partial M$ in $M$. The exponential map identifies $SM$ with the set&lt;/p&gt;
@@ -179,10 +215,10 @@ $$ Q_{n+1} = B(Q_n). $$&lt;/p&gt;
        
        <item>
          <title>The Index Form</title>
-         <link>https://jmf1sh.github.io/posts/index-form/</link>
+         <link>https://jmf1sh.github.io/posts/2015-09-11-index-form/</link>
          <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/index-form/</guid>
+         <guid>https://jmf1sh.github.io/posts/2015-09-11-index-form/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Let $f: [0,T] \times (-\epsilon, \epsilon) \to M$ be a family of parametrized curves in a Riemannian manifold $(M, g)$. To simplify this calculation, we assume that $f(0,s) = p, f(T, s) = q$ for some $p,q \in M$ and all $s \in (-\epsilon, \epsilon)$. (This assumption is not necessary, but without it our variational formulae will have additional boundary terms.)&lt;/p&gt;
 &lt;p&gt;For convenience, set $\dot f = \partial f / \partial t$ and $f&#39; = \partial f / \partial s$. For each $s \in (-\epsilon, \epsilon)$ we define the energy functional $E = E(s)$ to be&lt;/p&gt;
@@ -251,10 +287,10 @@ $$ Q_{n+1} = B(Q_n). $$&lt;/p&gt;
        
        <item>
          <title>Boundary Distance</title>
-         <link>https://jmf1sh.github.io/posts/boundary-distance/</link>
+         <link>https://jmf1sh.github.io/posts/2015-09-03-boundary-distance/</link>
          <pubDate>Thu, 03 Sep 2015 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/boundary-distance/</guid>
+         <guid>https://jmf1sh.github.io/posts/2015-09-03-boundary-distance/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Recently, I&amp;rsquo;ve been learning some topics related to machine learning, and especially manifold learning. These both fall under the general notion of inverse problems: given some mathematical object $X$ (it could be a function $f: A \to B$, or a Riemannian manifold $(M,g)$, or a probability measure $d\mu$ on a space $X$, etc.), can we effectively reconstruct $X$ given only the information of some auxiliary measurements? What if we can only perform finitely many measurements? What if the measurements are noisy? Can we reconstruct $X$ at least approximately? Can we measure in some precise way, how close our approximate reconstruction is to the unknown object $X$? And so on, and so forth.&lt;/p&gt;
 &lt;p&gt;Anyway, this post is about a cute observation, which I was reminded of while reading a paper on the inverse Gel&amp;rsquo;fand problem. Let $M$ be a compact manifold with smooth boundary $\partial M$. Then with no additional data required, we have a Banach space $L^\infty(\partial M)$ consisting of the essentially bounded measureable functions on the boundary. Since it is a Banach space, it comes with a complete metric $d_\infty(f,g) := |f-g|_{L^\infty(\partial M)}$.&lt;/p&gt;
@@ -274,10 +310,10 @@ $$ Q_{n+1} = B(Q_n). $$&lt;/p&gt;
        
        <item>
          <title>Hamilton-Jacobi equation and Riemannian distance</title>
-         <link>https://jmf1sh.github.io/posts/hamilton-jacobi-distance/</link>
+         <link>https://jmf1sh.github.io/posts/2015-08-31-hamilton-jacobi-distance/</link>
          <pubDate>Mon, 31 Aug 2015 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/hamilton-jacobi-distance/</guid>
+         <guid>https://jmf1sh.github.io/posts/2015-08-31-hamilton-jacobi-distance/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Consider the cotangent bundle $T^\ast X$ as a symplectic manifold with canonical symplectic form $\omega$. Consider the Hamilton-Jacobi equation&lt;/p&gt;
 &lt;p&gt;[ \frac{\partial S}{\partial t} + H(x, \nabla S) = 0, ]&lt;/p&gt;
@@ -320,10 +356,10 @@ $$ Q_{n+1} = B(Q_n). $$&lt;/p&gt;
        
        <item>
          <title>Classical partition function</title>
-         <link>https://jmf1sh.github.io/posts/classical-partition-function/</link>
+         <link>https://jmf1sh.github.io/posts/2015-08-18-classical-partition-function/</link>
          <pubDate>Tue, 18 Aug 2015 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/classical-partition-function/</guid>
+         <guid>https://jmf1sh.github.io/posts/2015-08-18-classical-partition-function/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Let $(M, \omega)$ be a symplectic manifold of dimension $2n$, and let $H: M \to \mathbf{R}$ be a classical Hamiltonian. The symplectic form $\omega$ allows us to define a measure on $M$, given by integration against the top form $\omega^n / n!$. We will denote this measure by $d\mu$.&lt;/p&gt;
 &lt;p&gt;We imagine that $(M, \omega, H)$ represents some classical mechanical system. We suppose that the dynamics of this dynamical system are very complicated, e.g. some system of $10^{23}$ particles. The system is so complicated that not only can we not solve the equations of motion exactly, and even if we could, their solutions might be so complicated that we can&amp;rsquo;t expect to learn very much from them.&lt;/p&gt;
@@ -358,10 +394,10 @@ $$ Q_{n+1} = B(Q_n). $$&lt;/p&gt;
        
        <item>
          <title>What is generalized geometry?</title>
-         <link>https://jmf1sh.github.io/posts/generalized-geometry/</link>
+         <link>https://jmf1sh.github.io/posts/2015-01-29-generalized-geometry/</link>
          <pubDate>Thu, 29 Jan 2015 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/generalized-geometry/</guid>
+         <guid>https://jmf1sh.github.io/posts/2015-01-29-generalized-geometry/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The following are my notes for a short introductory talk. References below are not intended to be comprehensive!&lt;/p&gt;
 &lt;p&gt;Math references:&lt;/p&gt;
@@ -447,10 +483,10 @@ $[X, fY] = f[X,Y] + a(X)f \cdot Y$ for $X,Y \in H^0(M,L)$ and $f \in H^0(M, \mat
        
        <item>
          <title>Virasoro algebra from the free boson</title>
-         <link>https://jmf1sh.github.io/posts/virasoro-algebra-free-boson/</link>
+         <link>https://jmf1sh.github.io/posts/2014-12-11-virasoro-algebra-free-boson/</link>
          <pubDate>Thu, 11 Dec 2014 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/virasoro-algebra-free-boson/</guid>
+         <guid>https://jmf1sh.github.io/posts/2014-12-11-virasoro-algebra-free-boson/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Usual physics derivations of the Virasoro algebra from the free boson in two dimensions usually use some sort of regularization procedure to compute the central charge. Following these notes I&amp;rsquo;d like to give a purely algebraic calculation of the central charge.&lt;/p&gt;
 &lt;p&gt;Let $A = \mathbf C[x_1, x_2, \dots]$ be the polynomial algebra in countably many generators. For an integer $k &amp;gt; 0$, define a $k$-linear operator $a_k$ on $A$ by&lt;/p&gt;
@@ -502,10 +538,10 @@ $[X, fY] = f[X,Y] + a(X)f \cdot Y$ for $X,Y \in H^0(M,L)$ and $f \in H^0(M, \mat
        
        <item>
          <title>The basic idea of the quantum BV complex</title>
-         <link>https://jmf1sh.github.io/posts/quantum-bv-complex/</link>
+         <link>https://jmf1sh.github.io/posts/2014-05-14-quantum-bv-complex/</link>
          <pubDate>Wed, 14 May 2014 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/quantum-bv-complex/</guid>
+         <guid>https://jmf1sh.github.io/posts/2014-05-14-quantum-bv-complex/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;. This post was originally written by Dylan Butson.&lt;/p&gt;
 &lt;p&gt;$ \newcommand{\h}{\hbar} \newcommand{\X}{\mathfrak{X}} \newcommand{\PV}{\text{PV}} \newcommand{\K}{{\mathbb K}} \newcommand{\R}{{\mathbb R}} \newcommand{\too}{\xrightarrow} \newcommand{\im}{\text{Im }} $ Let $M$ be an oriented $n$-dimensional manifold and $\X^\bullet(M):=\Gamma(M,\wedge^{-\bullet} TM)$, so that $\X^\bullet(M)$ is concentrated in non-positive degree. Let $\mu\in \Omega^n(M)$ a volume form on $M$. Then interior product with $\mu$ gives an isomorphism $\vee\mu: \X^k(M)\too{\cong}\Omega^{n-k}(M)$. From this, we induce a degree 1 differential $\Delta_\mu$ on $\X^\bullet(M)$ from the de Rham differential $d$ on $\Omega^\bullet(M)$, defined by $\Delta_\mu= (\vee\mu)^{-1}\circ d\circ\vee\mu$, making $\X^\bullet(M)$ into a cochain complex isomorphic to $\Omega^\bullet(M)[k]$; in particular $H^k(\X)=H^{n+k}(\Omega)$.&lt;/p&gt;
 &lt;p&gt;If $M$ is compact and connected, then $H^0(\X)=H^n(\Omega)$ is one dimensional, and upon fixing a basis to identify $H^0(\X)\too{\cong}\R$, the quotient map gives a map $\pi:C^\infty(M)\to \R$. We have the following:&lt;/p&gt;
@@ -519,10 +555,10 @@ $[X, fY] = f[X,Y] + a(X)f \cdot Y$ for $X,Y \in H^0(M,L)$ and $f \in H^0(M, \mat
        
        <item>
          <title>Clifford algebras and spinors part 3: Bochner identity</title>
-         <link>https://jmf1sh.github.io/posts/clifford-algebras-part-3/</link>
+         <link>https://jmf1sh.github.io/posts/2014-03-18-clifford-algebras-part-3/</link>
          <pubDate>Tue, 18 Mar 2014 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/clifford-algebras-part-3/</guid>
+         <guid>https://jmf1sh.github.io/posts/2014-03-18-clifford-algebras-part-3/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Let $M$ be a Riemannian manifold, and let $Cl(M)$ be its Clifford bundle. Let $E \to M$ be any vector bundle with connection, and assume that $C^\infty(M, E)$ is a $Cl(M)$-module. We can define a Dirac operator $\mathcal{D}$ acting on sections of $E$ via the formula&lt;/p&gt;
 &lt;p&gt;[ \mathcal{D} \sigma = \sum_{i=1}^n e_i \cdot \nabla_i \sigma ]&lt;/p&gt;
@@ -547,10 +583,10 @@ $[X, fY] = f[X,Y] + a(X)f \cdot Y$ for $X,Y \in H^0(M,L)$ and $f \in H^0(M, \mat
        
        <item>
          <title>Clifford algebras and spinors, part 2: spin structures and Dirac operators</title>
-         <link>https://jmf1sh.github.io/posts/clifford-algebras-part-2/</link>
+         <link>https://jmf1sh.github.io/posts/2014-03-06-clifford-algebras-part-2/</link>
          <pubDate>Thu, 06 Mar 2014 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/clifford-algebras-part-2/</guid>
+         <guid>https://jmf1sh.github.io/posts/2014-03-06-clifford-algebras-part-2/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;A very good reference for today&amp;rsquo;s material is Dan Freed&amp;rsquo;s (unpublished) notes on Dirac operators, available here.&lt;/p&gt;
 &lt;p&gt;Spin(n)&lt;/p&gt;
@@ -579,10 +615,10 @@ $[X, fY] = f[X,Y] + a(X)f \cdot Y$ for $X,Y \in H^0(M,L)$ and $f \in H^0(M, \mat
        
        <item>
          <title>Clifford algebras and spinors</title>
-         <link>https://jmf1sh.github.io/posts/clifford-algebras-part-1/</link>
+         <link>https://jmf1sh.github.io/posts/2014-03-05-clifford-algebras-part-1/</link>
          <pubDate>Wed, 05 Mar 2014 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/clifford-algebras-part-1/</guid>
+         <guid>https://jmf1sh.github.io/posts/2014-03-05-clifford-algebras-part-1/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Clifford Algebras&lt;/p&gt;
 &lt;p&gt;Today I&amp;rsquo;d like to write some brief notes about Clifford algebras and spinors. A classic reference is the paper &amp;ldquo;Clifford Modules&amp;rdquo; by Atiyah-Bott-Shapiro. Clifford algebras not only useful in algebra and geometry, but are essential for the construction of theories with fermions. Let (V) be a vector space with a non-degenerate symmetric bilinear form (B). We define the Clifford algebra (Cl(V, B)) to be the unital associative algebra generated by (v \in V) subject to the relation&lt;/p&gt;
@@ -616,10 +652,10 @@ $[X, fY] = f[X,Y] + a(X)f \cdot Y$ for $X,Y \in H^0(M,L)$ and $f \in H^0(M, \mat
        
        <item>
          <title>Virasoro algebra</title>
-         <link>https://jmf1sh.github.io/posts/virasoro-algebra/</link>
+         <link>https://jmf1sh.github.io/posts/2014-02-23-virasoro-algebra/</link>
          <pubDate>Sun, 23 Feb 2014 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/virasoro-algebra/</guid>
+         <guid>https://jmf1sh.github.io/posts/2014-02-23-virasoro-algebra/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Conformal Invariance in 2D&lt;/p&gt;
 &lt;p&gt;To begin, recall that in two dimensions, the conformal transformations are generated by holomorphic and anti-holomorphic transformations. At the infinitesimal level, let (\ell_n := -z^{n+1} \partial_z) be a basis of holomorphic vector fields. These satisfy the Witt algebra&lt;/p&gt;
@@ -664,10 +700,10 @@ $[X, fY] = f[X,Y] + a(X)f \cdot Y$ for $X,Y \in H^0(M,L)$ and $f \in H^0(M, \mat
        
        <item>
          <title>BRST and Lie algebra cohomology</title>
-         <link>https://jmf1sh.github.io/posts/brst-lie-algebra/</link>
+         <link>https://jmf1sh.github.io/posts/2012-12-28-brst-lie-algebra/</link>
          <pubDate>Fri, 28 Dec 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/brst-lie-algebra/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-12-28-brst-lie-algebra/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;We saw in previous posts that gauge-fixing is intimately related to BRST cohomology. Today I want to explain the underlying mathematical formalism, as it is actually something very well-known: Lie algebra cohomology. Let (\mathfrak{g}) be a Lie algebra and (M) a (\mathfrak{g})-module. We will construct a cochain complex that computes the Lie algebra cohomology with values in (M), (H^i(\mathfrak{g}, M)). Out of thin air, we define&lt;/p&gt;
 &lt;p&gt;[ C^\ast(\mathfrak{g}, M) = M \otimes \wedge^\ast \mathfrak{g}^\ast. ]&lt;/p&gt;
@@ -690,10 +726,10 @@ $[X, fY] = f[X,Y] + a(X)f \cdot Y$ for $X,Y \in H^0(M,L)$ and $f \in H^0(M, \mat
        
        <item>
          <title>BRST</title>
-         <link>https://jmf1sh.github.io/posts/brst/</link>
+         <link>https://jmf1sh.github.io/posts/2012-12-23-brst/</link>
          <pubDate>Sun, 23 Dec 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/brst/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-12-23-brst/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Finally, I want to discuss gauge-invariant of the gauge-fixed theory. (!?) We saw in the previous posts that if we have a gauge theory with connection (A) and matter fields (\psi), in order to derive sensible Feynman rules we have to introduce a gauge-fixing function (G) as well as Fermionic fields (c, \bar{c}), the ghosts. (Note: last time I used (\eta, \bar{\eta}) for the ghosts but I want to match the more standard notation, so I&amp;rsquo;ve switched to (c, \bar{c})).&lt;/p&gt;
 &lt;p&gt;Usually it is convenient to use the gauge-fixing function (G(A) = \partial^\mu A_\mu). Under an infinitesimal gauge-transformation (\lambda), (A) transforms as&lt;/p&gt;
@@ -758,10 +794,10 @@ $[X, fY] = f[X,Y] + a(X)f \cdot Y$ for $X,Y \in H^0(M,L)$ and $f \in H^0(M, \mat
        
        <item>
          <title>Fadeev-Popov ghosts, continued</title>
-         <link>https://jmf1sh.github.io/posts/fadeev-popoc-ghosts-continued/</link>
+         <link>https://jmf1sh.github.io/posts/2012-12-23-fadeev-popoc-ghosts-continued/</link>
          <pubDate>Sun, 23 Dec 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/fadeev-popoc-ghosts-continued/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-12-23-fadeev-popoc-ghosts-continued/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Last time I sketched how we can represent an integral over a submanifold (M \subset \mathbb{R}^n) by an integral of the form&lt;/p&gt;
 &lt;p&gt;[ \int_{\mathbb{R}^n} f(x) \delta(G(x)) \exp\left(\bar{\eta}G(x+\eta) \right) d\eta d\bar{\eta} dx. ]&lt;/p&gt;
@@ -785,10 +821,10 @@ $[X, fY] = f[X,Y] + a(X)f \cdot Y$ for $X,Y \in H^0(M,L)$ and $f \in H^0(M, \mat
        
        <item>
          <title>Fadeev-Popov ghosts</title>
-         <link>https://jmf1sh.github.io/posts/fadeev-popoc-ghosts/</link>
+         <link>https://jmf1sh.github.io/posts/2012-12-21-fadeev-popov-ghosts/</link>
          <pubDate>Fri, 21 Dec 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/fadeev-popoc-ghosts/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-12-21-fadeev-popov-ghosts/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Today I want to review the Fadeev-Popov procedure, with a view toward BRST and eventually BV.&lt;/p&gt;
 &lt;p&gt;Gauge-Invariance and Gauge-Fixing&lt;/p&gt;
@@ -857,10 +893,10 @@ $[X, fY] = f[X,Y] + a(X)f \cdot Y$ for $X,Y \in H^0(M,L)$ and $f \in H^0(M, \mat
        
        <item>
          <title>The Weyl and Wigner transforms</title>
-         <link>https://jmf1sh.github.io/posts/weyl-wigner-transform/</link>
+         <link>https://jmf1sh.github.io/posts/2012-12-13-weyl-wigner-transform/</link>
          <pubDate>Thu, 13 Dec 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/weyl-wigner-transform/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-12-13-weyl-wigner-transform/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Today I&amp;rsquo;d like to try to understand better how deformation quantization is related to the usual canonical quantization, and especially how the latter might be used to deduce the former, i.e., given an honest quantization (in the sense of operators), how might be reproduce the formula for the Moyal star product?&lt;/p&gt;
 &lt;p&gt;We&amp;rsquo;ll fix our symplectic manifold once and for all to be (\mathbb{R}^2) with its standard symplectic structure, with Darboux coordinates (x) and (p). Let (\mathcal{A}) be the algebra of observables on (\mathbb{R}^2). For technical reasons, we&amp;rsquo;ll restrict to those smooth functions that are polynomially bounded in the momentum coordinate (but of course the star product makes sense in general). Let (\mathcal{D}) be the algebra of pseudodifferential operators on (\mathbb{R}). We want to define a quantization map&lt;/p&gt;
@@ -914,10 +950,10 @@ $[X, fY] = f[X,Y] + a(X)f \cdot Y$ for $X,Y \in H^0(M,L)$ and $f \in H^0(M, \mat
        
        <item>
          <title>Equations of motion and Noether&#39;s theorem in the functional formalism</title>
-         <link>https://jmf1sh.github.io/posts/equations-of-motion-noether/</link>
+         <link>https://jmf1sh.github.io/posts/2012-11-29-equations-of-motion-noether/</link>
          <pubDate>Thu, 29 Nov 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/equations-of-motion-noether/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-11-29-equations-of-motion-noether/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;First, let us recall the derivation of the equations of motion and Noether&amp;rsquo;s theorem in classical field theory. We have some action functional (S[\phi]) defined by some local Lagrangian:&lt;/p&gt;
 &lt;p&gt;[ S[\phi] = \int L(\phi, \partial \phi) dx. ]&lt;/p&gt;
@@ -980,10 +1016,10 @@ $[X, fY] = f[X,Y] + a(X)f \cdot Y$ for $X,Y \in H^0(M,L)$ and $f \in H^0(M, \mat
        
        <item>
          <title>The Moyal product</title>
-         <link>https://jmf1sh.github.io/posts/moyal-product/</link>
+         <link>https://jmf1sh.github.io/posts/2012-11-24-moyal-product/</link>
          <pubDate>Sat, 24 Nov 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/moyal-product/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-11-24-moyal-product/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Today I want to understand the Moyal product, as we will need to understand it in order to construct quantizations of symplectic quotients. (More precisely, to incorporate stability conditions.)&lt;/p&gt;
 &lt;p&gt;Let (A) be the algebra of polynomial functions on (T^\ast \mathbb{C}^n). This algebra has a natural Poisson bracket, given by&lt;/p&gt;
@@ -1050,10 +1086,10 @@ $[X, fY] = f[X,Y] + a(X)f \cdot Y$ for $X,Y \in H^0(M,L)$ and $f \in H^0(M, \mat
        
        <item>
          <title>An exercise in quantum Hamiltonian reduction</title>
-         <link>https://jmf1sh.github.io/posts/quantum-hamiltonian-reduction/</link>
+         <link>https://jmf1sh.github.io/posts/2012-11-22-quantum-hamiltonian-reduction/</link>
          <pubDate>Thu, 22 Nov 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/quantum-hamiltonian-reduction/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-11-22-quantum-hamiltonian-reduction/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Semiclassical Setup&lt;/p&gt;
 &lt;p&gt;Let the group (GL(2)) act on (V = \mathrm{Mat}_{2\times n}) and consider the induced symplectic action on (T^\ast V). If we use variables ((x,p)) with (x) a (2 \times n) matrix and (p) an (n \times 2) matrix, then the classical moment map (\mu) is given by&lt;/p&gt;
@@ -1108,10 +1144,10 @@ Quantization&lt;/p&gt;
        
        <item>
          <title>The 1PI effective action</title>
-         <link>https://jmf1sh.github.io/posts/1pi-effective-action/</link>
+         <link>https://jmf1sh.github.io/posts/2012-11-07-1pi-effective-action/</link>
          <pubDate>Wed, 07 Nov 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/1pi-effective-action/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-11-07-1pi-effective-action/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In this post I&amp;rsquo;d like to try to understand the 1PI effective action that is often of interest. Suppose we have a QFT in some bosonic field (\phi(x)) taking values in a vector space (this is important). Then its vev (\phi_{cl}(x) := \langle \phi(x) \rangle) is just an ordinary (but possibly distributional) field on spacetime. The question is, what is the field equation satisfied by (\phi_{cl})? I.e., if we average over quantum effects by replacing all fields by their vevs, what is the action that governs this (now completely classical) theory? The 1PI effective action answers exactly this question.&lt;/p&gt;
 &lt;p&gt;Consider the generating functional&lt;/p&gt;
@@ -1136,10 +1172,10 @@ Quantization&lt;/p&gt;
        
        <item>
          <title>Spontaneous symmetry breaking in QFT</title>
-         <link>https://jmf1sh.github.io/posts/spontaneous-symmetry-breaking-qft/</link>
+         <link>https://jmf1sh.github.io/posts/2012-11-05-spontaneous-symmetry-breaking-qft/</link>
          <pubDate>Mon, 05 Nov 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/spontaneous-symmetry-breaking-qft/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-11-05-spontaneous-symmetry-breaking-qft/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In this post I want to try to understand symmetry breaking and the origin of the moduli space of vacua. Most of this can be found in the lectures by Witten in vol. 2 of Quantum Fields and Strings.&lt;/p&gt;
 &lt;p&gt;Non-Example: Quantum Mechanics&lt;/p&gt;
@@ -1164,10 +1200,10 @@ Quantization&lt;/p&gt;
        
        <item>
          <title>Seiberg-Witten theory and the Riemann-Hilbert problem</title>
-         <link>https://jmf1sh.github.io/posts/seiberg-witten-riemann-hilbert/</link>
+         <link>https://jmf1sh.github.io/posts/2012-11-04-seiberg-witten-riemann-hilbert/</link>
          <pubDate>Sun, 04 Nov 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/seiberg-witten-riemann-hilbert/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-11-04-seiberg-witten-riemann-hilbert/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;References:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Introduction to Seiberg-Witten theory and its stringy origin
@@ -1225,10 +1261,10 @@ Find the desired \(f_i(u)\) by solving the Riemann-Hilbert problem for these mon
        
        <item>
          <title>BPS states and wall-crossing</title>
-         <link>https://jmf1sh.github.io/posts/bps-wall-crossing/</link>
+         <link>https://jmf1sh.github.io/posts/2012-10-29-bps-wall-crossing/</link>
          <pubDate>Mon, 29 Oct 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/bps-wall-crossing/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-10-29-bps-wall-crossing/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;This is the first in what I hope will become a series of posts on BPS state counting and wall-crossing. I&amp;rsquo;m participating in gLab, and our most immediate goal is to understand the Kontsevich-Soibelman wall-crossing formula (KSWCF) in the context of quadratic differentials on a (punctured) Riemann surface, following the lectures of Kontsevich and Neitzke at IHES.&lt;/p&gt;
 &lt;p&gt;The purpose of these posts is to keep a written record of my attempts to understand the physics behind the WCF as well as the work of Gaiotto-Moore-Neitzke.&lt;/p&gt;
@@ -1280,10 +1316,10 @@ Understand how KSWCF implies consistency of the Darboux coordinates
        
        <item>
          <title>Seiberg-Witten theory video lectures</title>
-         <link>https://jmf1sh.github.io/posts/seiberg-witten-video-lectures/</link>
+         <link>https://jmf1sh.github.io/posts/2012-10-22-seiberg-witten-video-lectures/</link>
          <pubDate>Mon, 22 Oct 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/seiberg-witten-video-lectures/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-10-22-seiberg-witten-video-lectures/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I found some lectures by Sara Pasquetti on Seiberg-Witten theory here:&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=jvNRbdlp-Sg&#34;&gt;Lecture 1&lt;/a&gt;
@@ -1295,10 +1331,10 @@ Understand how KSWCF implies consistency of the Darboux coordinates
        
        <item>
          <title>A toy model for effective theory from extra dimensions</title>
-         <link>https://jmf1sh.github.io/posts/toy-model-extra-dimensions/</link>
+         <link>https://jmf1sh.github.io/posts/2012-08-27-toy-model-extra-dimensions/</link>
          <pubDate>Mon, 27 Aug 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/toy-model-extra-dimensions/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-08-27-toy-model-extra-dimensions/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I wanted to see how the Fourier transform can turn field theory into many-particle mechanics. This is just silly fooling around, so you shouldn&amp;rsquo;t take what follows too seriously (there are much better models of extra dimensions, to be sure!).&lt;/p&gt;
 &lt;p&gt;Take (\phi(t, s)) to be a field on a cylinder of radius (R). We consider the action&lt;/p&gt;
@@ -1317,10 +1353,10 @@ Understand how KSWCF implies consistency of the Darboux coordinates
        
        <item>
          <title>Generating functions</title>
-         <link>https://jmf1sh.github.io/posts/generating-functions/</link>
+         <link>https://jmf1sh.github.io/posts/2012-07-26-generating-functions/</link>
          <pubDate>Thu, 26 Jul 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/generating-functions/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-07-26-generating-functions/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Method of Generating Functions&lt;/p&gt;
 &lt;p&gt;Let (X) and (Y) be two smooth manifolds, and let (M = T^\ast X, N = T^\ast Y) with corresponding symplectic forms (\omega_M) and (\omega_N).&lt;/p&gt;
@@ -1366,10 +1402,10 @@ Origins from the Action Principle, and Hamilton-Jacobi&lt;/p&gt;
        
        <item>
          <title>KAM</title>
-         <link>https://jmf1sh.github.io/posts/kam-1/</link>
+         <link>https://jmf1sh.github.io/posts/2012-07-23-kam-1/</link>
          <pubDate>Mon, 23 Jul 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/kam-1/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-07-23-kam-1/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In this post I want to sketch the idea of KAM, following these lecture notes.&lt;/p&gt;
 &lt;p&gt;Integrable Systems&lt;/p&gt;
@@ -1422,10 +1458,10 @@ Origins from the Action Principle, and Hamilton-Jacobi&lt;/p&gt;
        
        <item>
          <title>Circle diffeomorphisms</title>
-         <link>https://jmf1sh.github.io/posts/circle-diffeomorphisms-1/</link>
+         <link>https://jmf1sh.github.io/posts/2012-07-13-circle-diffeomorphisms-1/</link>
          <pubDate>Fri, 13 Jul 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/circle-diffeomorphisms-1/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-07-13-circle-diffeomorphisms-1/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;This is the first of a series of posts based on these lecture notes on KAM theory. For now I just want to outline section 2, which is a toy model of KAM thoery.&lt;/p&gt;
 &lt;p&gt;Circle Diffeomorphisms&lt;/p&gt;
@@ -1465,10 +1501,10 @@ Origins from the Action Principle, and Hamilton-Jacobi&lt;/p&gt;
        
        <item>
          <title>Gaussian integrals and Wick&#39;s theorem</title>
-         <link>https://jmf1sh.github.io/posts/gaussian-integrals-wick/</link>
+         <link>https://jmf1sh.github.io/posts/2012-03-03-gaussian-integrals-wick/</link>
          <pubDate>Sat, 03 Mar 2012 15:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/gaussian-integrals-wick/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-03-03-gaussian-integrals-wick/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;We saw in the last update that the generating function (Z[J]) can be expressed as&lt;/p&gt;
 &lt;p&gt;[ Z[J] = e^{\frac{1}{2} J \cdot A^{-1} J} ]&lt;/p&gt;
@@ -1499,10 +1535,10 @@ Origins from the Action Principle, and Hamilton-Jacobi&lt;/p&gt;
        
        <item>
          <title>Introduction to Gaussian integrals</title>
-         <link>https://jmf1sh.github.io/posts/introduction-to-gaussian/</link>
+         <link>https://jmf1sh.github.io/posts/2012-03-03-introduction-to-gaussian/</link>
          <pubDate>Sat, 03 Mar 2012 09:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/introduction-to-gaussian/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-03-03-introduction-to-gaussian/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;As a warm-up for more serious stuff, I&amp;rsquo;d like to discuss Gaussian integrals over (\mathbb{R}^d). Gaussian integrals are the main tool for perturbative quantum field theory, and I find that understanding Gaussian integrals in finite dimensions is an immense aid to understanding how perturbative QFT works. So let&amp;rsquo;s get started.&lt;/p&gt;
 &lt;p&gt;The Basics&lt;/p&gt;
@@ -1542,10 +1578,10 @@ Origins from the Action Principle, and Hamilton-Jacobi&lt;/p&gt;
        
        <item>
          <title>Geometry of curved spacetime, part 5</title>
-         <link>https://jmf1sh.github.io/posts/geometry-of-spacetime-part-5/</link>
+         <link>https://jmf1sh.github.io/posts/2012-02-05-geometry-of-spacetime-part-5/</link>
          <pubDate>Sat, 25 Feb 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/geometry-of-spacetime-part-5/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-02-05-geometry-of-spacetime-part-5/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Background&lt;/p&gt;
 &lt;p&gt;Following last time, we are almost ready to write down the Einstein equations. Before doing any math, let&amp;rsquo;s understand what we&amp;rsquo;re trying to do. Minkowski realized that Einstein&amp;rsquo;s special relativity was best understood by combining space and time into 4-dimensional spacetime, with Lorentzian metric&lt;/p&gt;
@@ -1591,10 +1627,10 @@ Origins from the Action Principle, and Hamilton-Jacobi&lt;/p&gt;
        
        <item>
          <title>Geometry of curved spacetime, part 4</title>
-         <link>https://jmf1sh.github.io/posts/geometry-of-spacetime-part-4/</link>
+         <link>https://jmf1sh.github.io/posts/2012-02-06-geometry-of-spacetime-part-4/</link>
          <pubDate>Mon, 06 Feb 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/geometry-of-spacetime-part-4/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-02-06-geometry-of-spacetime-part-4/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Today I had to try to explain connections and curvature in local frames (as opposed to coordinates), and I really feel that Wald&amp;rsquo;s treatment of this is just awful (this is one of the few complaints I have with an otherwise classic textbook). It is particularly baffling since the treatment in Misner, Thorne, and Wheeler is just perfect. What follows is the modern math (as opposed to physics) point of view. This is more abstract than any introductory GR (or even Riemannian geometry) text I&amp;rsquo;ve seen, but in this case the abstraction absolutely clarifies and simplifies things.&lt;/p&gt;
 &lt;p&gt;Let (M) be a smooth manifold and suppose (E) is a smooth vector bundle over (M). A connection on (E) is a map \nabla taking sections of (E) to sections of (T^\ast M \otimes E), (\mathbb{R})-linear and satisfying the Leibniz rule&lt;/p&gt;
@@ -1651,10 +1687,10 @@ Origins from the Action Principle, and Hamilton-Jacobi&lt;/p&gt;
        
        <item>
          <title>Geometry of curved spacetime, part 3</title>
-         <link>https://jmf1sh.github.io/posts/geometry-of-spacetime-part-3/</link>
+         <link>https://jmf1sh.github.io/posts/2012-02-04-geometry-of-spacetime-part-3/</link>
          <pubDate>Sat, 04 Feb 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/geometry-of-spacetime-part-3/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-02-04-geometry-of-spacetime-part-3/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Today, some numerology. The Riemann curvature tensor is a tensor (R_{abcd}) satisfying the identities:&lt;/p&gt;
 &lt;ol&gt;
@@ -1690,10 +1726,10 @@ Origins from the Action Principle, and Hamilton-Jacobi&lt;/p&gt;
        
        <item>
          <title>Path integrals, part 3</title>
-         <link>https://jmf1sh.github.io/posts/path-integrals-part-2/</link>
+         <link>https://jmf1sh.github.io/posts/2012-02-04-path-integrals-part-2/</link>
          <pubDate>Sat, 04 Feb 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/path-integrals-part-2/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-02-04-path-integrals-part-2/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Consider the heat equation&lt;/p&gt;
 &lt;p&gt;[ \frac{\partial \psi}{\partial t} = -\hat{H} \psi ]&lt;/p&gt;
@@ -1715,10 +1751,10 @@ Origins from the Action Principle, and Hamilton-Jacobi&lt;/p&gt;
        
        <item>
          <title>Path integrals, part 3</title>
-         <link>https://jmf1sh.github.io/posts/path-integrals-part-3/</link>
+         <link>https://jmf1sh.github.io/posts/2012-02-04-path-integrals-part-3/</link>
          <pubDate>Sat, 04 Feb 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/path-integrals-part-3/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-02-04-path-integrals-part-3/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In my previous posts on path integrals, I described (rather tersely) how the path integral, suitably defined and interpreted, can be used to compute the Schwartz kernel of the operators (e^{iHt}) (Lorentzian signature) and (e^{-Ht}) (Euclidean signature).&lt;/p&gt;
 &lt;p&gt;Suppose that we understand the spectrum of (H) completely (nb: for a given system described by (H), this is the goal). For example, suppose we know that the spectrum of (H) consists of discrete eigenvalues (E_n, n = 0, \cdots) with corresponding eigenvectors (|n\rangle),&lt;/p&gt;
@@ -1747,10 +1783,10 @@ Origins from the Action Principle, and Hamilton-Jacobi&lt;/p&gt;
        
        <item>
          <title>Geometry of curved spacetime, part 2</title>
-         <link>https://jmf1sh.github.io/posts/geometry-of-spacetime-part-2/</link>
+         <link>https://jmf1sh.github.io/posts/2012-01-26-geometry-of-spacetime-part-2/</link>
          <pubDate>Thu, 26 Jan 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/geometry-of-spacetime-part-2/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-01-26-geometry-of-spacetime-part-2/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Disclaimer: as before, these are (incredibly) rough notes intended for a tutorial. I may clean them up a bit later but for now it will seem like a lot of unmotivated equations (with typos!!).&lt;/p&gt;
 &lt;p&gt;The Energy Functional&lt;/p&gt;
@@ -1829,10 +1865,10 @@ Origins from the Action Principle, and Hamilton-Jacobi&lt;/p&gt;
        
        <item>
          <title>Geometry of curved spacetime, part 1</title>
-         <link>https://jmf1sh.github.io/posts/geometry-of-spacetime-part-1/</link>
+         <link>https://jmf1sh.github.io/posts/2012-01-19-geometry-of-spacetime-part-1/</link>
          <pubDate>Thu, 19 Jan 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/geometry-of-spacetime-part-1/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-01-19-geometry-of-spacetime-part-1/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;m TAing a course on general relativity this semester, and I&amp;rsquo;m covering some of the geometry background in tutorials. Since I need to prepare some material for these, I thought there was no harm in putting it up on this blog. So here we go.&lt;/p&gt;
 &lt;p&gt;Throughout, we&amp;rsquo;ll let (M) be a smooth manifold equipped with a metric (g). Whenever it makes life easier, I&amp;rsquo;ll assume that (g) is positive definite (rather than Lorentzian). For a point (p \in M), denote its tangent space by (T_p M).&lt;/p&gt;
@@ -1879,10 +1915,10 @@ Origins from the Action Principle, and Hamilton-Jacobi&lt;/p&gt;
        
        <item>
          <title>Path integrals, part 1</title>
-         <link>https://jmf1sh.github.io/posts/path-integrals-part-1/</link>
+         <link>https://jmf1sh.github.io/posts/2012-01-16-path-integrals-part-1/</link>
          <pubDate>Mon, 16 Jan 2012 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/path-integrals-part-1/</guid>
+         <guid>https://jmf1sh.github.io/posts/2012-01-16-path-integrals-part-1/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Consider the Hilbert space (\mathcal{H} = L^2(\mathbb{R})) with Lebesgue measure and a Hamiltonian (H = T(k) + V(x)) (a sum of kinetic and potential energy). Then the quantum hamiltonian (\hat{H}) acts as&lt;/p&gt;
 &lt;p&gt;\begin{align}&lt;/p&gt;
@@ -1934,10 +1970,10 @@ Origins from the Action Principle, and Hamilton-Jacobi&lt;/p&gt;
        
        <item>
          <title>Lattice quantum mechanics in 1d</title>
-         <link>https://jmf1sh.github.io/posts/lattice-quantum-mechanics-1d/</link>
+         <link>https://jmf1sh.github.io/posts/2011-11-12-lattice-quantum-mechanics-1d/</link>
          <pubDate>Sat, 12 Nov 2011 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/lattice-quantum-mechanics-1d/</guid>
+         <guid>https://jmf1sh.github.io/posts/2011-11-12-lattice-quantum-mechanics-1d/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;For some reason I&amp;rsquo;ve been interested in lattice QFT recently, especially lattice gauge theory (note to self: a miniproject for the Christmas break is to understand the paper by Kogut and Susskind &lt;a href=&#34;http://prd.aps.org/abstract/PRD/v11/i2/p395_1)&#34;&gt;http://prd.aps.org/abstract/PRD/v11/i2/p395_1)&lt;/a&gt;. As a warm-up, I thought I would try understanding plain-old 1D QM on the lattice, and writing some code to see if I got results that are at all reasonable.&lt;/p&gt;
 &lt;p&gt;The Setup: We will take as our space of states (\mathscr{H} = L^2([0,1])) and hamiltonian&lt;/p&gt;
@@ -1976,10 +2012,10 @@ Origins from the Action Principle, and Hamilton-Jacobi&lt;/p&gt;
        
        <item>
          <title>Susskind on string theory</title>
-         <link>https://jmf1sh.github.io/posts/susskind-string-theory/</link>
+         <link>https://jmf1sh.github.io/posts/2011-10-05-susskind-string-theory/</link>
          <pubDate>Wed, 05 Oct 2011 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/susskind-string-theory/</guid>
+         <guid>https://jmf1sh.github.io/posts/2011-10-05-susskind-string-theory/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Found this and thought I&amp;rsquo;d share:&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=25haxRuZQUk&amp;amp;feature=list_related&amp;amp;playnext=1&amp;amp;list=SPA2FDCCBC7956448F&#34;&gt;Lectures on String Theory by Susskind&lt;/a&gt;&lt;/p&gt;
@@ -1989,10 +2025,10 @@ Origins from the Action Principle, and Hamilton-Jacobi&lt;/p&gt;
        
        <item>
          <title>Classical mechanics, part 6</title>
-         <link>https://jmf1sh.github.io/posts/classical-mechanics-part-6/</link>
+         <link>https://jmf1sh.github.io/posts/2011-09-01-classical-mechanics-part-6/</link>
          <pubDate>Thu, 01 Sep 2011 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/classical-mechanics-part-6/</guid>
+         <guid>https://jmf1sh.github.io/posts/2011-09-01-classical-mechanics-part-6/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Last time we saw that a classical mechanical system which has a Lagrangian formulation can (under some mild assumptions) be repackaged as a symplectic manifold ((M, \omega)) together with a smooth function (H) called the Hamiltonian. The equations of motion then become&lt;/p&gt;
 &lt;p&gt;[ \dot{x} = X_H ]&lt;/p&gt;
@@ -2043,10 +2079,10 @@ Origins from the Action Principle, and Hamilton-Jacobi&lt;/p&gt;
        
        <item>
          <title>Classical mechanics, part 5</title>
-         <link>https://jmf1sh.github.io/posts/classical-mechanics-part-5/</link>
+         <link>https://jmf1sh.github.io/posts/2011-08-25-classical-mechanics-part-5/</link>
          <pubDate>Thu, 25 Aug 2011 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/classical-mechanics-part-5/</guid>
+         <guid>https://jmf1sh.github.io/posts/2011-08-25-classical-mechanics-part-5/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;As we saw in the previous post, the equations of motion for a mechanical system can be cast into a 1st order form called Hamilton&amp;rsquo;s equations, which are naturally interpreted as describing a path in the phase space (T^\ast M) associated to the configuration space (M). Let us investigate the geometry of (T^\ast M) see why Hamilton&amp;rsquo;s equations are so nice.&lt;/p&gt;
 &lt;p&gt;Definition The canonical (or sometimes tautological) 1-form on the cotangent bundle (T^\ast M) is the 1-form (\theta) defined by&lt;/p&gt;
@@ -2090,10 +2126,10 @@ Origins from the Action Principle, and Hamilton-Jacobi&lt;/p&gt;
        
        <item>
          <title>Classical mechanics, part 4</title>
-         <link>https://jmf1sh.github.io/posts/classical-mechanics-part-4/</link>
+         <link>https://jmf1sh.github.io/posts/2011-08-23-classical-mechanics-part-4/</link>
          <pubDate>Tue, 23 Aug 2011 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/classical-mechanics-part-4/</guid>
+         <guid>https://jmf1sh.github.io/posts/2011-08-23-classical-mechanics-part-4/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Recall from last time that a classical mechanical system consists of a manifold (M) (the configuration space) and a function (L) on the tangent bundle (TM). The equations of motion for a path (x(t)) in (M) are the 2nd order Euler-Lagrange equations:&lt;/p&gt;
 &lt;p&gt;[ \frac{d}{dt}\left( \frac{\partial L}{\partial v}(x, \dot{x}) \right) = \frac{\partial L}{\partial x}(x, \dot{x}) ]&lt;/p&gt;
@@ -2126,10 +2162,10 @@ Origins from the Action Principle, and Hamilton-Jacobi&lt;/p&gt;
        
        <item>
          <title>Classical mechanics, part 3</title>
-         <link>https://jmf1sh.github.io/posts/classical-mechanics-part-3/</link>
+         <link>https://jmf1sh.github.io/posts/2011-08-19-classical-mechanics-part-3/</link>
          <pubDate>Fri, 19 Aug 2011 21:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/classical-mechanics-part-3/</guid>
+         <guid>https://jmf1sh.github.io/posts/2011-08-19-classical-mechanics-part-3/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;We saw before that Newton&amp;rsquo;s 2nd law can be written in a more general form as&lt;/p&gt;
 &lt;p&gt;[ \frac{d}{dt} \frac{\partial L}{\partial v}(x, \dot{x}) = \frac{\partial L}{\partial x}(x, \dot{x}), ]&lt;/p&gt;
@@ -2156,10 +2192,10 @@ Origins from the Action Principle, and Hamilton-Jacobi&lt;/p&gt;
        
        <item>
          <title>Classical mechanics, part 2</title>
-         <link>https://jmf1sh.github.io/posts/classical-mechanics-part-2/</link>
+         <link>https://jmf1sh.github.io/posts/2011-08-19-classical-mechanics-part-2/</link>
          <pubDate>Fri, 19 Aug 2011 15:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/classical-mechanics-part-2/</guid>
+         <guid>https://jmf1sh.github.io/posts/2011-08-19-classical-mechanics-part-2/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;After the previous post, we are now familiar with Newton&amp;rsquo;s 2nd law&lt;/p&gt;
 &lt;p&gt;[ \mathbf{F} = m\mathbf{a}, ]&lt;/p&gt;
@@ -2197,10 +2233,10 @@ Origins from the Action Principle, and Hamilton-Jacobi&lt;/p&gt;
        
        <item>
          <title>Classical mechanics, part 1</title>
-         <link>https://jmf1sh.github.io/posts/classical-mechanics-part-1/</link>
+         <link>https://jmf1sh.github.io/posts/2011-08-19-classical-mechanics-part-1/</link>
          <pubDate>Fri, 19 Aug 2011 09:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/classical-mechanics-part-1/</guid>
+         <guid>https://jmf1sh.github.io/posts/2011-08-19-classical-mechanics-part-1/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;This is a surpisingly hard topic, and someday I would like to make an honest attempt at it. But Feynman did it better than I ever could! See &amp;ldquo;What is a Force?&amp;rdquo; from the Feynman Lectures on Physics, available here: here &lt;a href=&#34;http://strangebeautiful.com/other-texts/feynman-phys-lects-1_12.pdf&#34;&gt;pdf&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I promise to update eventually.&lt;/p&gt;
@@ -2209,10 +2245,10 @@ Origins from the Action Principle, and Hamilton-Jacobi&lt;/p&gt;
        
        <item>
          <title>Updated outline</title>
-         <link>https://jmf1sh.github.io/posts/updated-outline/</link>
+         <link>https://jmf1sh.github.io/posts/2011-08-17-updated-outline/</link>
          <pubDate>Wed, 17 Aug 2011 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/updated-outline/</guid>
+         <guid>https://jmf1sh.github.io/posts/2011-08-17-updated-outline/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I was thinking about how to put this blog to use, and especially how to make it worthwhile for myself. In 2010, I ran a learning seminar on math/physics which in my opinion was extremely successful. I made detailed notes for nearly all of the talks, and I had several people ask me at the end of the seminar to give them copies of the notes I had made. We managed to do something very special in the seminar, and I think it&amp;rsquo;s worth writing up notes from the best talks (and reorganizing/elaborating/etc. when necessary) and putting them online for all to see. It gives me a chance to practice my math writing, and if I ever run another seminar of this flavor (or teach a course, or write a book&amp;hellip;) then a lot of the work will already be done for me.&lt;/p&gt;
 &lt;p&gt;Here is a rough outline of the topics we covered (or that need to be covered as background):&lt;/p&gt;
@@ -2245,10 +2281,10 @@ Path integral proof of the index theorem.
        
        <item>
          <title>Legendre transform</title>
-         <link>https://jmf1sh.github.io/posts/legendre-transform/</link>
+         <link>https://jmf1sh.github.io/posts/2010-01-27-legendre-transform/</link>
          <pubDate>Wed, 27 Jan 2010 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/legendre-transform/</guid>
+         <guid>https://jmf1sh.github.io/posts/2010-01-27-legendre-transform/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Yesterday, I gave an introductory talk on Hamiltonian mechanics and symplectic geometry. The starting point is the Legendre transform. First, begin with a configuration space (Q). The Lagrangian (\mathcal{L}) is a smooth function on (TQ). In local coordinates (q^i) on (Q), we have coordinates ((q_i, v_i)) on (TQ), where the (v^i) are the components of the tangent vector&lt;/p&gt;
 &lt;p&gt;(v = v_i \partial_i \in T_q Q). Typically, the Lagrangian will be of the form&lt;/p&gt;
@@ -2270,10 +2306,10 @@ Path integral proof of the index theorem.
        
        <item>
          <title>Hyperkahler reduction</title>
-         <link>https://jmf1sh.github.io/posts/hyperkaehler-reduction/</link>
+         <link>https://jmf1sh.github.io/posts/2010-01-08-hyperkaehler-reduction/</link>
          <pubDate>Fri, 08 Jan 2010 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/hyperkaehler-reduction/</guid>
+         <guid>https://jmf1sh.github.io/posts/2010-01-08-hyperkaehler-reduction/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Yesterday I gave a talk on hyperkahler reduction&amp;ndash;my first invited talk ever. I thought I should summarize it here.&lt;/p&gt;
 &lt;p&gt;A hyperkahler manifold is just a Kahler manifold ( (M, g, I)) together with two additional integrable complex structures (J,K) such that (I,J,K) satisfy the quaternion relations, and (J) and (K) are compatible with the metric. Hyperkahler manifolds are modeled on (\mathbb{H}^n), analogous to the way that Kahler manifolds are modeled on (\mathbb{C}^n)&lt;/p&gt;
@@ -2300,10 +2336,10 @@ Path integral proof of the index theorem.
        
        <item>
          <title>Fist day of 2010</title>
-         <link>https://jmf1sh.github.io/posts/first-day-of-2010/</link>
+         <link>https://jmf1sh.github.io/posts/2010-01-04-first-day-of-2010/</link>
          <pubDate>Mon, 04 Jan 2010 09:26:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/first-day-of-2010/</guid>
+         <guid>https://jmf1sh.github.io/posts/2010-01-04-first-day-of-2010/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;It&amp;rsquo;s the first (academic) day of 2010. I figured that the best use of this blog is as a log&amp;ndash;that is, to log and plan my work for the semester/year/life. If you want to accomplish goals, the fist thing to do is to write them down! So here we go, crude outline for the next semester:&lt;/p&gt;
 &lt;ol&gt;
@@ -2332,10 +2368,10 @@ Path integral proof of the index theorem.
        
        <item>
          <title>In the beginning...</title>
-         <link>https://jmf1sh.github.io/posts/in-the-beginning/</link>
+         <link>https://jmf1sh.github.io/posts/2008-08-09-in-the-beginning/</link>
          <pubDate>Sat, 09 Aug 2008 00:00:00 +0000</pubDate>
          
-         <guid>https://jmf1sh.github.io/posts/in-the-beginning/</guid>
+         <guid>https://jmf1sh.github.io/posts/2008-08-09-in-the-beginning/</guid>
          <description>&lt;p&gt;This post has been migrated from my old blog, the &lt;a href=&#34;https://mathphysseminar.blogspot.com/&#34;&gt;math-physics learning seminar&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Well this is the first post. I&amp;rsquo;m on the tail end of a MSc right now, and set to start my PhD in the fall, so I thought it might be interesting to document my (probable) descent into madness. I had thought about doing this at the beginning of my MSc, but I guess I never got around to it. Much of this blog will focus on my own studies/progress, as well as happenings at my university, but I don&amp;rsquo;t plan on trying too hard to keep it strictly academic. We&amp;rsquo;ll see how it goes.&lt;/p&gt;
 </description>

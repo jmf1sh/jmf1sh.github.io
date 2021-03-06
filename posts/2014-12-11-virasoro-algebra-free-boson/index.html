@@ -1,0 +1,253 @@
+<!doctype html>
+
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jonathan&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.81.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
+
+        <ul id="social-media">
+          
+
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
+        
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+      <main>
+
+
+
+
+<article>
+
+    <h1>Virasoro algebra from the free boson</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2014-12-11T00:00:00Z">Dec 11, 2014</time>
+        </li>
+        
+
+        
+
+        <li>5 minutes read</li>
+    </ul>
+</aside>
+
+    
+
+    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+<p>Usual physics derivations of the Virasoro algebra from the free boson in two dimensions usually use some sort of regularization procedure to compute the central charge. Following these notes I&rsquo;d like to give a purely algebraic calculation of the central charge.</p>
+<p>Let $A = \mathbf C[x_1, x_2, \dots]$ be the polynomial algebra in countably many generators. For an integer $k &gt; 0$, define a $k$-linear operator $a_k$ on $A$ by</p>
+<p>[ a_k = \frac{\partial}{\partial x_k}, \ k &gt; 0 ]</p>
+<p>Similarly, for $k &lt; 0$ we define $a_k$ by multiplication:</p>
+<p>[ a_{-k} = k x_k, k &gt; 0 ]</p>
+<p>For $k = 0$, we define $a_0$ to be multiplication by some fixed complex number (which by abuse of notation we also denote by $a_0$).</p>
+<p>Lemma. We have the commutation relation $[a_m, a_n] = m \delta_{m+n}$ as linear operators on $A$.</p>
+<p>For any monomial in the $a_k$, we define normal ordering $::$ to be the monomial obtained by reordering the terms so that the indices are increasing. (Mathematical interpretation: it is a section of the quotient map from the tensor algebra in the $a_k$ to the symmetric algebra, defined by lexicographic order.) For example,</p>
+<p>[ :a_j a_k:\ = \left{ \begin{array}{rr} a_j a_k, &amp; j \leq k \ a_k a_j, &amp; j &gt; k \end{array} \right. ]</p>
+<p>Next we formally define a set of operators $L_k$ by</p>
+<p>[ L_k = \frac{1}{2}\sum_j :a_j a_{k-j}: ]</p>
+<p>Proposition. The $L_k$ are well-defined as linear operators on $A$.</p>
+<p>Proof. For sufficiently large $|j|$, at least one of $j$ or $k-j$ is positive, and hence $:a_j a_{k-j}:$ contains a differentiation (on the right). Since any element $f \in A$ is annihilated by all but finitely many of the differentiation operators $\partial_j$, the formal expression $L_k f$ contains only finitely many non-zero terms, and hence is well-defined.</p>
+<p>Lemma. As operators on $A$, we have $[a_k, L_n] = k a_{k+n}$.</p>
+<p>Theorem. As operators on $A$, we have</p>
+<p>[ [L_m, L_n] = (m-n) L_{m+n} + \frac{1}{12} (m^3-m) \delta_{m+n} ]</p>
+<p>Proof. Fix $m,n$. For the sake of simplicity we will assume $m \neq n$ and $mn \neq 0$. (The other special cases can be treated by similar arguments.) By the same argument as the proof of the preceding proposition, for any fixed element $f \in A$ there exists some $N \gg 0$ such that</p>
+<p>[ [L_m, L_n]f = [L_m^N, L_n] f ]</p>
+<p>where $L_m^N$ is the truncated operator</p>
+<p>[ L_m^N = \frac{1}{2}\sum_{|j| &lt; N} :a_j a_{m-j}: ]</p>
+<p>Let us compute (noting that since $m \neq 0$, $:a_j a_{m-j}: = a_j a_{m-j}$)</p>
+<p>\begin{align}</p>
+<p>[L_m^N, L_n] &amp;= \frac{1}{2} \sum_{|j| &lt; N} [a_j a_{m-j}, L_n] \</p>
+<p>&amp;= \frac{1}{2} \sum_{|j| &lt; N} (m-j) a_j a_{m+n-j} + \frac{1}{2} \sum_{|j| &lt; N}j a_{n+j} a_{m-j}</p>
+<p>\end{align}</p>
+<p>Denote the two sums above by $S_1$ and $S_2$. It is clear that these should be related to the operator $L_{m+n}$, but to see the exact relation we will have to normal order the terms. Let&rsquo;s start with $S_1$. Note that $a_j a_{m+n-j}$ is already normal ordered, unless $j &gt; m+n-j$. Hence</p>
+<p>\begin{align}</p>
+<p>S_1 &amp;= \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{1}{2} \sum_{m+n\lt2j\lt2N} (m-j) [a_j, a_{m+n-j}] \</p>
+<p>&amp;= \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{\delta_{m+n}}{2} \sum_{m+n\lt2j\lt2N} j(m-j) \</p>
+<p>&amp;= \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{\delta_{m+n}}{2} \sum_{0\lt j\lt N} j(m-j)</p>
+<p>\end{align}</p>
+<p>Similarly, we normal order the terms in $S_2$:</p>
+<p>\begin{align}</p>
+<p>S_2 &amp;= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{1}{2} \sum_{m-n\lt2j\lt2N}j [a_{m-j}, a_{n+j}] \</p>
+<p>&amp;= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{\delta_{m+n}}{2} \sum_{m\lt j\lt N}j (m-j) \</p>
+<p>&amp;= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{\delta_{m+n}}{2} \sum_{m\lt j\lt N}j (m-j) \</p>
+<p>&amp;= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{\delta_{m+n}}{2} \sum_{m\lt j\lt N}j (m-j)</p>
+<p>\end{align}</p>
+<p>Hence we have</p>
+<p>[ S_1 + S_2 = \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: + \frac{\delta_{m+n}}{2} \sum_{0\lt j\leq m} j(m-j)  ]</p>
+<p>Now that everything is normal ordered, we can take the limit $N \to \infty$ without fear. After a simple cancellation, and explicitly summing the last term using well-known formulas for sums of powers of integers, we obtain:</p>
+<p>[ [L_m, L_n] = (m-n) L_{m+n} + \frac{1}{12} (m^3-m) \delta_{m+n} ]</p>
+<p>For the usual conventions of the Virasoro algebra, this shows that this representation corresponds to central charge $c=1$.</p>
+<p>Remark. If we tried to take the limit $N \to \infty$ in each of the terms $S_1, S_2$ separately, before taking their sum, we would obtain a formal infinite constant $\sum_{j} j(m-j)$. In any physics textbook, the author will simply zeta-regularize this sum to obtain a fininte result. However, the above calculation shows that this is not necessary. By taking care that each term in the expression $S_1+S_2$ was normal-ordered, before taking the limit, we obtain only finite constants with no need to regularize. Zeta regularization certainly has its uses (for example in rigorous definitions of functional determinants), but as the above calculation shows, it can also be an unnecessary crutch that obscures the underlying mathematical phenomena.</p>
+<p>Remark. There is an analogous calculation which shows that one obtains a Virasoro representation from affine Lie algebras. Physically, this corresponds to the WZW model. Roughly, the generators of the affine Lie algebra behave as an infinite set of harmonic oscillators, similar to the Heisenberg algebra above. Sometime in the future I may write a sequel to this post giving the details of this calculation.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2014-05-14-quantum-bv-complex/"><i class="fa fa-chevron-circle-left"></i> The basic idea of the quantum BV complex</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2015-01-29-generalized-geometry/">What is generalized geometry? <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
+</body>
+
+</html>

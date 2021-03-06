@@ -1,0 +1,247 @@
+<!doctype html>
+
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jonathan&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.81.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
+
+        <ul id="social-media">
+          
+
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
+        
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+      <main>
+
+
+
+
+<article>
+
+    <h1>Generating functions</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2012-07-26T00:00:00Z">Jul 26, 2012</time>
+        </li>
+        
+
+        
+
+        <li>4 minutes read</li>
+    </ul>
+</aside>
+
+    
+
+    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+<p>Method of Generating Functions</p>
+<p>Let (X) and (Y) be two smooth manifolds, and let (M = T^\ast X, N = T^\ast Y) with corresponding symplectic forms (\omega_M) and (\omega_N).</p>
+<p>Question: How can we produce symplectomorphisms (\phi: M \to N)?</p>
+<p>The most important construction from classical mechanics is the method of generating functions. I will outline this method, shameless stolen from Ana Cannas da Silva&rsquo;s lecture notes.</p>
+<p>Suppose we have a smooth function (f \in C^\infty(X \times Y)). Then its graph (\Gamma) is a submanifold of (M \times N): ( \Gamma = { (x,y, df_{x,y}) \in M \times N }). Since (M \times N) is a product, we have projections (\pi_M, \pi_N), and this allows us to write the graph as</p>
+<p>[ \Gamma = { (x, y, df_x, df_y) }]</p>
+<p>Now there is a not-so-obvious trick: we consider the twisted graph (\Gamma^\sigma) given by</p>
+<p>[ \Gamma^\sigma =  {(x,y, df_x, -df_y) } ]</p>
+<p>Note the minus sign.</p>
+<p>Proposition If (\Gamma^\sigma) is the graph of a diffeomorphism (\phi: M \to N), then (\phi) is a symplectomorphism.</p>
+<p>Proof By construction, (\Gamma^\sigma) is a Lagrangian submanifold of (M \times N) with respect to the twisted symplectic form (\pi_M^\ast \omega_M - \pi_N^\ast \omega_N). It is a standard fact that a diffeomorphism is a symplectomorphism iff its graph is Lagrangian with respect to the twisted symplectic form, so we&rsquo;re done.</p>
+<p>Now we have:</p>
+<p>Modified question: Given (f \in C^\infty(M \times N)), when is its graph the graph of a diffeomorphism (\phi: M \to N)?</p>
+<p>Pick coordinates (x) on (X) and (y) on (Y), with corresponding momenta (\xi) and (\eta). Then if (\phi(x,\xi) = (y,\eta)), we obtain</p>
+<p>[ \xi = d_x f, \ \eta = -d_y f ]</p>
+<p>Note the simlarity to Hamilton&rsquo;s equations. By the implicit function theorem, we can construct a (local) diffeomorphism (\phi) as long as (f) is sufficiently non-degenerate.</p>
+<p>Different Types of Generating Functions</p>
+<p>We now concentrate on the special case of (M = T^\ast \mathbb{R} = \mathbb{R} \times \mathbb{R}^\ast). Note that this is a cotangent bundle in two ways: (T^\ast \mathbb{R} \cong T^\ast \mathbb{R}^\ast). Hence we can construct local diffeomorphisms (T^\ast \mathbb{R} \to T^\ast \mathbb{R}) in four ways, by taking functions of the forms</p>
+<p>[ f(x_1, x_2), \ f(x_1, p_2), \ f(p_1, x_2), \ f(p_1, p_2) ]
+Origins from the Action Principle, and Hamilton-Jacobi</p>
+<p>Suppose that we have two actions</p>
+<p>[ S_1 = \int p_1 \dot{q}_1 - H_1 dt, \ S_2 = \int p_2 \dot{q}_2 - H_2 dt ]</p>
+<p>which give rise to the same dynamics. Then the Lagrangians must differ by a total derivative, i.e.</p>
+<p>[ p_1 \dot{q}_1 - H_1 = p_2 \dot{q}_2 - H_2  + \frac{d f}{dt} ]</p>
+<p>Suppose that (f = -q_2 p_2 + g(q_1, p_2, t)). Then we have</p>
+<p>[ p_1 \dot{q}_1 - H_1 = -q_2 \dot{p}_2 - H_2 + \frac{\partial g}{\partial t} + \frac{\partial g}{\partial q_1}\dot{q}_1 + \frac{\partial g}{\partial p_2} \dot{p_2} ]</p>
+<p>Comparing coefficients, we find</p>
+<p>[ p_1 = \frac{\partial g}{\partial q_1}, \ q_2 = \frac{\partial g}{\partial p_2}, \ H_2 = H_1 + \frac{\partial g}{\partial t} ]</p>
+<p>Now suppose that the coordinates ((q_2, p_2)) are chosen so that Hamilton&rsquo;s equations become</p>
+<p>[ \dot{q_2} = 0, \ \dot{p}_2 = 0 ]</p>
+<p>Then we must have (H_2 = 0), i.e.</p>
+<p>[ H_1 + \frac{\partial g}{\partial t} = 0 ]</p>
+<p>Now we also have (\partial H_2 / \partial p_2 = 0), so this tells us that (g) is independent of (p_2), i.e. (g = g(q_1, t)). Since (p_1 = \partial g / \partial q_1), we obtain</p>
+<p>[ \frac{\partial g}{\partial t} + H_1(q_1, \frac{\partial g}{\partial q_1}) = 0 ]</p>
+<p>This is the Hamilton-Jacobi equation, usually written as</p>
+<p>[ \frac{\partial S}{\partial t} + H(x, \frac{\partial S}{\partial x}) = 0 ]</p>
+<p>Note the similarity to the Schrodinger equation! In fact, one can derive the Hamilton-Jacobi equation from the Schrodinger equation by taking a wavefunction of the form</p>
+<p>[ \psi(x,t) = A(x,t) \exp({\frac{i}{\hbar} S(x,t)}) ]</p>
+<p>and expanding in powers of (\hbar). This also helps to motivate the path integral formulation of quantum theory.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2012-07-23-kam-1/"><i class="fa fa-chevron-circle-left"></i> KAM</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2012-08-27-toy-model-extra-dimensions/">A toy model for effective theory from extra dimensions <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
+</body>
+
+</html>

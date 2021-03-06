@@ -1,0 +1,268 @@
+<!doctype html>
+
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jonathan&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.81.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
+
+        <ul id="social-media">
+          
+
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
+        
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+      <main>
+
+
+
+
+<article>
+
+    <h1>The Moyal product</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2012-11-24T00:00:00Z">Nov 24, 2012</time>
+        </li>
+        
+
+        
+
+        <li>4 minutes read</li>
+    </ul>
+</aside>
+
+    
+
+    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+<p>Today I want to understand the Moyal product, as we will need to understand it in order to construct quantizations of symplectic quotients. (More precisely, to incorporate stability conditions.)</p>
+<p>Let (A) be the algebra of polynomial functions on (T^\ast \mathbb{C}^n). This algebra has a natural Poisson bracket, given by</p>
+<p>[ {p_i, x_j} = \delta_{ij}. ]</p>
+<p>We would like to define a new associative product (\ast) on (A((\hbar))) satisfying:</p>
+<pre><code>\(f  \ast g = fg + O(\hbar) \)
+\(f \ast g - g \ast f = \hbar \{f, g\} + O(\hbar^2)\)
+\(1 \ast f = f \ast 1 = f\)
+\((f \ast g)^\ast = -g^\ast \ast f^\ast\)
+</code></pre>
+<p>In the last line, the map ((\cdot)^\ast) takes (x_i \mapsto x_i) and (p_i \mapsto -p_i). To figure out what this new product should be, let&rsquo;s take (f,g \in A) and expand (f \ast g) in power series:</p>
+<p>[ f \ast g = \sum_{n=0}^\infty c_n(f,g) \hbar^n ]</p>
+<p>Now, equations (1) and (2) will be satisfied by taking (c_0(f,g) = fg) and (c_1(f,g) = {f,g}/2). Let (\sigma) be the Poisson bivector defining the Poisson bracket. This defines a differential operator (\Pi) on (A \otimes A) by</p>
+<p>[ \Pi = \sigma^{ij} (\partial_i \otimes \partial_j) ]</p>
+<p>Let (B = \sum_{n=0}^\infty B_n \hbar^n) and write the product as</p>
+<p>[ f \ast g = m \circ B(f \otimes g). ]</p>
+<p>Now, condition (2) tells us that (B(0) = 1) and that</p>
+<p>[ \left. \frac{dB}{d\hbar} \right|_{\hbar=0} = \frac{\Pi}{2} ]</p>
+<p>So</p>
+<p>[ B = 1 + \frac{\hbar \Pi}{2} + O(\hbar^2) ]</p>
+<p>It is natural to guess that (B) should be built out of powers of (\Pi), and a natural guess is</p>
+<p>[ B = \exp(\frac{\hbar \Pi}{2}), ]</p>
+<p>which certainly reproduces the first two terms of our expansion. Let&rsquo;s see that this choice actually works, i.e. defines an associative (\ast)-product. Let (m: A \otimes A \to A) be the multiplication, and</p>
+<p>(m_{12}, m_{23}: A \otimes A \otimes A \to A \otimes A), (m_{123}: A \otimes A \otimes A \to A) the induced multiplication maps. Then</p>
+<p>\begin{align}</p>
+<p>f \ast (g \ast h) &amp;= m \circ(B( f \otimes m \circ B(g \otimes h) ) ) \\</p>
+<p>&amp;= m \circ B( m_{23} \circ (1 \otimes B)(f \otimes g \otimes h) ) \\</p>
+<p>&amp;= m_{123} (B \otimes 1)(1 \otimes B)(f \otimes g \otimes h)</p>
+<p>\end{align}</p>
+<p>On the other hand, we have</p>
+<p>\begin{align}</p>
+<p>(f \ast g) \ast h) &amp;= m \circ(B( m \circ B(f \otimes g) \otimes h) ) ) \\</p>
+<p>&amp;= m \circ B( m_{12} \circ (B \otimes 1)(f \otimes g \otimes h) ) \\</p>
+<p>&amp;= m_{123} (1 \otimes B)(B \otimes 1)(f \otimes g \otimes h)</p>
+<p>\end{align}</p>
+<p>Hence, associativity is the condition</p>
+<p>[ m_{123} \circ [1\otimes B, B \otimes 1] = 0. ]</p>
+<p>On (A \otimes A \otimes A), write (\partial_i^1) for the partial derivative acting on the first factor, (\partial_i^2) on the second, etc. Then</p>
+<p>[ 1 \otimes B = \sum_n \frac {\hbar^n}{2^n n!}</p>
+<p>\Pi^{i_1 j_1} \cdots \Pi^{i_n j_n} \partial^2_{i_1} \partial^3_{j_1} \cdots</p>
+<p>\partial^2_{i_n} \partial^3_{j_n} ]</p>
+<p>and similarly for (B \otimes 1). So we have</p>
+<p>\begin{align}</p>
+<p>m_{123} (B\otimes 1)(1 \otimes B) &amp;= \sum_n \sum_{k=0}^n \frac {\hbar^n}{2^n k! (n-k)!}</p>
+<p>\Pi^{k_1 l_1} \cdots \Pi^{k_k l_k} \partial_{k_1} \partial_{l_1} \cdots</p>
+<p>\partial_{k_k} \partial_{l_k} \\</p>
+<p>&amp; \ \times  \Pi^{i_1 j_1} \cdots \Pi^{i_{n-k} j_{n-k}} \partial_{i_1} \partial_{j_1} \cdots</p>
+<p>\partial_{i_{n-k}} \partial_{j_{n-k}} \\</p>
+<p>&amp;= m_{123}(1 \otimes B)(B \otimes 1)</p>
+<p>\end{align}</p>
+<p>Hence we obtain an associative (\ast)-product. This is called Moyal product.</p>
+<p>Sheafifying the Construction</p>
+<p>Now suppose that (U) is a (Zariski) open subset of (X = T^\ast \mathbb{C}^n). Then the star product induces a well-defined map</p>
+<p>[ \ast: O_X(U)((\hbar)) \otimes_\mathbb{C} O_X(U)((\hbar)) \to O_X(U)((\hbar)) ]</p>
+<p>In this way we obtain a sheaf (\mathcal{D}) of (O_X) modules with a non-commutative (\ast)-product defined as above.</p>
+<p>Define a (\mathbb{C}^\ast) action on (T^\ast \mathbb{C}^n) by acting on (x_i) and (p_i) with weight 1. Extend this to an action on (\mathcal{D}) by acting on (hbar) with weight -1.</p>
+<p>Proposition: The algebra (C^\ast)-invariant global sections of (\mathcal{D}) is naturally identified with the algebra of differential operators on (\mathbb{C}^n).</p>
+<p>Proof: The (\mathbb{C}^\ast)-invariant global sections are generated by (\hbar^{-1} x_i) and (\hbar^{-1} p_i). So define a map (\Gamma(\mathcal{D})^{\mathbb{C}^\ast} \to \mathbb{D}) by</p>
+<p>[ \hbar^{-1} x_i \mapsto x_i ]</p>
+<p>[ \hbar^{-1} p_i \mapsto \partial_i ]</p>
+<p>From the definition of the star product, it is clear that this is an algebra map, and that it is both injective and surjective.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2012-11-22-quantum-hamiltonian-reduction/"><i class="fa fa-chevron-circle-left"></i> An exercise in quantum Hamiltonian reduction</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2012-11-29-equations-of-motion-noether/">Equations of motion and Noether&#39;s theorem in the functional formalism <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
+</body>
+
+</html>

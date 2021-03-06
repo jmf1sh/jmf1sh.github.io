@@ -1,0 +1,248 @@
+<!doctype html>
+
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jonathan&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.81.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
+
+        <ul id="social-media">
+          
+
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
+        
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+      <main>
+
+
+
+
+<article>
+
+    <h1>Introduction to Reinforcement Learning</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2018-01-14T00:00:00Z">Jan 14, 2018</time>
+        </li>
+        
+
+        
+
+        <li>4 minutes read</li>
+    </ul>
+</aside>
+
+    
+
+    <p>I would like to record the basic formalism of reinforcement learning. Hopefully, this will lead to a post or series of posts giving a basic tensorflow implementation of a simple deep reinforcement learning model. But first, we have to know what problem we are trying to solve.</p>
+<p>To begin, we have the following data (which are considered to be given as part of the problem):</p>
+<ul>
+<li>a set of states $$\mathcal{S}$$</li>
+<li>for each state $$s \in \mathcal{S}$$, a set $$\mathcal{A}_s$$ of actions</li>
+<li>for each state $$s$$, a mapping $$t_s: \mathcal{A}_s \to \mathcal{S}$$ evolving the system according to the chosen state</li>
+<li>for each state $$s$$, a reward function $$r_s: \mathcal{A}_s \to \mathbb{R}$$</li>
+</ul>
+<p>In addition, we also introduce a parameter $$\gamma \in (0,1)$$ as a measure of ``impatience,'' with 0 representing infinite impatience and 1 representing infinite patience. The importance of $$\gamma$$ will become clearer below.</p>
+<p>Now for a definition: a <em>policy</em> $$\pi$$ is a choice, for each state $$s$$, of a probability distribution on the set of actions $$\mathcal{A}_s$$. Associated to the above data, we also have</p>
+<ul>
+<li>the set $$\mathcal{P}$$ of policies associated with the states and actions</li>
+</ul>
+<p>Now, consider a sequnce of actions $$a_0, a_1, \ldots$$ starting from an initial state $$s_0$$ transforming the system in a sequence of states $$s_0, s_1, \ldots$$. Associated to this, we can define a total reward</p>
+<p>$$ r_{\mathrm{total}} = r_0(s_0, a_0) + \gamma r(s_1, a_1) + \gamma^2 r(s_2, a_2) + \cdots$$</p>
+<p>The weighting by $$\gamma$$ will turn out to be very important shortly. Now recall that a policy $$\pi$$ assigns a probability distribution to the viable actions, and therefore for a given policy $$\pi$$ we can consider the expected value of the above quantity. We define the $$Q$$-function to be</p>
+<p>$$ Q(s, a) = \max_{\pi} \mathbb{E}_\pi[r_{\mathrm{total}}] $$</p>
+<p>From the definition, we see that $$Q$$ measures the maximum possible expected reward starting from the initial state $$s$$ and action $$a$$. The importance of $$Q$$ is clear&ndash;if we know $$Q$$, then we can find the best sequence of actions greedily: at each state $$s$$, we simply choose an action $$a$$ that maximizes $$Q(s,a)$$.</p>
+<p>Now comes the magic. From the definition of $$r_{\mathrm{total}}$$ above, we have</p>
+<p>$$
+\begin{align*}
+Q(s,a) &amp;= \max_{\pi} \mathbb{E}_\pi[r(s,a) + \gamma r(s_1, a_1) + \cdots] \\\<br>
+&amp;= r(s,a) + \gamma \max_\pi \mathbb{E}_\pi[r(s_1, a_1) + \gamma r(s_2, a_2) + \cdots] \\\<br>
+&amp;= r(s,a) + \gamma \max_{a'} Q(t(a), a')
+\end{align*}
+$$</p>
+<p>This recursive relation is known as the <em>Bellman equation</em>. To understand how to solve this equation, let us introduce the space $$\mathcal{F}$$ as follows:</p>
+<p>$$ \mathcal{F} = { (s,a) \ | \ s \in \mathcal{S}, a \in \mathcal{A}_s } $$</p>
+<p>Using the sup-norm, we obtain a Banach space of functions $$\mathcal{F} \to \mathbb{R}$$. Let $$B$$ be the (non-linear) operator on this space defined by</p>
+<p>$$ B(q)(s,a) = r(s,a) + \gamma \max_{a'} q(t(s,a), a') $$</p>
+<p>which is known as the <em>Bellman operator</em>. As stated above, the desired $$Q$$-function satisfies the fixed-point equation $$Q = B(Q)$$. Under reasonable assumptions, it is a straightforward exercise to verify that</p>
+<p>$$| B(q_1) - B(q_2) | \leq \gamma | q_1 - q_2 | $$</p>
+<p>making $$B$$ into a contraction on the space of functions $$\mathcal{F} \to \mathbb{R}$$, provided that $$\gamma \in (0,1)$$. Therefore, by the <a href="https://en.wikipedia.org/wiki/Banach_fixed-point_theorem">Banach fixed-point theorem</a>, the Bellman equation has a unique solution $$Q^\ast$$. Furthermore, this solution can be constructed as follows: we take an initial function $$Q_0$$, and take $$Q^\ast$$ to be the limit of the sequence defined by
+$$ Q_{n+1} = B(Q_n). $$</p>
+<p>Now, the basic ideas of deep reinforcement learning are the following</p>
+<ul>
+<li>use a neural network to provide a reasonable finite-dimensional approximation to the aforementioned Banach space</li>
+<li>using an approximate $$Q$$, generate new sequences of actions and add these to a running list of <em>experiences</em></li>
+<li>periodically, take a random sample of past experiences and use these to update the $$Q$$ function via the Bellman equation</li>
+</ul>
+<p>For more details, see <a href="https://www.nature.com/articles/nature14236">Human-level control through deep reinforcement learning</a>. I plan to follow up with more posts giving a basic implementation using <a href="https://www.tensorflow.org/">tensorflow</a> and <a href="https://github.com/openai/gym">OpenAI Gym</a>.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2017-12-19-variance-stabilizing/"><i class="fa fa-chevron-circle-left"></i> Variance Stabilizing Transformations</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2018-07-10-beta-function/">Euler beta function and Dirichlet distribution <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
+</body>
+
+</html>

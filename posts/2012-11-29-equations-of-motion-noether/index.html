@@ -1,0 +1,264 @@
+<!doctype html>
+
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jonathan&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.81.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
+
+        <ul id="social-media">
+          
+
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
+        
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+      <main>
+
+
+
+
+<article>
+
+    <h1>Equations of motion and Noether&#39;s theorem in the functional formalism</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2012-11-29T00:00:00Z">Nov 29, 2012</time>
+        </li>
+        
+
+        
+
+        <li>3 minutes read</li>
+    </ul>
+</aside>
+
+    
+
+    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+<p>First, let us recall the derivation of the equations of motion and Noether&rsquo;s theorem in classical field theory. We have some action functional (S[\phi]) defined by some local Lagrangian:</p>
+<p>[ S[\phi] = \int L(\phi, \partial \phi) dx. ]</p>
+<p>The classical equations of motion are just the Euler-Lagrange equations</p>
+<p>[ \frac{\delta S}{\delta \phi(x)} = 0</p>
+<p>\iff \partial_\mu \left( \frac{\partial L}{\partial(\partial_\mu\phi)} \right)</p>
+<p>= \frac{\partial L}{\partial \phi} ]</p>
+<p>Now suppose that (S) is invariant under some transformation (\phi(x) \mapsto \phi(x) + \epsilon(x) \eta(x)), so that (S[\phi] = S[\phi+\epsilon \eta]). Here we treat (\eta) as a fixed function but (\epsilon) may be an arbitrary infinitesimal function. The Lagrangian is not necessarily invariant, but rather can transform with a total derivative:</p>
+<p>[ L(\phi+\epsilon \eta) = L(\phi)</p>
+<ul>
+<li>
+<p>\frac{\partial L}{\partial (\partial_\mu \phi)} \eta \partial_\mu \epsilon</p>
+</li>
+<li>
+<p>\epsilon \partial_\mu f^\mu ]</p>
+</li>
+</ul>
+<p>For some unknown vector field (f^\mu) (which we could compute given any particular Lagrangian). So let&rsquo;s compute</p>
+<p>\begin{align}\delta_\epsilon S &amp;= \int \delta_\epsilon L \\</p>
+<p>&amp;= \int \frac{\partial L}{\partial (\partial_\mu \phi)}</p>
+<p>\eta \partial_\mu \epsilon + \epsilon \partial_\mu f^\mu \\</p>
+<p>&amp;= \int \partial_\mu \left(f^\mu - \frac{\partial L}{\partial (\partial_\mu \phi)} \eta \right) \epsilon</p>
+<p>\end{align}</p>
+<p>Let us define the Noether current (J^\mu) by</p>
+<p>[ J^\mu = \frac{\partial L}{\partial (\partial_\mu \phi)} \eta - f^\mu. ]</p>
+<p>Then the previous computation showed that</p>
+<p>[ \frac{\delta S}{\delta \epsilon} = -\partial_\mu J^\mu. ]</p>
+<p>If (\phi) is a solution to the Euler-Lagrange equations, then the variation (dS) vanishes, hence we obtain:</p>
+<p>Theorem (Noether&rsquo;s theorem) The Noether current is divergence free, i.e.</p>
+<p>[ \partial_\mu J^\mu = 0.]</p>
+<p>Functional Version</p>
+<p>First, we derive the functional analogue of the classical equations of motion. Consider an expectation value</p>
+<p>[ \langle \mathcal{O(\phi)} \rangle</p>
+<p>= \int \mathcal{O}(\phi) e^{\frac{i}{\hbar} S} \mathcal{D}\phi ]</p>
+<p>We&rsquo;ll assume that (\phi) takes values in a vector space (or bundle). Then we can perform a change of variables (\psi = \phi + \epsilon), and since (\mathcal{D}\phi = \mathcal{D}\psi) we find that</p>
+<p>[ \int \mathcal{O}(\phi+\epsilon) \exp\left(\frac{i}{\hbar} S[\phi] \right) \mathcal{D}\phi ]</p>
+<p>is independent of (\epsilon). Expanding to first order in (\epsilon), we have</p>
+<p>[ 0 = \int \left(\frac{\delta\mathcal{O}}{\delta \phi}</p>
+<ul>
+<li>\frac{i \mathcal{O}}{\hbar} \frac{\delta S}{\delta \phi} \right)</li>
+</ul>
+<p>\exp \left( \frac{i}{\hbar} S \right) \mathcal{D}\phi  ]</p>
+<p>So we find the quantum analogue of the equations of motion:</p>
+<p>[ \left\langle \frac{\delta \mathcal{O}}{\delta \phi} \right\rangle</p>
+<ul>
+<li>\frac{i}{\hbar} \left\langle \mathcal{O} \frac{\delta S}{\delta \phi} \right\rangle = 0]</li>
+</ul>
+<p>Next, we move on to the quantum version of Noether&rsquo;s theorem. Suppose there is a transformation (Q) of the fields leaving the action invariant. Assuming the path integral measure is invariant, we obtain</p>
+<p>[ \left\langle QF \right \rangle + \frac{i}{\hbar} \left\langle F QS \right\rangle = 0]</p>
+<p>To compare with the classical result, consider (Q) to be the (singular) operator</p>
+<p>[ Q = \frac{\delta}{\delta \epsilon(x)} ]</p>
+<p>Then by the previous calculations,</p>
+<p>[ Q S = -\delta_\mu J^\mu, ]</p>
+<p>so we obtain</p>
+<p>[ \left\langle \frac{\delta \mathcal{O}}{\delta \epsilon(x)} \right\rangle</p>
+<p>= \frac{i}{\hbar} \left\langle \mathcal{O} \partial_\mu J^\mu \right\rangle.  ]</p>
+<p>This is the Ward-Takahashi identity, the quantum analogue of Noether&rsquo;s theorem.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2012-11-24-moyal-product/"><i class="fa fa-chevron-circle-left"></i> The Moyal product</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2012-12-13-weyl-wigner-transform/">The Weyl and Wigner transforms <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
+</body>
+
+</html>

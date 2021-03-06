@@ -1,0 +1,248 @@
+<!doctype html>
+
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jonathan&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.81.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
+
+        <ul id="social-media">
+          
+
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
+        
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+      <main>
+
+
+
+
+<article>
+
+    <h1>Geometry of curved spacetime, part 1</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2012-01-19T00:00:00Z">Jan 19, 2012</time>
+        </li>
+        
+
+        
+
+        <li>5 minutes read</li>
+    </ul>
+</aside>
+
+    
+
+    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+<p>I&rsquo;m TAing a course on general relativity this semester, and I&rsquo;m covering some of the geometry background in tutorials. Since I need to prepare some material for these, I thought there was no harm in putting it up on this blog. So here we go.</p>
+<p>Throughout, we&rsquo;ll let (M) be a smooth manifold equipped with a metric (g). Whenever it makes life easier, I&rsquo;ll assume that (g) is positive definite (rather than Lorentzian). For a point (p \in M), denote its tangent space by (T_p M).</p>
+<p>Theorem 1 For any (p \in M), there exist a neighborhood (U) of 0 in (T_p M) and a neighborhood (V) of (p) in (M), and a diffeomorphism (\exp_p: U \to V) called exponential map. This map takes lines through the origin in (T_p M) to geodesics in (M) passing through (p).</p>
+<p>Theorem 2 In exponential coordinates, the components of the metric are</p>
+<p>[ g_{ij} = \delta_{ij} + O(|x|^2) ]</p>
+<p>Corollary 3 In exponential coordinates, the Christoffel symbols vanish at (p).</p>
+<p>Corollary 4 The Christoffel symbols are not the components of a tensor.</p>
+<p>Corollary 5 Not all metrics are equivalent: there is a local invariant, called the curvature.</p>
+<p>Construction of exponential map. The metric on (M) induces a (constant) metric (g_{ij}) on (T_p M). By a linear change of coordinates on (T_p M), we can assume that this induced metric is just (g_{ij} = \delta_{ij}). Now the geodesic equation on (M) is a 2nd order ODE which has a unique solution once we specify an initial condition. An initial condition is just a pair ((p,v)) consisting of a point (p \in M) and tangent vector (v \in T_p M). Since we have fixed (p), each (v \in T_p M) gives a unique geodesic through (p). Call it (\gamma_v(t)). Then define the exponential map as follows:</p>
+<p>[ \exp_p(v) := \gamma_v(1) ]</p>
+<p>The fact that this map is well-defined, smooth, and 1-1 (at least locally) follows from the standard existence and uniqueness theorem for ODEs. So to see that it is a diffeomorphism near (0), we can just compute its differential and apply the inverse function theorem.</p>
+<p>The easy way out. By construction, every geodesic through 0 is of the form (\gamma_v(t) = tv). Plugging this into the geodesic equation,</p>
+<p>[ \dot{v} + \Gamma(x)^i_{jk} v^j v^k = 0 ]</p>
+<p>we see that at 0, (\Gamma^i_{jk}) vanishes, and in particular, the first partial derivatives of the metric vanish.</p>
+<p>The hard way: the differential of (exp) at 0. First, taylor expand the velocity of a geodesic, and evaluate at time (t = 1):</p>
+<p>[ v(t) = v + \dot{v} + \frac{1}{2} \ddot{v} + \cdots ]</p>
+<p>Now, by the geodesic equation, (\dot{v}) is (O(v^2)). Similarly, by differentiating the geodesic equation, we find that all of the higher time derivatives are also (O(v^2)). So we find that the exponential map is just the identity + (O(v^2)), and hence its differential at 0 is just the identity.</p>
+<p>Now, we have argued that in exponential coordinates, the Christoffel symbols vanish at 0. Recall that for any tensor (T), if the components of (T) vanish at some point (p) in one coordinate system, then (T) is identically 0 at that point (i.e. its components vanish at that point in all coordinate systems). If the Christoffel symbols were a tensor, then, the above shows that they must be identically zero at all points in (M), in all coordinate systems. But this is absolutely not the case&ndash;even in flat (\mathbb{R}^n), we can pick coordinates so that the Christoffel symbols do not vanish. Hence they are not a tensor.</p>
+<p>Aside Though the Christoffel symbols are not a tensor, they are the components of something which does have a coordinate indepdendent definition: a connection 1-form. A connection 1-form is not a tensor but rather a section of a certain associated bundle. More on this in future posts.</p>
+<p>Claim Suppose (\gamma) is a curve in (M) with tangent vector (T), and suppose (V) is a vector field defined on (\gamma). Then (\nabla_T V) is well-defined, independent of the smooth extension of (V).</p>
+<p>Proof Suppose (V) and (W) are two smooth vector field that agree on (\gamma). We would like to show that</p>
+<p>[ \nabla_T V = \nabla_T W ]</p>
+<p>i.e., this directional derivative depends only on their restriction to (\gamma). It suffices to prove this pointwise. In coordinates, we have</p>
+<p>[ \nabla_T V = T^k \frac{\partial V^i}{\partial x^k} + \Gamma^i_{jk} V^j T^k ]</p>
+<p>and similarly for (W). The terms involving Christoffel symbols do not depend on derivatives of (V) or (W), so they agree by assumption. If (T) is zero at a point, there is nothing to show. So assume that (T) is nonzero at some point. Then near this point, we can choose coordinates (x^i) such that</p>
+<p>[ \gamma(t) = (t, 0) ]</p>
+<p>so that</p>
+<p>[ T = (1, 0) ]</p>
+<p>Then (V) and (W) agree when (x^i = 0) for (i \geq 2), and hence their partials agree. We have</p>
+<p>[ T^k \frac{\partial V^i}{\partial x^k} = \frac{V^i}{\partial x^1} = T^k \frac{\partial W^i}{\partial x^k} ]</p>
+<p>Explicit Formulas for Christoffel Symbols. Using properties of covariant derivatives, we find</p>
+<p>[ 0 = \nabla_k g_{ij} = \frac{\partial g_{ij}}{\partial x^k} - \Gamma^l_{ki} g_{lj} - \Gamma^l_{kj} g_{il} ]</p>
+<p>So</p>
+<p>[ \Gamma_{kij} + \Gamma_{kji} = g_{ij,k} ]</p>
+<p>[ \Gamma_{ijk} + \Gamma_{ikj} = g_{jk,i} ]</p>
+<p>[ \Gamma_{jki} + \Gamma_{jik} = g_{ki,j} ]</p>
+<p>Taking (2) + (3) - (1) gives</p>
+<p>[ 2\Gamma_{ijk} = g_{jk,i} + g_{ki,j} - g_{ij,k} ]</p>
+<p>Hence</p>
+<p>[ \Gamma_{ij}^k = \frac{g^{kl}}{2}\left(g_{jl,i} + g_{li,j} - g_{ij,l} \right) ]</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2012-01-16-path-integrals-part-1/"><i class="fa fa-chevron-circle-left"></i> Path integrals, part 1</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2012-01-26-geometry-of-spacetime-part-2/">Geometry of curved spacetime, part 2 <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
+</body>
+
+</html>

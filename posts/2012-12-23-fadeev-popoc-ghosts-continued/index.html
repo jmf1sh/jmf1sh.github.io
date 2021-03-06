@@ -1,0 +1,225 @@
+<!doctype html>
+
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jonathan&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.81.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
+
+        <ul id="social-media">
+          
+
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
+        
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+      <main>
+
+
+
+
+<article>
+
+    <h1>Fadeev-Popov ghosts, continued</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2012-12-23T00:00:00Z">Dec 23, 2012</time>
+        </li>
+        
+
+        
+
+        <li>3 minutes read</li>
+    </ul>
+</aside>
+
+    
+
+    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+<p>Last time I sketched how we can represent an integral over a submanifold (M \subset \mathbb{R}^n) by an integral of the form</p>
+<p>[ \int_{\mathbb{R}^n} f(x) \delta(G(x)) \exp\left(\bar{\eta}G(x+\eta) \right) d\eta d\bar{\eta} dx. ]</p>
+<p>Here, (\eta, \bar{\eta}) are Fermionic variables called Fadeev-Popov ghosts, which are introduced to cancel an unwanted determinant factor. The function (G(x)) singles out the submanifold (M) as (M = G^{-1}(0)).</p>
+<p>Now suppose that we start with a vector (or affine) space (V), which is acted on by a group (H). We would like to undstand integrals over the quotient (V / H) in terms of integrals over (V). Suppose there is some function (G(x)) on (V) satisfying the following property:</p>
+<pre><code>For each level \(w\) of \(G\), the subspace \(M_w := G^{-1}(w)\) intersects the orbits transversely, and furthermore every \(H\)-orbit intersects \(M_w\) exactly once. (*)
+</code></pre>
+<p>We call such a function a gauge-fixing function, and a level (w) a gauge-fixing. By assumption, we have (V/H \cong M_w) for any (w). Hence using the integral we derived last time, we can integrate over (M_w) for any particular choice of (w), and this ought to be the same as integrating over (V/H). The problem, however, is that in the QFT setting it&rsquo;s not clear what the Feynman rules should be for such a path integral. The final trick is that since the answer should be independent of (w), and by integrating over all possible (w) we obtain a Lagrangian from which we can derive sensible Feynman rules.</p>
+<p>We have some integral</p>
+<p>[Z = \int \delta(G(x) - w) \exp\left{\frac{i}{\hbar}S(x) + \bar{\eta}dG \eta\right} dx d\eta d\bar{\eta} ]</p>
+<p>which is independent of (w). So we add a Gaussian weight an integrate over (w):</p>
+<p>\begin{align}</p>
+<p>Z' &amp;= \int \delta(G(x) -w) \exp\left{\frac{i}{\hbar}S(x) + \bar{\eta}dG \eta - \frac{1}{2\xi} |w|^2\right}</p>
+<p>dx dw d\eta d\bar{\eta}\</p>
+<p>&amp;= \int \exp\left{\frac{i}{\hbar}S(x) + \bar{\eta}dG \eta - \frac{1}{2\xi} |G(x)|^2 \right} dx d\eta d\bar{\eta}.</p>
+<p>\end{align}</p>
+<p>Here, (\xi) is an arbitrary real positive constant, and we denote the new integral by (Z') to indicate that it differs from the old path integral (Z) by (at most) an overall constant. Now the important thing is that the new action appear in the integrand of (Z') is gauge-fixed and hence there is no problem whatsoever in deriving sensible, meaningful Feynman rules. The gauge-fixing term (|G(x)|^2) serves to make the action non-degenerate, so that propagators are well-defined, while the term involving the Fermions (\eta, \bar{\eta}) generates new Feynman rules that &ldquo;cancel&rdquo; the superfluous degrees of freedom due to gauge redundancy.</p>
+<p>The question remains, what if we choose some other gauge-fixing function? i.e., what happens if we perturb (G(x)) to some new function satisfying property (*)? We&rsquo;ll answer this using the BRST formalism.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2012-12-21-fadeev-popov-ghosts/"><i class="fa fa-chevron-circle-left"></i> Fadeev-Popov ghosts</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2012-12-23-brst/">BRST <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
+</body>
+
+</html>

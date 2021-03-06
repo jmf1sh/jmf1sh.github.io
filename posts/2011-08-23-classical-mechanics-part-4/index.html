@@ -1,0 +1,234 @@
+<!doctype html>
+
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jonathan&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.81.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
+
+        <ul id="social-media">
+          
+
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
+        
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+      <main>
+
+
+
+
+<article>
+
+    <h1>Classical mechanics, part 4</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2011-08-23T00:00:00Z">Aug 23, 2011</time>
+        </li>
+        
+
+        
+
+        <li>3 minutes read</li>
+    </ul>
+</aside>
+
+    
+
+    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+<p>Recall from last time that a classical mechanical system consists of a manifold (M) (the configuration space) and a function (L) on the tangent bundle (TM). The equations of motion for a path (x(t)) in (M) are the 2nd order Euler-Lagrange equations:</p>
+<p>[ \frac{d}{dt}\left( \frac{\partial L}{\partial v}(x, \dot{x}) \right) = \frac{\partial L}{\partial x}(x, \dot{x}) ]</p>
+<p>Hamilton discovered a way of recasting these equations as a first order system for a path in a related manifold, the cotangent bundle (T^\ast M). The benefits are twofold: in addition to reducing the equations to a first order system (at the cost of introducing new variables), it turns out that this framework makes it much easier to find conserved quantities and prove theorems about mechanical systems. So let&rsquo;s see what he did.</p>
+<p>Theorem Under mild assumptions on (L), there is a function (H) on (T^\ast M) constructed canonically out of (L) such that solutions of the Euler-Lagrange equations are in 1-1 correspondence with solutions (q(t), p(t)) on (T^\ast M) of Hamilton&rsquo;s equations</p>
+<p>[ \dot{q} = \frac{\partial H}{\partial p}(q, p) ]</p>
+<p>[ \dot{p} = -\frac{\partial H}{\partial q}(q,p) ]</p>
+<p>Furthermore, if the original Lagrangian function (L) is not explicitly time-dependent, then the function (H) is constant for any solution of the equations of motion.</p>
+<p>To start with, introduce coordinates (x, v) on (TM) as before. We will define new coordinates (q,p) as follows:</p>
+<p>[ q(x,v) = x ]</p>
+<p>[ p(x,v) = \frac{\partial L}{\partial x}(x,v) ]</p>
+<p>Our assumption on (L) will be the following: the above formulas can be inverted to obtain (x) and (v) as functions of (q) and (p). It is easily seen from the definition of (p) that under a coordinate transformation (of (x)), it behaves as a 1-form, so the coordinates (q) and (p) can be interpreted as local coordinates on the cotangent bundle (T^\ast M). We construct the Hamiltonian as</p>
+<p>[ H(q,p) = p\cdot v(q,p) - L(x(q,p), v(q,p)) ]</p>
+<p>(this is the Legendre transform&ndash;more later). Of course, the above formula is not well-defined if we cannot solve for (x) and (v) in terms of (p) and (q)&ndash;hence the assumption. Now we check:</p>
+<p>[ \frac{\partial H}{\partial p} = v + p \frac{\partial v}{\partial p} - \frac{\partial L}{\partial x} \frac{\partial x}{\partial p} -\frac{\partial L}{\partial v}\frac{\partial v}{\partial p} = v + p\frac{\partial v}{\partial p} - p\frac{\partial v}{\partial p} = v]</p>
+<p>Since (\dot{x} = v), this is the first of Hamilton&rsquo;s equations.</p>
+<p>For the second, we perform a similar computation:</p>
+<p>[ \frac{\partial H}{\partial q} = -\frac{\partial L}{\partial x} \frac{\partial x}{\partial q} - \frac{\partial L}{\partial v} \frac{\partial v}{\partial q} = -\frac{\partial L}{\partial x} ]</p>
+<p>But the Euler-Lagrange equations say that</p>
+<p>[ \dot{p} = \frac{d}{dt}\frac{\partial L}{\partial v} = \frac{\partial L}{\partial x} = -\frac{\partial H}{\partial x}, ]</p>
+<p>so we&rsquo;ve obtained the second of Hamilton&rsquo;s equations.</p>
+<p>For the last part, suppose that the Lagrangian does not depend explicitly on time, i.e.</p>
+<p>[ \frac{\partial L}{\partial t} = 0. ]</p>
+<p>Then we compute:</p>
+<p>[ \frac{d}{dt}H = \frac{\partial H}{\partial q}\dot{q} + \frac{\partial H}{\partial p}\dot{p} = \frac{\partial H}{\partial q} \frac{\partial H}{\partial p} - \frac{\partial H}{\partial p} \frac{\partial H}{\partial q} = 0. ]</p>
+<p>Hence (H) is automatically conserved. For this reason, (H) is often called the energy of the system.</p>
+<p>Later, we will see that conserved quantities correspond to symmetries, and conservation of energy is a statement about the symmetry corresponding to time translation.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2011-08-19-classical-mechanics-part-3/"><i class="fa fa-chevron-circle-left"></i> Classical mechanics, part 3</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2011-08-25-classical-mechanics-part-5/">Classical mechanics, part 5 <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
+</body>
+
+</html>

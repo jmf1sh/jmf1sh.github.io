@@ -1,0 +1,226 @@
+<!doctype html>
+
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jonathan&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.81.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
+
+        <ul id="social-media">
+          
+
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
+        
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+      <main>
+
+
+
+
+<article>
+
+    <h1>Clifford algebras and spinors part 3: Bochner identity</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2014-03-18T00:00:00Z">Mar 18, 2014</time>
+        </li>
+        
+
+        
+
+        <li>2 minutes read</li>
+    </ul>
+</aside>
+
+    
+
+    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+<p>Let $M$ be a Riemannian manifold, and let $Cl(M)$ be its Clifford bundle. Let $E \to M$ be any vector bundle with connection, and assume that $C^\infty(M, E)$ is a $Cl(M)$-module. We can define a Dirac operator $\mathcal{D}$ acting on sections of $E$ via the formula</p>
+<p>[ \mathcal{D} \sigma = \sum_{i=1}^n e_i \cdot \nabla_i \sigma ]</p>
+<p>for any orthonormal frame ${e_1, \dots, e_n}$ on $M$, and where $\cdot$ denotes the Clifford module action. We demand that the connection on $E$ is compatible with Clifford multiplication in the following sense:</p>
+<p>[ \nabla_j (e_i \cdot \sigma) = (\nabla_j e_i) \cdot \sigma + e_i \cdot \nabla_j \sigma. ]</p>
+<p>Let $R$ denote the curvature of $E$, i.e. we have</p>
+<p>[ [\nabla_i, \nabla_j] \sigma =  R(e_i, e_j) \sigma+ \nabla_{[e_i, e_j]} \sigma ]</p>
+<p>We can define an endomorphism $\mathcal{R}$ on $E$ by</p>
+<p>[ \mathcal{R} = \frac{1}{2} \sum_{ij} R(e_i, e_j). ]</p>
+<p>Theorem. We have the identity $\mathcal{D}^2 = -\Delta + \mathcal{R}$.</p>
+<p>Proof. We compute</p>
+<p>\begin{align}</p>
+<p>\mathcal{D}^2 \sigma &amp;= \sum_{ij} e_i \nabla_i \left( e_j \nabla_j \sigma \right) \</p>
+<p>&amp;= \sum_{ij} e_i e_j \nabla_i \nabla_j \sigma + e_i ( \nabla_i e_j ) \nabla_j \sigma \</p>
+<p>&amp;= -\Delta \sigma + \frac{1}{2}\sum_{ij}e_i e_j [\nabla_i, \nabla_j] \sigma + \sum_{ij} e_i ( \nabla_i e_j) \nabla_j \sigma \</p>
+<p>&amp;= -\Delta \sigma + \frac{1}{2}\sum_{ij}e_i e_j R(e_i, e_j) \sigma + \frac{1}{2}\sum_{ij} e_i e_j \nabla_{[e_i, e_j]} \sigma+ \sum_{ij} e_i ( \nabla_i e_j) \nabla_j \sigma \</p>
+<p>&amp;= (-\Delta + \mathcal{R})\sigma + \frac{1}{2} \sum_{ij} \left( e_i e_j \nabla_{[e_i, e_j]}\sigma +  e_i (\nabla_i e_j) \nabla_j + e_j (\nabla_j e_i) \nabla_i \right)\sigma</p>
+<p>\end{align}</p>
+<p>We will be done provided we can show that the last term vanishes. Notice that it is fully tensorial, since it can be expressed as $\mathcal{D}^2 + \Delta - \mathcal{R}$. On the other hand, the terms $[e_i, e_j]$ and $\nabla_j e_i$ are (by definition!) proportional to Christoffel symbols. Since we can always choose a frame so that these vanish at a point, these terms must vanish identically. Hence we have $0 = \mathcal{D}^2 + \Delta - \mathcal{R}$, as desired.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2014-03-06-clifford-algebras-part-2/"><i class="fa fa-chevron-circle-left"></i> Clifford algebras and spinors, part 2: spin structures and Dirac operators</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2014-05-14-quantum-bv-complex/">The basic idea of the quantum BV complex <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
+</body>
+
+</html>

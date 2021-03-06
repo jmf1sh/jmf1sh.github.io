@@ -1,0 +1,226 @@
+<!doctype html>
+
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jonathan&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.81.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
+
+        <ul id="social-media">
+          
+
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
+        
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+      <main>
+
+
+
+
+<article>
+
+    <h1>The 1PI effective action</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2012-11-07T00:00:00Z">Nov 7, 2012</time>
+        </li>
+        
+
+        
+
+        <li>2 minutes read</li>
+    </ul>
+</aside>
+
+    
+
+    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+<p>In this post I&rsquo;d like to try to understand the 1PI effective action that is often of interest. Suppose we have a QFT in some bosonic field (\phi(x)) taking values in a vector space (this is important). Then its vev (\phi_{cl}(x) := \langle \phi(x) \rangle) is just an ordinary (but possibly distributional) field on spacetime. The question is, what is the field equation satisfied by (\phi_{cl})? I.e., if we average over quantum effects by replacing all fields by their vevs, what is the action that governs this (now completely classical) theory? The 1PI effective action answers exactly this question.</p>
+<p>Consider the generating functional</p>
+<p>[ Z[J] = \int e^{-S[\phi]+\langle \phi, J \rangle} \mathcal{D}\phi ]</p>
+<p>Then for a given source (J), define the (J)-vev of (\phi(x)) to be</p>
+<p>[ \phi_J(x) = \frac{\partial \log Z[J]}{\partial J}. ]</p>
+<p>Now let&rsquo;s take (\Gamma) to be the Legendre transform of (\log Z) with respect to (J):</p>
+<p>[ \Gamma[\phi_J] = \langle J, \phi_J \rangle - \log Z[J] ]</p>
+<p>Then we compute:</p>
+<p>[ \frac{\partial \Gamma}{\partial \phi_J} = J + \frac{\partial J}{\partial \phi_J} \phi_J</p>
+<p>-\frac{\partial \log Z[J]}{\partial J} \frac{\partial J}{\partial \phi_J} = J. ]</p>
+<p>Now consider the situation without a background source, i.e. (J = 0). Then (\phi_0 = \phi_{cl}) and we find</p>
+<p>[ \frac{\partial \Gamma}{\partial \phi_{cl}} = 0 ]</p>
+<p>Hence, (\phi_{cl}) satisfies the Euler-Lagrange equations associated to the functional (\Gamma). Note that from the Legendre transform, (\Gamma) takes quantum effects (i.e. Feynman diagrams with loops) into account, even though the field and the equations are purely classical!</p>
+<p>By studying these equations, we might find instanton solutions (or solitons in Lorentz signature).</p>
+<p>Now for the name. Some combinatorics and algebra (which I will skip!) show that (\Gamma[\phi_{cl}]) is itself a generating functional for certain correlation functions, then 1PI correlation functions:</p>
+<p>[ \frac{\partial^n \Gamma}{\partial \phi(x_1) \cdots \partial \phi(x_n)} = \langle \phi(x_1) \cdots \phi(x_n) \rangle_{1PI}. ]</p>
+<p>The 1PI subscript means that the RHS is computed in perturbation theory by summing over only the connection 1PI (1 particle irreducible) Feynman diagrams.</p>
+<p>Warning: As usual, there are regularization issues, both in the UV and IR. UV divergences can be solved by a cutoff (if we only care about effective field theory), but IR divergences are much more technical. For this reason (and others), it is sometimes preferable to try to understand the low energy dynamics by studying the Wilsonian effective action. As the Wilsonian effective action does not take IR modes into account, it can avoid many of the difficulties of the 1PI effective action.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2012-11-05-spontaneous-symmetry-breaking-qft/"><i class="fa fa-chevron-circle-left"></i> Spontaneous symmetry breaking in QFT</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2012-11-22-quantum-hamiltonian-reduction/">An exercise in quantum Hamiltonian reduction <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
+</body>
+
+</html>

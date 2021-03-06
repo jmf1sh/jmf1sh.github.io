@@ -1,0 +1,241 @@
+<!doctype html>
+
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jonathan&#39;s blog</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="Jonathan Fisher">
+    <meta name="generator" content="Hugo 0.81.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
+
+        <ul id="social-media">
+          
+
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
+        
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+      <main>
+
+
+
+
+<article>
+
+    <h1>Circle diffeomorphisms</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2012-07-13T00:00:00Z">Jul 13, 2012</time>
+        </li>
+        
+
+        
+
+        <li>2 minutes read</li>
+    </ul>
+</aside>
+
+    
+
+    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+<p>This is the first of a series of posts based on these lecture notes on KAM theory. For now I just want to outline section 2, which is a toy model of KAM thoery.</p>
+<p>Circle Diffeomorphisms</p>
+<p>We consider a map (\phi: \mathbb{R} \to \mathbb{R}) defined by</p>
+<p>[ \phi(x) = x + \rho + \eta(x) ]</p>
+<p>where (\rho) is its rotation number and (\eta(x)) is &ldquo;small&rdquo;.</p>
+<p>Define (S_\sigma) to be the strip ({ |\mathrm{Im} z|&lt;\sigma} \subset \mathbb{C}) and let (B_\sigma) be the space of holomorphic functions bounded on (S_\sigma) with sup norm (|\cdot|_\sigma).</p>
+<p>Goal: Show that if (|\eta|_\sigma) is sufficiently small, then there exists some diffeomorphism (H(x)) such that</p>
+<p>[ H^{-1} \circ \phi \circ H (x) = x + \rho ]</p>
+<p>i.e. that (\phi) is conjugate to a pure rotation.</p>
+<p>Linearization</p>
+<p>The idea is that if (\eta) is small, then (H) should be close to the identity, so we suppose that</p>
+<p>[ H(x) = x + h(x) ]</p>
+<p>where (h(x)) is small. Plugging this into the equation above and discarding higher order terms yields</p>
+<p>[ h(x+\rho) - h(x) = \eta(x) ]</p>
+<p>Since (\eta) is periodic, we Fourier transform both sides to obtain an explicit formula for the Fourier coefficients of (h(x)). We have to show several things:</p>
+<ol>
+<li>
+<p>The Fourier series defining (h(x)) converges in some appropriate sense.</p>
+</li>
+<li>
+<p>The function (H(x) = x + h(x)) is a diffeomorphism.</p>
+</li>
+<li>
+<p>The composition (\tilde{\phi} = H^{-1} \circ \phi \circ H) is closer to a pure rotation than (\phi), in the sense that</p>
+</li>
+</ol>
+<p>[ \tilde{\phi}(x) = x + \rho + \tilde{\eta}(x) ]</p>
+<p>where (|\tilde{\eta}| \ll |\eta|).</p>
+<p>Newton&rsquo;s Method</p>
+<p>Carrying out the analysis, one finds that for appropriate epsilons and deltas, if (\eta \in B_\sigma) then (H \in B_{\sigma - \delta}) and that (|\tilde{\eta}|_{\sigma-\delta} \leq C |\eta|_\sigma^2). By carefully choosing the deltas, we can iterate this procedure (composing the (H)&rsquo;s) to obtain a well-defined limit (H_\infty \in B_{\sigma/2}) such that</p>
+<p>[ H_\infty^{-1} \circ \phi \circ H_\infty (x) = x + \rho, ]</p>
+<p>as desired.</p>
+<p>So in fact the idea of the proof is extremely simple, and all of the hard work is in proving some estimates.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2012-03-03-gaussian-integrals-wick/"><i class="fa fa-chevron-circle-left"></i> Gaussian integrals and Wick&#39;s theorem</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2012-07-23-kam-1/">KAM <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6> |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
+</body>
+
+</html>
