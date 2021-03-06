@@ -2,7 +2,7 @@
 
 <html lang="en-us">
 
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>jonathan&#39;s blog</title>
@@ -14,41 +14,64 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</head>
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
 
-<body>
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
     <div id="container">
-        <header>
-            <h1>
-                <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
-            </h1>
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
 
-            <ul id="social-media">
-                
-        
-                
-                <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-        
-                
-            </ul>
-            
-            <p><em>mathematics, physics, programming, and machine learning</em></p>
-            
-        </header>
+        <ul id="social-media">
+          
 
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
         
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
 <nav>
     <ul>
         
@@ -66,8 +89,8 @@
         
     </ul>
 </nav>
-        
-        <main>
+
+      <main>
 
 
 
@@ -83,36 +106,23 @@
             <time class="post-date" datetime="2017-12-19T13:49:09&#43;01:00">Dec 19, 2017</time>
         </li>
         
-        
 
         
 
-        <li>1 min read</li>
+        <li>One minute read</li>
     </ul>
 </aside>
+
     
 
-    <p>I want to record here a very interesting thing which I recently discovered, <a href="https://en.wikipedia.org/wiki/Variance-stabilizing_transformation">variance-stabilizing transformations</a>. The idea is very simple: suppose we have a random variable <span  class="math">\(x\)</span>, which follows a probability distribution which is parametrized solely by its mean <span  class="math">\(\mu\)</span>, with variance <span  class="math">\(var(x) = g(\mu)\)</span> a known function of the mean.</p>
-
-<p>Now, suppose we take the new random variable <span  class="math">\(y = f(x)\)</span>, for some yet-to-be-determined function <span  class="math">\(f\)</span>. Assuming that <span  class="math">\(x\)</span> is reasonably localized about its mean, we can make the approximation</p>
-
-<p><span  class="math">\[ f(x) = f(\mu + (x-\mu)) \approx f(\mu) + f'(\mu)(x-\mu). \]</span></p>
-
+    <p>I want to record here a very interesting thing which I recently discovered, <a href="https://en.wikipedia.org/wiki/Variance-stabilizing_transformation">variance-stabilizing transformations</a>. The idea is very simple: suppose we have a random variable $$x$$, which follows a probability distribution which is parametrized solely by its mean $$\mu$$, with variance $$var(x) = g(\mu)$$ a known function of the mean.</p>
+<p>Now, suppose we take the new random variable $$y = f(x)$$, for some yet-to-be-determined function $$f$$. Assuming that $$x$$ is reasonably localized about its mean, we can make the approximation</p>
+<p>$$ f(x) = f(\mu + (x-\mu)) \approx f(\mu) + f'(\mu)(x-\mu). $$</p>
 <p>Then we have</p>
-
-<p>
-\begin{align}
-E[y] &\approx f(\mu) \\
-var(y) &\approx f'(\mu)^2 var(x) \\
- &= f'(\mu)^2 g(\mu)
-\end{align}
-</p>
-
-<p>Now, suppose we want to choose <span  class="math">\(f(x)\)</span> so that <span  class="math">\(var(y) \approx 1\)</span>. Using the above approximation, we have <span  class="math">\( f'(\mu) = \frac{1}{\sqrt{g(\mu)}} \)</span>, which we can solve as</p>
-
-<p><span  class="math">\[ f(\mu) = \int \frac{1}{\sqrt{g(\mu)}} d\mu\]</span></p>
-
-<p>Now let's take the special case of the Poisson distrubution, where <span  class="math">\(var(x) = \mu\)</span>. Then <span  class="math">\(f(\mu) = \int \frac{1}{\sqrt \mu} d\mu = 2\sqrt{\mu}\)</span>. This is very nearly the <a href="https://en.wikipedia.org/wiki/Anscombe_transform">Anscombe transform</a> <span  class="math">\(x \mapsto 2\sqrt{x+3/8}\)</span>. The additional shift by <span  class="math">\(3/8\)</span> can be understood by doing a more careful analysis of the variance under the transformation.</p>
+<!-- raw HTML omitted -->
+<p>Now, suppose we want to choose $$f(x)$$ so that $$var(y) \approx 1$$. Using the above approximation, we have $$ f'(\mu) = \frac{1}{\sqrt{g(\mu)}} $$, which we can solve as</p>
+<p>$$ f(\mu) = \int \frac{1}{\sqrt{g(\mu)}} d\mu$$</p>
+<p>Now let&rsquo;s take the special case of the Poisson distrubution, where $$var(x) = \mu$$. Then $$f(\mu) = \int \frac{1}{\sqrt \mu} d\mu = 2\sqrt{\mu}$$. This is very nearly the <a href="https://en.wikipedia.org/wiki/Anscombe_transform">Anscombe transform</a> $$x \mapsto 2\sqrt{x+3/8}$$. The additional shift by $$3/8$$ can be understood by doing a more careful analysis of the variance under the transformation.</p>
 
 
 </article>
@@ -193,12 +203,13 @@ var(y) &\approx f'(\mu)^2 var(x) \\
 
 </main>
     <footer>
-        <h6> | 
+        <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
             <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
 </body>
 
 </html>

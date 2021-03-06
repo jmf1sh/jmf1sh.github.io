@@ -2,7 +2,7 @@
 
 <html lang="en-us">
 
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>jonathan&#39;s blog</title>
@@ -14,41 +14,64 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</head>
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
 
-<body>
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
     <div id="container">
-        <header>
-            <h1>
-                <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
-            </h1>
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
 
-            <ul id="social-media">
-                
-        
-                
-                <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-        
-                
-            </ul>
-            
-            <p><em>mathematics, physics, programming, and machine learning</em></p>
-            
-        </header>
+        <ul id="social-media">
+          
 
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
         
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
 <nav>
     <ul>
         
@@ -66,8 +89,8 @@
         
     </ul>
 </nav>
-        
-        <main>
+
+      <main>
 
 
 
@@ -83,75 +106,46 @@
             <time class="post-date" datetime="2011-11-12T00:00:00Z">Nov 12, 2011</time>
         </li>
         
-        
 
         
 
-        <li>2 min read</li>
+        <li>2 minutes read</li>
     </ul>
 </aside>
+
     
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
-
-<p>For some reason I've been interested in lattice QFT recently, especially lattice gauge theory (note to self: a miniproject for the Christmas break is to understand the paper by Kogut and Susskind <a href="http://prd.aps.org/abstract/PRD/v11/i2/p395_1">http://prd.aps.org/abstract/PRD/v11/i2/p395_1</a>). As a warm-up, I thought I would try understanding plain-old 1D QM on the lattice, and writing some code to see if I got results that are at all reasonable.</p>
-
+<p>For some reason I&rsquo;ve been interested in lattice QFT recently, especially lattice gauge theory (note to self: a miniproject for the Christmas break is to understand the paper by Kogut and Susskind <a href="http://prd.aps.org/abstract/PRD/v11/i2/p395_1)">http://prd.aps.org/abstract/PRD/v11/i2/p395_1)</a>. As a warm-up, I thought I would try understanding plain-old 1D QM on the lattice, and writing some code to see if I got results that are at all reasonable.</p>
 <p>The Setup: We will take as our space of states (\mathscr{H} = L^2([0,1])) and hamiltonian</p>
-
 <p>$$</p>
-
-<p>H = -\frac{d<sup>2}{dx</sup>2} + V(x).</p>
-
+<p>H = -\frac{d^2}{dx^2} + V(x).</p>
 <p>$$</p>
-
 <p>for some real function (V(x)) defined on ([0,1]).</p>
-
 <p>Now fix some large positive integer (N). Let (\epsilon = 1/N). We will consider the subspace (\mathscr{H}_N) of (\mathscr{H}) spanned by those functions that are constant on the subintervals (i\epsilon, (i+1)\epsilon)). Such a function is defined (a.e.) by the (N) values it takes on these intervals, so we may identify (\mathscr{H}_N \cong \mathbb{C}^N) as vector spaces. Let us denote elements of (\mathscr{H}_N) by (\psi_i) for (i = 0, \ldots, N-1). Thinking of these as the values of a function (\psi(x)) at (x = i\epsilon), we see that the inner product on (\mathscr{H}_N) is given by</p>
-
 <p>$$</p>
-
-<p>(\phi, \psi) = \int<em>0^1 \bar{\phi}(x) \psi(x) dx = \sum</em>^{N-1} \bar{\phi}_i \psi(i)</p>
-
+<p>(\phi, \psi) = \int_0^1 \bar{\phi}(x) \psi(x) dx = \sum_{i=0}^{N-1} \bar{\phi}_i \psi(i)</p>
 <p>$$</p>
-
 <p>So we see that with these identifications, (\mathscr{H}_N) is just (\mathbb{C}^N) with the usual hermitian inner product.</p>
-
 <p>Now, we can approximate (d/dx) with the forward and backward difference operators</p>
-
 <p>\begin{align}</p>
-
-<p>(D_+ \psi)<em>i &amp;= \frac{\psi</em>{i+1} - \psi_i}{\epsilon} \</p>
-
-<p>(D_-\psi)_i &amp;= \frac{\psi<em>i - \psi</em>{i-1}}{\epsilon}</p>
-
+<p>(D_+ \psi)_i &amp;= \frac{\psi_{i+1} - \psi_i}{\epsilon} \</p>
+<p>(D_-\psi)_i &amp;= \frac{\psi_i - \psi_{i-1}}{\epsilon}</p>
 <p>\end{align}</p>
-
 <p>Note: throughout I will assume periodic boundary conditions to make life easy. In this case we have (\psi_{i+N} = \psi_i).</p>
-
 <p>Now consider</p>
-
 <p>\begin{align}</p>
-
-<p>(D_+\phi, \psi) &amp;= \epsilon^{-1} \sum<em>i \left( \bar{\phi}</em>{i+1}\psi_i - \bar{\phi}_i \psi_i \right) \</p>
-
+<p>(D_+\phi, \psi) &amp;= \epsilon^{-1} \sum_i \left( \bar{\phi}_{i+1}\psi_i - \bar{\phi}_i \psi_i \right) \</p>
 <p>&amp;= \epsilon^{-1} \sum_i \left( \bar{\phi}<em>i \psi</em>{i-1} - \bar{\phi}_i \psi_i \right) \</p>
-
 <p>&amp;= -(\phi, D_-\psi).</p>
-
 <p>\end{align}</p>
-
 <p>Thus we have (D_+^\ast = -D_-). Similarly, (D_-^\ast = -D_+). Then the operator (D = (D_+ + D_-)/2) approximates (d/dx) and satisfies (D^\ast = -D) (as it should!), and the discrete Laplacian (D^2) is self-adjoint.</p>
-
 <p>Finally, we can form the discrete hamiltonian (H_N) by taking (H_N = -D^2 + \hat{V}), where (\hat{V}) is the operator (\psi_i \mapsto V(x_i) \psi_i), where (x_i = i\epsilon).</p>
-
 <p>Note: typically one further imposes Dirichlet or Neumann boundary conditions. This corresponds to projecting to a smaller subspace of (\mathscr{H}_N).</p>
-
 <p>I wrote some Sage code to test this. With (V(x) = 0), and (N = 500), here is one of the lowest-energy states:</p>
-
 <figure class="placement">
     <img src="https://jmf1sh.github.io/img/state.png"/> 
 </figure>
-
 
 <p>Rather encouraging.</p>
 
@@ -234,12 +228,13 @@
 
 </main>
     <footer>
-        <h6> | 
+        <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
             <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
 </body>
 
 </html>

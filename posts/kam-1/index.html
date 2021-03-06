@@ -2,7 +2,7 @@
 
 <html lang="en-us">
 
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>jonathan&#39;s blog</title>
@@ -14,41 +14,64 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</head>
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
 
-<body>
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
     <div id="container">
-        <header>
-            <h1>
-                <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
-            </h1>
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
 
-            <ul id="social-media">
-                
-        
-                
-                <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-        
-                
-            </ul>
-            
-            <p><em>mathematics, physics, programming, and machine learning</em></p>
-            
-        </header>
+        <ul id="social-media">
+          
 
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
         
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
 <nav>
     <ul>
         
@@ -66,8 +89,8 @@
         
     </ul>
 </nav>
-        
-        <main>
+
+      <main>
 
 
 
@@ -83,106 +106,62 @@
             <time class="post-date" datetime="2012-07-23T00:00:00Z">Jul 23, 2012</time>
         </li>
         
-        
 
         
 
-        <li>4 min read</li>
+        <li>4 minutes read</li>
     </ul>
 </aside>
+
     
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
-
 <p>In this post I want to sketch the idea of KAM, following these lecture notes.</p>
-
 <p>Integrable Systems</p>
-
-<p>I don't want to worry too much about details, so for now we'll define an integrable system to be a Hamiltonian system ((M, \omega, H)) for which we can choose local Darboux coordinates ((I, \phi)) with (I \in \mathbb{R}^N) and (\phi \in T^N), such that the Hamiltonian is a function of (I) only. Defining (\omega_j := \partial H / \partial I_j), Hamilton's equations then read</p>
-
+<p>I don&rsquo;t want to worry too much about details, so for now we&rsquo;ll define an integrable system to be a Hamiltonian system ((M, \omega, H)) for which we can choose local Darboux coordinates ((I, \phi)) with (I \in \mathbb{R}^N) and (\phi \in T^N), such that the Hamiltonian is a function of (I) only. Defining (\omega_j := \partial H / \partial I_j), Hamilton&rsquo;s equations then read</p>
 <p>\begin{align}</p>
-
-<p>\dot{I}_j &amp;= 0, \</p>
-
+<p>\dot{I}_j &amp;= 0, \\</p>
 <p>\dot{\phi}_j &amp;= \omega_j(I).</p>
-
 <p>\end{align}</p>
-
-<p>Hence we obtain linear motion on the torus as our dynamics. Note in particular that the sets ({I = \mathrm{const}}) are tori, and that the dynamics are constrained to these tori. We call these tori &quot;invariant&quot;.</p>
-
+<p>Hence we obtain linear motion on the torus as our dynamics. Note in particular that the sets ({I = \mathrm{const}}) are tori, and that the dynamics are constrained to these tori. We call these tori &ldquo;invariant&rdquo;.</p>
 <p>Now suppose that our Hamiltonian (H) is of the form</p>
-
 <p>[ H(I, \phi) = h(I) + f(I, \phi) ]</p>
-
-<p>with (f) &quot;small&quot;. What can be said of the dynamics? Specifically, do there exist invariant tori? KAM theory lets us formulate this question in a precise way, and gives an explicit quantitative answer (as long as (f) is nice enough, and small enough).</p>
-
+<p>with (f) &ldquo;small&rdquo;. What can be said of the dynamics? Specifically, do there exist invariant tori? KAM theory lets us formulate this question in a precise way, and gives an explicit quantitative answer (as long as (f) is nice enough, and small enough).</p>
 <p>I want to sketch the idea of the KAM theorem, completely ignoring analytical details.</p>
-
 <p>Constructing the Symplectomorphism</p>
-
-<p>Suppose we could find a symplectomorphism (\Phi): (I, \phi) \mapsto (\tilde{I}, \tilde{\phi})) such that (H(I, \phi) = H(\tilde{I}). Then our system would still be integrable (just in new action-angle coordinates), and we'd be done. There are two relatively easy ways of constructing symplectomorphisms: integrating symplectic vector fields, and generating functions. In the lecture notes, generating functions are used, so let's take a minute to discuss them.</p>
-
+<p>Suppose we could find a symplectomorphism (\Phi): (I, \phi) \mapsto (\tilde{I}, \tilde{\phi})) such that (H(I, \phi) = H(\tilde{I}). Then our system would still be integrable (just in new action-angle coordinates), and we&rsquo;d be done. There are two relatively easy ways of constructing symplectomorphisms: integrating symplectic vector fields, and generating functions. In the lecture notes, generating functions are used, so let&rsquo;s take a minute to discuss them.</p>
 <p>Proposition Let (\Sigma(\tilde{I}, \phi)) be a smooth function and suppose that the transformation</p>
-
-<p>[ I = \frac{\partial \Sigma}{\partial \phi}, </p>
-
+<p>[ I = \frac{\partial \Sigma}{\partial \phi}, \</p>
 <p>\tilde{\phi} = \frac{\partial \Sigma}{\partial \tilde{I}}]</p>
-
 <p>can be inverted to produce a diffeomorphism (\Phi: (I, \phi) \mapsto (\tilde{I}, \tilde{\phi})). Then (\Phi) is a symplectomorphism.</p>
-
 <p>Proof</p>
-
 <p>[ dI = \frac{\partial^2 \Sigma}{\partial \phi \partial \tilde{I}} d \tilde{I} ]</p>
-
 <p>[ d\tilde{\phi} = \frac{\partial^2 \Sigma}{\partial \phi \partial \tilde{I}} d\phi ]</p>
-
 <p>Hence</p>
-
 <p>[ dI \wedge d\phi = \frac{\partial^2 \Sigma}{\partial \phi \partial \tilde{I}} d \tilde{I} \wedge d\phi = d\tilde{I} \wedge d\tilde{\phi}. ]</p>
-
 <p>We want a symplectomorphism (\Phi) such that</p>
-
 <p>[ H \circ \Phi(\tilde{I}, \tilde{\phi}) = \tilde{h}(\tilde{I} ]</p>
-
 <p>If (\Phi) came from a generating function (\Sigma), then we have</p>
-
 <p>[ H(\frac{\partial \Sigma}{\partial \phi}, \phi) = \tilde{h}(\tilde{I}) ]</p>
-
 <p>Expanding things, we have</p>
-
 <p>[ h(\frac{\partial \Sigma}{\partial \phi}) + f(\frac{\partial \Sigma}{\partial \phi}, \phi) = \tilde{h}(\tilde{I}). ]</p>
-
 <p>If (f) is small, then we might expect (\Phi) to be close to the identity, and hence (\Sigma) ought to be close to the generating function for the identity (which is (\langle I, \phi \rangle)). So we take</p>
-
 <p>[ \Sigma(\tilde{I}, \phi) = \langle \tilde{I}, \phi \rangle + S(\tilde{I}, \phi) ]</p>
-
-<p>where (S) should be &quot;small&quot;. So we linearize the equation in (S):</p>
-
+<p>where (S) should be &ldquo;small&rdquo;. So we linearize the equation in (S):</p>
 <p>[ \langle \omega(\tilde{I}), \frac{\partial S}{\partial \phi} \rangle</p>
-
 <ul>
 <li>f(\tilde{I}, \phi)</li>
 </ul>
-
 <p>= \tilde{h}(\tilde{I}) - h(\tilde{I}) ]</p>
-
 <p>Now we can expand (S) and (f) in Fourier series and solve coefficient-wise. This gives a formal solution (S(\tilde{I}, \phi)) of the equation</p>
-
 <p>[ \langle \omega, \frac{\partial S}{\partial \phi} \rangle + f(\tilde{I}, \phi) = 0. ]</p>
-
 <p>Getting it to Work</p>
-
 <p>Unfortunately, the Fourier series for (S) has no chance to converge, so instead we take a finite truncation. If we assume (f) is analytic, its Fourier coefficients decay exponentially fast, so this provides a very good approximate solution to the linearized equation (and we can give an explicit bound in terms of a certain norm of (f)). Call this function (S_1). We then use (S_1) to construct a symplectomorphism (\Phi_1).</p>
-
 <p>Now we take</p>
-
 <p>[ H_1(I, \phi) = H \circ \Phi_1(I, \phi) = h_1(I) + f_1(I, \phi). ]</p>
-
 <p>Some hard analysis then shows that (h - h_1) is small, and (f_1) is much smaller than f.</p>
-
 <p>The Induction Step</p>
-
-<p>The above arguments sketch a method to put the system &quot;closer&quot; to an integrable form. By carefully controlling (\epsilon)'s and (\delta)'s, one then shows that iterated sequence (\Phi_1, \Phi_2 \circ \Phi<em>1, \ldots) converges to some limiting symplectomorphism (\Phi</em>\infty).</p>
+<p>The above arguments sketch a method to put the system &ldquo;closer&rdquo; to an integrable form. By carefully controlling (\epsilon)&rsquo;s and (\delta)&rsquo;s, one then shows that iterated sequence (\Phi_1, \Phi_2 \circ \Phi_1, \ldots) converges to some limiting symplectomorphism (\Phi_\infty).</p>
 
 
 </article>
@@ -263,12 +242,13 @@
 
 </main>
     <footer>
-        <h6> | 
+        <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
             <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
 </body>
 
 </html>

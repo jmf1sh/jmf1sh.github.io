@@ -2,7 +2,7 @@
 
 <html lang="en-us">
 
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>jonathan&#39;s blog</title>
@@ -14,41 +14,64 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</head>
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
 
-<body>
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
     <div id="container">
-        <header>
-            <h1>
-                <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
-            </h1>
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
 
-            <ul id="social-media">
-                
-        
-                
-                <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-        
-                
-            </ul>
-            
-            <p><em>mathematics, physics, programming, and machine learning</em></p>
-            
-        </header>
+        <ul id="social-media">
+          
 
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
         
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
 <nav>
     <ul>
         
@@ -66,8 +89,8 @@
         
     </ul>
 </nav>
-        
-        <main>
+
+      <main>
 
 
 
@@ -83,72 +106,44 @@
             <time class="post-date" datetime="2018-07-10T00:00:00Z">Jul 10, 2018</time>
         </li>
         
-        
 
         
 
-        <li>2 min read</li>
+        <li>2 minutes read</li>
     </ul>
 </aside>
+
     
 
-    <p>Let's remind ourselves how about the Euler beta function, defined as</p>
-
-<p><span  class="math">\[ B(x,y) = \int_0^1 t^{x-1} (1-t)^{y-1} dt. \]</span></p>
-
-<p>First, we will express <span  class="math">\(B(x,y)\)</span> in terms of the more familiar Gamma function,
+    <p>Let&rsquo;s remind ourselves how about the Euler beta function, defined as</p>
+<p>$$ B(x,y) = \int_0^1 t^{x-1} (1-t)^{y-1} dt. $$</p>
+<p>First, we will express $$B(x,y)$$ in terms of the more familiar Gamma function,
 defined as</p>
-
-<p><span  class="math">\[ \Gamma(x) = \int_0^\infty t^{x-1} e^{-t} dt. \]</span></p>
-
+<p>$$ \Gamma(x) = \int_0^\infty t^{x-1} e^{-t} dt. $$</p>
 <p>First, we have</p>
-
-<p><span  class="math">\[ \Gamma(x) \Gamma(y) = \int_0^\infty \int_0^\infty s^{x-1} t^{y-1} e^{-s-t} ds dt \]</span></p>
-
-<p>Now, suppose we have a multinomial distribution over <span  class="math">\(k\)</span> classes with probabilites <span  class="math">\(p_1, \ldots, p_k\)</span>. In for $n$ trials, the probability of observing <span  class="math">\(k_i\)</span> instances of class <span  class="math">\(i\)</span> is given by</p>
-
-<p><span  class="math">\[ P(n_1, \ldots, n_k) = {n \choose n_1, \ldots, n_k} \prod_i p_i^{n_i} \]</span></p>
-
+<p>$$ \Gamma(x) \Gamma(y) = \int_0^\infty \int_0^\infty s^{x-1} t^{y-1} e^{-s-t} ds dt $$</p>
+<p>Now, suppose we have a multinomial distribution over $$k$$ classes with probabilites $$p_1, \ldots, p_k$$. In for $n$ trials, the probability of observing $$k_i$$ instances of class $$i$$ is given by</p>
+<p>$$ P(n_1, \ldots, n_k) = {n \choose n_1, \ldots, n_k} \prod_i p_i^{n_i} $$</p>
 <p>Suppose that initially the probabilities $p_i$ are unknown, and we wish to infer them from
 a given observation of $n$ trials. Using a conjugate prior, we can take the unknown probabilites
 to follow the Dirichlet distribution</p>
-
-<p><span  class="math">\[ P(p_1, \ldots, p_k) = C_\alpha \prod_i p_i^{\alpha_i-1} \]</span></p>
-
-<p>(where the normalization constant <span  class="math">\(C_\alpha\)</span> can be computed explicitly in terms of the
+<p>$$ P(p_1, \ldots, p_k) = C_\alpha \prod_i p_i^{\alpha_i-1} $$</p>
+<p>(where the normalization constant $$C_\alpha$$ can be computed explicitly in terms of the
 generalized beta function, or equivalently in terms of the Gamma function).
 Using Bayes' theorem we have</p>
-
-<p>
-\begin{align*}
-P(\alpha | n_1, \ldots, n_k) &= C P(n_1, \ldots, n_k | \alpha) P(\alpha) \\
-&= C' \prod_i p_i^{n_i+\alpha_i-1}
-\end{align*}
-</p>
-
-<p>This gives a new Dirichlet distribution with <span  class="math">\(\alpha_i\)</span> replaced by <span  class="math">\(\alpha_i+n_i\)</span>.
+<!-- raw HTML omitted -->
+<p>This gives a new Dirichlet distribution with $$\alpha_i$$ replaced by $$\alpha_i+n_i$$.
 Taking expectation values of the posterior we have</p>
-
-<p><span  class="math">\(E[p_i] = \frac{n_i+\alpha_i}{n+\sum_i \alpha_i}\)</span>.</p>
-
-<p>Taking the Jeffreys prior <span  class="math">\(\alpha_i = 1/2\)</span>, we have finally</p>
-
-<p><span  class="math">\(E[p_i] = \frac{n_i+1/2}{n+n/2}\)</span>.</p>
-
-<p>Note that this assigns a non-zero value to <span  class="math">\(p_i\)</span> even in the case that <span  class="math">\(n_i = 0\)</span>!</p>
-
+<p>$$E[p_i] = \frac{n_i+\alpha_i}{n+\sum_i \alpha_i}$$.</p>
+<p>Taking the Jeffreys prior $$\alpha_i = 1/2$$, we have finally</p>
+<p>$$E[p_i] = \frac{n_i+1/2}{n+n/2}$$.</p>
+<p>Note that this assigns a non-zero value to $$p_i$$ even in the case that $$n_i = 0$$!</p>
 <p>For comparison, consider taking instead the estimate from maximum likelihood. We have</p>
-
-<p><span  class="math">\[ \log L(p, n) = C + \sum_i n_i \log p_i. \]</span></p>
-
-<p>Maximizing subject to the constraints <span  class="math">\(\sum_i p_i = 1\)</span>, we have</p>
-
-<p><span  class="math">\[ n_i / p_i = \lambda \]</span></p>
-
-<p>for some Lagrange multiplier <span  class="math">\(\lambda\)</span>, for all <span  class="math">\(i\)</span>. Hence we obtain</p>
-
-<p><span  class="math">\[ p_i = n_i / n \]</span></p>
-
+<p>$$ \log L(p, n) = C + \sum_i n_i \log p_i. $$</p>
+<p>Maximizing subject to the constraints $$\sum_i p_i = 1$$, we have</p>
+<p>$$ n_i / p_i = \lambda $$</p>
+<p>for some Lagrange multiplier $$\lambda$$, for all $$i$$. Hence we obtain</p>
+<p>$$ p_i = n_i / n $$</p>
 <p>and note that in this case, we assign zero probability to any class which is not observed.
 So we see that the expected distribution derived though Bayesian inference is more
 conservative than maximum likelihood, in the sense that zero probabilities are assigned
@@ -233,12 +228,13 @@ only in the limit of infinitely many trials.</p>
 
 </main>
     <footer>
-        <h6> | 
+        <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
             <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
 </body>
 
 </html>

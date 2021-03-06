@@ -2,7 +2,7 @@
 
 <html lang="en-us">
 
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>jonathan&#39;s blog</title>
@@ -14,41 +14,64 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</head>
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
 
-<body>
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
     <div id="container">
-        <header>
-            <h1>
-                <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
-            </h1>
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
 
-            <ul id="social-media">
-                
-        
-                
-                <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-        
-                
-            </ul>
-            
-            <p><em>mathematics, physics, programming, and machine learning</em></p>
-            
-        </header>
+        <ul id="social-media">
+          
 
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
         
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
 <nav>
     <ul>
         
@@ -66,8 +89,8 @@
         
     </ul>
 </nav>
-        
-        <main>
+
+      <main>
 
 
 
@@ -83,59 +106,39 @@
             <time class="post-date" datetime="2018-12-24T00:00:00Z">Dec 24, 2018</time>
         </li>
         
-        
 
         
 
-        <li>2 min read</li>
+        <li>One minute read</li>
     </ul>
 </aside>
+
     
 
     <p>See <a href="https://arxiv.org/abs/1312.6114">Autoencoding variational Bayes</a></p>
-
-<p>Suppose we have set <span  class="math">\(X\)</span> with (<em>a priori</em> unknown) probability density function <span  class="math">\(p(x)\)</span>.
-We would like to find a lower-dimensional representation of <span  class="math">\(X\)</span> in some latent space
-<span  class="math">\(Z\)</span> by imposing a joint probability density <span  class="math">\(p(x, z)\)</span>.</p>
-
+<p>Suppose we have set $X$ with (<em>a priori</em> unknown) probability density function $p(x)$.
+We would like to find a lower-dimensional representation of $X$ in some latent space
+$Z$ by imposing a joint probability density $p(x, z)$.</p>
 <p><em>Assumptions.</em></p>
-
 <ol>
-<li>The marginal <span  class="math">\(p(x)\)</span> is unknown but we can sample from <span  class="math">\(X\)</span>.</li>
-<li>We are free to choose the marginal <span  class="math">\(p(z)\)</span>.</li>
-<li>We are free to choose the <em>decoder</em> <span  class="math">\(p(x|z)\)</span>.</li>
+<li>The marginal $p(x)$ is unknown but we can sample from $X$.</li>
+<li>We are free to choose the marginal $p(z)$.</li>
+<li>We are free to choose the <em>decoder</em> $p(x|z)$.</li>
 </ol>
-
-<p>The relationship between <span  class="math">\(X\)</span> and <span  class="math">\(Z\)</span> is encoded in the conditional probability
-densities <span  class="math">\(p(x|z)\)</span> (the decoder) and <span  class="math">\(p(z|x)\)</span> (the encoder). From Bayes' theorem,</p>
-
-<p><span  class="math">\[ p(z|x) = \frac{p(x|z) p(z)}{p(x)} \]</span></p>
-
-<p>So once we have specified the prior <span  class="math">\(p(z)\)</span> and the decoder <span  class="math">\(p(x|z)\)</span>, we have no freedom
-to choose <span  class="math">\(p(z|x)\)</span>. Furthermore, without access to <span  class="math">\(p(x)\)</span>, we have no way to recover
-<span  class="math">\(p(x|z)\)</span> analytically. To get around this problem, we introduce another probability
-density <span  class="math">\(q(z|x)\)</span>, the <em>approximate posterior</em>, which is intended to be a tractable
-approximation to the intractable <span  class="math">\(p(z|x)\)</span>. We can quantify the difference between
+<p>The relationship between $X$ and $Z$ is encoded in the conditional probability
+densities $p(x|z)$ (the decoder) and $p(z|x)$ (the encoder). From Bayes' theorem,</p>
+<p>$$ p(z|x) = \frac{p(x|z) p(z)}{p(x)} $$</p>
+<p>So once we have specified the prior $p(z)$ and the decoder $p(x|z)$, we have no freedom
+to choose $p(z|x)$. Furthermore, without access to $p(x)$, we have no way to recover
+$p(x|z)$ analytically. To get around this problem, we introduce another probability
+density $q(z|x)$, the <em>approximate posterior</em>, which is intended to be a tractable
+approximation to the intractable $p(z|x)$. We can quantify the difference between
 the true posterior and approximate posterior with the Kullback-Leiber divergence,</p>
-
-<p>
-\begin{align*}
-D_{KL}(q(z|x)||p(z|x))
-&= E_{z \sim q(z|x)}\left(\frac{\log q(z|x)}{\log p(z|x)}\right) \\
-&=E_{z \sim q(z|x)}\left(\log q(z|x)-\log p(z|x)\right) \\
-&=E_{z \sim q(z|x)}\left(\log q(z|x)-\log p(x,z)+\log p(x)\right) \\
-&=E_{z \sim q(z|x)}\left(\log q(z|x)-\log p(x|z) - \log p(z) +\log p(x)\right) \\
-&=\log p(x)  + D_{KL}(q(z|x)||p(z)) - E_{z \sim q(z|x)}\left(\log p(x|z) \right)
-\end{align*}
-</p>
-
+<!-- raw HTML omitted -->
 <p>Rearranging this expression, we have</p>
-
-<p><span  class="math">\[ \log p(x) = D_{KL}(q(z|x)||p(z|x)) + L \]</span></p>
-
-<p>where <span  class="math">\(L\)</span> is the <em>variational lower bound</em>,</p>
-
-<p><span  class="math">\[ L = -D_{KL}(q(z|x)||p(z)) + E_{z \sim q(z|x)}(\log p(x|z)) \]</span></p>
+<p>$ \log p(x) = D_{KL}(q(z|x)||p(z|x)) + L $</p>
+<p>where $L$ is the <em>variational lower bound</em>,</p>
+<p>$$ L = -D_{KL}(q(z|x)||p(z)) + E_{z \sim q(z|x)}(\log p(x|z)) $$</p>
 
 
 </article>
@@ -212,12 +215,13 @@ D_{KL}(q(z|x)||p(z|x))
 
 </main>
     <footer>
-        <h6> | 
+        <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
             <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 
 <html lang="en-us">
 
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>jonathan&#39;s blog</title>
@@ -14,41 +14,64 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</head>
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
 
-<body>
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
     <div id="container">
-        <header>
-            <h1>
-                <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
-            </h1>
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
 
-            <ul id="social-media">
-                
-        
-                
-                <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-        
-                
-            </ul>
-            
-            <p><em>mathematics, physics, programming, and machine learning</em></p>
-            
-        </header>
+        <ul id="social-media">
+          
 
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
         
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
 <nav>
     <ul>
         
@@ -66,8 +89,8 @@
         
     </ul>
 </nav>
-        
-        <main>
+
+      <main>
 
 
 
@@ -83,25 +106,23 @@
             <time class="post-date" datetime="2011-08-17T00:00:00Z">Aug 17, 2011</time>
         </li>
         
-        
 
         
 
-        <li>2 min read</li>
+        <li>2 minutes read</li>
     </ul>
 </aside>
+
     
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
-
-<p>I was thinking about how to put this blog to use, and especially how to make it worthwhile for myself. In 2010, I ran a learning seminar on math/physics which in my opinion was extremely successful. I made detailed notes for nearly all of the talks, and I had several people ask me at the end of the seminar to give them copies of the notes I had made. We managed to do something very special in the seminar, and I think it's worth writing up notes from the best talks (and reorganizing/elaborating/etc. when necessary) and putting them online for all to see. It gives me a chance to practice my math writing, and if I ever run another seminar of this flavor (or teach a course, or write a book...) then a lot of the work will already be done for me.</p>
-
+<p>I was thinking about how to put this blog to use, and especially how to make it worthwhile for myself. In 2010, I ran a learning seminar on math/physics which in my opinion was extremely successful. I made detailed notes for nearly all of the talks, and I had several people ask me at the end of the seminar to give them copies of the notes I had made. We managed to do something very special in the seminar, and I think it&rsquo;s worth writing up notes from the best talks (and reorganizing/elaborating/etc. when necessary) and putting them online for all to see. It gives me a chance to practice my math writing, and if I ever run another seminar of this flavor (or teach a course, or write a book&hellip;) then a lot of the work will already be done for me.</p>
 <p>Here is a rough outline of the topics we covered (or that need to be covered as background):</p>
-<pre><code>Newton&#39;s Laws (review of high school physics).
-The Euler-Lagrange equations derived from Newton&#39;s 2nd law.
-Hamilton&#39;s action principle.
-Legendre transform, Hamilton&#39;s equations, basic symplectic geometry.
-Symmetry, Noether&#39;s theorem, and moment maps.
+<pre><code>Newton's Laws (review of high school physics).
+The Euler-Lagrange equations derived from Newton's 2nd law.
+Hamilton's action principle.
+Legendre transform, Hamilton's equations, basic symplectic geometry.
+Symmetry, Noether's theorem, and moment maps.
 Completely integrable systems.
 Special relativity.
 Classical field theory.
@@ -118,7 +139,8 @@ Berezin integration and quantization of fermionic fields.
 Gauge fields.
 Faddeev-Popov method for gauge fields.
 BRST.
-Path integral proof of the index theorem.</code></pre>
+Path integral proof of the index theorem.
+</code></pre>
 <p>As you can see, it was an ambitious seminar! I will update the outline as I go through my old notes and start posting them.</p>
 
 
@@ -200,12 +222,13 @@ Path integral proof of the index theorem.</code></pre>
 
 </main>
     <footer>
-        <h6> | 
+        <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
             <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
 </body>
 
 </html>

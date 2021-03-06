@@ -2,7 +2,7 @@
 
 <html lang="en-us">
 
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>jonathan&#39;s blog</title>
@@ -14,41 +14,64 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</head>
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
 
-<body>
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
     <div id="container">
-        <header>
-            <h1>
-                <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
-            </h1>
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
 
-            <ul id="social-media">
-                
-        
-                
-                <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-        
-                
-            </ul>
-            
-            <p><em>mathematics, physics, programming, and machine learning</em></p>
-            
-        </header>
+        <ul id="social-media">
+          
 
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
         
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
 <nav>
     <ul>
         
@@ -66,8 +89,8 @@
         
     </ul>
 </nav>
-        
-        <main>
+
+      <main>
 
 
 
@@ -83,17 +106,17 @@
             <time class="post-date" datetime="2018-12-24T00:00:00Z">Dec 24, 2018</time>
         </li>
         
-        
 
         
 
-        <li>2 min read</li>
+        <li>One minute read</li>
     </ul>
 </aside>
+
             <p>See Autoencoding variational Bayes
-Suppose we have set \(X\) with (a priori unknown) probability density function \(p(x)\). We would like to find a lower-dimensional representation of \(X\) in some latent space \(Z\) by imposing a joint probability density \(p(x, z)\).</p>
+Suppose we have set $X$ with (a priori unknown) probability density function $p(x)$. We would like to find a lower-dimensional representation of $X$ in some latent space $Z$ by imposing a joint probability density $p(x, z)$.</p>
             
-            <a href="https://jmf1sh.github.io/posts/vae/">Read more&hellip;</a>
+            <a href="https://jmf1sh.github.io/posts/vae/">Read more…</a>
             
           </li>
           
@@ -105,18 +128,18 @@ Suppose we have set \(X\) with (a priori unknown) probability density function \
             <time class="post-date" datetime="2018-07-10T00:00:00Z">Jul 10, 2018</time>
         </li>
         
-        
 
         
 
-        <li>2 min read</li>
+        <li>2 minutes read</li>
     </ul>
 </aside>
-            <p>Let's remind ourselves how about the Euler beta function, defined as
-\[ B(x,y) = \int_0^1 t^{x-1} (1-t)^{y-1} dt. \]
-First, we will express \(B(x,y)\) in terms of the more familiar Gamma function, defined as</p>
+
+            <p>Let&rsquo;s remind ourselves how about the Euler beta function, defined as
+$$ B(x,y) = \int_0^1 t^{x-1} (1-t)^{y-1} dt. $$
+First, we will express $$B(x,y)$$ in terms of the more familiar Gamma function, defined as</p>
             
-            <a href="https://jmf1sh.github.io/posts/beta-function/">Read more&hellip;</a>
+            <a href="https://jmf1sh.github.io/posts/beta-function/">Read more…</a>
             
           </li>
           
@@ -128,16 +151,16 @@ First, we will express \(B(x,y)\) in terms of the more familiar Gamma function, 
             <time class="post-date" datetime="2018-01-14T00:00:00Z">Jan 14, 2018</time>
         </li>
         
-        
 
         
 
-        <li>4 min read</li>
+        <li>3 minutes read</li>
     </ul>
 </aside>
+
             <p>I would like to record the basic formalism of reinforcement learning. Hopefully, this will lead to a post or series of posts giving a basic tensorflow implementation of a simple deep reinforcement learning model.</p>
             
-            <a href="https://jmf1sh.github.io/posts/reinforcement-learning/">Read more&hellip;</a>
+            <a href="https://jmf1sh.github.io/posts/reinforcement-learning/">Read more…</a>
             
           </li>
           
@@ -149,16 +172,16 @@ First, we will express \(B(x,y)\) in terms of the more familiar Gamma function, 
             <time class="post-date" datetime="2017-12-19T13:49:09&#43;01:00">Dec 19, 2017</time>
         </li>
         
-        
 
         
 
-        <li>1 min read</li>
+        <li>One minute read</li>
     </ul>
 </aside>
-            <p>I want to record here a very interesting thing which I recently discovered, variance-stabilizing transformations. The idea is very simple: suppose we have a random variable \(x\), which follows a probability distribution which is parametrized solely by its mean \(\mu\), with variance \(var(x) = g(\mu)\) a known function of the mean.</p>
+
+            <p>I want to record here a very interesting thing which I recently discovered, variance-stabilizing transformations. The idea is very simple: suppose we have a random variable $$x$$, which follows a probability distribution which is parametrized solely by its mean $$\mu$$, with variance $$var(x) = g(\mu)$$ a known function of the mean.</p>
             
-            <a href="https://jmf1sh.github.io/posts/variance-stabilizing/">Read more&hellip;</a>
+            <a href="https://jmf1sh.github.io/posts/variance-stabilizing/">Read more…</a>
             
           </li>
           
@@ -170,17 +193,17 @@ First, we will express \(B(x,y)\) in terms of the more familiar Gamma function, 
             <time class="post-date" datetime="2015-09-15T00:00:00Z">Sep 15, 2015</time>
         </li>
         
-        
 
         
 
-        <li>2 min read</li>
+        <li>2 minutes read</li>
     </ul>
 </aside>
+
             <p>This post has been migrated from my old blog, the math-physics learning seminar.
-Let \(M\) be a simple Riemannian manifold with boundary $\partial M$. For $(x,v) \in SM$, let $\tau(x,v)$ denote the exit time of the geodesic starting at $x$ with tangent vector $v$, i.</p>
+Let $$M$$ be a simple Riemannian manifold with boundary $$\partial M$$. For $$(x,v) \in SM$$, let $$\tau(x,v)$$ denote the exit time of the geodesic starting at $$x$$ with tangent vector $$v$$, i.</p>
             
-            <a href="https://jmf1sh.github.io/posts/santalo-formula/">Read more&hellip;</a>
+            <a href="https://jmf1sh.github.io/posts/santalo-formula/">Read more…</a>
             
           </li>
           
@@ -192,17 +215,17 @@ Let \(M\) be a simple Riemannian manifold with boundary $\partial M$. For $(x,v)
             <time class="post-date" datetime="2015-09-11T00:00:00Z">Sep 11, 2015</time>
         </li>
         
-        
 
         
 
-        <li>3 min read</li>
+        <li>3 minutes read</li>
     </ul>
 </aside>
+
             <p>This post has been migrated from my old blog, the math-physics learning seminar.
 Let $f: [0,T] \times (-\epsilon, \epsilon) \to M$ be a family of parametrized curves in a Riemannian manifold $(M, g)$.</p>
             
-            <a href="https://jmf1sh.github.io/posts/index-form/">Read more&hellip;</a>
+            <a href="https://jmf1sh.github.io/posts/index-form/">Read more…</a>
             
           </li>
           
@@ -214,17 +237,17 @@ Let $f: [0,T] \times (-\epsilon, \epsilon) \to M$ be a family of parametrized cu
             <time class="post-date" datetime="2015-09-03T00:00:00Z">Sep 3, 2015</time>
         </li>
         
-        
 
         
 
-        <li>3 min read</li>
+        <li>3 minutes read</li>
     </ul>
 </aside>
+
             <p>This post has been migrated from my old blog, the math-physics learning seminar.
-Recently, I've been learning some topics related to machine learning, and especially manifold learning. These both fall under the general notion of inverse problems: given some mathematical object $X$ (it could be a function $f: A \to B$, or a Riemannian manifold $(M,g)$, or a probability measure $d\mu$ on a space $X$, etc.</p>
+Recently, I&rsquo;ve been learning some topics related to machine learning, and especially manifold learning. These both fall under the general notion of inverse problems: given some mathematical object $X$ (it could be a function $f: A \to B$, or a Riemannian manifold $(M,g)$, or a probability measure $d\mu$ on a space $X$, etc.</p>
             
-            <a href="https://jmf1sh.github.io/posts/boundary-distance/">Read more&hellip;</a>
+            <a href="https://jmf1sh.github.io/posts/boundary-distance/">Read more…</a>
             
           </li>
           
@@ -236,17 +259,17 @@ Recently, I've been learning some topics related to machine learning, and especi
             <time class="post-date" datetime="2015-08-31T00:00:00Z">Aug 31, 2015</time>
         </li>
         
-        
 
         
 
-        <li>4 min read</li>
+        <li>4 minutes read</li>
     </ul>
 </aside>
+
             <p>This post has been migrated from my old blog, the math-physics learning seminar.
 Consider the cotangent bundle $T^\ast X$ as a symplectic manifold with canonical symplectic form $\omega$. Consider the Hamilton-Jacobi equation</p>
             
-            <a href="https://jmf1sh.github.io/posts/hamilton-jacobi-distance/">Read more&hellip;</a>
+            <a href="https://jmf1sh.github.io/posts/hamilton-jacobi-distance/">Read more…</a>
             
           </li>
           
@@ -258,17 +281,17 @@ Consider the cotangent bundle $T^\ast X$ as a symplectic manifold with canonical
             <time class="post-date" datetime="2015-08-18T00:00:00Z">Aug 18, 2015</time>
         </li>
         
-        
 
         
 
-        <li>3 min read</li>
+        <li>3 minutes read</li>
     </ul>
 </aside>
+
             <p>This post has been migrated from my old blog, the math-physics learning seminar.
 Let $(M, \omega)$ be a symplectic manifold of dimension $2n$, and let $H: M \to \mathbf{R}$ be a classical Hamiltonian.</p>
             
-            <a href="https://jmf1sh.github.io/posts/classical-partition-function/">Read more&hellip;</a>
+            <a href="https://jmf1sh.github.io/posts/classical-partition-function/">Read more…</a>
             
           </li>
           
@@ -280,17 +303,17 @@ Let $(M, \omega)$ be a symplectic manifold of dimension $2n$, and let $H: M \to 
             <time class="post-date" datetime="2015-01-29T00:00:00Z">Jan 29, 2015</time>
         </li>
         
-        
 
         
 
-        <li>7 min read</li>
+        <li>7 minutes read</li>
     </ul>
 </aside>
+
             <p>This post has been migrated from my old blog, the math-physics learning seminar.
 The following are my notes for a short introductory talk. References below are not intended to be comprehensive!</p>
             
-            <a href="https://jmf1sh.github.io/posts/generalized-geometry/">Read more&hellip;</a>
+            <a href="https://jmf1sh.github.io/posts/generalized-geometry/">Read more…</a>
             
           </li>
           
@@ -301,12 +324,13 @@ The following are my notes for a short introductory talk. References below are n
 
 </main>
     <footer>
-        <h6> | 
+        <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
             <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
 </body>
 
 </html>

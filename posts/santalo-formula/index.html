@@ -2,7 +2,7 @@
 
 <html lang="en-us">
 
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>jonathan&#39;s blog</title>
@@ -14,41 +14,64 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</head>
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
 
-<body>
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
     <div id="container">
-        <header>
-            <h1>
-                <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
-            </h1>
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
 
-            <ul id="social-media">
-                
-        
-                
-                <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-        
-                
-            </ul>
-            
-            <p><em>mathematics, physics, programming, and machine learning</em></p>
-            
-        </header>
+        <ul id="social-media">
+          
 
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
         
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
 <nav>
     <ul>
         
@@ -66,8 +89,8 @@
         
     </ul>
 </nav>
-        
-        <main>
+
+      <main>
 
 
 
@@ -83,55 +106,35 @@
             <time class="post-date" datetime="2015-09-15T00:00:00Z">Sep 15, 2015</time>
         </li>
         
-        
 
         
 
-        <li>2 min read</li>
+        <li>2 minutes read</li>
     </ul>
 </aside>
+
     
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
-
-<p>Let <span  class="math">\(M\)</span> be a simple Riemannian manifold with boundary $\partial M$. For $(x,v) \in SM$, let $\tau(x,v)$ denote the exit time of the geodesic starting at $x$ with tangent vector $v$, i.e. $\tau(x,v)$ is the (necessarily unique, and finite) time at which $\exp_x(tv) \in \partial M$.</p>
-
+<p>Let $$M$$ be a simple Riemannian manifold with boundary $$\partial M$$. For $$(x,v) \in SM$$, let $$\tau(x,v)$$ denote the exit time of the geodesic starting at $$x$$ with tangent vector $$v$$, i.e. $$\tau(x,v)$$ is the (necessarily unique, and finite) time at which $$\exp_x(tv) \in \partial M$$.</p>
 <p>We let $\partial_+(SM)$ denote the set</p>
-
-<p><span  class="math">\[ \partial_+(SM) = \{ (x,v) \in SM \ | \ x \in \partial M, \langle v, \nu\rangle &gt; 0 \} \]</span></p>
-
+<p>$$ \partial_+(SM) = { (x,v) \in SM \ | \ x \in \partial M, \langle v, \nu\rangle &gt; 0 } $$</p>
 <p>where $\nu$ denotes the inward unit normal to $\partial M$ in $M$. The exponential map identifies $SM$ with the set</p>
-
-<p><span  class="math">\[ \Omega = \{ (x,v,t) \in \partial_+(SM) \times \mathbf{R} \ | \ 0 \leq t \leq \tau(x,v)  \}, \]</span></p>
-
+<p>$$ \Omega = { (x,v,t) \in \partial_+(SM) \times \mathbf{R} \ | \ 0 \leq t \leq \tau(x,v)  }, $$</p>
 <p>via $(x,v,t) \mapsto \exp_x(tv)$. Let $\Phi: \Omega \to M$ denote this diffeomorphism. Then we have, for all $f \in C^\infty(SM)$</p>
-
 <p>\begin{align}</p>
-
 <p>\int_{SM} f dvol(SM) &amp;= \int_\Omega (\Phi^\ast f) (\Phi^\ast dvol(SM)) \</p>
-
 <p>&amp;= \int_{\partial_+(SM)} \int_0^{\tau(x,v)} f(\phi_t(x,v)) \Phi^\ast dvol(SM).</p>
-
 <p>\end{align}</p>
-
 <p>Therefore, we can compute integrals of functions over $SM$ by integrating along geodesics, provided that we can cmopute $\Phi^\ast dvol(SM)$. This is the content of the Santalo formula.</p>
-
 <p>Theorem (Santalo formula). For all $f \in C^\infty(SM)$, we have</p>
-
 <p>[ \int_{SM} f dvol(SM) = \int_{\partial_+(SM)} \int_0^{\tau(x,v)} f(\phi_t(x,v)) \langle v, \nu\rangle dt dvol(\partial(SM)) ]</p>
-
 <p>Proof. Necessarily, we must have</p>
-
 <p>[ \Phi^\ast(dvol(SM)) = a(x,v) dt \wedge dvol(\partial(SM))), ]</p>
-
 <p>for some function $a(x,v)$. The reason we can assume that $a$ is independent of $t$ is that $\Phi$ is defined via geodesic flow, and geodesic flow preserves the volume form on $SM$. To compute the factor $a(x,v)$, we just need to compute</p>
-
 <p>[ i_{\partial / \partial t} \Phi^\ast(dvol(SM)) = \Phi^\ast(i_{\Phi_\ast(\partial / \partial t)} dvol(SM)) ]</p>
-
 <p>From the definition of $\Phi$, we have that $\Phi_\ast(\partial / \partial t)$ is the Reeb vector field on $SM$, i.e. the vector field generating geodesic flow. Therefore, $\Phi_\ast(\partial / \partial t)$ is equal, at a point $(x,v)$ to the horizontal lift of the vector $v$. Therefore, using the definition of the induced volume form on a hypersurface of a Riemannian manifold, we find</p>
-
-<p><span  class="math">\[ i_{\partial / \partial t} \Phi^\ast(dvol(SM)) = \langle v, \nu \rangle dvol(\partial(SM)) \]</span></p>
-
+<p>$$ i_{\partial / \partial t} \Phi^\ast(dvol(SM)) = \langle v, \nu \rangle dvol(\partial(SM)) $$</p>
 <p>where $\nu$ is the inward pointing unit normal to $\partial(SM)$ in $SM$. This shows that $a(x,v) = \langle v, \nu \rangle$ and completes the proof.</p>
 
 
@@ -213,12 +216,13 @@
 
 </main>
     <footer>
-        <h6> | 
+        <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
             <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
 </body>
 
 </html>

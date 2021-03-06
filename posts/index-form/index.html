@@ -2,7 +2,7 @@
 
 <html lang="en-us">
 
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>jonathan&#39;s blog</title>
@@ -14,41 +14,64 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</head>
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
 
-<body>
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
     <div id="container">
-        <header>
-            <h1>
-                <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
-            </h1>
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
 
-            <ul id="social-media">
-                
-        
-                
-                <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-        
-                
-            </ul>
-            
-            <p><em>mathematics, physics, programming, and machine learning</em></p>
-            
-        </header>
+        <ul id="social-media">
+          
 
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
         
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
 <nav>
     <ul>
         
@@ -66,8 +89,8 @@
         
     </ul>
 </nav>
-        
-        <main>
+
+      <main>
 
 
 
@@ -83,111 +106,77 @@
             <time class="post-date" datetime="2015-09-11T00:00:00Z">Sep 11, 2015</time>
         </li>
         
-        
 
         
 
-        <li>3 min read</li>
+        <li>3 minutes read</li>
     </ul>
 </aside>
+
     
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
-
 <p>Let $f: [0,T] \times (-\epsilon, \epsilon) \to M$ be a family of parametrized curves in a Riemannian manifold $(M, g)$. To simplify this calculation, we assume that $f(0,s) = p, f(T, s) = q$ for some $p,q \in M$ and all $s \in (-\epsilon, \epsilon)$. (This assumption is not necessary, but without it our variational formulae will have additional boundary terms.)</p>
-
 <p>For convenience, set $\dot f = \partial f / \partial t$ and $f' = \partial f / \partial s$. For each $s \in (-\epsilon, \epsilon)$ we define the energy functional $E = E(s)$ to be</p>
-
 <p>[ E(s) = \frac{1}{2} \int_0^T |\dot f|^2 dt. ]</p>
-
 <p>The first variation is</p>
-
 <p>\begin{align}</p>
-
-<p>\frac{dE}{ds} &amp;= \int<em>0^T \langle \nabla</em>{f'} \dot f, \dot f \rangle dt \</p>
-
-<p>&amp;= \int<em>0^T \langle \nabla</em>{\dot f} f', \dot f \rangle dt \</p>
-
-<p>&amp;= -\int<em>0^T \langle f', \nabla</em>{\dot f}\dot f \rangle dt</p>
-
+<p>\frac{dE}{ds} &amp;= \int_0^T \langle \nabla_{f'} \dot f, \dot f \rangle dt \\</p>
+<p>&amp;= \int_0^T \langle \nabla_{\dot f} f', \dot f \rangle dt \\</p>
+<p>&amp;= -\int_0^T \langle f', \nabla_{\dot f}\dot f \rangle dt</p>
 <p>\end{align}</p>
-
 <p>Set $\gamma(t) := f(t,0)$ and $X(t) = f'(t)$ (thought of as a vector field supported on $\gamma$). Evaluating the above at $s=0$ we obtain</p>
-
-<p>[ \left.\frac{dE}{ds}\right|_ = -\int<em>0^T \langle X, \nabla</em>{\dot \gamma} \dot \gamma \rangle dt, ]</p>
-
+<p>[ \left.\frac{dE}{ds}\right|<em>{s=0} = -\int_0^T \langle X, \nabla</em>{\dot \gamma} \dot \gamma \rangle dt, ]</p>
 <p>which shows immediately that</p>
-
 <p>Theorem. $\gamma$ is a critical point of the energy functional if and only if $\nabla_{\dot \gamma} \dot \gamma = 0$.</p>
-
 <p>The second variation is</p>
-
 <p>\begin{align}</p>
-
 <p>\frac{d^2 E}{ds^2}</p>
-
-<p>&amp;= -\int<em>0^T \langle \nabla</em>{f'}f', \nabla_{\dot f}\dot f \rangle</p>
-
+<p>&amp;= -\int_0^T \langle \nabla_{f'}f', \nabla_{\dot f}\dot f \rangle</p>
 <ul>
-<li>\langle f', \nabla_{f'}\nabla_{\dot f}\dot f \rangle dt \<br></li>
+<li>\langle f', \nabla_{f'}\nabla_{\dot f}\dot f \rangle dt \\</li>
 </ul>
-
-<p>&amp;= -\int<em>0^T \langle \nabla</em>{f'}f', \nabla_{\dot f}\dot f \rangle</p>
-
+<p>&amp;= -\int_0^T \langle \nabla_{f'}f', \nabla_{\dot f}\dot f \rangle</p>
 <ul>
-<li><p>\langle f', \nabla_{\dot f}\nabla_{f'}\dot f \rangle dt</p></li>
-
-<li><p>\langle f', R(f', \dot f)\dot f \rangle dt \</p></li>
+<li>
+<p>\langle f', \nabla_{\dot f}\nabla_{f'}\dot f \rangle dt</p>
+</li>
+<li>
+<p>\langle f', R(f', \dot f)\dot f \rangle dt \\</p>
+</li>
 </ul>
-
-<p>&amp;= -\int<em>0^T \langle \nabla</em>{f'}f', \nabla_{\dot f}\dot f \rangle</p>
-
+<p>&amp;= -\int_0^T \langle \nabla_{f'}f', \nabla_{\dot f}\dot f \rangle</p>
 <ul>
-<li><p>\langle \nabla_{\dot f}f', \nabla_{f'}\dot f \rangle dt</p></li>
-
-<li><p>\langle f', R(f', \dot f)\dot f \rangle dt \\ &amp;= -\int<em>0^T \langle \nabla</em>{f'}f', \nabla_{\dot f}\dot f \rangle</p></li>
-
-<li><p>\langle \nabla_{\dot f} f', \nabla_{\dot f} f'\rangle dt</p></li>
-
-<li><p>\langle f', R(f', \dot f)\dot f \rangle dt</p></li>
+<li>\langle \nabla_{\dot f}f', \nabla_{f'}\dot f \rangle dt</li>
 </ul>
-
+<ul>
+<li>\langle f', R(f', \dot f)\dot f \rangle dt \\ &amp;= -\int_0^T \langle \nabla_{f'}f', \nabla_{\dot f}\dot f \rangle</li>
+</ul>
+<ul>
+<li>\langle \nabla_{\dot f} f', \nabla_{\dot f} f'\rangle dt</li>
+</ul>
+<ul>
+<li>\langle f', R(f', \dot f)\dot f \rangle dt</li>
+</ul>
 <p>\end{align}</p>
-
 <p>Assume now that $\gamma$ is a geodesic, i.e. $\nabla_{\dot \gamma} \dot \gamma = 0$. Then evaluating the above at $s=0$, we obtain</p>
-
-<p>[ \frac{d^2 E}{ds^2} = \int<em>0^T |\nabla</em>{\dot \gamma} X|^2 - \langle X, R(X, \dot \gamma) \dot \gamma \rangle dt. ]</p>
-
+<p>[ \frac{d^2 E}{ds^2} = \int_0^T |\nabla_{\dot \gamma} X|^2 - \langle X, R(X, \dot \gamma) \dot \gamma \rangle dt. ]</p>
 <p>Definition. Let $\gamma$ be a geodesic. The index form associated to variations $X,Y$ of $\gamma$ is</p>
-
-<p>\begin{align} I(X,Y) &amp;= \int<em>0^T \langle \nabla</em>{\dot \gamma} X, \nabla_{\dot \gamma} Y \rangle dt</p>
-
+<p>\begin{align} I(X,Y) &amp;= \int_0^T \langle \nabla_{\dot \gamma} X, \nabla_{\dot \gamma} Y \rangle dt</p>
 <ul>
-<li>\langle Y, R(X, \dot \gamma) \dot \gamma \rangle \<br></li>
+<li>\langle Y, R(X, \dot \gamma) \dot \gamma \rangle \\</li>
 </ul>
-
-<p>&amp;= -\int<em>0^T \langle Y, \nabla</em>{\dot \gamma}^2 X + R(X, \dot\gamma)\dot \gamma \rangle</p>
-
+<p>&amp;= -\int_0^T \langle Y, \nabla_{\dot \gamma}^2 X + R(X, \dot\gamma)\dot \gamma \rangle</p>
 <p>\end{align}</p>
-
 <p>It follows from symmetries of the Riemann tensor that $I(X,Y) = I(Y, X)$ and also $I(X,X) = E''$ as above.</p>
-
 <p>Theorem. Suppose that $X$ is the infinitesimal variation of a family of affine geodesics about a fixed geodesic $\gamma$. Then</p>
-
 <p>[ \nabla_{\dot \gamma}^2 X + R(X, \dot\gamma)\dot\gamma = 0. ]</p>
-
 <p>In particular, $I(X, -) = 0$.</p>
-
 <p>Proof. Let $f(t,s)$ denote the family as above. By hypothesis, we have that $\nabla_{\dot f} \dot f = 0$ for all $s$, so that</p>
-
 <p>[ \nabla_{f'} \nabla_{\dot f} \dot f = 0. ]</p>
-
 <p>Commuting the derivatives using the curvature tensor, we have</p>
-
 <p>[ 0 = \nabla_{\dot f} \nabla_{f'} \dot f + R(f', \dot f) \dot f. ]</p>
-
 <p>Now use $\nabla_{\dot f} f' = \nabla_{f'} \dot f$ and evaluate at $s=0$ to obtain</p>
-
 <p>[ 0 = \nabla_{\dot \gamma}^2 X + R(X, \dot \gamma)\dot\gamma. ]</p>
 
 
@@ -269,12 +258,13 @@
 
 </main>
     <footer>
-        <h6> | 
+        <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
             <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
 </body>
 
 </html>

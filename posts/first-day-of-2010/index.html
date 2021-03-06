@@ -2,7 +2,7 @@
 
 <html lang="en-us">
 
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>jonathan&#39;s blog</title>
@@ -14,41 +14,64 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</head>
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
 
-<body>
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
     <div id="container">
-        <header>
-            <h1>
-                <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
-            </h1>
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
 
-            <ul id="social-media">
-                
-        
-                
-                <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-        
-                
-            </ul>
-            
-            <p><em>mathematics, physics, programming, and machine learning</em></p>
-            
-        </header>
+        <ul id="social-media">
+          
 
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
         
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
 <nav>
     <ul>
         
@@ -66,8 +89,8 @@
         
     </ul>
 </nav>
-        
-        <main>
+
+      <main>
 
 
 
@@ -83,34 +106,38 @@
             <time class="post-date" datetime="2010-01-04T09:26:00Z">Jan 4, 2010</time>
         </li>
         
-        
 
         
 
-        <li>2 min read</li>
+        <li>2 minutes read</li>
     </ul>
 </aside>
+
     
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
-
-<p>It's the first (academic) day of 2010. I figured that the best use of this blog is as a log--that is, to log and plan my work for the semester/year/life. If you want to accomplish goals, the fist thing to do is to write them down! So here we go, crude outline for the next semester:</p>
-
+<p>It&rsquo;s the first (academic) day of 2010. I figured that the best use of this blog is as a log&ndash;that is, to log and plan my work for the semester/year/life. If you want to accomplish goals, the fist thing to do is to write them down! So here we go, crude outline for the next semester:</p>
 <ol>
-<li><p>Work through Milnor's Morse theory book, cover to cover. This should be easy since I'm taking a class in morse theory anyway.</p></li>
-
-<li><p>Work through Kirwan's thesis cover to cover. I've already been through quite a bit of it, and the only things that caused me any trouble last summer have since been cleared up.</p></li>
-
-<li><p>Work though Gulliemin and Sternberg's Equivariant cohomology book. Again, quite a bit of the material I already know, so this should be doable.</p></li>
-
-<li><p>Finish working through HKLR. Really the only remaining part is supersymmetric nonlinear sigma models.</p></li>
-
-<li><p>The details of the ADHM construction, once and for all. I should know this already.</p></li>
-
-<li><p>Hilbert schemes of points on a surface. Really, the hyperkahler metric for the scheme of points on (\mathbb{C}^2). Again, I should know this already.</p></li>
+<li>
+<p>Work through Milnor&rsquo;s Morse theory book, cover to cover. This should be easy since I&rsquo;m taking a class in morse theory anyway.</p>
+</li>
+<li>
+<p>Work through Kirwan&rsquo;s thesis cover to cover. I&rsquo;ve already been through quite a bit of it, and the only things that caused me any trouble last summer have since been cleared up.</p>
+</li>
+<li>
+<p>Work though Gulliemin and Sternberg&rsquo;s Equivariant cohomology book. Again, quite a bit of the material I already know, so this should be doable.</p>
+</li>
+<li>
+<p>Finish working through HKLR. Really the only remaining part is supersymmetric nonlinear sigma models.</p>
+</li>
+<li>
+<p>The details of the ADHM construction, once and for all. I should know this already.</p>
+</li>
+<li>
+<p>Hilbert schemes of points on a surface. Really, the hyperkahler metric for the scheme of points on (\mathbb{C}^2). Again, I should know this already.</p>
+</li>
 </ol>
-
-<p>We'll see how these go--this is probably ambitious, and many of these will get extended into the summer.</p>
+<p>We&rsquo;ll see how these go&ndash;this is probably ambitious, and many of these will get extended into the summer.</p>
 
 
 </article>
@@ -191,12 +218,13 @@
 
 </main>
     <footer>
-        <h6> | 
+        <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
             <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
 </body>
 
 </html>

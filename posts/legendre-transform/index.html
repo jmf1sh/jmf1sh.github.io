@@ -2,7 +2,7 @@
 
 <html lang="en-us">
 
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>jonathan&#39;s blog</title>
@@ -14,41 +14,64 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</head>
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
 
-<body>
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
     <div id="container">
-        <header>
-            <h1>
-                <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
-            </h1>
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
 
-            <ul id="social-media">
-                
-        
-                
-                <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-        
-                
-            </ul>
-            
-            <p><em>mathematics, physics, programming, and machine learning</em></p>
-            
-        </header>
+        <ul id="social-media">
+          
 
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
         
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
 <nav>
     <ul>
         
@@ -66,8 +89,8 @@
         
     </ul>
 </nav>
-        
-        <main>
+
+      <main>
 
 
 
@@ -83,46 +106,31 @@
             <time class="post-date" datetime="2010-01-27T00:00:00Z">Jan 27, 2010</time>
         </li>
         
-        
 
         
 
-        <li>2 min read</li>
+        <li>2 minutes read</li>
     </ul>
 </aside>
+
     
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
-
 <p>Yesterday, I gave an introductory talk on Hamiltonian mechanics and symplectic geometry. The starting point is the Legendre transform. First, begin with a configuration space (Q). The Lagrangian (\mathcal{L}) is a smooth function on (TQ). In local coordinates (q^i) on (Q), we have coordinates ((q_i, v_i)) on (TQ), where the (v^i) are the components of the tangent vector</p>
-
 <p>(v = v_i \partial_i \in T_q Q). Typically, the Lagrangian will be of the form</p>
-
 <p>[ \mathcal{L}(q,v) = \frac{1}{2} g(v,v) - V(q), ]</p>
-
 <p>where (g) is some metric on (Q). Now we introduce new coordinates (p_i) defined by</p>
-
 <p>[ p_i = \frac{\partial \mathcal{L}}{\partial v^i}. ]</p>
-
 <p>If (\mathcal{L}) is (strictly?) convex in (v) then we can solve for (v^i) as a function of ((q^i, p_j)). It is easy to check that the (p_i) transform as covectors, and so this gives a diffeomorphism (TQ \to T^\ast Q)(which depends on (\mathcal{L})). For example, in the above Lagrangian,</p>
-
 <p>[ \frac{\partial \mathcal{L}}{\partial v} = g(v, -), ]</p>
-
 <p>which is just the dual of (v) with respect to the metric (g). So for Lagrangians of this form, the map (TQ \to T^\ast Q) is just the one given by the metric.</p>
-
 <p>Now comes the interesting part. There is a natural way to turn (\mathcal{L}), which is a function on (TQ), into a function (H) on (T^\ast Q), in such a way that if we repeat this process, we will get back the original function (\mathcal{L}) on (TQ). This is the Legendre transform:</p>
-
 <p>[ \mathcal{H} = pv - L. ]</p>
-
 <p>Now suppose we have a curve (q(t), \dot{q}(t) \in TQ) that satisfies the Euler-Lagrange equations. Then by the identification (TQ = T^\ast Q), this gives a curve ((q(t), p(t)) \in T^\ast Q). What equation does it satisfy? We have</p>
-
 <p>[ \frac{d}{dt} p = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial v} = \frac{\partial \mathcal{L}}{\partial q} = -\frac{\partial H}{\partial q}, ]</p>
-
 <p>and</p>
-
 <p>[ \frac{d}{dt}q = v = \frac{\partial H}{\partial p}. ]</p>
-
-<p>These are Hamilton's equations, and they say that the curve (\gamma = (q(t), p(t)) \in T^\ast Q) is just an integral curve of the symplectic gradient of (H)! So classical mechanics is really just about flows of Hamiltonian vector fields on symplectic manifolds.</p>
+<p>These are Hamilton&rsquo;s equations, and they say that the curve (\gamma = (q(t), p(t)) \in T^\ast Q) is just an integral curve of the symplectic gradient of (H)! So classical mechanics is really just about flows of Hamiltonian vector fields on symplectic manifolds.</p>
 
 
 </article>
@@ -203,12 +211,13 @@
 
 </main>
     <footer>
-        <h6> | 
+        <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
             <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 
 <html lang="en-us">
 
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>jonathan&#39;s blog</title>
@@ -14,41 +14,64 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</head>
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
 
-<body>
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
     <div id="container">
-        <header>
-            <h1>
-                <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
-            </h1>
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
 
-            <ul id="social-media">
-                
-        
-                
-                <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-        
-                
-            </ul>
-            
-            <p><em>mathematics, physics, programming, and machine learning</em></p>
-            
-        </header>
+        <ul id="social-media">
+          
 
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
         
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
 <nav>
     <ul>
         
@@ -66,8 +89,8 @@
         
     </ul>
 </nav>
-        
-        <main>
+
+      <main>
 
 
 
@@ -83,55 +106,44 @@
             <time class="post-date" datetime="2012-02-04T00:00:00Z">Feb 4, 2012</time>
         </li>
         
-        
 
         
 
-        <li>2 min read</li>
+        <li>2 minutes read</li>
     </ul>
 </aside>
+
     
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
-
 <p>Today, some numerology. The Riemann curvature tensor is a tensor (R_{abcd}) satisfying the identities:</p>
-
 <ol>
-<li><p>(R_{abcd} = -R_{bacd}.)</p></li>
-
-<li><p>(R_{abcd} = R_{cdba}. )</p></li>
-
-<li><p>(R_{abcd} + R_{acdb} + R_{adbc} = 0. ) (First Bianchi)</p></li>
-
-<li><p>(R_{abcd|e} + R_{acec|d} + R_{abde|c} = 0. ) (Second Bianchi)</p></li>
+<li>
+<p>(R_{abcd} = -R_{bacd}.)</p>
+</li>
+<li>
+<p>(R_{abcd} = R_{cdba}. )</p>
+</li>
+<li>
+<p>(R_{abcd} + R_{acdb} + R_{adbc} = 0. ) (First Bianchi)</p>
+</li>
+<li>
+<p>(R_{abcd|e} + R_{acec|d} + R_{abde|c} = 0. ) (Second Bianchi)</p>
+</li>
 </ol>
-
 <p>By 1, the number of independent (ab) indices is (N = n(n-1)/2), and similarly for (cd). By 2, the number of independent pairs of indices is (N(N+1)/2). Now the cyclic constraint 3 can be written as</p>
-
 <p>[ R_{[abcd]} = 0, ]</p>
-
 <p>and thus constitutes ({n \choose 4}) equations. So the number of independent components is</p>
-
 <p>\begin{align}</p>
-
 <p>N(N+1)/2 - {n \choose 4} &amp;= \frac{n(n-1)((n(n-1)/2+1)}{4} - \frac{n(n-1)(n-2)(n-3)}{24} \</p>
-
-<p>&amp;= \frac{(n<sup>2-n)(n</sup>2-n+2)}{8} - \frac{(n<sup>2-n)(n</sup>2-5n+6}{24} \</p>
-
-<p>&amp;= \frac{n<sup>4-2n</sup>3+3n^2+2n}{8} - \frac{n<sup>4-6n</sup>3+11n^2-6n}{24} \</p>
-
-<p>&amp;= \frac{2n<sup>4-2n</sup>2}{24} \</p>
-
-<p>&amp;= \frac{n<sup>4-n</sup>2}{12} \</p>
-
-<p>&amp;= \frac{n<sup>2(n</sup>2-1)}{12}</p>
-
+<p>&amp;= \frac{(n^2-n)(n^2-n+2)}{8} - \frac{(n^2-n)(n^2-5n+6}{24} \</p>
+<p>&amp;= \frac{n^4-2n^3+3n^2+2n}{8} - \frac{n^4-6n^3+11n^2-6n}{24} \</p>
+<p>&amp;= \frac{2n^4-2n^2}{24} \</p>
+<p>&amp;= \frac{n^4-n^2}{12} \</p>
+<p>&amp;= \frac{n^2(n^2-1)}{12}</p>
 <p>\end{align}</p>
-
 <p>Now consider the Weyl tensor (C_{abcd}) which is defined as the completely trace-free part of the Rienmann tensor. The trace is determined by the Ricci tensor (R_{ab}) which as (n(n+1)/2) indepdendent components, so the Weyl tensor has</p>
-
-<p>[ \frac{n<sup>2(n</sup>2-1)}{12} - \frac{n^2-n}{2} = \frac{n<sup>4-7n</sup>2+6n}{12} ]</p>
-
+<p>[ \frac{n^2(n^2-1)}{12} - \frac{n^2-n}{2} = \frac{n^4-7n^2+6n}{12} ]</p>
 <p>independent components. Now, for (n = 1) we see that (R_{abcd}) has no independent components, i.e. it vanishes identically. In (n=2), it has only 1 independent component, and so the scalar curvature determines everything. In (n=3), it has 6 independent components. Note that in this case, the Weyl tensor has no independent components, i.e. it is identically 0. So we see that in (n = 2, 3) every Riemannian manifold is conformally flat. So things only start to get really interesting in (n=4), where the Riemann tensor has 20 independent components, and the Weyl tensor has 10.</p>
 
 
@@ -213,12 +225,13 @@
 
 </main>
     <footer>
-        <h6> | 
+        <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
             <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
 </body>
 
 </html>

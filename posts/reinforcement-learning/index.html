@@ -2,7 +2,7 @@
 
 <html lang="en-us">
 
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>jonathan&#39;s blog</title>
@@ -14,41 +14,64 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</head>
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
 
-<body>
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
     <div id="container">
-        <header>
-            <h1>
-                <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
-            </h1>
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
 
-            <ul id="social-media">
-                
-        
-                
-                <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-        
-                
-            </ul>
-            
-            <p><em>mathematics, physics, programming, and machine learning</em></p>
-            
-        </header>
+        <ul id="social-media">
+          
 
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
         
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
 <nav>
     <ul>
         
@@ -66,8 +89,8 @@
         
     </ul>
 </nav>
-        
-        <main>
+
+      <main>
 
 
 
@@ -83,77 +106,49 @@
             <time class="post-date" datetime="2018-01-14T00:00:00Z">Jan 14, 2018</time>
         </li>
         
-        
 
         
 
-        <li>4 min read</li>
+        <li>3 minutes read</li>
     </ul>
 </aside>
+
     
 
     <p>I would like to record the basic formalism of reinforcement learning. Hopefully, this will lead to a post or series of posts giving a basic tensorflow implementation of a simple deep reinforcement learning model. But first, we have to know what problem we are trying to solve.</p>
-
 <p>To begin, we have the following data (which are considered to be given as part of the problem):</p>
-
 <ul>
-<li>a set of states <span  class="math">\(\mathcal{S}\)</span></li>
-<li>for each state <span  class="math">\(s \in \mathcal{S}\)</span>, a set <span  class="math">\(\mathcal{A}_s\)</span> of actions</li>
-<li>for each state <span  class="math">\(s\)</span>, a mapping <span  class="math">\(t_s: \mathcal{A}_s \to \mathcal{S}\)</span> evolving the system according to the chosen state</li>
-<li>for each state <span  class="math">\(s\)</span>, a reward function <span  class="math">\(r_s: \mathcal{A}_s \to \mathbb{R}\)</span></li>
+<li>a set of states $$\mathcal{S}$$</li>
+<li>for each state $$s \in \mathcal{S}$$, a set $$\mathcal{A}_s$$ of actions</li>
+<li>for each state $$s$$, a mapping $$t_s: \mathcal{A}_s \to \mathcal{S}$$ evolving the system according to the chosen state</li>
+<li>for each state $$s$$, a reward function $$r_s: \mathcal{A}_s \to \mathbb{R}$$</li>
 </ul>
-
-<p>In addition, we also introduce a parameter <span  class="math">\(\gamma \in (0,1)\)</span> as a measure of ``impatience,'' with 0 representing infinite impatience and 1 representing infinite patience. The importance of <span  class="math">\(\gamma\)</span> will become clearer below.</p>
-
-<p>Now for a definition: a <em>policy</em> <span  class="math">\(\pi\)</span> is a choice, for each state <span  class="math">\(s\)</span>, of a probability distribution on the set of actions <span  class="math">\(\mathcal{A}_s\)</span>. Associated to the above data, we also have</p>
-
+<p>In addition, we also introduce a parameter $$\gamma \in (0,1)$$ as a measure of ``impatience,'' with 0 representing infinite impatience and 1 representing infinite patience. The importance of $$\gamma$$ will become clearer below.</p>
+<p>Now for a definition: a <em>policy</em> $$\pi$$ is a choice, for each state $$s$$, of a probability distribution on the set of actions $$\mathcal{A}_s$$. Associated to the above data, we also have</p>
 <ul>
-<li>the set <span  class="math">\(\mathcal{P}\)</span> of policies associated with the states and actions</li>
+<li>the set $$\mathcal{P}$$ of policies associated with the states and actions</li>
 </ul>
-
-<p>Now, consider a sequnce of actions <span  class="math">\(a_0, a_1, \ldots\)</span> starting from an initial state <span  class="math">\(s_0\)</span> transforming the system in a sequence of states <span  class="math">\(s_0, s_1, \ldots\)</span>. Associated to this, we can define a total reward</p>
-
-<p><span  class="math">\[ r_{\mathrm{total}} = r_0(s_0, a_0) + \gamma r(s_1, a_1) + \gamma^2 r(s_2, a_2) + \cdots\]</span></p>
-
-<p>The weighting by <span  class="math">\(\gamma\)</span> will turn out to be very important shortly. Now recall that a policy <span  class="math">\(\pi\)</span> assigns a probability distribution to the viable actions, and therefore for a given policy <span  class="math">\(\pi\)</span> we can consider the expected value of the above quantity. We define the <span  class="math">\(Q\)</span>-function to be</p>
-
-<p><span  class="math">\[ Q(s, a) = \max_{\pi} \mathbb{E}_\pi[r_{\mathrm{total}}] \]</span></p>
-
-<p>From the definition, we see that <span  class="math">\(Q\)</span> measures the maximum possible expected reward starting from the initial state <span  class="math">\(s\)</span> and action <span  class="math">\(a\)</span>. The importance of <span  class="math">\(Q\)</span> is clear--if we know <span  class="math">\(Q\)</span>, then we can find the best sequence of actions greedily: at each state <span  class="math">\(s\)</span>, we simply choose an action <span  class="math">\(a\)</span> that maximizes <span  class="math">\(Q(s,a)\)</span>.</p>
-
-<p>Now comes the magic. From the definition of <span  class="math">\(r_{\mathrm{total}}\)</span> above, we have</p>
-
-<p>
-\begin{align*}
-Q(s,a) &= \max_{\pi} \mathbb{E}_\pi[r(s,a) + \gamma r(s_1, a_1) + \cdots] \\
-&= r(s,a) + \gamma \max_\pi \mathbb{E}_\pi[r(s_1, a_1) + \gamma r(s_2, a_2) + \cdots] \\
-&= r(s,a) + \gamma \max_{a'} Q(t(a), a')
-\end{align*}
-</p>
-
-<p>This recursive relation is known as the <em>Bellman equation</em>. To understand how to solve this equation, let us introduce the space <span  class="math">\(\mathcal{F}\)</span> as follows:</p>
-
-<p><span  class="math">\[ \mathcal{F} = \{ (s,a) \ | \ s \in \mathcal{S}, a \in \mathcal{A}_s \} \]</span></p>
-
-<p>Using the sup-norm, we obtain a Banach space of functions <span  class="math">\(\mathcal{F} \to \mathbb{R}\)</span>. Let <span  class="math">\(B\)</span> be the (non-linear) operator on this space defined by</p>
-
-<p><span  class="math">\[ B(q)(s,a) = r(s,a) + \gamma \max_{a'} q(t(s,a), a') \]</span></p>
-
-<p>which is known as the <em>Bellman operator</em>. As stated above, the desired <span  class="math">\(Q\)</span>-function satisfies the fixed-point equation <span  class="math">\(Q = B(Q)\)</span>. Under reasonable assumptions, it is a straightforward exercise to verify that</p>
-
-<p><span  class="math">\[\| B(q_1) - B(q_2) \| \leq \gamma \| q_1 - q_2 \| \]</span></p>
-
-<p>making <span  class="math">\(B\)</span> into a contraction on the space of functions <span  class="math">\(\mathcal{F} \to \mathbb{R}\)</span>, provided that <span  class="math">\(\gamma \in (0,1)\)</span>. Therefore, by the <a href="https://en.wikipedia.org/wiki/Banach_fixed-point_theorem">Banach fixed-point theorem</a>, the Bellman equation has a unique solution <span  class="math">\(Q^\ast\)</span>. Furthermore, this solution can be constructed as follows: we take an initial function <span  class="math">\(Q_0\)</span>, and take <span  class="math">\(Q^\ast\)</span> to be the limit of the sequence defined by
-<span  class="math">\( Q_{n+1} = B(Q_n). \)</span></p>
-
+<p>Now, consider a sequnce of actions $$a_0, a_1, \ldots$$ starting from an initial state $$s_0$$ transforming the system in a sequence of states $$s_0, s_1, \ldots$$. Associated to this, we can define a total reward</p>
+<p>$$ r_{\mathrm{total}} = r_0(s_0, a_0) + \gamma r(s_1, a_1) + \gamma^2 r(s_2, a_2) + \cdots$$</p>
+<p>The weighting by $$\gamma$$ will turn out to be very important shortly. Now recall that a policy $$\pi$$ assigns a probability distribution to the viable actions, and therefore for a given policy $$\pi$$ we can consider the expected value of the above quantity. We define the $$Q$$-function to be</p>
+<p>$$ Q(s, a) = \max_{\pi} \mathbb{E}_\pi[r_{\mathrm{total}}] $$</p>
+<p>From the definition, we see that $$Q$$ measures the maximum possible expected reward starting from the initial state $$s$$ and action $$a$$. The importance of $$Q$$ is clear&ndash;if we know $$Q$$, then we can find the best sequence of actions greedily: at each state $$s$$, we simply choose an action $$a$$ that maximizes $$Q(s,a)$$.</p>
+<p>Now comes the magic. From the definition of $$r_{\mathrm{total}}$$ above, we have</p>
+<!-- raw HTML omitted -->
+<p>This recursive relation is known as the <em>Bellman equation</em>. To understand how to solve this equation, let us introduce the space $$\mathcal{F}$$ as follows:</p>
+<p>$$ \mathcal{F} = { (s,a) \ | \ s \in \mathcal{S}, a \in \mathcal{A}_s } $$</p>
+<p>Using the sup-norm, we obtain a Banach space of functions $$\mathcal{F} \to \mathbb{R}$$. Let $$B$$ be the (non-linear) operator on this space defined by</p>
+<p>$$ B(q)(s,a) = r(s,a) + \gamma \max_{a'} q(t(s,a), a') $$</p>
+<p>which is known as the <em>Bellman operator</em>. As stated above, the desired $$Q$$-function satisfies the fixed-point equation $$Q = B(Q)$$. Under reasonable assumptions, it is a straightforward exercise to verify that</p>
+<p>$$| B(q_1) - B(q_2) | \leq \gamma | q_1 - q_2 | $$</p>
+<p>making $$B$$ into a contraction on the space of functions $$\mathcal{F} \to \mathbb{R}$$, provided that $$\gamma \in (0,1)$$. Therefore, by the <a href="https://en.wikipedia.org/wiki/Banach_fixed-point_theorem">Banach fixed-point theorem</a>, the Bellman equation has a unique solution $$Q^\ast$$. Furthermore, this solution can be constructed as follows: we take an initial function $$Q_0$$, and take $$Q^\ast$$ to be the limit of the sequence defined by
+$$ Q_{n+1} = B(Q_n). $$</p>
 <p>Now, the basic ideas of deep reinforcement learning are the following</p>
-
 <ul>
 <li>use a neural network to provide a reasonable finite-dimensional approximation to the aforementioned Banach space</li>
-<li>using an approximate <span  class="math">\(Q\)</span>, generate new sequences of actions and add these to a running list of <em>experiences</em></li>
-<li>periodically, take a random sample of past experiences and use these to update the <span  class="math">\(Q\)</span> function via the Bellman equation</li>
+<li>using an approximate $$Q$$, generate new sequences of actions and add these to a running list of <em>experiences</em></li>
+<li>periodically, take a random sample of past experiences and use these to update the $$Q$$ function via the Bellman equation</li>
 </ul>
-
 <p>For more details, see <a href="https://www.nature.com/articles/nature14236">Human-level control through deep reinforcement learning</a>. I plan to follow up with more posts giving a basic implementation using <a href="https://www.tensorflow.org/">tensorflow</a> and <a href="https://github.com/openai/gym">OpenAI Gym</a>.</p>
 
 
@@ -235,12 +230,13 @@ Q(s,a) &= \max_{\pi} \mathbb{E}_\pi[r(s,a) + \gamma r(s_1, a_1) + \cdots] \\
 
 </main>
     <footer>
-        <h6> | 
+        <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
             <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
 </body>
 
 </html>

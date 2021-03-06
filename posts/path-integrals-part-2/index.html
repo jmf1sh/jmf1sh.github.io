@@ -2,7 +2,7 @@
 
 <html lang="en-us">
 
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>jonathan&#39;s blog</title>
@@ -14,41 +14,64 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</head>
+    
+   <script>
+  MathJax = {
+      tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true
+      },
+      options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  };
 
-<body>
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+          x.parentElement.classList += 'has-jax'})
+  });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+
+  <body>
     <div id="container">
-        <header>
-            <h1>
-                <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
-            </h1>
+      <header>
+        <h1>
+          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+        </h1>
 
-            <ul id="social-media">
-                
-        
-                
-                <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-                <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
-                
-        
-                
-        
-                
-            </ul>
-            
-            <p><em>mathematics, physics, programming, and machine learning</em></p>
-            
-        </header>
+        <ul id="social-media">
+          
 
+          
+          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+
+          
+
+          
+        </ul>
         
+        <p><em>mathematics, physics, programming, and machine learning</em></p>
+        
+      </header>
+
+      
 <nav>
     <ul>
         
@@ -66,8 +89,8 @@
         
     </ul>
 </nav>
-        
-        <main>
+
+      <main>
 
 
 
@@ -83,46 +106,31 @@
             <time class="post-date" datetime="2012-02-04T00:00:00Z">Feb 4, 2012</time>
         </li>
         
-        
 
         
 
-        <li>2 min read</li>
+        <li>2 minutes read</li>
     </ul>
 </aside>
+
     
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
-
 <p>Consider the heat equation</p>
-
 <p>[ \frac{\partial \psi}{\partial t} = -\hat{H} \psi ]</p>
-
 <p>We find similarly</p>
-
-<p>[ \langle x_N|U_t|x<em>0\rangle = \int \exp \sum</em>^{N-1} ik_j(x<em>j - x</em>{j+1}) -\Delta t H(x_j, k_j) dx dk. ]</p>
-
+<p>[ \langle x_N|U_t|x_0\rangle = \int \exp \sum_{j=0}^{N-1} ik_j(x_j - x_{j+1}) -\Delta t H(x_j, k_j) dx dk. ]</p>
 <p>Now take (H(x,k) = k^2/2m + V(x)) and complete the square:</p>
-
-<p>[ ik_j(x<em>j - x</em>{j+1}) - \Delta t k_j^2/2m - \Delta tV(x<em>j) + ik</em>{j+1}(x_{j+1} - x_{j+2}) - k_{j+1}^2/2m - V(x_{j+1}) ]</p>
-
+<p>[ ik_j(x_j - x_{j+1}) - \Delta t k_j^2/2m - \Delta tV(x_j) + ik_{j+1}(x_{j+1} - x_{j+2}) - k_{j+1}^2/2m - V(x_{j+1}) ]</p>
 <p>\begin{align}</p>
-
 <p>ik_j a_j - \Delta t k_j^2/2m &amp;= -(-2mi k_j a_j / \Delta t + k_j^2) \Delta t/2m \</p>
-
 <p>&amp;= -(k_j^2 -2mi k_j a_j/\Delta t -m^2 a_j^2/(\Delta t)^2 + m^2 a_j^2/(\Delta t)^2) \Delta t/2m \</p>
-
 <p>&amp;= -(k_j -mia_j/\Delta t)^2 \Delta t/2m -ma_j^2/2\Delta t</p>
-
 <p>\end{align}</p>
-
 <p>Combining things together, we have that the heat kernel is given by</p>
-
 <p>[ \langle y|e^{-t \hat{H}}|x\rangle = \int e^{-S_{\textrm{euc}}} \mathcal{D}x ]</p>
-
 <p>That is, Schwartz kernel of time evolution operator is given by the oscialltory Lorentzian signature path integral, whereas the heat kernel is given by the exponentially decaying path integral (better chance of being well-defined). Most importantly, the heat kernel contains most of the essential information about the spectrum of (\hat{H}), which is really all we need in order to understand the dynamics.</p>
-
-<p>See ABC of Instantons. (I never understood the title of Nekrasov's &quot;ABCD of Instantons&quot; until I found this classic).</p>
+<p>See ABC of Instantons. (I never understood the title of Nekrasov&rsquo;s &ldquo;ABCD of Instantons&rdquo; until I found this classic).</p>
 
 
 </article>
@@ -203,12 +211,13 @@
 
 </main>
     <footer>
-        <h6> | 
+        <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
             <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
 </body>
 
 </html>
