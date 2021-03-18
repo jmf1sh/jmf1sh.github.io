@@ -4,6 +4,8 @@ date: 2014-03-06
 draft: false
 ---
 
+[Other articles in this series]({{< ref "2014-03-05-clifford-algebras-part-0.md" >}})
+
 This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
 
 
