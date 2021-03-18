@@ -25,13 +25,9 @@ $$ ik_j(x_j - x_{j+1}) - \Delta t k_j^2/2m - \Delta tV(x_j) + ik_{j+1}(x_{j+1} -
 
 
 \\begin{align}
-
- ik_j a_j - \Delta t k_j^2/2m &= -(-2mi k_j a_j / \Delta t + k_j^2) \Delta t/2m \\\
-
-&= -(k_j^2 -2mi k_j a_j/\Delta t -m^2 a_j^2/(\Delta t)^2 + m^2 a_j^2/(\Delta t)^2) \Delta t/2m \\\
-
+ ik_j a_j - \Delta t k_j^2/2m &= -(-2mi k_j a_j / \Delta t + k_j^2) \Delta t/2m \\\\\\
+&= -(k_j^2 -2mi k_j a_j/\Delta t -m^2 a_j^2/(\Delta t)^2 + m^2 a_j^2/(\Delta t)^2) \Delta t/2m \\\\\\
 &= -(k_j -mia_j/\Delta t)^2 \Delta t/2m -ma_j^2/2\Delta t
-
 \\end{align}
 
 

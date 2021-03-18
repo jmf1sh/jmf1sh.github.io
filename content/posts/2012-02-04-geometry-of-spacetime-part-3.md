@@ -29,19 +29,12 @@ $$ R_{[abcd]} = 0, $$
 and thus constitutes ${n \choose 4}$ equations. So the number of independent components is
 
 \\begin{align}
-
- N(N+1)/2 - {n \choose 4} &= \frac{n(n-1)((n(n-1)/2+1)}{4} - \frac{n(n-1)(n-2)(n-3)}{24} \\\
-
-&= \frac{(n^2-n)(n^2-n+2)}{8} - \frac{(n^2-n)(n^2-5n+6}{24} \\\
-
-&= \frac{n^4-2n^3+3n^2+2n}{8} - \frac{n^4-6n^3+11n^2-6n}{24} \\\
-
-&= \frac{2n^4-2n^2}{24} \\\
-
-&= \frac{n^4-n^2}{12} \\\
-
+ N(N+1)/2 - {n \choose 4} &= \frac{n(n-1)((n(n-1)/2+1)}{4} - \frac{n(n-1)(n-2)(n-3)}{24} \\\\\\
+&= \frac{(n^2-n)(n^2-n+2)}{8} - \frac{(n^2-n)(n^2-5n+6}{24} \\\\\\
+&= \frac{n^4-2n^3+3n^2+2n}{8} - \frac{n^4-6n^3+11n^2-6n}{24} \\\\\\
+&= \frac{2n^4-2n^2}{24} \\\\\\
+&= \frac{n^4-n^2}{12} \\\\\\
 &= \frac{n^2(n^2-1)}{12}
-
 \\end{align}
 
 
