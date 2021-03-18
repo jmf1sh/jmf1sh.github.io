@@ -13,11 +13,11 @@ Usual physics derivations of the Virasoro algebra from the free boson in two dim
 
 Let $A = \mathbf C[x_1, x_2, \dots]$ be the polynomial algebra in countably many generators. For an integer $k &gt; 0$, define a $k$-linear operator $a_k$ on $A$ by
 
-\[ a_k = \frac{\partial}{\partial x_k}, \ k &gt; 0 \]
+$$ a_k = \frac{\partial}{\partial x_k}, \ k &gt; 0 $$
 
 Similarly, for $k &lt; 0$ we define $a_k$ by multiplication:
 
-\[ a_{-k} = k x_k, k &gt; 0 \]
+$$ a_{-k} = k x_k, k &gt; 0 $$
 
 For $k = 0$, we define $a_0$ to be multiplication by some fixed complex number (which by abuse of notation we also denote by $a_0$).
 
@@ -27,12 +27,12 @@ Lemma. We have the commutation relation $[a_m, a_n] = m \delta_{m+n}$ as linear 
 
 For any monomial in the $a_k$, we define normal ordering $::$ to be the monomial obtained by reordering the terms so that the indices are increasing. (Mathematical interpretation: it is a section of the quotient map from the tensor algebra in the $a_k$ to the symmetric algebra, defined by lexicographic order.) For example,
 
-\[ :a_j a_k:\ = \left\{ \begin{array}{rr} a_j a_k, &amp; j \leq k \\ a_k a_j, &amp; j &gt; k \end{array} \right. \]
+$$ :a_j a_k:\ = \left\{ \\begin{array}{rr} a_j a_k, & j \leq k \\ a_k a_j, & j &gt; k \\end{array} \right. $$
 
 
 Next we formally define a set of operators $L_k$ by
 
-\[ L_k = \frac{1}{2}\sum_j :a_j a_{k-j}: \]
+$$ L_k = \frac{1}{2}\sum_j :a_j a_{k-j}: $$
 
 
 Proposition. The $L_k$ are well-defined as linear operators on $A$.
@@ -46,62 +46,62 @@ Lemma. As operators on $A$, we have $[a_k, L_n] = k a_{k+n}$.
 
 Theorem. As operators on $A$, we have
 
-\[ [L_m, L_n] = (m-n) L_{m+n} + \frac{1}{12} (m^3-m) \delta_{m+n} \]
+$$ [L_m, L_n] = (m-n) L_{m+n} + \frac{1}{12} (m^3-m) \delta_{m+n} $$
 
 
 Proof. Fix $m,n$. For the sake of simplicity we will assume $m \neq n$ and $mn \neq 0$. (The other special cases can be treated by similar arguments.) By the same argument as the proof of the preceding proposition, for any fixed element $f \in A$ there exists some $N \gg 0$ such that
 
-\[ [L_m, L_n]f = [L_m^N, L_n] f \]
+$$ [L_m, L_n]f = [L_m^N, L_n] f $$
 
 where $L_m^N$ is the truncated operator
 
-\[ L_m^N = \frac{1}{2}\sum_{|j| &lt; N} :a_j a_{m-j}: \]
+$$ L_m^N = \frac{1}{2}\sum_{|j| &lt; N} :a_j a_{m-j}: $$
 
 Let us compute (noting that since $m \neq 0$, $:a_j a_{m-j}: = a_j a_{m-j}$)
 
-\begin{align}
+\\begin{align}
 
-  [L_m^N, L_n] &amp;= \frac{1}{2} \sum_{|j| &lt; N} [a_j a_{m-j}, L_n] \\
+  [L_m^N, L_n] &= \frac{1}{2} \sum_{|j| &lt; N} [a_j a_{m-j}, L_n] \\\
 
-  &amp;= \frac{1}{2} \sum_{|j| &lt; N} (m-j) a_j a_{m+n-j} + \frac{1}{2} \sum_{|j| &lt; N}j a_{n+j} a_{m-j}
+  &= \frac{1}{2} \sum_{|j| &lt; N} (m-j) a_j a_{m+n-j} + \frac{1}{2} \sum_{|j| &lt; N}j a_{n+j} a_{m-j}
 
-\end{align}
+\\end{align}
 
 Denote the two sums above by $S_1$ and $S_2$. It is clear that these should be related to the operator $L_{m+n}$, but to see the exact relation we will have to normal order the terms. Let's start with $S_1$. Note that $a_j a_{m+n-j}$ is already normal ordered, unless $j &gt; m+n-j$. Hence
 
-\begin{align}
+\\begin{align}
 
-  S_1 &amp;= \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{1}{2} \sum_{m+n\lt2j\lt2N} (m-j) [a_j, a_{m+n-j}] \\
+  S_1 &= \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{1}{2} \sum_{m+n\lt2j\lt2N} (m-j) [a_j, a_{m+n-j}] \\\
 
-&amp;= \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{\delta_{m+n}}{2} \sum_{m+n\lt2j\lt2N} j(m-j) \\
+&= \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{\delta_{m+n}}{2} \sum_{m+n\lt2j\lt2N} j(m-j) \\\
 
-&amp;= \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{\delta_{m+n}}{2} \sum_{0\lt j\lt N} j(m-j)
+&= \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{\delta_{m+n}}{2} \sum_{0\lt j\lt N} j(m-j)
 
-\end{align}
+\\end{align}
 
 
 Similarly, we normal order the terms in $S_2$:
 
-\begin{align}
+\\begin{align}
 
-  S_2 &amp;= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{1}{2} \sum_{m-n\lt2j\lt2N}j [a_{m-j}, a_{n+j}] \\
+  S_2 &= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{1}{2} \sum_{m-n\lt2j\lt2N}j [a_{m-j}, a_{n+j}] \\\
 
-&amp;= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{\delta_{m+n}}{2} \sum_{m\lt j\lt N}j (m-j) \\
+&= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{\delta_{m+n}}{2} \sum_{m\lt j\lt N}j (m-j) \\\
 
-&amp;= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{\delta_{m+n}}{2} \sum_{m\lt j\lt N}j (m-j) \\
+&= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{\delta_{m+n}}{2} \sum_{m\lt j\lt N}j (m-j) \\\
 
-&amp;= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{\delta_{m+n}}{2} \sum_{m\lt j\lt N}j (m-j)
+&= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{\delta_{m+n}}{2} \sum_{m\lt j\lt N}j (m-j)
 
-\end{align}
+\\end{align}
 
 
 Hence we have
 
-\[ S_1 + S_2 = \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: + \frac{\delta_{m+n}}{2} \sum_{0\lt j\leq m} j(m-j)  \]
+$$ S_1 + S_2 = \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: + \frac{\delta_{m+n}}{2} \sum_{0\lt j\leq m} j(m-j)  $$
 
 Now that everything is normal ordered, we can take the limit $N \to \infty$ without fear. After a simple cancellation, and explicitly summing the last term using well-known formulas for sums of powers of integers, we obtain:
 
-\[ [L_m, L_n] = (m-n) L_{m+n} + \frac{1}{12} (m^3-m) \delta_{m+n} \]
+$$ [L_m, L_n] = (m-n) L_{m+n} + \frac{1}{12} (m^3-m) \delta_{m+n} $$
 
 For the usual conventions of the Virasoro algebra, this shows that this representation corresponds to central charge $c=1$.
 

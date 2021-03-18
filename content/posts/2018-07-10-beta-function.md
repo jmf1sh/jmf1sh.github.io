@@ -32,10 +32,10 @@ generalized beta function, or equivalently in terms of the Gamma function).
 Using Bayes' theorem we have
 
 $$
-\begin{align*}
+\\begin{align*}
 P(\alpha | n_1, \ldots, n_k) &= C P(n_1, \ldots, n_k | \alpha) P(\alpha) \\\\\\
 &= C' \prod_i p_i^{n_i+\alpha_i-1}
-\end{align*}
+\\end{align*}
 $$
 
 This gives a new Dirichlet distribution with $$\alpha_i$$ replaced by $$\alpha_i+n_i$$.

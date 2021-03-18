@@ -19,29 +19,29 @@ $$ \Omega = \{ (x,v,t) \in \partial_+(SM) \times \mathbf{R} \ | \ 0 \leq t \leq 
 
 via $(x,v,t) \mapsto \exp_x(tv)$. Let $\Phi: \Omega \to M$ denote this diffeomorphism. Then we have, for all $f \in C^\infty(SM)$
 
-\begin{align}
+\\begin{align}
 
-\int_{SM} f dvol(SM) &amp;= \int_\Omega (\Phi^\ast f) (\Phi^\ast dvol(SM)) \\
+\int_{SM} f dvol(SM) &= \int_\Omega (\Phi^\ast f) (\Phi^\ast dvol(SM)) \\\
 
-&amp;= \int_{\partial_+(SM)} \int_0^{\tau(x,v)} f(\phi_t(x,v)) \Phi^\ast dvol(SM).
+&= \int_{\partial_+(SM)} \int_0^{\tau(x,v)} f(\phi_t(x,v)) \Phi^\ast dvol(SM).
 
-\end{align}
+\\end{align}
 
 Therefore, we can compute integrals of functions over $SM$ by integrating along geodesics, provided that we can cmopute $\Phi^\ast dvol(SM)$. This is the content of the Santalo formula.
 
 
 Theorem (Santalo formula). For all $f \in C^\infty(SM)$, we have
 
-\[ \int_{SM} f dvol(SM) = \int_{\partial_+(SM)} \int_0^{\tau(x,v)} f(\phi_t(x,v)) \langle v, \nu\rangle dt dvol(\partial(SM)) \]
+$$ \int_{SM} f dvol(SM) = \int_{\partial_+(SM)} \int_0^{\tau(x,v)} f(\phi_t(x,v)) \langle v, \nu\rangle dt dvol(\partial(SM)) $$
 
 
 Proof. Necessarily, we must have
 
-\[ \Phi^\ast(dvol(SM)) = a(x,v) dt \wedge dvol(\partial(SM))), \]
+$$ \Phi^\ast(dvol(SM)) = a(x,v) dt \wedge dvol(\partial(SM))), $$
 
 for some function $a(x,v)$. The reason we can assume that $a$ is independent of $t$ is that $\Phi$ is defined via geodesic flow, and geodesic flow preserves the volume form on $SM$. To compute the factor $a(x,v)$, we just need to compute
 
-\[ i_{\partial / \partial t} \Phi^\ast(dvol(SM)) = \Phi^\ast(i_{\Phi_\ast(\partial / \partial t)} dvol(SM)) \]
+$$ i_{\partial / \partial t} \Phi^\ast(dvol(SM)) = \Phi^\ast(i_{\Phi_\ast(\partial / \partial t)} dvol(SM)) $$
 
 From the definition of $\Phi$, we have that $\Phi_\ast(\partial / \partial t)$ is the Reeb vector field on $SM$, i.e. the vector field generating geodesic flow. Therefore, $\Phi_\ast(\partial / \partial t)$ is equal, at a point $(x,v)$ to the horizontal lift of the vector $v$. Therefore, using the definition of the induced volume form on a hypersurface of a Riemannian manifold, we find
 

@@ -34,7 +34,7 @@ Physics references:
 
 Before trying to define generalized geometry, we should first decide what we mean by ordinary geometry. Of course, this question doesn't have a unique answer, so there are many ways to generalize the classical notions of manifolds and varieties. The viewpoint taken in generalized geometry is the following: the distinguishing feature of smooth manifolds is the existence of a tangent bundle
 
-\[ TM \to M \]
+$$ TM \to M $$
 
 which satisfies some nice axioms. The basic idea of generalized geometry is to replace the tangent bundle with some other vector bundle $L \to M$, again satisfying some nice axioms. Different generalized geometries on $M$ will correspond to different choices of bundle $L \to M$, as well as auxiliary data compatible with $L$ in some appropriate sense.
 
@@ -62,18 +62,18 @@ Courant Bracket
 
 We'd like to try to fit the preceding examples into a common framework. Let $\mathbf{T}M = TM \oplus T^\ast M$. This bundle has a natural symmetric bilinear pairing given by
 
-\[ \langle X \oplus \alpha, Y \oplus \beta \rangle = \frac{1}{2} \alpha(Y) + \frac{1}{2} \beta(X) \]
+$$ \langle X \oplus \alpha, Y \oplus \beta \rangle = \frac{1}{2} \alpha(Y) + \frac{1}{2} \beta(X) $$
 
 Note that this bilinear form is of split signature $(n,n)$. We define a bracket on sections of $\mathbf{T}M$ by
 
-\[ [X\oplus \alpha, Y\oplus \beta] = [X,Y] \oplus \left(L_X \beta + \frac{1}{2}(d \alpha(Y))- L_Y \alpha -\frac{1}{2} d( \beta(X)) \right ) \]
+$$ [X\oplus \alpha, Y\oplus \beta] = [X,Y] \oplus \left(L_X \beta + \frac{1}{2}(d \alpha(Y))- L_Y \alpha -\frac{1}{2} d( \beta(X)) \right ) $$
 
 Note that this bracket is not a Lie bracket. We also have an anchor map $a: \mathbf{T}M \to TM$ which is just the projection.
 
 
  Let $B$ be a 2-form on $M$. Define an action of $B$ on sections of $\mathbf TM$ by
 
-\[ X + \alpha \mapsto X + \alpha + i_X B \]
+$$ X + \alpha \mapsto X + \alpha + i_X B $$
 
 
 Proposition. This action preserves the Courant bracket if and only if $B$ is closed.
@@ -111,7 +111,7 @@ Definition. A smooth function $f$ on $M$ is called admissible if there exists a 
 
 The Poisson bracket is defined as follows. If $f,g$ are admissible, then define
 
-\[ \{f, g\} = X_f g. \]
+$$ \{f, g\} = X_f g. $$
 
 It is easy to check from the definitions that the bracket on admissible functions is well-defined (independent of choice of $X_f$) and skew-symmetric. With a little bit of calculation, we find the following.
 
@@ -131,14 +131,14 @@ Equivalently: A generalized complex structure is a (complex) Dirac structure $L 
 
 Example 1. Let $J$ be an ordinary complex structure on $M$. Then the endomorphism
 
-\[ \begin{bmatrix} -J &amp; 0 \\ 0 &amp; J^\ast \end{bmatrix} \]
+$$ \\begin{bmatrix} -J & 0 \\ 0 & J^\ast \\end{bmatrix} $$
 
 defines a generalized complex structure on $M$.
 
 
 Example 2. Let $\omega$ be a symplectic form on $M$. Then the endomorphism
 
-\[ \begin{bmatrix} 0 &amp; -\omega^{-1} \\ \omega &amp; 0 \end{bmatrix} \]
+$$ \\begin{bmatrix} 0 & -\omega^{-1} \\ \omega & 0 \\end{bmatrix} $$
 
 defines a generalized complex structure on $M$.
 
@@ -148,7 +148,7 @@ Thus, generalized geometry gives a common framework for both complex geometry an
 
 Example 3. Let $J$ be a complex structure on $M$ and let $\sigma$ be a holomorphic Poisson tensor. Consider the subbundle $L \subset \mathbf TM$ defined as the span of
 
-\[ \frac{\partial}{\partial \bar z_1}, \dots, \frac{\partial}{\partial \bar z_n}, dz_1 - \sigma(dz_1), \dots, dz_n - \sigma(dz_n) \]
+$$ \frac{\partial}{\partial \bar z_1}, \dots, \frac{\partial}{\partial \bar z_n}, dz_1 - \sigma(dz_1), \dots, dz_n - \sigma(dz_n) $$
 
 Then $L$ defines a generalized complex structure on $M$.
 
@@ -165,11 +165,11 @@ Generalized Kähler Manifolds
 
 Let $(g, J, \omega)$ be a Kähler triple. The Kähler property requires that
 
-\[ \omega = g J. \]
+$$ \omega = g J. $$
 
 Let $I_1$ denote the generalized complex structure induced by $J$, and let $I_1$ denote the generalized complex structure induced by the symplectic form $\omega$. We have
 
-\[ I_1 I_2 = \begin{bmatrix} - J &amp; 0 \\ 0 &amp; J^\ast \end{bmatrix} \begin{bmatrix} 0 &amp; -\omega^{-1} \\ \omega &amp; 0 \end{bmatrix} = \begin{bmatrix} 0 &amp; g^{-1} \\ g &amp; 0 \end{bmatrix} = I_2 I_1 \]
+$$ I_1 I_2 = \\begin{bmatrix} - J & 0 \\ 0 & J^\ast \\end{bmatrix} \\begin{bmatrix} 0 & -\omega^{-1} \\ \omega & 0 \\end{bmatrix} = \\begin{bmatrix} 0 & g^{-1} \\ g & 0 \\end{bmatrix} = I_2 I_1 $$
 
 
  Definition. A generalized Kähler manifold is a manifold with two commuting generalized complex structure $I_1, I_2$ such that the bilinear pairing $(I_1 I_2 u, v)$ is positive definite.
@@ -200,6 +200,6 @@ Example. If $M$ is symplectic with symplectic form $\omega$, then $\phi = \exp(i
 
 If $(M, \phi)$ is generalized Calabi-Yau, then so is $(M, \exp(B) \phi)$ for any closed real 2-form $B$. In the symplectic case, we obtain
 
-\[ \phi = \exp(B+i\omega) \]
+$$ \phi = \exp(B+i\omega) $$
 
 This explains the appearance of the $B$-field (or "complexified Kähler form") in discussions of mirror symmetry.

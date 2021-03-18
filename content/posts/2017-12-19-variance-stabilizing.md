@@ -13,11 +13,11 @@ $ f(x) = f(\mu + (x-\mu)) \approx f(\mu) + f'(\mu)(x-\mu). $
 Then we have
 
 $$
-\begin{align}
+\\begin{align}
 E[y] &\approx f(\mu) \\\\\\
 var(y) &\approx f'(\mu)^2 var(x) \\\\\\
  &= f'(\mu)^2 g(\mu)
-\end{align}
+\\end{align}
 $$
 
 Now, suppose we want to choose $f(x)$ so that $var(y) \approx 1$. Using the above approximation, we have $ f'(\mu) = \frac{1}{\sqrt{g(\mu)}} $, which we can solve as

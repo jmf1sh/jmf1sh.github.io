@@ -30,11 +30,11 @@ From the definition, we see that $$Q$$ measures the maximum possible expected re
 Now comes the magic. From the definition of $$r_{\mathrm{total}}$$ above, we have
 
 $$
-\begin{align*}
+\\begin{align*}
 Q(s,a) &= \max_{\pi} \mathbb{E}_\pi[r(s,a) + \gamma r(s_1, a_1) + \cdots] \\\\\\
 &= r(s,a) + \gamma \max_\pi \mathbb{E}_\pi[r(s_1, a_1) + \gamma r(s_2, a_2) + \cdots] \\\\\\
 &= r(s,a) + \gamma \max_{a'} Q(t(a), a')
-\end{align*}
+\\end{align*}
 $$
 
 This recursive relation is known as the _Bellman equation_. To understand how to solve this equation, let us introduce the space $$\mathcal{F}$$ as follows:

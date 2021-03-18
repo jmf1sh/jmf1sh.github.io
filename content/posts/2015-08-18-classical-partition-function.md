@@ -18,16 +18,16 @@ So instead, we ask statistical questions. Imagine that we cannot measure the sta
 
 How does $\rho$ evolve in time? We know that the system obeys Hamilton's equations,
 
-\[ (\dot x, \dot p) = X_H = (\partial H / \partial p, -\partial H / \partial x) \]
+$$ (\dot x, \dot p) = X_H = (\partial H / \partial p, -\partial H / \partial x) $$
 
  in local Darboux coordinates. Therefore, a particle located at $(x,p)$ in phase space at time $t$ will be located at $(x,p)+X_H dt$ in phase space at time $t+dt$. Therefore, the probability that a particle is at point $(x,p)$ at time $t+dt$, should be equal to the probability that the particle is at point $(x,p)-X_H dt$ at time $t$. Therefore, we have
 
-\[ \frac{\partial \rho}{\partial t} = \frac{\partial H}{\partial x} \frac{\partial \rho}{\partial p} - \frac{\partial H}{\partial p} \frac{\partial \rho}{\partial x} = \{H, \rho\} \]
+$$ \frac{\partial \rho}{\partial t} = \frac{\partial H}{\partial x} \frac{\partial \rho}{\partial p} - \frac{\partial H}{\partial p} \frac{\partial \rho}{\partial x} = \{H, \rho\} $$
 
 
 Given a probability distribution $\rho$, the entropy is defined to be
 
-\[ S[\rho] = -\int_M  \rho \log \rho d\mu. \]
+$$ S[\rho] = -\int_M  \rho \log \rho d\mu. $$
 
 
 (A version of) the second law of thermodynamics. For a given average energy $U$, the system assumes a distribution of maximal possible entropy at thermodynamic equilibrium.
@@ -35,14 +35,14 @@ Given a probability distribution $\rho$, the entropy is defined to be
 
 The goal now, is to determine what distribution $\rho$ will maximize the entropy, subject to the constraints (for fixed $U$)
 
-\begin{align*} \int_M H \rho d\mu &amp;= U \\\
+\\begin{align*} \int_M H \rho d\mu &= U \\\
 
-\int_M \rho d\mu &amp;= 1 \end{align*}
+\int_M \rho d\mu &= 1 \\end{align*}
 
 
 Setting aside technical issues of convergence, etc., this variational problem is easily solved using the method of Lagrange multipliers. Introducing parameters $\lambda_1, \lambda_2$, we consider the modified functional
 
-\[ S[\rho, \lambda_1, \lambda_2, U] = \int_M\left(-\rho \log \rho +\lambda_1\rho +\lambda_2(H\rho)\right)d\mu -\lambda_1-\lambda_2 U. \]
+$$ S[\rho, \lambda_1, \lambda_2, U] = \int_M\left(-\rho \log \rho +\lambda_1\rho +\lambda_2(H\rho)\right)d\mu -\lambda_1-\lambda_2 U. $$
 
 
 Note that $\partial S / \partial U = -\lambda_2$, and this is conventionally identified with (minus) the inverse temperature.
@@ -50,29 +50,29 @@ Note that $\partial S / \partial U = -\lambda_2$, and this is conventionally ide
 
 Taking the variation with respect to $\rho$, we find
 
-\[ 0= \frac{\delta S}{\delta \rho} = -\log \rho-1+\lambda_1+H\lambda_2\]
+$$ 0= \frac{\delta S}{\delta \rho} = -\log \rho-1+\lambda_1+H\lambda_2$$
 
 Therefore, $rho$ is proportional to $e^{-\beta H}$ where we have set $\beta=-\lambda_2$. Define the partition function $Z$ to be
 
-\[ Z = \int_M e^{-\beta H} d\mu. \]
+$$ Z = \int_M e^{-\beta H} d\mu. $$
 
 We therefore have proved (formally and heuristically only!):
 
 
 Theorem. The probability distribution $\rho$ assumed by the system at thermodynamic equilibrium is given by
 
-\[  \rho = \frac{e^{-\beta H}}{Z} \]
+$$  \rho = \frac{e^{-\beta H}}{Z} $$
 
 where $\beta &gt; 0$ is a real parameter, called the inverse temperature.
 
 
 Corollary. At thermodynamic equilibrium, the average energy is given by
 
-\[ U = -\frac{\partial \log Z}{\partial \beta} , \]
+$$ U = -\frac{\partial \log Z}{\partial \beta} , $$
 
 and the entropy is given by
 
-\[ S = \beta U + \log Z.\]
+$$ S = \beta U + \log Z.$$
 
 
 
