@@ -17,15 +17,17 @@
     
    <script>
   MathJax = {
-      tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$','$$'], ['\\[', '\\]']],
-          processEscapes: true,
-          processEnvironments: true
-      },
-      options: {
-          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      }
+    loader: {load: ['[tex]/ams']},
+    tex: {
+      packages: {'[+]': ['ams']},
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
   };
 
   window.addEventListener('load', (event) => {
@@ -117,32 +119,30 @@
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
 <p>For some reason I&rsquo;ve been interested in lattice QFT recently, especially lattice gauge theory (note to self: a miniproject for the Christmas break is to understand the paper by Kogut and Susskind <a href="http://prd.aps.org/abstract/PRD/v11/i2/p395_1)">http://prd.aps.org/abstract/PRD/v11/i2/p395_1)</a>. As a warm-up, I thought I would try understanding plain-old 1D QM on the lattice, and writing some code to see if I got results that are at all reasonable.</p>
-<p>The Setup: We will take as our space of states (\mathscr{H} = L^2([0,1])) and hamiltonian</p>
-<p>$$</p>
-<p>H = -\frac{d^2}{dx^2} + V(x).</p>
-<p>$$</p>
-<p>for some real function (V(x)) defined on ([0,1]).</p>
-<p>Now fix some large positive integer (N). Let (\epsilon = 1/N). We will consider the subspace (\mathscr{H}_N) of (\mathscr{H}) spanned by those functions that are constant on the subintervals (i\epsilon, (i+1)\epsilon)). Such a function is defined (a.e.) by the (N) values it takes on these intervals, so we may identify (\mathscr{H}_N \cong \mathbb{C}^N) as vector spaces. Let us denote elements of (\mathscr{H}_N) by (\psi_i) for (i = 0, \ldots, N-1). Thinking of these as the values of a function (\psi(x)) at (x = i\epsilon), we see that the inner product on (\mathscr{H}_N) is given by</p>
-<p>$$</p>
-<p>(\phi, \psi) = \int_0^1 \bar{\phi}(x) \psi(x) dx = \sum_{i=0}^{N-1} \bar{\phi}_i \psi(i)</p>
-<p>$$</p>
-<p>So we see that with these identifications, (\mathscr{H}_N) is just (\mathbb{C}^N) with the usual hermitian inner product.</p>
-<p>Now, we can approximate (d/dx) with the forward and backward difference operators</p>
-<p>\begin{align}</p>
-<p>(D_+ \psi)_i &amp;= \frac{\psi_{i+1} - \psi_i}{\epsilon} \</p>
-<p>(D_-\psi)_i &amp;= \frac{\psi_i - \psi_{i-1}}{\epsilon}</p>
-<p>\end{align}</p>
-<p>Note: throughout I will assume periodic boundary conditions to make life easy. In this case we have (\psi_{i+N} = \psi_i).</p>
+<p>The Setup: We will take as our space of states $\mathscr{H} = L^2([0,1])$ and hamiltonian</p>
+<p>$$ H = -\frac{d^2}{dx^2} + V(x). $$</p>
+<p>for some real function $V(x)$ defined on $[0,1]$.</p>
+<p>Now fix some large positive integer $N$. Let $\epsilon = 1/N$. We will consider the subspace $\mathscr{H}_N$ of $\mathscr{H}$ spanned by those functions that are constant on the subintervals $i\epsilon, (i+1)\epsilon)$. Such a function is defined (a.e.) by the $N$ values it takes on these intervals, so we may identify $\mathscr{H}_N \cong \mathbb{C}^N$ as vector spaces. Let us denote elements of $\mathscr{H}_N$ by $\psi_i$ for $i = 0, \ldots, N-1$. Thinking of these as the values of a function $\psi(x)$ at $x = i\epsilon$, we see that the inner product on $\mathscr{H}_N$ is given by</p>
+<p>$$
+(\phi, \psi) = \int_0^1 \bar{\phi}(x) \psi(x) dx = \sum_{i=0}^{N-1} \bar{\phi}_i \psi(i)
+$$</p>
+<p>So we see that with these identifications, $\mathscr{H}_N$ is just $\mathbb{C}^N$ with the usual hermitian inner product.</p>
+<p>Now, we can approximate $d/dx$ with the forward and backward difference operators</p>
+<p>\begin{align}
+(D_+ \psi)_i &amp;= \frac{\psi_{i+1} - \psi_i}{\epsilon} \\\<br>
+(D_-\psi)_i &amp;= \frac{\psi_i - \psi_{i-1}}{\epsilon}
+\end{align}</p>
+<p>Note: throughout I will assume periodic boundary conditions to make life easy. In this case we have $\psi_{i+N} = \psi_i$.</p>
 <p>Now consider</p>
-<p>\begin{align}</p>
-<p>(D_+\phi, \psi) &amp;= \epsilon^{-1} \sum_i \left( \bar{\phi}_{i+1}\psi_i - \bar{\phi}_i \psi_i \right) \</p>
-<p>&amp;= \epsilon^{-1} \sum_i \left( \bar{\phi}<em>i \psi</em>{i-1} - \bar{\phi}_i \psi_i \right) \</p>
-<p>&amp;= -(\phi, D_-\psi).</p>
-<p>\end{align}</p>
-<p>Thus we have (D_+^\ast = -D_-). Similarly, (D_-^\ast = -D_+). Then the operator (D = (D_+ + D_-)/2) approximates (d/dx) and satisfies (D^\ast = -D) (as it should!), and the discrete Laplacian (D^2) is self-adjoint.</p>
-<p>Finally, we can form the discrete hamiltonian (H_N) by taking (H_N = -D^2 + \hat{V}), where (\hat{V}) is the operator (\psi_i \mapsto V(x_i) \psi_i), where (x_i = i\epsilon).</p>
-<p>Note: typically one further imposes Dirichlet or Neumann boundary conditions. This corresponds to projecting to a smaller subspace of (\mathscr{H}_N).</p>
-<p>I wrote some Sage code to test this. With (V(x) = 0), and (N = 500), here is one of the lowest-energy states:</p>
+<p>\begin{align}
+(D_+\phi, \psi) &amp;= \epsilon^{-1} \sum_i \left( \bar{\phi}_{i+1}\psi_i - \bar{\phi}_i \psi_i \right) \\\<br>
+&amp;= \epsilon^{-1} \sum_i \left( \bar{\phi}_i \psi_{i-1} - \bar{\phi}_i \psi_i \right) \\\<br>
+&amp;= -(\phi, D_-\psi).
+\end{align}</p>
+<p>Thus we have $D_+^\ast = -D_-$. Similarly, $D_-^\ast = -D_+$. Then the operator $D = (D_+ + D_-)/2$ approximates $d/dx$ and satisfies $D^\ast = -D$ (as it should!), and the discrete Laplacian $D^2$ is self-adjoint.</p>
+<p>Finally, we can form the discrete hamiltonian $H_N$ by taking $H_N = -D^2 + \hat{V}$, where $\hat{V}$ is the operator $\psi_i \mapsto V(x_i) \psi_i$, where $x_i = i\epsilon$.</p>
+<p>Note: typically one further imposes Dirichlet or Neumann boundary conditions. This corresponds to projecting to a smaller subspace of $\mathscr{H}_N$.</p>
+<p>I wrote some Sage code to test this. With $V(x) = 0$, and $N = 500$, here is one of the lowest-energy states:</p>
 <figure class="placement">
     <img src="https://jmf1sh.github.io/img/state.png"/> 
 </figure>

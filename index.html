@@ -17,15 +17,17 @@
     
    <script>
   MathJax = {
-      tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$','$$'], ['\\[', '\\]']],
-          processEscapes: true,
-          processEnvironments: true
-      },
-      options: {
-          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      }
+    loader: {load: ['[tex]/ams']},
+    tex: {
+      packages: {'[+]': ['ams']},
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
   };
 
   window.addEventListener('load', (event) => {
@@ -99,25 +101,6 @@
         <ul>
           
           <li class="first">
-            <h1><a href="https://jmf1sh.github.io/posts/test/" title="Test">Test</a></h1> 
-            <aside>
-    <ul>
-        <li>
-            <time class="post-date" datetime="2021-03-06T00:00:00Z">Mar 6, 2021</time>
-        </li>
-        
-
-        
-
-        <li>One minute read</li>
-    </ul>
-</aside>
-
-            <p>About</p>
-            
-          </li>
-          
-          <li >
             <h1><a href="https://jmf1sh.github.io/posts/2018-12-24-vae/" title="Variational autoencoders">Variational autoencoders</a></h1> 
             <aside>
     <ul>
@@ -311,6 +294,28 @@ Consider the cotangent bundle $T^\ast X$ as a symplectic manifold with canonical
 Let $(M, \omega)$ be a symplectic manifold of dimension $2n$, and let $H: M \to \mathbf{R}$ be a classical Hamiltonian.</p>
             
             <a href="https://jmf1sh.github.io/posts/2015-08-18-classical-partition-function/">Read more…</a>
+            
+          </li>
+          
+          <li >
+            <h1><a href="https://jmf1sh.github.io/posts/2015-01-29-generalized-geometry/" title="What is generalized geometry?">What is generalized geometry?</a></h1> 
+            <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2015-01-29T00:00:00Z">Jan 29, 2015</time>
+        </li>
+        
+
+        
+
+        <li>7 minutes read</li>
+    </ul>
+</aside>
+
+            <p>This post has been migrated from my old blog, the math-physics learning seminar.
+The following are my notes for a short introductory talk. References below are not intended to be comprehensive!</p>
+            
+            <a href="https://jmf1sh.github.io/posts/2015-01-29-generalized-geometry/">Read more…</a>
             
           </li>
           

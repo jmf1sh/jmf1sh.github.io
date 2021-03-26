@@ -17,15 +17,17 @@
     
    <script>
   MathJax = {
-      tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$','$$'], ['\\[', '\\]']],
-          processEscapes: true,
-          processEnvironments: true
-      },
-      options: {
-          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      }
+    loader: {load: ['[tex]/ams']},
+    tex: {
+      packages: {'[+]': ['ams']},
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
   };
 
   window.addEventListener('load', (event) => {
@@ -116,31 +118,31 @@
     
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
-<p>Recall from last time that a classical mechanical system consists of a manifold (M) (the configuration space) and a function (L) on the tangent bundle (TM). The equations of motion for a path (x(t)) in (M) are the 2nd order Euler-Lagrange equations:</p>
-<p>[ \frac{d}{dt}\left( \frac{\partial L}{\partial v}(x, \dot{x}) \right) = \frac{\partial L}{\partial x}(x, \dot{x}) ]</p>
-<p>Hamilton discovered a way of recasting these equations as a first order system for a path in a related manifold, the cotangent bundle (T^\ast M). The benefits are twofold: in addition to reducing the equations to a first order system (at the cost of introducing new variables), it turns out that this framework makes it much easier to find conserved quantities and prove theorems about mechanical systems. So let&rsquo;s see what he did.</p>
-<p>Theorem Under mild assumptions on (L), there is a function (H) on (T^\ast M) constructed canonically out of (L) such that solutions of the Euler-Lagrange equations are in 1-1 correspondence with solutions (q(t), p(t)) on (T^\ast M) of Hamilton&rsquo;s equations</p>
-<p>[ \dot{q} = \frac{\partial H}{\partial p}(q, p) ]</p>
-<p>[ \dot{p} = -\frac{\partial H}{\partial q}(q,p) ]</p>
-<p>Furthermore, if the original Lagrangian function (L) is not explicitly time-dependent, then the function (H) is constant for any solution of the equations of motion.</p>
-<p>To start with, introduce coordinates (x, v) on (TM) as before. We will define new coordinates (q,p) as follows:</p>
-<p>[ q(x,v) = x ]</p>
-<p>[ p(x,v) = \frac{\partial L}{\partial x}(x,v) ]</p>
-<p>Our assumption on (L) will be the following: the above formulas can be inverted to obtain (x) and (v) as functions of (q) and (p). It is easily seen from the definition of (p) that under a coordinate transformation (of (x)), it behaves as a 1-form, so the coordinates (q) and (p) can be interpreted as local coordinates on the cotangent bundle (T^\ast M). We construct the Hamiltonian as</p>
-<p>[ H(q,p) = p\cdot v(q,p) - L(x(q,p), v(q,p)) ]</p>
-<p>(this is the Legendre transform&ndash;more later). Of course, the above formula is not well-defined if we cannot solve for (x) and (v) in terms of (p) and (q)&ndash;hence the assumption. Now we check:</p>
-<p>[ \frac{\partial H}{\partial p} = v + p \frac{\partial v}{\partial p} - \frac{\partial L}{\partial x} \frac{\partial x}{\partial p} -\frac{\partial L}{\partial v}\frac{\partial v}{\partial p} = v + p\frac{\partial v}{\partial p} - p\frac{\partial v}{\partial p} = v]</p>
-<p>Since (\dot{x} = v), this is the first of Hamilton&rsquo;s equations.</p>
+<p>Recall from last time that a classical mechanical system consists of a manifold $M$ (the configuration space) and a function $L$ on the tangent bundle $TM$. The equations of motion for a path $x(t)$ in $M$ are the 2nd order Euler-Lagrange equations:</p>
+<p>$$ \frac{d}{dt}\left( \frac{\partial L}{\partial v}(x, \dot{x}) \right) = \frac{\partial L}{\partial x}(x, \dot{x}) $$</p>
+<p>Hamilton discovered a way of recasting these equations as a first order system for a path in a related manifold, the cotangent bundle $T^\ast M$. The benefits are twofold: in addition to reducing the equations to a first order system (at the cost of introducing new variables), it turns out that this framework makes it much easier to find conserved quantities and prove theorems about mechanical systems. So let&rsquo;s see what he did.</p>
+<p>Theorem Under mild assumptions on $L$, there is a function $H$ on $T^\ast M$ constructed canonically out of $L$ such that solutions of the Euler-Lagrange equations are in 1-1 correspondence with solutions $q(t), p(t)$ on $T^\ast M$ of Hamilton&rsquo;s equations</p>
+<p>$$ \dot{q} = \frac{\partial H}{\partial p}(q, p) $$</p>
+<p>$$ \dot{p} = -\frac{\partial H}{\partial q}(q,p) $$</p>
+<p>Furthermore, if the original Lagrangian function $L$ is not explicitly time-dependent, then the function $H$ is constant for any solution of the equations of motion.</p>
+<p>To start with, introduce coordinates $x, v$ on $TM$ as before. We will define new coordinates $q,p$ as follows:</p>
+<p>$$ q(x,v) = x $$</p>
+<p>$$ p(x,v) = \frac{\partial L}{\partial x}(x,v) $$</p>
+<p>Our assumption on $L$ will be the following: the above formulas can be inverted to obtain $x$ and $v$ as functions of $q$ and $p$. It is easily seen from the definition of $p$ that under a coordinate transformation (of $x$), it behaves as a 1-form, so the coordinates $q$ and $p$ can be interpreted as local coordinates on the cotangent bundle $T^\ast M$. We construct the Hamiltonian as</p>
+<p>$$ H(q,p) = p\cdot v(q,p) - L(x(q,p), v(q,p)) $$</p>
+<p>(this is the Legendre transform&ndash;more later). Of course, the above formula is not well-defined if we cannot solve for $x$ and $v$ in terms of $p$ and $q$&ndash;hence the assumption. Now we check:</p>
+<p>$$ \frac{\partial H}{\partial p} = v + p \frac{\partial v}{\partial p} - \frac{\partial L}{\partial x} \frac{\partial x}{\partial p} -\frac{\partial L}{\partial v}\frac{\partial v}{\partial p} = v + p\frac{\partial v}{\partial p} - p\frac{\partial v}{\partial p} = v$$</p>
+<p>Since $\dot{x} = v$, this is the first of Hamilton&rsquo;s equations.</p>
 <p>For the second, we perform a similar computation:</p>
-<p>[ \frac{\partial H}{\partial q} = -\frac{\partial L}{\partial x} \frac{\partial x}{\partial q} - \frac{\partial L}{\partial v} \frac{\partial v}{\partial q} = -\frac{\partial L}{\partial x} ]</p>
+<p>$$ \frac{\partial H}{\partial q} = -\frac{\partial L}{\partial x} \frac{\partial x}{\partial q} - \frac{\partial L}{\partial v} \frac{\partial v}{\partial q} = -\frac{\partial L}{\partial x} $$</p>
 <p>But the Euler-Lagrange equations say that</p>
-<p>[ \dot{p} = \frac{d}{dt}\frac{\partial L}{\partial v} = \frac{\partial L}{\partial x} = -\frac{\partial H}{\partial x}, ]</p>
+<p>$$ \dot{p} = \frac{d}{dt}\frac{\partial L}{\partial v} = \frac{\partial L}{\partial x} = -\frac{\partial H}{\partial x}, $$</p>
 <p>so we&rsquo;ve obtained the second of Hamilton&rsquo;s equations.</p>
 <p>For the last part, suppose that the Lagrangian does not depend explicitly on time, i.e.</p>
-<p>[ \frac{\partial L}{\partial t} = 0. ]</p>
+<p>$$ \frac{\partial L}{\partial t} = 0. $$</p>
 <p>Then we compute:</p>
-<p>[ \frac{d}{dt}H = \frac{\partial H}{\partial q}\dot{q} + \frac{\partial H}{\partial p}\dot{p} = \frac{\partial H}{\partial q} \frac{\partial H}{\partial p} - \frac{\partial H}{\partial p} \frac{\partial H}{\partial q} = 0. ]</p>
-<p>Hence (H) is automatically conserved. For this reason, (H) is often called the energy of the system.</p>
+<p>$$ \frac{d}{dt}H = \frac{\partial H}{\partial q}\dot{q} + \frac{\partial H}{\partial p}\dot{p} = \frac{\partial H}{\partial q} \frac{\partial H}{\partial p} - \frac{\partial H}{\partial p} \frac{\partial H}{\partial q} = 0. $$</p>
+<p>Hence $H$ is automatically conserved. For this reason, $H$ is often called the energy of the system.</p>
 <p>Later, we will see that conserved quantities correspond to symmetries, and conservation of energy is a statement about the symmetry corresponding to time translation.</p>
 
 

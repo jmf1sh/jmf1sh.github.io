@@ -17,15 +17,17 @@
     
    <script>
   MathJax = {
-      tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$','$$'], ['\\[', '\\]']],
-          processEscapes: true,
-          processEnvironments: true
-      },
-      options: {
-          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      }
+    loader: {load: ['[tex]/ams']},
+    tex: {
+      packages: {'[+]': ['ams']},
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
   };
 
   window.addEventListener('load', (event) => {
@@ -131,7 +133,7 @@ Grana, Flux compactifications in string theory: a comprehensive review
 </code></pre>
 <p>What is geometry?</p>
 <p>Before trying to define generalized geometry, we should first decide what we mean by ordinary geometry. Of course, this question doesn&rsquo;t have a unique answer, so there are many ways to generalize the classical notions of manifolds and varieties. The viewpoint taken in generalized geometry is the following: the distinguishing feature of smooth manifolds is the existence of a tangent bundle</p>
-<p>[ TM \to M ]</p>
+<p>$$ TM \to M $$</p>
 <p>which satisfies some nice axioms. The basic idea of generalized geometry is to replace the tangent bundle with some other vector bundle $L \to M$, again satisfying some nice axioms. Different generalized geometries on $M$ will correspond to different choices of bundle $L \to M$, as well as auxiliary data compatible with $L$ in some appropriate sense.</p>
 <p>Definition. A Lie algebroid over $M$ is a smooth vector bundle $L \to M$ together with a vector bundle map $a: L \to TM$ called the anchor map and a bracket $[\cdot, \cdot]: H^0(M, L) \otimes H^0(M, L) \to H^0(M, L)$ satisfying the following axioms:</p>
 <pre><code>$[\cdot,\cdot]$ is  a Lie bracket on $H^0(M, L)$
@@ -143,12 +145,12 @@ $[X, fY] = f[X,Y] + a(X)f \cdot Y$ for $X,Y \in H^0(M,L)$ and $f \in H^0(M, \mat
 <p>Example 3. Let $M$ be a complex manifold of and let $L \subset TM \otimes \mathbf{C}$ be the sub-bundle of vectors spanned by ${\partial / \partial z_1, \dots, \partial / \partial z_n}$ in local holomorphic coordinates. Then $L \to M$ is a (complex) Lie algebroid.</p>
 <p>Courant Bracket</p>
 <p>We&rsquo;d like to try to fit the preceding examples into a common framework. Let $\mathbf{T}M = TM \oplus T^\ast M$. This bundle has a natural symmetric bilinear pairing given by</p>
-<p>[ \langle X \oplus \alpha, Y \oplus \beta \rangle = \frac{1}{2} \alpha(Y) + \frac{1}{2} \beta(X) ]</p>
+<p>$$ \langle X \oplus \alpha, Y \oplus \beta \rangle = \frac{1}{2} \alpha(Y) + \frac{1}{2} \beta(X) $$</p>
 <p>Note that this bilinear form is of split signature $(n,n)$. We define a bracket on sections of $\mathbf{T}M$ by</p>
-<p>[ [X\oplus \alpha, Y\oplus \beta] = [X,Y] \oplus \left(L_X \beta + \frac{1}{2}(d \alpha(Y))- L_Y \alpha -\frac{1}{2} d( \beta(X)) \right ) ]</p>
+<p>$$ [X\oplus \alpha, Y\oplus \beta] = [X,Y] \oplus \left(L_X \beta + \frac{1}{2}(d \alpha(Y))- L_Y \alpha -\frac{1}{2} d( \beta(X)) \right ) $$</p>
 <p>Note that this bracket is not a Lie bracket. We also have an anchor map $a: \mathbf{T}M \to TM$ which is just the projection.</p>
 <p>Let $B$ be a 2-form on $M$. Define an action of $B$ on sections of $\mathbf TM$ by</p>
-<p>[ X + \alpha \mapsto X + \alpha + i_X B ]</p>
+<p>$$ X + \alpha \mapsto X + \alpha + i_X B $$</p>
 <p>Proposition. This action preserves the Courant bracket if and only if $B$ is closed.</p>
 <p>This shows that the diffeomorphisms of $M$ as a generalized manifold are large than the ordinary diffeomorphisms of $M$. In fact is is the semidirect product of the diffeomorphism group of $M$ with the vector space of closed 2-forms.</p>
 <p>Dirac Structures</p>
@@ -161,29 +163,29 @@ $[X, fY] = f[X,Y] + a(X)f \cdot Y$ for $X,Y \in H^0(M,L)$ and $f \in H^0(M, \mat
 <p>We now let $L \to M$ be a Dirac structure on $M$.</p>
 <p>Definition. A smooth function $f$ on $M$ is called admissible if there exists a vector field $X_f$ such that $(X_f, df)$ is a section of $L$.</p>
 <p>The Poisson bracket is defined as follows. If $f,g$ are admissible, then define</p>
-<p>[ {f, g} = X_f g. ]</p>
+<p>$$ {f, g} = X_f g. $$</p>
 <p>It is easy to check from the definitions that the bracket on admissible functions is well-defined (independent of choice of $X_f$) and skew-symmetric. With a little bit of calculation, we find the following.</p>
 <p>Proposition. The vector space of admissible functions is naturally a Poisson algebra, and moreover the natural bracket satisfies the Leibniz rule.</p>
 <p>Generalized Complex Structures</p>
 <p>Definition. A generalized complex structure is a skew endomorphism $J$ of $\mathbf T M$ such that $J^2 = -1$ and such that the $+i$-eigenbundle is involutive under the Courant bracket.</p>
 <p>Equivalently: A generalized complex structure is a (complex) Dirac structure $L \subset \mathbf TM$ satisfying the condition $L \cap \overline L = 0$.</p>
 <p>Example 1. Let $J$ be an ordinary complex structure on $M$. Then the endomorphism</p>
-<p>[ \begin{bmatrix} -J &amp; 0 \ 0 &amp; J^\ast \end{bmatrix} ]</p>
+<p>$$ \begin{bmatrix} -J &amp; 0 \ 0 &amp; J^\ast \end{bmatrix} $$</p>
 <p>defines a generalized complex structure on $M$.</p>
 <p>Example 2. Let $\omega$ be a symplectic form on $M$. Then the endomorphism</p>
-<p>[ \begin{bmatrix} 0 &amp; -\omega^{-1} \ \omega &amp; 0 \end{bmatrix} ]</p>
+<p>$$ \begin{bmatrix} 0 &amp; -\omega^{-1} \ \omega &amp; 0 \end{bmatrix} $$</p>
 <p>defines a generalized complex structure on $M$.</p>
 <p>Thus, generalized geometry gives a common framework for both complex geometry and symplectic geometry. Such a connection is exactly what is conjectured by mirror symmetry.</p>
 <p>Example 3. Let $J$ be a complex structure on $M$ and let $\sigma$ be a holomorphic Poisson tensor. Consider the subbundle $L \subset \mathbf TM$ defined as the span of</p>
-<p>[ \frac{\partial}{\partial \bar z_1}, \dots, \frac{\partial}{\partial \bar z_n}, dz_1 - \sigma(dz_1), \dots, dz_n - \sigma(dz_n) ]</p>
+<p>$$ \frac{\partial}{\partial \bar z_1}, \dots, \frac{\partial}{\partial \bar z_n}, dz_1 - \sigma(dz_1), \dots, dz_n - \sigma(dz_n) $$</p>
 <p>Then $L$ defines a generalized complex structure on $M$.</p>
 <p>The last example shows that deformations of $M$ as a generalized  complex manifold contain non-commutative deformations of the structure sheaf.  We also have the following theorem, which shows that there is an intimate relation between generalized complex geometry and holomorphic Poisson geometry.</p>
 <p>Theorem (Bailey). Near any point of a generalized complex manifold, $M$ is locally isomorphic to the product of a holomorphic Poisson manifold with a symplectic manifold.</p>
 <p>Generalized Kähler Manifolds</p>
 <p>Let $(g, J, \omega)$ be a Kähler triple. The Kähler property requires that</p>
-<p>[ \omega = g J. ]</p>
+<p>$$ \omega = g J. $$</p>
 <p>Let $I_1$ denote the generalized complex structure induced by $J$, and let $I_1$ denote the generalized complex structure induced by the symplectic form $\omega$. We have</p>
-<p>[ I_1 I_2 = \begin{bmatrix} - J &amp; 0 \ 0 &amp; J^\ast \end{bmatrix} \begin{bmatrix} 0 &amp; -\omega^{-1} \ \omega &amp; 0 \end{bmatrix} = \begin{bmatrix} 0 &amp; g^{-1} \ g &amp; 0 \end{bmatrix} = I_2 I_1 ]</p>
+<p>$$ I_1 I_2 = \begin{bmatrix} - J &amp; 0 \ 0 &amp; J^\ast \end{bmatrix} \begin{bmatrix} 0 &amp; -\omega^{-1} \ \omega &amp; 0 \end{bmatrix} = \begin{bmatrix} 0 &amp; g^{-1} \ g &amp; 0 \end{bmatrix} = I_2 I_1 $$</p>
 <p>Definition. A generalized Kähler manifold is a manifold with two commuting generalized complex structure $I_1, I_2$ such that the bilinear pairing $(I_1 I_2 u, v)$ is positive definite.</p>
 <p>Theorem (Gualtieri). A generalized Kähler structure on $M$ induces a Riemannian metric $g$, two integrable almost complex structures $J_\pm$ Hermitian with respect to $g$, and two affine connections $\nabla_\pm$ with skew-torsion $\pm H$ which preserve the metric and complex structure $J_\pm$. Conversely, these data determine a generalized Kähler structure which is unique up to a B-field transformation.</p>
 <p>Thus the notion of generalized Kähler manifold recovers the bihermitian geometry investigated by physicists in the context of susy non-linear $\sigma$-models.</p>
@@ -193,7 +195,7 @@ $[X, fY] = f[X,Y] + a(X)f \cdot Y$ for $X,Y \in H^0(M,L)$ and $f \in H^0(M, \mat
 <p>Example. If $M$ is a complex manifold with a nowhere vanishing holomorphic $(n,0)$ form, then it is generalized Calabi-Yau.</p>
 <p>Example. If $M$ is symplectic with symplectic form $\omega$, then $\phi = \exp(i\omega)$ gives $M$ the structure of a generalized Calabi-Yau manifold.</p>
 <p>If $(M, \phi)$ is generalized Calabi-Yau, then so is $(M, \exp(B) \phi)$ for any closed real 2-form $B$. In the symplectic case, we obtain</p>
-<p>[ \phi = \exp(B+i\omega) ]</p>
+<p>$$ \phi = \exp(B+i\omega) $$</p>
 <p>This explains the appearance of the $B$-field (or &ldquo;complexified Kähler form&rdquo;) in discussions of mirror symmetry.</p>
 
 

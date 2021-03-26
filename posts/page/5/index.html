@@ -17,15 +17,17 @@
     
    <script>
   MathJax = {
-      tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$','$$'], ['\\[', '\\]']],
-          processEscapes: true,
-          processEnvironments: true
-      },
-      options: {
-          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      }
+    loader: {load: ['[tex]/ams']},
+    tex: {
+      packages: {'[+]': ['ams']},
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
   };
 
   window.addEventListener('load', (event) => {
@@ -107,22 +109,64 @@
 
     
 
-    <h3>2014</h3>
+    <h3>2012</h3>
     <ul>
         
         <li>
-            <a href="https://jmf1sh.github.io/posts/2014-05-14-quantum-bv-complex/">The basic idea of the quantum BV complex</a>
-            <time class="date-meta">May 14</time>
+            <a href="https://jmf1sh.github.io/posts/2012-02-04-geometry-of-spacetime-part-3/">Geometry of curved spacetime, part 3</a>
+            <time class="date-meta">Feb 4</time>
         </li>
         
         <li>
-            <a href="https://jmf1sh.github.io/posts/2014-03-18-clifford-algebras-part-3/">Clifford algebras and spinors part 3: Bochner identity</a>
-            <time class="date-meta">Mar 18</time>
+            <a href="https://jmf1sh.github.io/posts/2012-01-26-geometry-of-spacetime-part-2/">Geometry of curved spacetime, part 2</a>
+            <time class="date-meta">Jan 26</time>
         </li>
         
         <li>
-            <a href="https://jmf1sh.github.io/posts/2014-03-06-clifford-algebras-part-2/">Clifford algebras and spinors, part 2: spin structures and Dirac operators</a>
-            <time class="date-meta">Mar 6</time>
+            <a href="https://jmf1sh.github.io/posts/2012-01-19-geometry-of-spacetime-part-1/">Geometry of curved spacetime, part 1</a>
+            <time class="date-meta">Jan 19</time>
+        </li>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2012-01-16-path-integrals-part-1/">Path integrals, part 1</a>
+            <time class="date-meta">Jan 16</time>
+        </li>
+        
+    </ul>
+    
+    
+
+    <h3>2011</h3>
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2011-11-12-lattice-quantum-mechanics-1d/">Lattice quantum mechanics in 1d</a>
+            <time class="date-meta">Nov 12</time>
+        </li>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2011-10-05-susskind-string-theory/">Susskind on string theory</a>
+            <time class="date-meta">Oct 5</time>
+        </li>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2011-09-01-classical-mechanics-part-6/">Classical mechanics, part 6</a>
+            <time class="date-meta">Sep 1</time>
+        </li>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2011-08-25-classical-mechanics-part-5/">Classical mechanics, part 5</a>
+            <time class="date-meta">Aug 25</time>
+        </li>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2011-08-23-classical-mechanics-part-4/">Classical mechanics, part 4</a>
+            <time class="date-meta">Aug 23</time>
+        </li>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2011-08-19-classical-mechanics-part-3/">Classical mechanics, part 3</a>
+            <time class="date-meta">Aug 19</time>
         </li>
         
     </ul>
@@ -157,17 +201,11 @@
   <li class="page-item">
     <a class="page-link" href="https://jmf1sh.github.io/posts/page/6/">6</a>
   </li>
-  <li class="page-item disabled">
-    <span aria-hidden="true">&nbsp;&hellip;&nbsp;</span>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="https://jmf1sh.github.io/posts/page/19/">19</a>
-  </li>
   <li class="page-item">
     <a href="https://jmf1sh.github.io/posts/page/6/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
   </li>
   <li class="page-item">
-    <a href="https://jmf1sh.github.io/posts/page/19/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    <a href="https://jmf1sh.github.io/posts/page/6/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
   </li>
 </ul>
 

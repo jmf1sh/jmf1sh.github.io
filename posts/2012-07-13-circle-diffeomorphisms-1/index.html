@@ -17,15 +17,17 @@
     
    <script>
   MathJax = {
-      tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$','$$'], ['\\[', '\\]']],
-          processEscapes: true,
-          processEnvironments: true
-      },
-      options: {
-          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      }
+    loader: {load: ['[tex]/ams']},
+    tex: {
+      packages: {'[+]': ['ams']},
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
   };
 
   window.addEventListener('load', (event) => {
@@ -118,35 +120,35 @@
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
 <p>This is the first of a series of posts based on these lecture notes on KAM theory. For now I just want to outline section 2, which is a toy model of KAM thoery.</p>
 <p>Circle Diffeomorphisms</p>
-<p>We consider a map (\phi: \mathbb{R} \to \mathbb{R}) defined by</p>
-<p>[ \phi(x) = x + \rho + \eta(x) ]</p>
-<p>where (\rho) is its rotation number and (\eta(x)) is &ldquo;small&rdquo;.</p>
-<p>Define (S_\sigma) to be the strip ({ |\mathrm{Im} z|&lt;\sigma} \subset \mathbb{C}) and let (B_\sigma) be the space of holomorphic functions bounded on (S_\sigma) with sup norm (|\cdot|_\sigma).</p>
-<p>Goal: Show that if (|\eta|_\sigma) is sufficiently small, then there exists some diffeomorphism (H(x)) such that</p>
-<p>[ H^{-1} \circ \phi \circ H (x) = x + \rho ]</p>
-<p>i.e. that (\phi) is conjugate to a pure rotation.</p>
+<p>We consider a map $\phi: \mathbb{R} \to \mathbb{R}$ defined by</p>
+<p>$$ \phi(x) = x + \rho + \eta(x) $$</p>
+<p>where $\rho$ is its rotation number and $\eta(x)$ is &ldquo;small&rdquo;.</p>
+<p>Define $S_\sigma$ to be the strip ${ |\mathrm{Im} z|&lt;\sigma} \subset \mathbb{C}$ and let $B_\sigma$ be the space of holomorphic functions bounded on $S_\sigma$ with sup norm $|\cdot|_\sigma$.</p>
+<p>Goal: Show that if $|\eta|_\sigma$ is sufficiently small, then there exists some diffeomorphism $H(x)$ such that</p>
+<p>$$ H^{-1} \circ \phi \circ H (x) = x + \rho $$</p>
+<p>i.e. that $\phi$ is conjugate to a pure rotation.</p>
 <p>Linearization</p>
-<p>The idea is that if (\eta) is small, then (H) should be close to the identity, so we suppose that</p>
-<p>[ H(x) = x + h(x) ]</p>
-<p>where (h(x)) is small. Plugging this into the equation above and discarding higher order terms yields</p>
-<p>[ h(x+\rho) - h(x) = \eta(x) ]</p>
-<p>Since (\eta) is periodic, we Fourier transform both sides to obtain an explicit formula for the Fourier coefficients of (h(x)). We have to show several things:</p>
+<p>The idea is that if $\eta$ is small, then $H$ should be close to the identity, so we suppose that</p>
+<p>$$ H(x) = x + h(x) $$</p>
+<p>where $h(x)$ is small. Plugging this into the equation above and discarding higher order terms yields</p>
+<p>$$ h(x+\rho) - h(x) = \eta(x) $$</p>
+<p>Since $\eta$ is periodic, we Fourier transform both sides to obtain an explicit formula for the Fourier coefficients of $h(x)$. We have to show several things:</p>
 <ol>
 <li>
-<p>The Fourier series defining (h(x)) converges in some appropriate sense.</p>
+<p>The Fourier series defining $h(x)$ converges in some appropriate sense.</p>
 </li>
 <li>
-<p>The function (H(x) = x + h(x)) is a diffeomorphism.</p>
+<p>The function $H(x) = x + h(x)$ is a diffeomorphism.</p>
 </li>
 <li>
-<p>The composition (\tilde{\phi} = H^{-1} \circ \phi \circ H) is closer to a pure rotation than (\phi), in the sense that</p>
+<p>The composition $\tilde{\phi} = H^{-1} \circ \phi \circ H$ is closer to a pure rotation than $\phi$, in the sense that</p>
 </li>
 </ol>
-<p>[ \tilde{\phi}(x) = x + \rho + \tilde{\eta}(x) ]</p>
-<p>where (|\tilde{\eta}| \ll |\eta|).</p>
+<p>$$ \tilde{\phi}(x) = x + \rho + \tilde{\eta}(x) $$</p>
+<p>where $|\tilde{\eta}| \ll |\eta|$.</p>
 <p>Newton&rsquo;s Method</p>
-<p>Carrying out the analysis, one finds that for appropriate epsilons and deltas, if (\eta \in B_\sigma) then (H \in B_{\sigma - \delta}) and that (|\tilde{\eta}|_{\sigma-\delta} \leq C |\eta|_\sigma^2). By carefully choosing the deltas, we can iterate this procedure (composing the (H)&rsquo;s) to obtain a well-defined limit (H_\infty \in B_{\sigma/2}) such that</p>
-<p>[ H_\infty^{-1} \circ \phi \circ H_\infty (x) = x + \rho, ]</p>
+<p>Carrying out the analysis, one finds that for appropriate epsilons and deltas, if $\eta \in B_\sigma$ then $H \in B_{\sigma - \delta}$ and that $|\tilde{\eta}|_{\sigma-\delta} \leq C |\eta|_\sigma^2$. By carefully choosing the deltas, we can iterate this procedure (composing the $H$&rsquo;s) to obtain a well-defined limit $H_\infty \in B_{\sigma/2}$ such that</p>
+<p>$$ H_\infty^{-1} \circ \phi \circ H_\infty (x) = x + \rho, $$</p>
 <p>as desired.</p>
 <p>So in fact the idea of the proof is extremely simple, and all of the hard work is in proving some estimates.</p>
 

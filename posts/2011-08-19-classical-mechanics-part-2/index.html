@@ -17,15 +17,17 @@
     
    <script>
   MathJax = {
-      tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$','$$'], ['\\[', '\\]']],
-          processEscapes: true,
-          processEnvironments: true
-      },
-      options: {
-          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      }
+    loader: {load: ['[tex]/ams']},
+    tex: {
+      packages: {'[+]': ['ams']},
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
   };
 
   window.addEventListener('load', (event) => {
@@ -120,34 +122,34 @@
 <p>$$
 \mathbf{F} = m\mathbf{a},
 $$</p>
-<p>which (suitably interpreted) holds for any system of $N$ particles. However, this equation requires the use of cartesian coordinates, which for many systems may not be the most convenient choice. Suppose we have some other coordinates $q^i = q^i(x^j)$. What is the correct analogue of Newton&rsquo;s 2nd law for the (q)-coordinates?</p>
-<p>To make life easier, we will assume for now that the force (\mathbf{F}) is conservative; i.e.</p>
-<p>[ \mathbf{F} = -\nabla V(x) ]</p>
-<p>for some potential function (V(x)). Under this assumption, Newton&rsquo;s 2nd law is</p>
-<p>[ m\mathbf{a} + \nabla V(x) = 0. ]</p>
-<p>Let us define the function (T) by</p>
-<p>[ T(x,v) = \frac{1}{2}m |v|^2, ]</p>
-<p>and define the function (L) as</p>
-<p>[ L(x,v) = T(x,v) - V(x). ]</p>
+<p>which (suitably interpreted) holds for any system of $N$ particles. However, this equation requires the use of cartesian coordinates, which for many systems may not be the most convenient choice. Suppose we have some other coordinates $q^i = q^i(x^j)$. What is the correct analogue of Newton&rsquo;s 2nd law for the $q$-coordinates?</p>
+<p>To make life easier, we will assume for now that the force $\mathbf{F}$ is conservative; i.e.</p>
+<p>$$ \mathbf{F} = -\nabla V(x) $$</p>
+<p>for some potential function $V(x)$. Under this assumption, Newton&rsquo;s 2nd law is</p>
+<p>$$ m\mathbf{a} + \nabla V(x) = 0. $$</p>
+<p>Let us define the function $T$ by</p>
+<p>$$ T(x,v) = \frac{1}{2}m |v|^2, $$</p>
+<p>and define the function $L$ as</p>
+<p>$$ L(x,v) = T(x,v) - V(x). $$</p>
 <p>Then we have immediately that Newton&rsquo;s 2nd law is equivalent to</p>
-<p>[ \frac{d}{dt}\frac{\partial L}{\partial v}(x, \dot{x}) - \frac{\partial L}{\partial x}(x,\dot{x})  = 0. ]</p>
+<p>$$ \frac{d}{dt}\frac{\partial L}{\partial v}(x, \dot{x}) - \frac{\partial L}{\partial x}(x,\dot{x})  = 0. $$</p>
 <p>Why go through the trouble of introducing these auxiliary functions and rewriting Newton&rsquo;s 2nd law in this way? The answer lies in the following theorem.</p>
-<p>Theorem For any choice of coordinates (y = y(x)), Newton&rsquo;s 2nd law is equivalent to the equations</p>
-<p>[ \frac{d}{dt}\frac{\partial \tilde{L}}{\partial w}(y, \dot{y}) - \frac{\partial \tilde{L}}{\partial y}(y,\dot{y})  = 0, ]</p>
-<p>where (w = dY_x(v)) and (\tilde{L}(y,w) = L(x(y,w), v(y,w)). These equations are called the Euler-Lagrange equations.</p>
-<p>The proof of this theorem is a straightforward calculation using the chain rule. Let (M) denote the manifold (\mathbb{R}^{3N}) (or some open subset thereof). The coordinate change (y = y(x) ) can be thought of as a diffeomorphism (Y: M \to M) given by (x \mapsto y(x) ). The differential ( dY: TM \to TM) is also a diffeomorphism. In coordinates, we have</p>
-<p>[ y = y(x) ]</p>
-<p>[ w = dY_x(v)  = Jv ]</p>
-<p>where (y,w) are coordinates on the target (TM).</p>
-<p>Now we need to compute the derivatives of (\tilde{L}).</p>
-<p>[ \frac{\partial L}{\partial x} = \frac{\partial \tilde{L}}{\partial y}\frac{\partial y}{\partial x} + \frac{\partial \tilde{L}}{\partial w}\frac{\partial w}{\partial x} = \tilde{L}_y J + \tilde{L}_w H v ]</p>
-<p>where (J) is the matrix of mixed partials and (H) is the Hessian matrix.</p>
-<p>[ \frac{\partial L}{\partial v} = \frac{\partial \tilde{L}}{\partial y} \frac{\partial y}{\partial v} + \frac{\partial \tilde{L}}{\partial w} \frac{\partial w}{\partial v} = \tilde{L}_w J ]</p>
+<p>Theorem For any choice of coordinates $y = y(x)$, Newton&rsquo;s 2nd law is equivalent to the equations</p>
+<p>$$ \frac{d}{dt}\frac{\partial \tilde{L}}{\partial w}(y, \dot{y}) - \frac{\partial \tilde{L}}{\partial y}(y,\dot{y})  = 0, $$</p>
+<p>where $w = dY_x(v)$ and $\tilde{L}(y,w) = L(x(y,w), v(y,w)$. These equations are called the Euler-Lagrange equations.</p>
+<p>The proof of this theorem is a straightforward calculation using the chain rule. Let $M$ denote the manifold $\mathbb{R}^{3N}$ (or some open subset thereof). The coordinate change $y = y(x) $ can be thought of as a diffeomorphism $Y: M \to M$ given by $x \mapsto y(x) $. The differential $ dY: TM \to TM$ is also a diffeomorphism. In coordinates, we have</p>
+<p>$$ y = y(x) $$</p>
+<p>$$ w = dY_x(v)  = Jv $$</p>
+<p>where $y,w$ are coordinates on the target $TM$.</p>
+<p>Now we need to compute the derivatives of $\tilde{L}$.</p>
+<p>$$ \frac{\partial L}{\partial x} = \frac{\partial \tilde{L}}{\partial y}\frac{\partial y}{\partial x} + \frac{\partial \tilde{L}}{\partial w}\frac{\partial w}{\partial x} = \tilde{L}_y J + \tilde{L}_w H v $$</p>
+<p>where $J$ is the matrix of mixed partials and $H$ is the Hessian matrix.</p>
+<p>$$ \frac{\partial L}{\partial v} = \frac{\partial \tilde{L}}{\partial y} \frac{\partial y}{\partial v} + \frac{\partial \tilde{L}}{\partial w} \frac{\partial w}{\partial v} = \tilde{L}_w J $$</p>
 <p>Then we have</p>
-<p>[ \frac{d}{dt}\left( \tilde{L}_w J \right) = \frac{d}{dt}\tilde{L}_w J + \tilde{L}_w H \dot{x}  ]</p>
-<p>Subtracting (\frac{\partial L}{\partial x}) from this and using the calculation above, we obtain</p>
-<p>[ \left( \frac{d}{dt} \tilde{L}_w - \tilde{L}_y \right) J ]</p>
-<p>and since (J) is invertible, this is (0) if and only if (\frac{d}{dt} \tilde{L}_w - \tilde{L}_y) is.</p>
+<p>$$ \frac{d}{dt}\left( \tilde{L}_w J \right) = \frac{d}{dt}\tilde{L}_w J + \tilde{L}_w H \dot{x}  $$</p>
+<p>Subtracting $\frac{\partial L}{\partial x}$ from this and using the calculation above, we obtain</p>
+<p>$$ \left( \frac{d}{dt} \tilde{L}_w - \tilde{L}_y \right) J $$</p>
+<p>and since $J$ is invertible, this is $0$ if and only if $\frac{d}{dt} \tilde{L}_w - \tilde{L}_y$ is.</p>
 <p>But this is exactly what we wanted to prove!</p>
 
 

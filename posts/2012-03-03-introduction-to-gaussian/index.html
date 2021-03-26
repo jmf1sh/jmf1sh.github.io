@@ -17,15 +17,17 @@
     
    <script>
   MathJax = {
-      tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$','$$'], ['\\[', '\\]']],
-          processEscapes: true,
-          processEnvironments: true
-      },
-      options: {
-          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      }
+    loader: {load: ['[tex]/ams']},
+    tex: {
+      packages: {'[+]': ['ams']},
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
   };
 
   window.addEventListener('load', (event) => {
@@ -116,38 +118,38 @@
     
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
-<p>As a warm-up for more serious stuff, I&rsquo;d like to discuss Gaussian integrals over (\mathbb{R}^d). Gaussian integrals are the main tool for perturbative quantum field theory, and I find that understanding Gaussian integrals in finite dimensions is an immense aid to understanding how perturbative QFT works. So let&rsquo;s get started.</p>
+<p>As a warm-up for more serious stuff, I&rsquo;d like to discuss Gaussian integrals over $\mathbb{R}^d$. Gaussian integrals are the main tool for perturbative quantum field theory, and I find that understanding Gaussian integrals in finite dimensions is an immense aid to understanding how perturbative QFT works. So let&rsquo;s get started.</p>
 <p>The Basics</p>
-<p>Let (A) be some (d \times d) symmetric positive definite matrix. We are interested in the integral</p>
-<p>[ \int_{-\infty}^\infty \exp(-\frac{x \cdot Ax}{2}) dx. ]</p>
+<p>Let $A$ be some $d \times d$ symmetric positive definite matrix. We are interested in the integral</p>
+<p>$$ \int_{-\infty}^\infty \exp(-\frac{x \cdot Ax}{2}) dx. $$</p>
 <p>Out of laziness, I will suppress the limits of integration and just write this as</p>
-<p>[ \int e^{-S(x)} dx. ]</p>
-<p>where (S(x) = x \cdot Ax / 2). Now for a function (f(x)), we define the expectation value (\langle f(x) \rangle) to be</p>
-<p>[ \langle f(x) \rangle_0 = \int f(x) e^{-S(x)} dx ]</p>
+<p>$$ \int e^{-S(x)} dx. $$</p>
+<p>where $S(x) = x \cdot Ax / 2$. Now for a function $f(x)$, we define the expectation value $\langle f(x) \rangle$ to be</p>
+<p>$$ \langle f(x) \rangle_0 = \int f(x) e^{-S(x)} dx $$</p>
 <p>Occasionally, we might care about the normalized expectation value</p>
-<p>[ langle f(x) \rangle = \frac{\langle f(x) \rangle_0}{\langle 1 \rangle_0} = \frac{1}{\langle 1 \rangle_0} \int f(x) e^{-S(x)} dx. ]</p>
-<p>We mostly care about asymptotics, so we will typically think of a function (f(x)) as being a polynomial (or Taylor series). So what we&rsquo;re really interested in is</p>
-<p>[ \langle x^I \rangle = c\int x^I e^{-S(x)} dx, ]</p>
-<p>where (I) is a multi-index.</p>
+<p>$$ langle f(x) \rangle = \frac{\langle f(x) \rangle_0}{\langle 1 \rangle_0} = \frac{1}{\langle 1 \rangle_0} \int f(x) e^{-S(x)} dx. $$</p>
+<p>We mostly care about asymptotics, so we will typically think of a function $f(x)$ as being a polynomial (or Taylor series). So what we&rsquo;re really interested in is</p>
+<p>$$ \langle x^I \rangle = c\int x^I e^{-S(x)} dx, $$</p>
+<p>where $I$ is a multi-index.</p>
 <p>The Partition Function</p>
-<p>Let us define (Z[J]) by</p>
-<p>[ Z[J] = \int e^{-S(x) + J \cdot x} dx. ]</p>
+<p>Let us define $Z[J]$ by</p>
+<p>$$ Z[J] = \int e^{-S(x) + J \cdot x} dx. $$</p>
 <p>Now the great thing is that</p>
-<p>[ \langle x^I \rangle = \left. \frac{d^I}{dJ^I} \right|_{J = 0} Z[J], ]</p>
-<p>so that once we know (Z[J]), we can calculate anything. So let&rsquo;s try to compute it. We have</p>
+<p>$$ \langle x^I \rangle = \left. \frac{d^I}{dJ^I} \right|_{J = 0} Z[J], $$</p>
+<p>so that once we know $Z[J]$, we can calculate anything. So let&rsquo;s try to compute it. We have</p>
 <p>\begin{align}</p>
 <p>(Ax - J) \cdot A^{-1} (Ax - J) &amp;= (Ax - J) \cdot (x - A^{-1} J) \\</p>
 <p>&amp;= x \cdot Ax - x \cdot J - J \cdot x + J \cdot A^{-1} J \\</p>
 <p>&amp;= x \cdot Ax - 2 x \cdot J + J \cdot A^{-1} J.</p>
 <p>\end{align}</p>
 <p>So we see that</p>
-<p>[ -\frac{1}{2} x \cdot A x + J \cdot x = \frac{1}{2} J \cdot A^{-1} J -\frac{1}{2} (x-A^{-1}J) \cdot A(x - A^{-1} J). ]</p>
-<p>So, after a change of variales (x \mapsto x - A^{-1} J) we find</p>
-<p>[ Z[J] = e^{\frac{1}{2} J \cdot A^{-1} J} Z[0]. ]</p>
+<p>$$ -\frac{1}{2} x \cdot A x + J \cdot x = \frac{1}{2} J \cdot A^{-1} J -\frac{1}{2} (x-A^{-1}J) \cdot A(x - A^{-1} J). $$</p>
+<p>So, after a change of variales $x \mapsto x - A^{-1} J$ we find</p>
+<p>$$ Z[J] = e^{\frac{1}{2} J \cdot A^{-1} J} Z[0]. $$</p>
 <p>Now the argument in the exponential is</p>
-<p>[ \frac{1}{2} A^{-1}_{ij} J^i J^j ]</p>
+<p>$$ \frac{1}{2} A^{-1}_{ij} J^i J^j $$</p>
 <p>So we find that</p>
-<p>[ \langle x^i x^j \rangle = \frac{d^2}{dx^i dx^j} Z[J]|<em>{J = 0} = A^{-1}</em>{ij}. ]</p>
+<p>$$ \langle x^i x^j \rangle = \frac{d^2}{dx^i dx^j} Z[J]|<em>{J = 0} = A^{-1}</em>{ij}. $$</p>
 <p>Now we are ready to prove Wick&rsquo;s theorem and discuss Feynman diagrams, which we&rsquo;ll do in the next post.</p>
 
 

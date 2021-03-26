@@ -17,15 +17,17 @@
     
    <script>
   MathJax = {
-      tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$','$$'], ['\\[', '\\]']],
-          processEscapes: true,
-          processEnvironments: true
-      },
-      options: {
-          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      }
+    loader: {load: ['[tex]/ams']},
+    tex: {
+      packages: {'[+]': ['ams']},
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
   };
 
   window.addEventListener('load', (event) => {
@@ -116,64 +118,64 @@
     
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
-<p>Finally, I want to discuss gauge-invariant of the gauge-fixed theory. (!?) We saw in the previous posts that if we have a gauge theory with connection (A) and matter fields (\psi), in order to derive sensible Feynman rules we have to introduce a gauge-fixing function (G) as well as Fermionic fields (c, \bar{c}), the ghosts. (Note: last time I used (\eta, \bar{\eta}) for the ghosts but I want to match the more standard notation, so I&rsquo;ve switched to (c, \bar{c})).</p>
-<p>Usually it is convenient to use the gauge-fixing function (G(A) = \partial^\mu A_\mu). Under an infinitesimal gauge-transformation (\lambda), (A) transforms as</p>
-<p>[ A \mapsto -\nabla \lambda, ]</p>
-<p>so (G(A)) transforms as</p>
-<p>[ G(A) \mapsto G(A) - \partial^\mu \nabla_\mu \lambda. ]</p>
+<p>Finally, I want to discuss gauge-invariant of the gauge-fixed theory. (!?) We saw in the previous posts that if we have a gauge theory with connection $A$ and matter fields $\psi$, in order to derive sensible Feynman rules we have to introduce a gauge-fixing function $G$ as well as Fermionic fields $c, \bar{c}$, the ghosts. (Note: last time I used $\eta, \bar{\eta}$ for the ghosts but I want to match the more standard notation, so I&rsquo;ve switched to $c, \bar{c}$).</p>
+<p>Usually it is convenient to use the gauge-fixing function $G(A) = \partial^\mu A_\mu$. Under an infinitesimal gauge-transformation $\lambda$, $A$ transforms as</p>
+<p>$$ A \mapsto -\nabla \lambda, $$</p>
+<p>so $G(A)$ transforms as</p>
+<p>$$ G(A) \mapsto G(A) - \partial^\mu \nabla_\mu \lambda. $$</p>
 <p>Hence the term in the Lagrangian involving the ghosts is</p>
-<p>[ -\bar{c}^a \partial^\mu \nabla_\mu^{ab} c^b, ]</p>
+<p>$$ -\bar{c}^a \partial^\mu \nabla_\mu^{ab} c^b, $$</p>
 <p>and our gauge-fixed Lagrangian is</p>
-<p>[ \mathcal{L} = -\frac{1}{4} |F|^2 + \bar{\psi}(iD!!!/-m)\psi + -\frac{|\partial^\mu A_\mu|^2}{2\xi}</p>
+<p>$$ \mathcal{L} = -\frac{1}{4} |F|^2 + \bar{\psi}(iD!!!/-m)\psi + -\frac{|\partial^\mu A_\mu|^2}{2\xi}</p>
 <ul>
-<li>\bar{c}^a \nabla_\mu^{ab} c^b ]</li>
+<li>\bar{c}^a \nabla_\mu^{ab} c^b $$</li>
 </ul>
-<p>Introducing an auxiliary filed (B^a), this is of course equivalent to</p>
-<p>[ \mathcal{L} = -\frac{1}{4} |F|^2 + \bar{\psi}(iD!!!/-m)\psi + \frac{\xi}{2} B^a B_a</p>
+<p>Introducing an auxiliary filed $B^a$, this is of course equivalent to</p>
+<p>$$ \mathcal{L} = -\frac{1}{4} |F|^2 + \bar{\psi}(iD!!!/-m)\psi + \frac{\xi}{2} B^a B_a</p>
 <ul>
-<li>B^a \partial^\mu A_{\mu a} - \bar{c}^a \nabla_\mu^{ab} c^b. ]</li>
+<li>B^a \partial^\mu A_{\mu a} - \bar{c}^a \nabla_\mu^{ab} c^b. $$</li>
 </ul>
 <p>Now, there are two questions one might ask: (1) how can we tell that this is a gauge-theory? i.e., what remains of the original gauge symmetry? and (2) does the resulting theory depend in any way on the choice of gauge-fixing function?</p>
-<p>The answer to both of these questions is BRST symmetry. The field (c) is Lie-algebra valued, so we could think of it as being an infinitesimal gauge transformation. Rather, for (\epsilon) a constant odd variable, (\epsilon c) is even and an honest infinitesimal gauge transformation. Under this transformation, we have</p>
-<p>[ \delta_\epsilon A = -\nabla (\epsilon c) = -\epsilon \nabla c. ]</p>
-<p>Then we define a graded derivation (\delta) by</p>
-<p>[ \delta A = - \nabla c. ]</p>
-<p>We have a grading by ghost number, where (\mathrm{gh}(A) = 0, \mathrm{gh}(\psi) = 0, \mathrm{gh}(c) = 1, \mathrm{gh}(\bar{c}) = -1). We would like to extend (\delta) to a derivation of degree (+1) that squares to 0. First, we should figure out what (\delta c) is. We compute:</p>
+<p>The answer to both of these questions is BRST symmetry. The field $c$ is Lie-algebra valued, so we could think of it as being an infinitesimal gauge transformation. Rather, for $\epsilon$ a constant odd variable, $\epsilon c$ is even and an honest infinitesimal gauge transformation. Under this transformation, we have</p>
+<p>$$ \delta_\epsilon A = -\nabla (\epsilon c) = -\epsilon \nabla c. $$</p>
+<p>Then we define a graded derivation $\delta$ by</p>
+<p>$$ \delta A = - \nabla c. $$</p>
+<p>We have a grading by ghost number, where $\mathrm{gh}(A) = 0, \mathrm{gh}(\psi) = 0, \mathrm{gh}(c) = 1, \mathrm{gh}(\bar{c}) = -1$. We would like to extend $\delta$ to a derivation of degree $+1$ that squares to 0. First, we should figure out what $\delta c$ is. We compute:</p>
 <p>\begin{align}</p>
-<p>0 &amp;= \delta^2 A \</p>
-<p>&amp;= \delta(-\nabla c) \</p>
-<p>&amp;= -\partial \delta c - (\delta A) c - A (\delta c) + (\delta c) A - c (\delta A) \</p>
-<p>&amp;= -\partial \delta c + (\nabla c) c + c (\nabla c) - [A, \delta c] \</p>
+<p>0 &amp;= \delta^2 A \\</p>
+<p>&amp;= \delta(-\nabla c) \\</p>
+<p>&amp;= -\partial \delta c - (\delta A) c - A (\delta c) + (\delta c) A - c (\delta A) \\</p>
+<p>&amp;= -\partial \delta c + (\nabla c) c + c (\nabla c) - [A, \delta c] \\</p>
 <p>&amp;= -\nabla(\delta c) + \nabla(c^2).</p>
 <p>\end{align}</p>
-<p>From this, we see that (\nabla(\delta c) = \nabla(c^2)), so we can set</p>
-<p>[ \delta c = c^2 = \frac{1}{2}[c, c]. ]</p>
-<p>Then (\delta^2 c = 0) is just the Jacobi identity for the group&rsquo;s Lie algebra! Finally, we would like to extend (\delta) to act on (\psi), (B), and (\bar{c}) so that (\delta \mathcal{L} = 0), and (\delta^2 = 0). Since the action on (A) is by infinitesimal gauge transformation, this leaves the curvature term of (\mathcal{L}) invariant. Similarly, the (\psi) term is invariant if we simply take</p>
-<p>[ \delta \psi = c \cdot \psi ]</p>
-<p>where dot denotes the infinitesimal gauge transformation. Using the known rules for (\delta), we find that</p>
-<p>[ \delta \mathcal{L} = \frac{\xi}{2} \left(\delta B B + B \delta B \right) + \delta B \cdot \partial^\mu A_\mu</p>
+<p>From this, we see that $\nabla(\delta c) = \nabla(c^2)$, so we can set</p>
+<p>$$ \delta c = c^2 = \frac{1}{2}[c, c]. $$</p>
+<p>Then $\delta^2 c = 0$ is just the Jacobi identity for the group&rsquo;s Lie algebra! Finally, we would like to extend $\delta$ to act on $\psi$, $B$, and $\bar{c}$ so that $\delta \mathcal{L} = 0$, and $\delta^2 = 0$. Since the action on $A$ is by infinitesimal gauge transformation, this leaves the curvature term of $\mathcal{L}$ invariant. Similarly, the $\psi$ term is invariant if we simply take</p>
+<p>$$ \delta \psi = c \cdot \psi $$</p>
+<p>where dot denotes the infinitesimal gauge transformation. Using the known rules for $\delta$, we find that</p>
+<p>$$ \delta \mathcal{L} = \frac{\xi}{2} \left(\delta B B + B \delta B \right) + \delta B \cdot \partial^\mu A_\mu</p>
 <ul>
-<li>B \cdot \partial^\mu \nabla_\mu c - \delta\bar{c} \cdot \partial^\mu \nabla_\mu c ]</li>
+<li>B \cdot \partial^\mu \nabla_\mu c - \delta\bar{c} \cdot \partial^\mu \nabla_\mu c $$</li>
 </ul>
 <p>By comparing coefficients, we find (together with what we&rsquo;ve already computed)</p>
 <p>\begin{align}</p>
-<p>\delta A &amp;= -\nabla c \</p>
-<p>\delta \psi &amp;= c \cdot \psi \</p>
-<p>\delta c &amp;= \frac{1}{2}[c,c] \</p>
-<p>\delta \bar{c} &amp;= B \</p>
+<p>\delta A &amp;= -\nabla c \\</p>
+<p>\delta \psi &amp;= c \cdot \psi \\</p>
+<p>\delta c &amp;= \frac{1}{2}[c,c] \\</p>
+<p>\delta \bar{c} &amp;= B \\</p>
 <p>\delta B &amp;= 0.</p>
 <p>\end{align}</p>
-<p>This is the BRST differential. Now, suppose that (\mathcal{O}(A, \psi)) is a local operator involving the physical fields (A) and (psi). Then by construction,(delta O) is the change of (O) under an infinitesimal gauge transformation. Hence, we find</p>
-<pre><code>An operator \(\mathcal{O}\) is gauge invariant \(\iff \delta\mathcal{O} = 0\).
+<p>This is the BRST differential. Now, suppose that $\mathcal{O}(A, \psi)$ is a local operator involving the physical fields $A$ and $psi$. Then by construction,$delta O$ is the change of $O$ under an infinitesimal gauge transformation. Hence, we find</p>
+<pre><code>An operator $\mathcal{O}$ is gauge invariant $\iff \delta\mathcal{O} = 0$.
 </code></pre>
-<p>Now, suppose the functional measure (\mathcal{D}A \mathcal{D}\psi \mathcal{D}B \mathcal{D}c \mathcal{D}\bar{c}) is gauge-invariant, i.e. is BRST closed. (This assumption is equivalent to the absence of anomalies, but we&rsquo;ll completely ignore this in today&rsquo;s post.) Then we have</p>
-<p>[ \langle \delta \mathcal{O} \rangle = 0 ]</p>
-<p>for any local observable (\mathcal{O}). This just follows from integration by parts (this is where we have to assume the measure is (\delta)-closed). Now, why is this significant? First, this tells us that the space of physical observables is</p>
-<p>[ H^0(C^\ast_{\mathrm{BRST}}, \delta) ]</p>
-<p>where (C^\ast_{\mathrm{BRST}}) is the cochain complex of local observables, graded by ghost number.</p>
+<p>Now, suppose the functional measure $\mathcal{D}A \mathcal{D}\psi \mathcal{D}B \mathcal{D}c \mathcal{D}\bar{c}$ is gauge-invariant, i.e. is BRST closed. (This assumption is equivalent to the absence of anomalies, but we&rsquo;ll completely ignore this in today&rsquo;s post.) Then we have</p>
+<p>$$ \langle \delta \mathcal{O} \rangle = 0 $$</p>
+<p>for any local observable $\mathcal{O}$. This just follows from integration by parts (this is where we have to assume the measure is $\delta$-closed). Now, why is this significant? First, this tells us that the space of physical observables is</p>
+<p>$$ H^0(C^\ast_{\mathrm{BRST}}, \delta) $$</p>
+<p>where $C^\ast_{\mathrm{BRST}}$ is the cochain complex of local observables, graded by ghost number.</p>
 <p>Now, the real power of the BRST formalism is the following. We find that the gauge-fixed Lagrangian can be written as</p>
-<p>[ \mathcal{L}_{gf} = \mathcal{L}_0 +\delta \left(\bar{c} \frac{B}{2} + \bar{c}\Lambda\right) ]</p>
-<p>where ( \Lambda = \partial^\mu \nabla_\mu A ) is our gauge-fixing function, and (\mathcal{L}_0) is the original Lagrangian without gauge-fixing. Now the point is, any two choices of gauge fixing differ by terms which are BRST exact, and hence give the same expectation values on the physical observables (H^0). So we have restored gauge invariance, while obtaining a gauge-fixed perturbation theory!</p>
+<p>$$ \mathcal{L}_{gf} = \mathcal{L}_0 +\delta \left(\bar{c} \frac{B}{2} + \bar{c}\Lambda\right) $$</p>
+<p>where $ \Lambda = \partial^\mu \nabla_\mu A $ is our gauge-fixing function, and $\mathcal{L}_0$ is the original Lagrangian without gauge-fixing. Now the point is, any two choices of gauge fixing differ by terms which are BRST exact, and hence give the same expectation values on the physical observables $H^0$. So we have restored gauge invariance, while obtaining a gauge-fixed perturbation theory!</p>
 
 
 </article>

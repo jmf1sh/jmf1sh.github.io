@@ -17,15 +17,17 @@
     
    <script>
   MathJax = {
-      tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$','$$'], ['\\[', '\\]']],
-          processEscapes: true,
-          processEnvironments: true
-      },
-      options: {
-          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      }
+    loader: {load: ['[tex]/ams']},
+    tex: {
+      packages: {'[+]': ['ams']},
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
   };
 
   window.addEventListener('load', (event) => {
@@ -120,30 +122,30 @@
 <p>We imagine that $(M, \omega, H)$ represents some classical mechanical system. We suppose that the dynamics of this dynamical system are very complicated, e.g. some system of $10^{23}$ particles. The system is so complicated that not only can we not solve the equations of motion exactly, and even if we could, their solutions might be so complicated that we can&rsquo;t expect to learn very much from them.</p>
 <p>So instead, we ask statistical questions. Imagine that we cannot measure the state of the system exactly (e.g. particles in a box), so we try to guess a probability distribution $\rho(x,p,t)$ on $M$ indicating that at time $t$ the system has probability $\rho(x,p,t) d\mu$ of being in the state $(x,p)$. Obviously, $\rho$ should satisfy the constraint $\int_M \rho d\mu = 1$.</p>
 <p>How does $\rho$ evolve in time? We know that the system obeys Hamilton&rsquo;s equations,</p>
-<p>[ (\dot x, \dot p) = X_H = (\partial H / \partial p, -\partial H / \partial x) ]</p>
+<p>$$ (\dot x, \dot p) = X_H = (\partial H / \partial p, -\partial H / \partial x) $$</p>
 <p>in local Darboux coordinates. Therefore, a particle located at $(x,p)$ in phase space at time $t$ will be located at $(x,p)+X_H dt$ in phase space at time $t+dt$. Therefore, the probability that a particle is at point $(x,p)$ at time $t+dt$, should be equal to the probability that the particle is at point $(x,p)-X_H dt$ at time $t$. Therefore, we have</p>
-<p>[ \frac{\partial \rho}{\partial t} = \frac{\partial H}{\partial x} \frac{\partial \rho}{\partial p} - \frac{\partial H}{\partial p} \frac{\partial \rho}{\partial x} = {H, \rho} ]</p>
+<p>$$ \frac{\partial \rho}{\partial t} = \frac{\partial H}{\partial x} \frac{\partial \rho}{\partial p} - \frac{\partial H}{\partial p} \frac{\partial \rho}{\partial x} = {H, \rho} $$</p>
 <p>Given a probability distribution $\rho$, the entropy is defined to be</p>
-<p>[ S[\rho] = -\int_M  \rho \log \rho d\mu. ]</p>
+<p>$$ S[\rho] = -\int_M  \rho \log \rho d\mu. $$</p>
 <p>(A version of) the second law of thermodynamics. For a given average energy $U$, the system assumes a distribution of maximal possible entropy at thermodynamic equilibrium.</p>
 <p>The goal now, is to determine what distribution $\rho$ will maximize the entropy, subject to the constraints (for fixed $U$)</p>
 <p>\begin{align*} \int_M H \rho d\mu &amp;= U \\</p>
 <p>\int_M \rho d\mu &amp;= 1 \end{align*}</p>
 <p>Setting aside technical issues of convergence, etc., this variational problem is easily solved using the method of Lagrange multipliers. Introducing parameters $\lambda_1, \lambda_2$, we consider the modified functional</p>
-<p>[ S[\rho, \lambda_1, \lambda_2, U] = \int_M\left(-\rho \log \rho +\lambda_1\rho +\lambda_2(H\rho)\right)d\mu -\lambda_1-\lambda_2 U. ]</p>
+<p>$$ S[\rho, \lambda_1, \lambda_2, U] = \int_M\left(-\rho \log \rho +\lambda_1\rho +\lambda_2(H\rho)\right)d\mu -\lambda_1-\lambda_2 U. $$</p>
 <p>Note that $\partial S / \partial U = -\lambda_2$, and this is conventionally identified with (minus) the inverse temperature.</p>
 <p>Taking the variation with respect to $\rho$, we find</p>
-<p>[ 0= \frac{\delta S}{\delta \rho} = -\log \rho-1+\lambda_1+H\lambda_2]</p>
+<p>$$ 0= \frac{\delta S}{\delta \rho} = -\log \rho-1+\lambda_1+H\lambda_2$$</p>
 <p>Therefore, $rho$ is proportional to $e^{-\beta H}$ where we have set $\beta=-\lambda_2$. Define the partition function $Z$ to be</p>
-<p>[ Z = \int_M e^{-\beta H} d\mu. ]</p>
+<p>$$ Z = \int_M e^{-\beta H} d\mu. $$</p>
 <p>We therefore have proved (formally and heuristically only!):</p>
 <p>Theorem. The probability distribution $\rho$ assumed by the system at thermodynamic equilibrium is given by</p>
-<p>[  \rho = \frac{e^{-\beta H}}{Z} ]</p>
+<p>$$  \rho = \frac{e^{-\beta H}}{Z} $$</p>
 <p>where $\beta &gt; 0$ is a real parameter, called the inverse temperature.</p>
 <p>Corollary. At thermodynamic equilibrium, the average energy is given by</p>
-<p>[ U = -\frac{\partial \log Z}{\partial \beta} , ]</p>
+<p>$$ U = -\frac{\partial \log Z}{\partial \beta} , $$</p>
 <p>and the entropy is given by</p>
-<p>[ S = \beta U + \log Z.]</p>
+<p>$$ S = \beta U + \log Z.$$</p>
 
 
 </article>

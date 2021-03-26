@@ -99,45 +99,30 @@
 
 <article>
 
-    <h1>Santalo Formula</h1>
+    <h1>Clifford algebras and spinors: table of contents</h1>
 
     
         <aside>
     <ul>
         <li>
-            <time class="post-date" datetime="2015-09-15T00:00:00Z">Sep 15, 2015</time>
+            <time class="post-date" datetime="2014-03-05T00:00:00Z">Mar 5, 2014</time>
         </li>
         
 
         
 
-        <li>2 minutes read</li>
+        <li>One minute read</li>
     </ul>
 </aside>
 
     
 
-    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
-<p>Let $M$ be a simple Riemannian manifold with boundary $\partial M$. For $(x,v) \in SM$, let $\tau(x,v)$ denote the exit time of the geodesic starting at $x$ with tangent vector $v$, i.e. $\tau(x,v)$ is the (necessarily unique, and finite) time at which $\exp_x(tv) \in \partial M$.</p>
-<p>We let $\partial_+(SM)$ denote the set</p>
-<p>$$ \partial_+(SM) = { (x,v) \in SM \ | \ x \in \partial M, \langle v, \nu\rangle &gt; 0 } $$</p>
-<p>where $\nu$ denotes the inward unit normal to $\partial M$ in $M$. The exponential map identifies $SM$ with the set</p>
-<p>$$ \Omega = { (x,v,t) \in \partial_+(SM) \times \mathbf{R} \ | \ 0 \leq t \leq \tau(x,v)  }, $$</p>
-<p>via $(x,v,t) \mapsto \exp_x(tv)$. Let $\Phi: \Omega \to M$ denote this diffeomorphism. Then we have, for all $f \in C^\infty(SM)$</p>
-<p>\begin{align}</p>
-<p>\int_{SM} f dvol(SM) &amp;= \int_\Omega (\Phi^\ast f) (\Phi^\ast dvol(SM)) \\</p>
-<p>&amp;= \int_{\partial_+(SM)} \int_0^{\tau(x,v)} f(\phi_t(x,v)) \Phi^\ast dvol(SM).</p>
-<p>\end{align}</p>
-<p>Therefore, we can compute integrals of functions over $SM$ by integrating along geodesics, provided that we can cmopute $\Phi^\ast dvol(SM)$. This is the content of the Santalo formula.</p>
-<p>Theorem (Santalo formula). For all $f \in C^\infty(SM)$, we have</p>
-<p>$$ \int_{SM} f dvol(SM) = \int_{\partial_+(SM)} \int_0^{\tau(x,v)} f(\phi_t(x,v)) \langle v, \nu\rangle dt dvol(\partial(SM)) $$</p>
-<p>Proof. Necessarily, we must have</p>
-<p>$$ \Phi^\ast(dvol(SM)) = a(x,v) dt \wedge dvol(\partial(SM))), $$</p>
-<p>for some function $a(x,v)$. The reason we can assume that $a$ is independent of $t$ is that $\Phi$ is defined via geodesic flow, and geodesic flow preserves the volume form on $SM$. To compute the factor $a(x,v)$, we just need to compute</p>
-<p>$$ i_{\partial / \partial t} \Phi^\ast(dvol(SM)) = \Phi^\ast(i_{\Phi_\ast(\partial / \partial t)} dvol(SM)) $$</p>
-<p>From the definition of $\Phi$, we have that $\Phi_\ast(\partial / \partial t)$ is the Reeb vector field on $SM$, i.e. the vector field generating geodesic flow. Therefore, $\Phi_\ast(\partial / \partial t)$ is equal, at a point $(x,v)$ to the horizontal lift of the vector $v$. Therefore, using the definition of the induced volume form on a hypersurface of a Riemannian manifold, we find</p>
-<p>$$ i_{\partial / \partial t} \Phi^\ast(dvol(SM)) = \langle v, \nu \rangle dvol(\partial(SM)) $$</p>
-<p>where $\nu$ is the inward pointing unit normal to $\partial(SM)$ in $SM$. This shows that $a(x,v) = \langle v, \nu \rangle$ and completes the proof.</p>
+    <p>Table of contents:</p>
+<ul>
+<li><a href="https://jmf1sh.github.io/posts/2014-03-05-clifford-algebras-part-1/">Part 1</a></li>
+<li><a href="https://jmf1sh.github.io/posts/2014-03-06-clifford-algebras-part-2/">Part 2</a></li>
+<li><a href="https://jmf1sh.github.io/posts/2014-03-18-clifford-algebras-part-3/">Part 3</a></li>
+</ul>
 
 
 </article>
@@ -147,12 +132,12 @@
     <ul>
         
         <li>
-            <a href="https://jmf1sh.github.io/posts/2015-09-11-index-form/"><i class="fa fa-chevron-circle-left"></i> The Index Form</a>
+            <a href="https://jmf1sh.github.io/posts/2014-02-23-virasoro-algebra/"><i class="fa fa-chevron-circle-left"></i> Virasoro algebra</a>
         </li>
         
         
         <li>
-            <a href="https://jmf1sh.github.io/posts/2017-12-19-variance-stabilizing/">Variance Stabilizing Transformations <i class="fa fa-chevron-circle-right"></i> </a>
+            <a href="https://jmf1sh.github.io/posts/2014-03-05-clifford-algebras-part-1/">Clifford algebras and spinors: part 1 <i class="fa fa-chevron-circle-right"></i> </a>
         </li>
         
     </ul>

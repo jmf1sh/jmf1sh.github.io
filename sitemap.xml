@@ -3,16 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jmf1sh.github.io/posts/</loc>
-    <lastmod>2021-03-06T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jmf1sh.github.io/about/</loc>
     <lastmod>2017-12-19T13:43:10+01:00</lastmod>
   </url><url>
     <loc>https://jmf1sh.github.io/</loc>
-    <lastmod>2021-03-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jmf1sh.github.io/posts/test/</loc>
-    <lastmod>2021-03-06T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jmf1sh.github.io/posts/2018-12-24-vae/</loc>
     <lastmod>2018-12-24T00:00:00+00:00</lastmod>
@@ -57,6 +54,9 @@
     <lastmod>2014-03-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jmf1sh.github.io/posts/2014-03-05-clifford-algebras-part-1/</loc>
+    <lastmod>2014-03-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jmf1sh.github.io/posts/2014-03-05-clifford-algebras-part-0/</loc>
     <lastmod>2014-03-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jmf1sh.github.io/posts/2014-02-23-virasoro-algebra/</loc>

@@ -17,15 +17,17 @@
     
    <script>
   MathJax = {
-      tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$','$$'], ['\\[', '\\]']],
-          processEscapes: true,
-          processEnvironments: true
-      },
-      options: {
-          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      }
+    loader: {load: ['[tex]/ams']},
+    tex: {
+      packages: {'[+]': ['ams']},
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
   };
 
   window.addEventListener('load', (event) => {
@@ -134,7 +136,7 @@
 <p>The details of the ADHM construction, once and for all. I should know this already.</p>
 </li>
 <li>
-<p>Hilbert schemes of points on a surface. Really, the hyperkahler metric for the scheme of points on (\mathbb{C}^2). Again, I should know this already.</p>
+<p>Hilbert schemes of points on a surface. Really, the hyperkahler metric for the scheme of points on $\mathbb{C}^2$. Again, I should know this already.</p>
 </li>
 </ol>
 <p>We&rsquo;ll see how these go&ndash;this is probably ambitious, and many of these will get extended into the summer.</p>
