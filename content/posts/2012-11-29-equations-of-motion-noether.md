@@ -1,8 +1,10 @@
----
-title: "Equations of motion and Noether's theorem in the functional formalism"
-date: 2012-11-29
-draft: false
----
++++
+title = "Equations of motion and Noether's theorem in the functional formalism"
+date = 2012-11-29
+draft = false
+categories = ["physics"]
+tags = ["symmetry"]
++++
 
 This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
 
@@ -14,30 +16,20 @@ $$ S[\phi] = \int L(\phi, \partial \phi) dx. $$
 The classical equations of motion are just the Euler-Lagrange equations
 
 $$ \frac{\delta S}{\delta \phi(x)} = 0
-
  \iff \partial_\mu \left( \frac{\partial L}{\partial(\partial_\mu\phi)} \right)
-
 = \frac{\partial L}{\partial \phi} $$
 
 
 Now suppose that $S$ is invariant under some transformation $\phi(x) \mapsto \phi(x) + \epsilon(x) \eta(x)$, so that $S[\phi] = S[\phi+\epsilon \eta]$. Here we treat $\eta$ as a fixed function but $\epsilon$ may be an arbitrary infinitesimal function. The Lagrangian is not necessarily invariant, but rather can transform with a total derivative:
 
-$$ L(\phi+\epsilon \eta) = L(\phi)
-
-+ \frac{\partial L}{\partial (\partial_\mu \phi)} \eta \partial_\mu \epsilon
-
-+ \epsilon \partial_\mu f^\mu $$
+$$ L(\phi+\epsilon \eta) = L(\phi) + \frac{\partial L}{\partial (\partial_\mu \phi)} \eta \partial_\mu \epsilon + \epsilon \partial_\mu f^\mu $$
 
 For some unknown vector field $f^\mu$ (which we could compute given any particular Lagrangian). So let's compute
 
-\\begin{align}\delta_\epsilon S &= \int \delta_\epsilon L \\\
-
+\\begin{align}\delta_\epsilon S &= \int \delta_\epsilon L \\\\\\
 &= \int \frac{\partial L}{\partial (\partial_\mu \phi)}
-
-\eta \partial_\mu \epsilon + \epsilon \partial_\mu f^\mu \\\
-
+\eta \partial_\mu \epsilon + \epsilon \partial_\mu f^\mu \\\\\\
 &= \int \partial_\mu \left(f^\mu - \frac{\partial L}{\partial (\partial_\mu \phi)} \eta \right) \epsilon
-
 \\end{align}
 
 Let us define the Noether current $J^\mu$ by
@@ -62,7 +54,6 @@ Functional Version
 First, we derive the functional analogue of the classical equations of motion. Consider an expectation value
 
 $$ \langle \mathcal{O(\phi)} \rangle
-
 = \int \mathcal{O}(\phi) e^{\frac{i}{\hbar} S} \mathcal{D}\phi $$
 
 We'll assume that $\phi$ takes values in a vector space (or bundle). Then we can perform a change of variables $\psi = \phi + \epsilon$, and since $\mathcal{D}\phi = \mathcal{D}\psi$ we find that
@@ -71,17 +62,14 @@ $$ \int \mathcal{O}(\phi+\epsilon) \exp\left(\frac{i}{\hbar} S[\phi] \right) \ma
 
 is independent of $\epsilon$. Expanding to first order in $\epsilon$, we have
 
-$$ 0 = \int \left(\frac{\delta\mathcal{O}}{\delta \phi}
-
- + \frac{i \mathcal{O}}{\hbar} \frac{\delta S}{\delta \phi} \right)
-
+$$ 0 = \int \left(\frac{\delta\mathcal{O}}{\delta \phi} +
+ \frac{i \mathcal{O}}{\hbar} \frac{\delta S}{\delta \phi} \right)
  \exp \left( \frac{i}{\hbar} S \right) \mathcal{D}\phi  $$
 
 So we find the quantum analogue of the equations of motion:
 
-$$ \left\langle \frac{\delta \mathcal{O}}{\delta \phi} \right\rangle
-
-+ \frac{i}{\hbar} \left\langle \mathcal{O} \frac{\delta S}{\delta \phi} \right\rangle = 0$$
+$$ \left\langle \frac{\delta \mathcal{O}}{\delta \phi} \right\rangle +
+ \frac{i}{\hbar} \left\langle \mathcal{O} \frac{\delta S}{\delta \phi} \right\rangle = 0$$
 
 
 Next, we move on to the quantum version of Noether's theorem. Suppose there is a transformation $Q$ of the fields leaving the action invariant. Assuming the path integral measure is invariant, we obtain
@@ -99,7 +87,6 @@ $$ Q S = -\delta_\mu J^\mu, $$
 so we obtain
 
 $$ \left\langle \frac{\delta \mathcal{O}}{\delta \epsilon(x)} \right\rangle
-
 = \frac{i}{\hbar} \left\langle \mathcal{O} \partial_\mu J^\mu \right\rangle.  $$
 
 This is the Ward-Takahashi identity, the quantum analogue of Noether's theorem.

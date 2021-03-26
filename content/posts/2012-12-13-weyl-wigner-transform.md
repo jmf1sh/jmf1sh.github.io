@@ -39,23 +39,17 @@ $$ \int e^{ikx} dx = \delta(k), \ \ \int e^{ikx} dk = \delta(x). $$
 
 The theorem is a formal result of these:
 
-\\begin{align} \Phi(\Psi(f))(q, k) &= \int e^{-ikq'} \left\langle q + \frac{q'}{2} \right| \Psi(f) \left| q - \frac{q'}{2} \right\rangle \\\
-
-&= \int e^{-ikq'} e^{ik'q'} f(q, k) dk' dq' \\\
-
+\\begin{align} \Phi(\Psi(f))(q, k) &= \int e^{-ikq'} \left\langle q + \frac{q'}{2} \right| \Psi(f) \left| q - \frac{q'}{2} \right\rangle \\\\\\
+&= \int e^{-ikq'} e^{ik'q'} f(q, k) dk' dq' \\\\\\
 &= f(q,k).
-
 \\end{align}
 
 
 One may easily check that $\Psi(x) = x$ and $Psi(k) = -i\partial$, so this certainly gives a quantization. But why is it particularly natural? To see this, let $Q$ be the operator of multiplication by $x$, and let $P$ be the operator $-i\partial$. We'd like to take $f(q,p)$ and replace it by $f(Q, P)$, but we can't literally substitute like this due to order ambiguity. However, we could work formally as follows:
 
 \\begin{align}
-
-f(Q, P) &= \int \delta(Q-q) \delta(P - p) f(q,p) dq dp \\\
-
+f(Q, P) &= \int \delta(Q-q) \delta(P - p) f(q,p) dq dp \\\\\\
 &= \int e^{ik(Q-q) + iq'(P-p)} f(q,p) dq dq' dp dk.
-
 \\end{align}
 
 In this last expression, there is no order ambiguity in the argument of the exponential (since it is a sum and not a product), and furthermore the expression itself make sense since it is the exponential of a skew-adjoint operator. So let's check that this agrees with the Weyl transform. Using a special case of the Baker-Campbell-Hausdorff formula for the Heisenberg algebra, we have
@@ -65,42 +59,27 @@ $$ e^{ik(Q-q) + iq'(P-p)} = e^{ik(Q-q)} e^{iq'(P-p)} e^{-ikq'/2} $$
 Let us compute the matrix element:
 
 \\begin{align}
-
 \langle q_1 | P | q_2 \rangle &= \int \langle q_1 | p_1 \rangle
-
-\langle p_1 | P | p_2 \rangle \langle p_2 | q_2 \rangle dp_1 dp_2 \\\
-
-&= \int e^{iq_1p_1 - iq_2 p_2} p_2 \delta(p_2 - p_1) dp_1 dp_2 \\\
-
+\langle p_1 | P | p_2 \rangle \langle p_2 | q_2 \rangle dp_1 dp_2 \\\\\\
+&= \int e^{iq_1p_1 - iq_2 p_2} p_2 \delta(p_2 - p_1) dp_1 dp_2 \\\\\\
 &= \int e^{i p(q_1-q_2)} p dp.
-
 \\end{align}
 
 Hence we find that the matrix element for the exponential is
 
 \\begin{align} \langle q_1 |e^{ik(Q-q) + iq'(P-p)} | q_2 \rangle
-
-&= e^{-ikq'/2 + ik(q_1-q)} \langle q_1 | e^{iq'(P-p)} | q_2 \rangle \\\
-
-&=  \int e^{-ikq'/2 + ik(q_1-q) -iq'p} e^{iq'p'' + ip''(q_1-q_2)} dp'' \\\
-
+&= e^{-ikq'/2 + ik(q_1-q)} \langle q_1 | e^{iq'(P-p)} | q_2 \rangle \\\\\\
+&=  \int e^{-ikq'/2 + ik(q_1-q) -iq'p} e^{iq'p'' + ip''(q_1-q_2)} dp'' \\\\\\
 &= \delta(q' + q_1 - q_2)  e^{-ikq'/2 + ik(q_1-q) -iq'p}
-
 \\end{align}
 
 Plugging this back into the expression for $f(Q, P)$ we find
 
 \\begin{align}
-
  \langle q_1 | f(Q. P) | q_2 \rangle &= \int \delta(q' + q_1 - q_2)  e^{-ikq'/2 + ik(q_1-q) -iq'p}
-
-f(q,p) dq dq' dp dk \\\
-
-&= \int  e^{ ik(q_1/2 +q_2/2-q) -ip(q_1-q_2)} f(q,p) dq dp dk \\\
-
+f(q,p) dq dq' dp dk \\\\\\
+&= \int  e^{ ik(q_1/2 +q_2/2-q) -ip(q_1-q_2)} f(q,p) dq dp dk \\\\\\
 &= \int e^{ip(q_1-q_2)} f(\frac{q_1+q_2}{2}, p) dp,
-
 \\end{align}
 
 which is the original expression we gave for the Weyl transform.
-

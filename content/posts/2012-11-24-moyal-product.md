@@ -1,8 +1,8 @@
----
-title: "The Moyal product"
-date: 2012-11-24
-draft: false
----
++++
+title = "The Moyal product"
+date = 2012-11-24
+draft = false
++++
 
 This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
 
@@ -18,11 +18,12 @@ $$ \{p_i, x_j\} = \delta_{ij}. $$
 
 We would like to define a new associative product $\ast$ on $A((\hbar))$ satisfying:
 
-
-    $f  \ast g = fg + O(\hbar) $
-    $f \ast g - g \ast f = \hbar \{f, g\} + O(\hbar^2)$
-    $1 \ast f = f \ast 1 = f$
-    $(f \ast g)^\ast = -g^\ast \ast f^\ast$
+\\begin{align}
+f  \ast g &= fg + O(\hbar) \\\\\\
+f \ast g - g \ast f &= \hbar \\{f, g\\} + O(\hbar^2) \\\\\\
+1 \ast f &= f \ast 1 = f \\\\\\
+(f \ast g)^\ast &= -g^\ast \ast f^\ast
+\\end{align}
 
 In the last line, the map $(\cdot)^\ast$ takes $x_i \mapsto x_i$ and $p_i \mapsto -p_i$. To figure out what this new product should be, let's take $f,g \in A$ and expand $f \ast g$ in power series:
 
@@ -54,26 +55,18 @@ which certainly reproduces the first two terms of our expansion. Let's see that 
 $m_{12}, m_{23}: A \otimes A \otimes A \to A \otimes A$, $m_{123}: A \otimes A \otimes A \to A$ the induced multiplication maps. Then
 
 \\begin{align}
-
-f \ast (g \ast h) &= m \circ(B( f \otimes m \circ B(g \otimes h) ) ) \\\
-
-&= m \circ B( m_{23} \circ (1 \otimes B)(f \otimes g \otimes h) ) \\\
-
+f \ast (g \ast h) &= m \circ(B( f \otimes m \circ B(g \otimes h) ) ) \\\\\\
+&= m \circ B( m_{23} \circ (1 \otimes B)(f \otimes g \otimes h) ) \\\\\\
 &= m_{123} (B \otimes 1)(1 \otimes B)(f \otimes g \otimes h)
-
 \\end{align}
 
 On the other hand, we have
 
 
 \\begin{align}
-
-(f \ast g) \ast h) &= m \circ(B( m \circ B(f \otimes g) \otimes h) ) ) \\\
-
-&= m \circ B( m_{12} \circ (B \otimes 1)(f \otimes g \otimes h) ) \\\
-
+(f \ast g) \ast h) &= m \circ(B( m \circ B(f \otimes g) \otimes h) ) ) \\\\\\
+&= m \circ B( m_{12} \circ (B \otimes 1)(f \otimes g \otimes h) ) \\\\\\
 &= m_{123} (1 \otimes B)(B \otimes 1)(f \otimes g \otimes h)
-
 \\end{align}
 
 
@@ -84,31 +77,19 @@ $$ m_{123} \circ [1\otimes B, B \otimes 1] = 0. $$
 
 On $A \otimes A \otimes A$, write $\partial_i^1$ for the partial derivative acting on the first factor, $\partial_i^2$ on the second, etc. Then
 
-$$ 1 \otimes B = \sum_n \frac {\hbar^n}{2^n n!}
-
+$$ 1 \otimes B = \sum\_n \frac{\hbar^n}{2^n n!}
  \Pi^{i_1 j_1} \cdots \Pi^{i_n j_n} \partial^2_{i_1} \partial^3_{j_1} \cdots
-
 \partial^2_{i_n} \partial^3_{j_n} $$
 
 and similarly for $B \otimes 1$. So we have
 
 \\begin{align}
-
-
 m_{123} (B\otimes 1)(1 \otimes B) &= \sum_n \sum_{k=0}^n \frac {\hbar^n}{2^n k! (n-k)!}
-
-
  \Pi^{k_1 l_1} \cdots \Pi^{k_k l_k} \partial_{k_1} \partial_{l_1} \cdots
-
-\partial_{k_k} \partial_{l_k} \\\
-
+\partial_{k_k} \partial_{l_k} \\\\\\
  & \ \times  \Pi^{i_1 j_1} \cdots \Pi^{i_{n-k} j_{n-k}} \partial_{i_1} \partial_{j_1} \cdots
-
-
-\partial_{i_{n-k}} \partial_{j_{n-k}} \\\
-
+\partial_{i_{n-k}} \partial_{j_{n-k}} \\\\\\
 &= m_{123}(1 \otimes B)(B \otimes 1)
-
 \\end{align}
 
 Hence we obtain an associative $\ast$-product. This is called Moyal product.
@@ -116,7 +97,7 @@ Hence we obtain an associative $\ast$-product. This is called Moyal product.
 
 
 Sheafifying the Construction
-
+-------------------------------------------------------------------------------
 
 Now suppose that $U$ is a (Zariski) open subset of $X = T^\ast \mathbb{C}^n$. Then the star product induces a well-defined map
 

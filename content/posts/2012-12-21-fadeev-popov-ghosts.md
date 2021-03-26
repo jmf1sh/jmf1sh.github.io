@@ -32,17 +32,11 @@ $$ \nabla' \phi' = g \nabla \phi. $$
 We compute
 
 \\begin{align}
-
-\nabla' \phi' &= (d + A')(g \phi) \\\
-
-&= dg \phi + g d\phi + A'(g\phi) \\\
-
-&= gg^{-1}dg \phi + gd\phi + g g^{-1} A' g\phi \\\
-
-&= g(d\phi + g^{-1} A' g \phi + g^{-1} dg \phi \\\
-
+\nabla' \phi' &= (d + A')(g \phi) \\\\\\
+&= dg \phi + g d\phi + A'(g\phi) \\\\\\
+&= gg^{-1}dg \phi + gd\phi + g g^{-1} A' g\phi \\\\\\
+&= g(d\phi + g^{-1} A' g \phi + g^{-1} dg \phi \\\\\\
 &= g(d\phi + A\phi)
-
 \\end{align}
 
 Comparing terms, we see that
@@ -79,15 +73,15 @@ $$ \delta(G(x)) = \frac{1}{(2\pi)^k}\int e^{ip\cdot G(x)} d^k p. $$
 
 We can regularize this by taking the limit as $\epsilon \to 0$ of
 
-$$ \frac{1}{(2\pi)^k}\int \exp\left\{ip\cdot G(x) -\frac{\epsilon}{2} |p|^2\right\} d^k p $$
+$$ \frac{1}{(2\pi)^k}\int \exp\left\\{ip\cdot G(x) -\frac{\epsilon}{2} |p|^2\right\\} d^k p $$
 
 This integral is Gaussian, so we obtain explicitly
 
-$$ \left(\frac{2\pi}{\epsilon} \right)^{\frac{k}{2}} \exp\left\{-\frac{1}{2\epsilon} |G(x)|^2 \right\}. $$
+$$ \left(\frac{2\pi}{\epsilon} \right)^{\frac{k}{2}} \exp\left\\{-\frac{1}{2\epsilon} |G(x)|^2 \right\\}. $$
 
 So our original guess becomes
 
-$$ \left(\frac{1}{2\pi \epsilon}\right)^\frac{k}{2} \int f(x) \exp\left\{ -\frac{1}{2\epsilon} |G(x)|^2 \right\} dx .$$
+$$ \left(\frac{1}{2\pi \epsilon}\right)^\frac{k}{2} \int f(x) \exp\left\\{ -\frac{1}{2\epsilon} |G(x)|^2 \right\\} dx .$$
 
 As $\epsilon \to 0$, this integral localizes on the locus $\{G(x) = 0\}$, as desired, but does not give the right answer! To see this, let $u$ be a coordinate on $M = G^{-1}(0)$ and $v$ coordinates normal to $M$. Then we have
 
@@ -96,25 +90,18 @@ $$ G(x) = G(u,v) = v^T H(u) v + o(|v|^3) $$
 where $H(x)$ is the Hessian of $|G|^2$ at the point $x = (u, 0)$. So the integral becomes (as $\epsilon \to 0$)
 
 \\begin{align}
-
 I_\epsilon &= \left(\frac{1}{2\pi \epsilon}\right)^\frac{k}{2} \int\int
-
- f(u, v) \exp\left\{ -\frac{1}{2\epsilon} v^T H(u) v \right\} du dv \\\
-
+ f(u, v) \exp\left\\{ -\frac{1}{2\epsilon} v^T H(u) v \right\\} du dv \\\\\\
 &= \int_M \frac{f(u)}{\sqrt{\det H(u)}} du.
-
 \\end{align}
 
 This is not correct. We have to account for the determinant of the Hessian. Now, the Hessian is given by
 
-\\begin{align} H_{ij} &= \frac{1}{2} \frac{\partial^2 |G|^2}{\partial v^i \partial v^j} \\\
-
-&= \frac{\partial}{\partial v^i} \left( G^a \partial_j G^a \right) \\\
-
-&=  \left(\partial_i G^a \partial_j G^a + G^a \partial_{ij} G^a \right) \\\
-
+\\begin{align}
+H_{ij} &= \frac{1}{2} \frac{\partial^2 |G|^2}{\partial v^i \partial v^j} \\\\\\
+&= \frac{\partial}{\partial v^i} \left( G^a \partial_j G^a \right) \\\\\\
+&=  \left(\partial_i G^a \partial_j G^a + G^a \partial_{ij} G^a \right) \\\\\\
 &=  \partial_i G^a \partial_j G^a
-
 \\end{align}
 
 where we have used the fact that $G = 0$ on $x = (u, 0)$. Hence we see that
@@ -132,8 +119,5 @@ $$ \int e^{\eta^i G^i(0, \theta^j)} d\theta d\eta = \det A. $$
 So in the end, we find
 
 $$ \int_M f(x) d\mu = \int_{\mathbb{R}^n}
-
 f(x) \delta(G(x)) \exp\left(\eta \cdot G(x+ \theta) \right)
-
  dx d\theta d\eta. $$
- 

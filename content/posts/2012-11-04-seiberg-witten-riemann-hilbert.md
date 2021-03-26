@@ -1,8 +1,14 @@
----
-title: "Seiberg-Witten theory and the Riemann-Hilbert problem"
-date: 2012-11-04
-draft: false
----
++++
+title = "Seiberg-Witten theory and the Riemann-Hilbert problem"
+date = 2012-11-04
+draft = false
+tags = [
+    "qft"
+]
+categories = [
+    "physics"
+]
++++
 
 This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
 
@@ -18,17 +24,17 @@ For definiteness, we'll consider just the case of $SU(2)$ considered by Seiberg 
 
 $$ \mathrm{Tr}[\phi, \phi^\dagger]^2 $$
 
-Hence at the minimum, $[\phi,\phi^\dagger]=0$ and $\phi$ is diagonalizable. Hence the classical moduli space of vacua $\mathcal{M}_{cl}$ is just $\mathbb{C}$, with complex coodinate $a$, corresponding to the Higgs field
+Hence at the minimum, $[\phi,\phi^\dagger]=0$ and $\phi$ is diagonalizable. Hence the classical moduli space of vacua $\mathcal{M}\_{cl}$ is just $\mathbb{C}$, with complex coodinate $a$, corresponding to the Higgs field
 
 $$ \phi = \left( \\begin{array}{rr}a & 0 \\ 0 & -a\\end{array} \right) $$
 
-Actually, due to gauge invariance, it is better to introduce another copy of the complex plane $\mathcal{B}$ with local coordinate $u = \frac{1}{2} Tr \phi^2 = a^2$. Then we can think of $\mathcal{M}_{cl}$ as a branched cover of $\mathcal{B}$, with $a$ a (local) choice of square root of $u$.
+Actually, due to gauge invariance, it is better to introduce another copy of the complex plane $\mathcal{B}$ with local coordinate $u = \frac{1}{2} Tr \phi^2 = a^2$. Then we can think of $\mathcal{M}\_{cl}$ as a branched cover of $\mathcal{B}$, with $a$ a (local) choice of square root of $u$.
 
 
-The goal is to understand the low energy effective theory. We introduce a cutoff $\Lambda$ to define the quantum theory, and integrate out all degrees of freedom except for the low momentum modes of $\phi$ (in particular, we integrate out the gauge field d.o.f.). The result is a $\sigma$-model with target $\mathcal{M}_{cl}$. The kinetic term of the $\sigma$-model is governed by the metric on $\mathcal{M}_{cl}$, hence the low energy effective action determines a metric on $\mathcal{M}_{cl}$.
+The goal is to understand the low energy effective theory. We introduce a cutoff $\Lambda$ to define the quantum theory, and integrate out all degrees of freedom except for the low momentum modes of $\phi$ (in particular, we integrate out the gauge field d.o.f.). The result is a $\sigma$-model with target $\mathcal{M}\_{cl}$. The kinetic term of the $\sigma$-model is governed by the metric on $\mathcal{M}\_{cl}$, hence the low energy effective action determines a metric on $\mathcal{M}\_{cl}$.
 
 
-We'll see that 1-loop calculations introduce monodromy, so that in the quantum theory, "functions" on $\mathcal{M}_{cl}$ are actually sections of non-trivial bundles over $\mathcal{M}_{cl}$, and furthermore that the metric receives corrections from instantons (or BPS states). So what we really would like to understand/construct is the quantum moduli space of vacua $\mathcal{M}$, which will be some non-trivial modification of $\mathcal{M}_{cl}$. The key to the Seiberg-Witten solution is that susy allows us to reduce the problem to finding a specified set of holomorphic functions (in the $u$ coordinate$ satsfying certain monodromies, and that once we know the monodromies the solution is given to us by the Riemann-Hilbert correspondence.
+We'll see that 1-loop calculations introduce monodromy, so that in the quantum theory, "functions" on $\mathcal{M}\_{cl}$ are actually sections of non-trivial bundles over $\mathcal{M}\_{cl}$, and furthermore that the metric receives corrections from instantons (or BPS states). So what we really would like to understand/construct is the quantum moduli space of vacua $\mathcal{M}$, which will be some non-trivial modification of $\mathcal{M}\_{cl}$. The key to the Seiberg-Witten solution is that susy allows us to reduce the problem to finding a specified set of holomorphic functions (in the $u$ coordinate$ satsfying certain monodromies, and that once we know the monodromies the solution is given to us by the Riemann-Hilbert correspondence.
 
 
 The Riemann-Hilbert Correspondence
@@ -120,6 +126,3 @@ In this case, the group has rank $r=1$, so we should be looking for a family of 
 
 
 Next time: details of this construction, including exact formulas, and some words about instanton counting.
-
-
-

@@ -4,18 +4,19 @@ date: 2012-03-03 15:00:00Z
 draft: false
 ---
 
-This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
+This post has been migrated from my old blog, the
+[math-physics learning seminar](https://mathphysseminar.blogspot.com/).
 
 
-We saw in the last update that the generating function $Z[J]$ can be expressed as
+We saw in the last update that the generating function $Z[J]$ can be expressed
+as
 
 $$ Z[J] = e^{\frac{1}{2} J \cdot A^{-1} J} $$
 
-(at least as long as we've normalize things so that $Z[0] = 1$. Now the wonderful thing is that this is something we can compute explicitly:
+(at least as long as we've normalize things so that $Z[0] = 1$. Now the
+wonderful thing is that this is something we can compute explicitly:
 
-$$ Z[J] = \sum_{n = 0}^{\infty} \frac{(\frac{1}{2} A^{-1}_{ij} J^i J^j)^n}{n!}
-
-= \sum_{n=0}^\infty \frac{(A^{-1}_{ij} J^i J^j)^n}{2^n n!} $$
+$$ Z[J] = \sum\_{n = 0}^{\infty} \frac{(\frac{1}{2} A^{-1}\_{ij} J^i J^j)^n}{n!} = \sum_{n=0}^\infty \frac{(A^{-1}\_{ij} J^i J^j)^n}{2^n n!} $$
 
 
 For example, in the one-dimensional case (taking $A = 1$) we get
@@ -55,7 +56,10 @@ $$ \langle x^{i_1} \cdots x^{i_{2n}} \rangle $$
 is the sum over all full contractions. There are $(2n)!/ 2^n n!$ terms in the sum.
 
 
-Proof This follows from our formula for the power series of the generating function. The reason is that the coefficient of  $J^I$ in $(\frac{1}{2} A^{-1}_{ij} J^i J^k)^n$ is exactly given by summing products of $A^{-1}_{ij}$ over partitions of $I$ into pairs, and the $n!$ in the denominator takes care of the overcounting.
-
+Proof This follows from our formula for the power series of the generating
+function. The reason is that the coefficient of  $$J^I$$ in
+$$(\frac{1}{2} A^{-1}\_{ij} J^i J^k)^n$$ is exactly given by summing products
+of $$A^{-1}\_{ij}$$ over partitions of $$I$$ into pairs, and the $n!$ in the
+denominator takes care of the overcounting.
 
 Next up: perturbation theory and Feynman diagrams.
