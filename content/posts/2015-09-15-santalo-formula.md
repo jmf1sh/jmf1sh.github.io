@@ -1,8 +1,10 @@
----
-title: "Santalo Formula"
-date: 2015-09-15
-draft: false
----
++++
+title = "Santalo Formula"
+date = 2015-09-15
+draft = false
+categories = ["geometry"]
+tags = ["inverse-problems"]
++++
 
 This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
 
@@ -20,15 +22,11 @@ $$ \Omega = \{ (x,v,t) \in \partial_+(SM) \times \mathbf{R} \ | \ 0 \leq t \leq 
 via $(x,v,t) \mapsto \exp_x(tv)$. Let $\Phi: \Omega \to M$ denote this diffeomorphism. Then we have, for all $f \in C^\infty(SM)$
 
 \\begin{align}
-
-\int_{SM} f dvol(SM) &= \int_\Omega (\Phi^\ast f) (\Phi^\ast dvol(SM)) \\\
-
+\int_{SM} f dvol(SM) &= \int_\Omega (\Phi^\ast f) (\Phi^\ast dvol(SM)) \\\\\\
 &= \int_{\partial_+(SM)} \int_0^{\tau(x,v)} f(\phi_t(x,v)) \Phi^\ast dvol(SM).
-
 \\end{align}
 
 Therefore, we can compute integrals of functions over $SM$ by integrating along geodesics, provided that we can cmopute $\Phi^\ast dvol(SM)$. This is the content of the Santalo formula.
-
 
 Theorem (Santalo formula). For all $f \in C^\infty(SM)$, we have
 

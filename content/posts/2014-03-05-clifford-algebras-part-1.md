@@ -1,8 +1,10 @@
----
-title: "Clifford algebras and spinors: part 1"
-date: 2014-03-05
-draft: false
----
++++
+title = "Clifford algebras and spinors: part 1"
+date = 2014-03-05
+draft = false
+categories = ["geometry"]
+tags = ["clifford-algebras"]
++++
 
 [Other articles in this series]({{< ref "2014-03-05-clifford-algebras-part-0.md" >}})
 

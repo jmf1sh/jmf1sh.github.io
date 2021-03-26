@@ -1,8 +1,10 @@
----
-title: "Variance Stabilizing Transformations"
-date: 2017-12-19T13:49:09+01:00
-draft: false
----
++++
+title = "Variance Stabilizing Transformations"
+date = 2017-12-19T13:49:09+01:00
+draft = false
+categories = ["statistics"]
+tags = ["data-analysis"]
++++
 
 I want to record here a very interesting thing which I recently discovered, [variance-stabilizing transformations](https://en.wikipedia.org/wiki/Variance-stabilizing_transformation). The idea is very simple: suppose we have a random variable $x$, which follows a probability distribution which is parametrized solely by its mean $\mu$, with variance $var(x) = g(\mu)$ a known function of the mean.
 

@@ -1,8 +1,10 @@
----
-title: "Clifford algebras and spinors part 3: Bochner identity"
-date: 2014-03-18
-draft: false
----
++++
+title = "Clifford algebras and spinors part 3: Bochner identity"
+date = 2014-03-18
+draft = false
+categories = ["geometry"]
+tags = ["clifford-algebras"]
++++
 
 [Other articles in this series]({{< ref "2014-03-05-clifford-algebras-part-0.md" >}})
 
@@ -34,17 +36,11 @@ Theorem. We have the identity $\mathcal{D}^2 = -\Delta + \mathcal{R}$.
 Proof. We compute
 
 \\begin{align}
-
-\mathcal{D}^2 \sigma &= \sum_{ij} e_i \nabla_i \left( e_j \nabla_j \sigma \right) \\\
-
-&= \sum_{ij} e_i e_j \nabla_i \nabla_j \sigma + e_i ( \nabla_i e_j ) \nabla_j \sigma \\\
-
-&= -\Delta \sigma + \frac{1}{2}\sum_{ij}e_i e_j [\nabla_i, \nabla_j] \sigma + \sum_{ij} e_i ( \nabla_i e_j) \nabla_j \sigma \\\
-
-&= -\Delta \sigma + \frac{1}{2}\sum_{ij}e_i e_j R(e_i, e_j) \sigma + \frac{1}{2}\sum_{ij} e_i e_j \nabla_{[e_i, e_j]} \sigma+ \sum_{ij} e_i ( \nabla_i e_j) \nabla_j \sigma \\\
-
+\mathcal{D}^2 \sigma &= \sum_{ij} e_i \nabla_i \left( e_j \nabla_j \sigma \right) \\\\\\
+&= \sum_{ij} e_i e_j \nabla_i \nabla_j \sigma + e_i ( \nabla_i e_j ) \nabla_j \sigma \\\\\\
+&= -\Delta \sigma + \frac{1}{2}\sum_{ij}e_i e_j [\nabla_i, \nabla_j] \sigma + \sum_{ij} e_i ( \nabla_i e_j) \nabla_j \sigma \\\\\\
+&= -\Delta \sigma + \frac{1}{2}\sum_{ij}e_i e_j R(e_i, e_j) \sigma + \frac{1}{2}\sum_{ij} e_i e_j \nabla_{[e_i, e_j]} \sigma+ \sum_{ij} e_i ( \nabla_i e_j) \nabla_j \sigma \\\\\\
 &= (-\Delta + \mathcal{R})\sigma + \frac{1}{2} \sum_{ij} \left( e_i e_j \nabla_{[e_i, e_j]}\sigma +  e_i (\nabla_i e_j) \nabla_j + e_j (\nabla_j e_i) \nabla_i \right)\sigma
-
 \\end{align}
 
 We will be done provided we can show that the last term vanishes. Notice that it is fully tensorial, since it can be expressed as $\mathcal{D}^2 + \Delta - \mathcal{R}$. On the other hand, the terms $[e_i, e_j]$ and $\nabla_j e_i$ are (by definition!) proportional to Christoffel symbols. Since we can always choose a frame so that these vanish at a point, these terms must vanish identically. Hence we have $0 = \mathcal{D}^2 + \Delta - \mathcal{R}$, as desired.

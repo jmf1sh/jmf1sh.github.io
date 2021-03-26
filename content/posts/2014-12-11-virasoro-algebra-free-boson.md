@@ -1,8 +1,8 @@
----
-title: "Virasoro algebra from the free boson"
-date: 2014-12-11
-draft: false
----
++++
+title = "Virasoro algebra from the free boson"
+date = 2014-12-11
+draft = false
++++
 
 This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
 
@@ -27,7 +27,11 @@ Lemma. We have the commutation relation $[a_m, a_n] = m \delta_{m+n}$ as linear 
 
 For any monomial in the $a_k$, we define normal ordering $::$ to be the monomial obtained by reordering the terms so that the indices are increasing. (Mathematical interpretation: it is a section of the quotient map from the tensor algebra in the $a_k$ to the symmetric algebra, defined by lexicographic order.) For example,
 
-$$ :a_j a_k:\ = \left\{ \\begin{array}{rr} a_j a_k, & j \leq k \\ a_k a_j, & j &gt; k \\end{array} \right. $$
+$$ :a_j a_k:\ = \left\\{
+\\begin{array}{rr}
+a_j a_k, & j \leq k \\\\
+a_k a_j, & j > k
+\\end{array} \right. $$
 
 
 Next we formally define a set of operators $L_k$ by
@@ -60,38 +64,26 @@ $$ L_m^N = \frac{1}{2}\sum_{|j| &lt; N} :a_j a_{m-j}: $$
 Let us compute (noting that since $m \neq 0$, $:a_j a_{m-j}: = a_j a_{m-j}$)
 
 \\begin{align}
-
-  [L_m^N, L_n] &= \frac{1}{2} \sum_{|j| &lt; N} [a_j a_{m-j}, L_n] \\\
-
+  [L_m^N, L_n] &= \frac{1}{2} \sum_{|j| &lt; N} [a_j a_{m-j}, L_n] \\\\\\
   &= \frac{1}{2} \sum_{|j| &lt; N} (m-j) a_j a_{m+n-j} + \frac{1}{2} \sum_{|j| &lt; N}j a_{n+j} a_{m-j}
-
 \\end{align}
 
 Denote the two sums above by $S_1$ and $S_2$. It is clear that these should be related to the operator $L_{m+n}$, but to see the exact relation we will have to normal order the terms. Let's start with $S_1$. Note that $a_j a_{m+n-j}$ is already normal ordered, unless $j &gt; m+n-j$. Hence
 
 \\begin{align}
-
-  S_1 &= \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{1}{2} \sum_{m+n\lt2j\lt2N} (m-j) [a_j, a_{m+n-j}] \\\
-
-&= \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{\delta_{m+n}}{2} \sum_{m+n\lt2j\lt2N} j(m-j) \\\
-
+  S_1 &= \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{1}{2} \sum_{m+n\lt2j\lt2N} (m-j) [a_j, a_{m+n-j}] \\\\\\
+&= \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{\delta_{m+n}}{2} \sum_{m+n\lt2j\lt2N} j(m-j) \\\\\\
 &= \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{\delta_{m+n}}{2} \sum_{0\lt j\lt N} j(m-j)
-
 \\end{align}
 
 
 Similarly, we normal order the terms in $S_2$:
 
 \\begin{align}
-
-  S_2 &= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{1}{2} \sum_{m-n\lt2j\lt2N}j [a_{m-j}, a_{n+j}] \\\
-
-&= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{\delta_{m+n}}{2} \sum_{m\lt j\lt N}j (m-j) \\\
-
-&= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{\delta_{m+n}}{2} \sum_{m\lt j\lt N}j (m-j) \\\
-
+  S_2 &= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{1}{2} \sum_{m-n\lt2j\lt2N}j [a_{m-j}, a_{n+j}] \\\\\\
+&= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{\delta_{m+n}}{2} \sum_{m\lt j\lt N}j (m-j) \\\\\\
+&= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{\delta_{m+n}}{2} \sum_{m\lt j\lt N}j (m-j) \\\\\\
 &= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{\delta_{m+n}}{2} \sum_{m\lt j\lt N}j (m-j)
-
 \\end{align}
 
 

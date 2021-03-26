@@ -1,8 +1,10 @@
----
-title: "Clifford algebras and spinors: table of contents"
-date: 2014-03-05
-draft: false
----
++++
+title = "Clifford algebras and spinors: table of contents"
+date = 2014-03-05
+draft = false
+categories = ["geometry"]
+tags = ["clifford-algebras"]
++++
 
 
 Table of contents:
