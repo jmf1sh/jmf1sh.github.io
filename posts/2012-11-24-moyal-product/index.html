@@ -78,6 +78,18 @@
     <ul>
         
         <li>
+            <a class="" href="https://jmf1sh.github.io/categories">
+                <i class="fa-li fa  fa-lg"></i><span>Categories</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/tags">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+        <li>
             <a class="" href="https://jmf1sh.github.io/posts/">
                 <i class="fa-li fa  fa-lg"></i><span>Posts</span>
             </a>
@@ -92,6 +104,7 @@
     </ul>
 </nav>
 
+
       <main>
 
 
@@ -102,31 +115,36 @@
     <h1>The Moyal product</h1>
 
     
-        <aside>
+      <aside>
     <ul>
         <li>
-            <time class="post-date" datetime="2012-11-24T00:00:00Z">Nov 24, 2012</time>
+            <time class="post-date" datetime="2012-11-24T00:00:00&#43;01:00">Nov 24, 2012</time>
         </li>
         
+        
 
         
 
-        <li>4 minutes read</li>
+        <li>4 minute read</li>
     </ul>
 </aside>
 
     
+
+    
+
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
 <p>Today I want to understand the Moyal product, as we will need to understand it in order to construct quantizations of symplectic quotients. (More precisely, to incorporate stability conditions.)</p>
 <p>Let $A$ be the algebra of polynomial functions on $T^\ast \mathbb{C}^n$. This algebra has a natural Poisson bracket, given by</p>
 <p>$$ {p_i, x_j} = \delta_{ij}. $$</p>
 <p>We would like to define a new associative product $\ast$ on $A((\hbar))$ satisfying:</p>
-<pre><code>$f  \ast g = fg + O(\hbar) $
-$f \ast g - g \ast f = \hbar \{f, g\} + O(\hbar^2)$
-$1 \ast f = f \ast 1 = f$
-$(f \ast g)^\ast = -g^\ast \ast f^\ast$
-</code></pre>
+<p>\begin{align}
+f  \ast g &amp;= fg + O(\hbar) \\\<br>
+f \ast g - g \ast f &amp;= \hbar \{f, g\} + O(\hbar^2) \\\<br>
+1 \ast f &amp;= f \ast 1 = f \\\<br>
+(f \ast g)^\ast &amp;= -g^\ast \ast f^\ast
+\end{align}</p>
 <p>In the last line, the map $(\cdot)^\ast$ takes $x_i \mapsto x_i$ and $p_i \mapsto -p_i$. To figure out what this new product should be, let&rsquo;s take $f,g \in A$ and expand $f \ast g$ in power series:</p>
 <p>$$ f \ast g = \sum_{n=0}^\infty c_n(f,g) \hbar^n $$</p>
 <p>Now, equations (1) and (2) will be satisfied by taking $c_0(f,g) = fg$ and $c_1(f,g) = {f,g}/2$. Let $\sigma$ be the Poisson bivector defining the Poisson bracket. This defines a differential operator $\Pi$ on $A \otimes A$ by</p>
@@ -141,34 +159,34 @@ $(f \ast g)^\ast = -g^\ast \ast f^\ast$
 <p>$$ B = \exp(\frac{\hbar \Pi}{2}), $$</p>
 <p>which certainly reproduces the first two terms of our expansion. Let&rsquo;s see that this choice actually works, i.e. defines an associative $\ast$-product. Let $m: A \otimes A \to A$ be the multiplication, and</p>
 <p>$m_{12}, m_{23}: A \otimes A \otimes A \to A \otimes A$, $m_{123}: A \otimes A \otimes A \to A$ the induced multiplication maps. Then</p>
-<p>\begin{align}</p>
-<p>f \ast (g \ast h) &amp;= m \circ(B( f \otimes m \circ B(g \otimes h) ) ) \\</p>
-<p>&amp;= m \circ B( m_{23} \circ (1 \otimes B)(f \otimes g \otimes h) ) \\</p>
-<p>&amp;= m_{123} (B \otimes 1)(1 \otimes B)(f \otimes g \otimes h)</p>
-<p>\end{align}</p>
+<p>\begin{align}
+f \ast (g \ast h) &amp;= m \circ(B( f \otimes m \circ B(g \otimes h) ) ) \\\<br>
+&amp;= m \circ B( m_{23} \circ (1 \otimes B)(f \otimes g \otimes h) ) \\\<br>
+&amp;= m_{123} (B \otimes 1)(1 \otimes B)(f \otimes g \otimes h)
+\end{align}</p>
 <p>On the other hand, we have</p>
-<p>\begin{align}</p>
-<p>(f \ast g) \ast h) &amp;= m \circ(B( m \circ B(f \otimes g) \otimes h) ) ) \\</p>
-<p>&amp;= m \circ B( m_{12} \circ (B \otimes 1)(f \otimes g \otimes h) ) \\</p>
-<p>&amp;= m_{123} (1 \otimes B)(B \otimes 1)(f \otimes g \otimes h)</p>
-<p>\end{align}</p>
+<p>\begin{align}
+(f \ast g) \ast h) &amp;= m \circ(B( m \circ B(f \otimes g) \otimes h) ) ) \\\<br>
+&amp;= m \circ B( m_{12} \circ (B \otimes 1)(f \otimes g \otimes h) ) \\\<br>
+&amp;= m_{123} (1 \otimes B)(B \otimes 1)(f \otimes g \otimes h)
+\end{align}</p>
 <p>Hence, associativity is the condition</p>
 <p>$$ m_{123} \circ [1\otimes B, B \otimes 1] = 0. $$</p>
 <p>On $A \otimes A \otimes A$, write $\partial_i^1$ for the partial derivative acting on the first factor, $\partial_i^2$ on the second, etc. Then</p>
-<p>$$ 1 \otimes B = \sum_n \frac {\hbar^n}{2^n n!}</p>
-<p>\Pi^{i_1 j_1} \cdots \Pi^{i_n j_n} \partial^2_{i_1} \partial^3_{j_1} \cdots</p>
-<p>\partial^2_{i_n} \partial^3_{j_n} $$</p>
+<p>$$ 1 \otimes B = \sum_n \frac{\hbar^n}{2^n n!}
+\Pi^{i_1 j_1} \cdots \Pi^{i_n j_n} \partial^2_{i_1} \partial^3_{j_1} \cdots
+\partial^2_{i_n} \partial^3_{j_n} $$</p>
 <p>and similarly for $B \otimes 1$. So we have</p>
-<p>\begin{align}</p>
-<p>m_{123} (B\otimes 1)(1 \otimes B) &amp;= \sum_n \sum_{k=0}^n \frac {\hbar^n}{2^n k! (n-k)!}</p>
-<p>\Pi^{k_1 l_1} \cdots \Pi^{k_k l_k} \partial_{k_1} \partial_{l_1} \cdots</p>
-<p>\partial_{k_k} \partial_{l_k} \\</p>
-<p>&amp; \ \times  \Pi^{i_1 j_1} \cdots \Pi^{i_{n-k} j_{n-k}} \partial_{i_1} \partial_{j_1} \cdots</p>
-<p>\partial_{i_{n-k}} \partial_{j_{n-k}} \\</p>
-<p>&amp;= m_{123}(1 \otimes B)(B \otimes 1)</p>
-<p>\end{align}</p>
+<p>\begin{align}
+m_{123} (B\otimes 1)(1 \otimes B) &amp;= \sum_n \sum_{k=0}^n \frac {\hbar^n}{2^n k! (n-k)!}
+\Pi^{k_1 l_1} \cdots \Pi^{k_k l_k} \partial_{k_1} \partial_{l_1} \cdots
+\partial_{k_k} \partial_{l_k} \\\<br>
+&amp; \ \times  \Pi^{i_1 j_1} \cdots \Pi^{i_{n-k} j_{n-k}} \partial_{i_1} \partial_{j_1} \cdots
+\partial_{i_{n-k}} \partial_{j_{n-k}} \\\<br>
+&amp;= m_{123}(1 \otimes B)(B \otimes 1)
+\end{align}</p>
 <p>Hence we obtain an associative $\ast$-product. This is called Moyal product.</p>
-<p>Sheafifying the Construction</p>
+<h2 id="sheafifying-the-construction">Sheafifying the Construction</h2>
 <p>Now suppose that $U$ is a (Zariski) open subset of $X = T^\ast \mathbb{C}^n$. Then the star product induces a well-defined map</p>
 <p>$$ \ast: O_X(U)((\hbar)) \otimes_\mathbb{C} O_X(U)((\hbar)) \to O_X(U)((\hbar)) $$</p>
 <p>In this way we obtain a sheaf $\mathcal{D}$ of $O_X$ modules with a non-commutative $\ast$-product defined as above.</p>
@@ -197,9 +215,11 @@ $(f \ast g)^\ast = -g^\ast \ast f^\ast$
         
     </ul>
 </section>
+  
+    
     
         <section class="comments-block">
-      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments"></i> Add/View Comments</button>
 </section>
 
 <section id="disqus_thread"></section>
@@ -215,8 +235,19 @@ $(f \ast g)^\ast = -g^\ast \ast f^\ast$
             var disqus_shortname = 'jmf1sh';
             var disqus_button = document.getElementById("show-comments");
 
+            var disqus_autoload =  null ;
+            var disable_comment =  null ;
+
+            if (disable_comment)
+                  return;
+
             disqus_button.style.display = "";
-            disqus_button.addEventListener("click", disqus, false);
+
+            if (disqus_autoload){
+                  disqus();
+            }else{
+                  disqus_button.addEventListener("click", disqus, false);
+            }
 
             function disqus() {
 
@@ -250,7 +281,9 @@ $(f \ast g)^\ast = -g^\ast \ast f^\ast$
             }
       })();
 </script>
+
     
+  
 
 
 
@@ -260,11 +293,13 @@ $(f \ast g)^\ast = -g^\ast \ast f^\ast$
     <footer>
         <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
-            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe </a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
 
+
 </body>
 
 </html>
+

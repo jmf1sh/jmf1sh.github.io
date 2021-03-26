@@ -78,6 +78,18 @@
     <ul>
         
         <li>
+            <a class="" href="https://jmf1sh.github.io/categories">
+                <i class="fa-li fa  fa-lg"></i><span>Categories</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/tags">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+        <li>
             <a class="" href="https://jmf1sh.github.io/posts/">
                 <i class="fa-li fa  fa-lg"></i><span>Posts</span>
             </a>
@@ -92,6 +104,7 @@
     </ul>
 </nav>
 
+
       <main>
 
 
@@ -102,20 +115,24 @@
     <h1>Updated outline</h1>
 
     
-        <aside>
+      <aside>
     <ul>
         <li>
             <time class="post-date" datetime="2011-08-17T00:00:00Z">Aug 17, 2011</time>
         </li>
         
+        
 
         
 
-        <li>2 minutes read</li>
+        <li>2 minute read</li>
     </ul>
 </aside>
 
     
+
+    
+
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
 <p>I was thinking about how to put this blog to use, and especially how to make it worthwhile for myself. In 2010, I ran a learning seminar on math/physics which in my opinion was extremely successful. I made detailed notes for nearly all of the talks, and I had several people ask me at the end of the seminar to give them copies of the notes I had made. We managed to do something very special in the seminar, and I think it&rsquo;s worth writing up notes from the best talks (and reorganizing/elaborating/etc. when necessary) and putting them online for all to see. It gives me a chance to practice my math writing, and if I ever run another seminar of this flavor (or teach a course, or write a book&hellip;) then a lot of the work will already be done for me.</p>
@@ -163,9 +180,11 @@ Path integral proof of the index theorem.
         
     </ul>
 </section>
+  
+    
     
         <section class="comments-block">
-      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments"></i> Add/View Comments</button>
 </section>
 
 <section id="disqus_thread"></section>
@@ -181,8 +200,19 @@ Path integral proof of the index theorem.
             var disqus_shortname = 'jmf1sh';
             var disqus_button = document.getElementById("show-comments");
 
+            var disqus_autoload =  null ;
+            var disable_comment =  null ;
+
+            if (disable_comment)
+                  return;
+
             disqus_button.style.display = "";
-            disqus_button.addEventListener("click", disqus, false);
+
+            if (disqus_autoload){
+                  disqus();
+            }else{
+                  disqus_button.addEventListener("click", disqus, false);
+            }
 
             function disqus() {
 
@@ -216,7 +246,9 @@ Path integral proof of the index theorem.
             }
       })();
 </script>
+
     
+  
 
 
 
@@ -226,11 +258,13 @@ Path integral proof of the index theorem.
     <footer>
         <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
-            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe </a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
 
+
 </body>
 
 </html>
+

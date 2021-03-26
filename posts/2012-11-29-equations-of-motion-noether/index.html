@@ -78,6 +78,18 @@
     <ul>
         
         <li>
+            <a class="" href="https://jmf1sh.github.io/categories">
+                <i class="fa-li fa  fa-lg"></i><span>Categories</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/tags">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+        <li>
             <a class="" href="https://jmf1sh.github.io/posts/">
                 <i class="fa-li fa  fa-lg"></i><span>Posts</span>
             </a>
@@ -92,6 +104,7 @@
     </ul>
 </nav>
 
+
       <main>
 
 
@@ -102,44 +115,59 @@
     <h1>Equations of motion and Noether&#39;s theorem in the functional formalism</h1>
 
     
-        <aside>
+      <aside>
     <ul>
         <li>
-            <time class="post-date" datetime="2012-11-29T00:00:00Z">Nov 29, 2012</time>
+            <time class="post-date" datetime="2012-11-29T00:00:00&#43;01:00">Nov 29, 2012</time>
+        </li>
+        
+        
+        <li>
+            Categories:
+            <em>
+                
+                    
+                    <a href="https://jmf1sh.github.io/categories/physics">physics</a>
+                
+            </em>
         </li>
         
 
         
+        <li>
+            <em>
+                
+                    
+                    <a href="https://jmf1sh.github.io/tags/symmetry">#symmetry</a>
+                
+            </em>
+        </li>
+        
 
-        <li>3 minutes read</li>
+        <li>3 minute read</li>
     </ul>
 </aside>
 
     
 
+    
+
+
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
 <p>First, let us recall the derivation of the equations of motion and Noether&rsquo;s theorem in classical field theory. We have some action functional $S[\phi]$ defined by some local Lagrangian:</p>
 <p>$$ S[\phi] = \int L(\phi, \partial \phi) dx. $$</p>
 <p>The classical equations of motion are just the Euler-Lagrange equations</p>
-<p>$$ \frac{\delta S}{\delta \phi(x)} = 0</p>
-<p>\iff \partial_\mu \left( \frac{\partial L}{\partial(\partial_\mu\phi)} \right)</p>
-<p>= \frac{\partial L}{\partial \phi} $$</p>
+<p>$$ \frac{\delta S}{\delta \phi(x)} = 0
+\iff \partial_\mu \left( \frac{\partial L}{\partial(\partial_\mu\phi)} \right)
+= \frac{\partial L}{\partial \phi} $$</p>
 <p>Now suppose that $S$ is invariant under some transformation $\phi(x) \mapsto \phi(x) + \epsilon(x) \eta(x)$, so that $S[\phi] = S[\phi+\epsilon \eta]$. Here we treat $\eta$ as a fixed function but $\epsilon$ may be an arbitrary infinitesimal function. The Lagrangian is not necessarily invariant, but rather can transform with a total derivative:</p>
-<p>$$ L(\phi+\epsilon \eta) = L(\phi)</p>
-<ul>
-<li>
-<p>\frac{\partial L}{\partial (\partial_\mu \phi)} \eta \partial_\mu \epsilon</p>
-</li>
-<li>
-<p>\epsilon \partial_\mu f^\mu $$</p>
-</li>
-</ul>
+<p>$$ L(\phi+\epsilon \eta) = L(\phi) + \frac{\partial L}{\partial (\partial_\mu \phi)} \eta \partial_\mu \epsilon + \epsilon \partial_\mu f^\mu $$</p>
 <p>For some unknown vector field $f^\mu$ (which we could compute given any particular Lagrangian). So let&rsquo;s compute</p>
-<p>\begin{align}\delta_\epsilon S &amp;= \int \delta_\epsilon L \\</p>
-<p>&amp;= \int \frac{\partial L}{\partial (\partial_\mu \phi)}</p>
-<p>\eta \partial_\mu \epsilon + \epsilon \partial_\mu f^\mu \\</p>
-<p>&amp;= \int \partial_\mu \left(f^\mu - \frac{\partial L}{\partial (\partial_\mu \phi)} \eta \right) \epsilon</p>
-<p>\end{align}</p>
+<p>\begin{align}\delta_\epsilon S &amp;= \int \delta_\epsilon L \\\<br>
+&amp;= \int \frac{\partial L}{\partial (\partial_\mu \phi)}
+\eta \partial_\mu \epsilon + \epsilon \partial_\mu f^\mu \\\<br>
+&amp;= \int \partial_\mu \left(f^\mu - \frac{\partial L}{\partial (\partial_\mu \phi)} \eta \right) \epsilon
+\end{align}</p>
 <p>Let us define the Noether current $J^\mu$ by</p>
 <p>$$ J^\mu = \frac{\partial L}{\partial (\partial_\mu \phi)} \eta - f^\mu. $$</p>
 <p>Then the previous computation showed that</p>
@@ -149,21 +177,17 @@
 <p>$$ \partial_\mu J^\mu = 0.$$</p>
 <p>Functional Version</p>
 <p>First, we derive the functional analogue of the classical equations of motion. Consider an expectation value</p>
-<p>$$ \langle \mathcal{O(\phi)} \rangle</p>
-<p>= \int \mathcal{O}(\phi) e^{\frac{i}{\hbar} S} \mathcal{D}\phi $$</p>
+<p>$$ \langle \mathcal{O(\phi)} \rangle
+= \int \mathcal{O}(\phi) e^{\frac{i}{\hbar} S} \mathcal{D}\phi $$</p>
 <p>We&rsquo;ll assume that $\phi$ takes values in a vector space (or bundle). Then we can perform a change of variables $\psi = \phi + \epsilon$, and since $\mathcal{D}\phi = \mathcal{D}\psi$ we find that</p>
 <p>$$ \int \mathcal{O}(\phi+\epsilon) \exp\left(\frac{i}{\hbar} S[\phi] \right) \mathcal{D}\phi $$</p>
 <p>is independent of $\epsilon$. Expanding to first order in $\epsilon$, we have</p>
-<p>$$ 0 = \int \left(\frac{\delta\mathcal{O}}{\delta \phi}</p>
-<ul>
-<li>\frac{i \mathcal{O}}{\hbar} \frac{\delta S}{\delta \phi} \right)</li>
-</ul>
-<p>\exp \left( \frac{i}{\hbar} S \right) \mathcal{D}\phi  $$</p>
+<p>$$ 0 = \int \left(\frac{\delta\mathcal{O}}{\delta \phi} +
+\frac{i \mathcal{O}}{\hbar} \frac{\delta S}{\delta \phi} \right)
+\exp \left( \frac{i}{\hbar} S \right) \mathcal{D}\phi  $$</p>
 <p>So we find the quantum analogue of the equations of motion:</p>
-<p>$$ \left\langle \frac{\delta \mathcal{O}}{\delta \phi} \right\rangle</p>
-<ul>
-<li>\frac{i}{\hbar} \left\langle \mathcal{O} \frac{\delta S}{\delta \phi} \right\rangle = 0$$</li>
-</ul>
+<p>$$ \left\langle \frac{\delta \mathcal{O}}{\delta \phi} \right\rangle +
+\frac{i}{\hbar} \left\langle \mathcal{O} \frac{\delta S}{\delta \phi} \right\rangle = 0$$</p>
 <p>Next, we move on to the quantum version of Noether&rsquo;s theorem. Suppose there is a transformation $Q$ of the fields leaving the action invariant. Assuming the path integral measure is invariant, we obtain</p>
 <p>$$ \left\langle QF \right \rangle + \frac{i}{\hbar} \left\langle F QS \right\rangle = 0$$</p>
 <p>To compare with the classical result, consider $Q$ to be the (singular) operator</p>
@@ -171,8 +195,8 @@
 <p>Then by the previous calculations,</p>
 <p>$$ Q S = -\delta_\mu J^\mu, $$</p>
 <p>so we obtain</p>
-<p>$$ \left\langle \frac{\delta \mathcal{O}}{\delta \epsilon(x)} \right\rangle</p>
-<p>= \frac{i}{\hbar} \left\langle \mathcal{O} \partial_\mu J^\mu \right\rangle.  $$</p>
+<p>$$ \left\langle \frac{\delta \mathcal{O}}{\delta \epsilon(x)} \right\rangle
+= \frac{i}{\hbar} \left\langle \mathcal{O} \partial_\mu J^\mu \right\rangle.  $$</p>
 <p>This is the Ward-Takahashi identity, the quantum analogue of Noether&rsquo;s theorem.</p>
 
 
@@ -193,9 +217,11 @@
         
     </ul>
 </section>
+  
+    
     
         <section class="comments-block">
-      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments"></i> Add/View Comments</button>
 </section>
 
 <section id="disqus_thread"></section>
@@ -211,8 +237,19 @@
             var disqus_shortname = 'jmf1sh';
             var disqus_button = document.getElementById("show-comments");
 
+            var disqus_autoload =  null ;
+            var disable_comment =  null ;
+
+            if (disable_comment)
+                  return;
+
             disqus_button.style.display = "";
-            disqus_button.addEventListener("click", disqus, false);
+
+            if (disqus_autoload){
+                  disqus();
+            }else{
+                  disqus_button.addEventListener("click", disqus, false);
+            }
 
             function disqus() {
 
@@ -246,7 +283,9 @@
             }
       })();
 </script>
+
     
+  
 
 
 
@@ -256,11 +295,13 @@
     <footer>
         <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
-            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe </a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
 
+
 </body>
 
 </html>
+

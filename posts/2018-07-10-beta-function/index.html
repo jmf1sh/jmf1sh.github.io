@@ -78,6 +78,18 @@
     <ul>
         
         <li>
+            <a class="" href="https://jmf1sh.github.io/categories">
+                <i class="fa-li fa  fa-lg"></i><span>Categories</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/tags">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+        <li>
             <a class="" href="https://jmf1sh.github.io/posts/">
                 <i class="fa-li fa  fa-lg"></i><span>Posts</span>
             </a>
@@ -92,6 +104,7 @@
     </ul>
 </nav>
 
+
       <main>
 
 
@@ -102,35 +115,39 @@
     <h1>Euler beta function and Dirichlet distribution</h1>
 
     
-        <aside>
+      <aside>
     <ul>
         <li>
             <time class="post-date" datetime="2018-07-10T00:00:00Z">Jul 10, 2018</time>
         </li>
         
+        
 
         
 
-        <li>2 minutes read</li>
+        <li>2 minute read</li>
     </ul>
 </aside>
 
     
 
+    
+
+
     <p>Let&rsquo;s remind ourselves how about the Euler beta function, defined as</p>
 <p>$$ B(x,y) = \int_0^1 t^{x-1} (1-t)^{y-1} dt. $$</p>
-<p>First, we will express $$B(x,y)$$ in terms of the more familiar Gamma function,
+<p>First, we will express $B(x,y)$ in terms of the more familiar Gamma function,
 defined as</p>
 <p>$$ \Gamma(x) = \int_0^\infty t^{x-1} e^{-t} dt. $$</p>
 <p>First, we have</p>
 <p>$$ \Gamma(x) \Gamma(y) = \int_0^\infty \int_0^\infty s^{x-1} t^{y-1} e^{-s-t} ds dt $$</p>
-<p>Now, suppose we have a multinomial distribution over $$k$$ classes with probabilites $$p_1, \ldots, p_k$$. In for $n$ trials, the probability of observing $$k_i$$ instances of class $$i$$ is given by</p>
+<p>Now, suppose we have a multinomial distribution over $k$ classes with probabilites $p_1, \ldots, p_k$. In for $n$ trials, the probability of observing $k_i$ instances of class $i$ is given by</p>
 <p>$$ P(n_1, \ldots, n_k) = {n \choose n_1, \ldots, n_k} \prod_i p_i^{n_i} $$</p>
 <p>Suppose that initially the probabilities $p_i$ are unknown, and we wish to infer them from
 a given observation of $n$ trials. Using a conjugate prior, we can take the unknown probabilites
 to follow the Dirichlet distribution</p>
 <p>$$ P(p_1, \ldots, p_k) = C_\alpha \prod_i p_i^{\alpha_i-1} $$</p>
-<p>(where the normalization constant $$C_\alpha$$ can be computed explicitly in terms of the
+<p>(where the normalization constant $C_\alpha$ can be computed explicitly in terms of the
 generalized beta function, or equivalently in terms of the Gamma function).
 Using Bayes' theorem we have</p>
 <p>$$
@@ -139,17 +156,17 @@ P(\alpha | n_1, \ldots, n_k) &amp;= C P(n_1, \ldots, n_k | \alpha) P(\alpha) \\\
 &amp;= C' \prod_i p_i^{n_i+\alpha_i-1}
 \end{align*}
 $$</p>
-<p>This gives a new Dirichlet distribution with $$\alpha_i$$ replaced by $$\alpha_i+n_i$$.
+<p>This gives a new Dirichlet distribution with $\alpha_i$ replaced by $\alpha_i+n_i$.
 Taking expectation values of the posterior we have</p>
 <p>$$E[p_i] = \frac{n_i+\alpha_i}{n+\sum_i \alpha_i}$$.</p>
-<p>Taking the Jeffreys prior $$\alpha_i = 1/2$$, we have finally</p>
+<p>Taking the Jeffreys prior $\alpha_i = 1/2$, we have finally</p>
 <p>$$E[p_i] = \frac{n_i+1/2}{n+n/2}$$.</p>
-<p>Note that this assigns a non-zero value to $$p_i$$ even in the case that $$n_i = 0$$!</p>
+<p>Note that this assigns a non-zero value to $p_i$ even in the case that $n_i = 0$!</p>
 <p>For comparison, consider taking instead the estimate from maximum likelihood. We have</p>
 <p>$$ \log L(p, n) = C + \sum_i n_i \log p_i. $$</p>
-<p>Maximizing subject to the constraints $$\sum_i p_i = 1$$, we have</p>
+<p>Maximizing subject to the constraints $\sum_i p_i = 1$, we have</p>
 <p>$$ n_i / p_i = \lambda $$</p>
-<p>for some Lagrange multiplier $$\lambda$$, for all $$i$$. Hence we obtain</p>
+<p>for some Lagrange multiplier $\lambda$, for all $i$. Hence we obtain</p>
 <p>$$ p_i = n_i / n $$</p>
 <p>and note that in this case, we assign zero probability to any class which is not observed.
 So we see that the expected distribution derived though Bayesian inference is more
@@ -174,9 +191,11 @@ only in the limit of infinitely many trials.</p>
         
     </ul>
 </section>
+  
+    
     
         <section class="comments-block">
-      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments"></i> Add/View Comments</button>
 </section>
 
 <section id="disqus_thread"></section>
@@ -192,8 +211,19 @@ only in the limit of infinitely many trials.</p>
             var disqus_shortname = 'jmf1sh';
             var disqus_button = document.getElementById("show-comments");
 
+            var disqus_autoload =  null ;
+            var disable_comment =  null ;
+
+            if (disable_comment)
+                  return;
+
             disqus_button.style.display = "";
-            disqus_button.addEventListener("click", disqus, false);
+
+            if (disqus_autoload){
+                  disqus();
+            }else{
+                  disqus_button.addEventListener("click", disqus, false);
+            }
 
             function disqus() {
 
@@ -227,7 +257,9 @@ only in the limit of infinitely many trials.</p>
             }
       })();
 </script>
+
     
+  
 
 
 
@@ -237,11 +269,13 @@ only in the limit of infinitely many trials.</p>
     <footer>
         <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
-            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe </a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
 
+
 </body>
 
 </html>
+

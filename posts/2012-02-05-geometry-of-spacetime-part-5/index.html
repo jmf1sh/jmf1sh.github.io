@@ -78,6 +78,18 @@
     <ul>
         
         <li>
+            <a class="" href="https://jmf1sh.github.io/categories">
+                <i class="fa-li fa  fa-lg"></i><span>Categories</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/tags">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+        <li>
             <a class="" href="https://jmf1sh.github.io/posts/">
                 <i class="fa-li fa  fa-lg"></i><span>Posts</span>
             </a>
@@ -92,6 +104,7 @@
     </ul>
 </nav>
 
+
       <main>
 
 
@@ -102,59 +115,98 @@
     <h1>Geometry of curved spacetime, part 5</h1>
 
     
-        <aside>
+      <aside>
     <ul>
         <li>
             <time class="post-date" datetime="2012-02-25T00:00:00Z">Feb 25, 2012</time>
         </li>
         
+        
 
         
 
-        <li>4 minutes read</li>
+        <li>4 minute read</li>
     </ul>
 </aside>
 
     
 
-    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
-<p>Background</p>
-<p>Following last time, we are almost ready to write down the Einstein equations. Before doing any math, let&rsquo;s understand what we&rsquo;re trying to do. Minkowski realized that Einstein&rsquo;s special relativity was best understood by combining space and time into 4-dimensional spacetime, with Lorentzian metric</p>
+    
+
+
+    <p>This post has been migrated from my old blog, the
+<a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+<h2 id="background">Background</h2>
+<p>Following last time, we are almost ready to write down the Einstein equations.
+Before doing any math, let&rsquo;s understand what we&rsquo;re trying to do. Minkowski
+realized that Einstein&rsquo;s special relativity was best understood by combining
+space and time into 4-dimensional spacetime, with Lorentzian metric</p>
 <p>$$ ds^2 = -dt^2 + dx^2 + dy^2 + dz^2. $$</p>
-<p>The spacetime approach works wonderfully and even explains the Lorentz invariance of Maxwell&rsquo;s equations (indeed, it was Maxwell&rsquo;s equations that motivated Einstein to postulate his principle of relativity). However, (for reasons that I may discuss later) gravity is not a &ldquo;force&rdquo; but rather the geometry of spacetime itself.</p>
-<p>By mass-energy equivalence (which is one of the most basic consequences of relativity), the gravitational field, whatever it is, must couple to the stress-energy tensor $T_{ij}$. I won&rsquo;t get into details, but the stress-energy tensor is a familiar object from physics that roughly tells you what the energy-momentum density/flux is in each direction at every point in spacetime. If the matter is completely static, then it is ok to think of this as measuring the mass density, but for nonstatic matter it also takes things like pressure into account.</p>
-<p>Now, as I said above, the gravitational field is just the geometry of spacetime, which is measured by the metric tensor $g_{ij}$. Mass-energy equivalence says that it must couple to the stress-energy tensor $T_{ij}$. The simplest field equation then would be</p>
+<p>The spacetime approach works wonderfully and even explains the Lorentz
+invariance of Maxwell&rsquo;s equations (indeed, it was Maxwell&rsquo;s equations that
+motivated Einstein to postulate his principle of relativity). However, (for
+reasons that I may discuss later) gravity is not a &ldquo;force&rdquo; but rather the
+geometry of spacetime itself.</p>
+<p>By mass-energy equivalence (which is one of the most basic consequences of
+relativity), the gravitational field, whatever it is, must couple to the
+stress-energy tensor $T_{ij}$. I won&rsquo;t get into details, but the stress-energy
+tensor is a familiar object from physics that roughly tells you what the
+energy-momentum density/flux is in each direction at every point in spacetime.
+If the matter is completely static, then it is ok to think of this as measuring
+the mass density, but for nonstatic matter it also takes things like pressure
+into account.</p>
+<p>Now, as I said above, the gravitational field is just the geometry of spacetime,
+which is measured by the metric tensor $g_{ij}$. Mass-energy equivalence says
+that it must couple to the stress-energy tensor $T_{ij}$. The simplest field
+equation then would be</p>
 <p>$$ G_{ij} = c T_{ij} $$</p>
-<p>where $G_{ij}$ is some tensor built out of $g_{ij}$ and its derivatives, and $c$ is some constant. The equations of Newtonian gravity are 2nd order in the gravitational field, so if we want these equations to reduce to Newton&rsquo;s in the appropriate limit, $G_{ij}$ should only depend on the metric and its first two derivatives. Now there is an obvious 2nd rank tensor satisfying these constraints: $R_{ij}$, the Ricci tensor. However, this turns out to be completely wrong (except in the vacuum).</p>
+<p>where $G_{ij}$ is some tensor built out of $g_{ij}$ and its derivatives, and $c$
+is some constant. The equations of Newtonian gravity are 2nd order in the
+gravitational field, so if we want these equations to reduce to Newton&rsquo;s in the
+appropriate limit, $G_{ij}$ should only depend on the metric and its first two
+derivatives. Now there is an obvious 2nd rank tensor satisfying these
+constraints: $R_{ij}$, the Ricci tensor. However, this turns out to be
+completely wrong (except in the vacuum).</p>
 <p>Any reasonable matter will satisfy local energy-momentum conservation,</p>
 <p>$$ \nabla_j T^{ij} = 0. $$</p>
-<p>It turns out that the Ricci tensor does not satisfy this condition in general. So to look for the right tensor $G_{ij}$, we turn to the Bianchi identity.</p>
-<p>The Bianchi Identity</p>
-<p>As discussed in the previous post, the curvature of a connection is the endomorphism-valued 2-form</p>
+<p>It turns out that the Ricci tensor does not satisfy this condition in general.
+So to look for the right tensor $G_{ij}$, we turn to the Bianchi identity.</p>
+<h2 id="the-bianchi-identity">The Bianchi Identity</h2>
+<p>As discussed in the previous post, the curvature of a connection is the
+endomorphism-valued 2-form</p>
 <p>$$ F = d\Omega - \Omega \wedge \Omega $$</p>
-<p>where $\Omega$ is the matrix of 1-forms telling us how to take the covariant derivative of a frame, i.e.</p>
+<p>where $\Omega$ is the matrix of 1-forms telling us how to take the covariant
+derivative of a frame, i.e.</p>
 <p>$$ \nabla_i e_j = \Omega_{ij} \otimes e_j. $$</p>
-<p>Since a connection can be extended to all tensor powers in a natural way, we can consider the covariant derivative of the curvature $F$ (thought of as a section of the appropriate bundle). Quick calcluation:</p>
-<p>\begin{align}</p>
-<p>\nabla F &amp;= \nabla(d\Omega - \Omega \wedge \Omega) \\</p>
-<p>&amp;= d^2 \Omega - d\Omega \wedge \Omega + \Omega \wedge d\Omega \\</p>
-<p>&amp; \ \ + d\Omega \wedge \Omega - \Omega \wedge \Omega \wedge \Omega \\</p>
-<p>&amp; \ \ - \Omega \wedge d\Omega + \Omega \wedge \Omega \wedge \Omega \\</p>
-<p>&amp;= 0.</p>
-<p>\end{align}</p>
-<p>Thus the endomorphism valued 3-form $\nabla F$ is identically 0. Writing $F$ in components as $R_{ijkl}$, this is equivalent to</p>
+<p>Since a connection can be extended to all tensor powers in a natural way, we can
+consider the covariant derivative of the curvature $F$ (thought of as a section
+of the appropriate bundle). Quick calcluation:</p>
+<p>$$
+\begin{align}
+\nabla F &amp;= \nabla(d\Omega - \Omega \wedge \Omega) \\\<br>
+&amp;= d^2 \Omega - d\Omega \wedge \Omega + \Omega \wedge d\Omega \\\<br>
+&amp; \ \ + d\Omega \wedge \Omega - \Omega \wedge \Omega \wedge \Omega \\\<br>
+&amp; \ \ - \Omega \wedge d\Omega + \Omega \wedge \Omega \wedge \Omega \\\<br>
+&amp;= 0.
+\end{align}
+$$</p>
+<p>Thus the endomorphism valued 3-form $\nabla F$ is identically 0. Writing $F$ in
+components as $R_{ijkl}$, this is equivalent to</p>
 <p>$$ R_{ijkl|m} +  R_{ijlm|k} + R_{ijmk|l} = 0. $$</p>
 <p>Now let&rsquo;s contract:</p>
-<p>\begin{align}</p>
-<p>0 &amp;= g^{ik} g^{jl} R_{ijkl|m} + g^{ik} g^{jl} R_{ijlm|k} + g^{ik} g^{jl} R_{ijmk|l}\\</p>
-<p>&amp;= g^{ik} R_{ik|m} - g^{ik}R_{im|k} - g^{jl} R_{jm|l} \\</p>
-<p>&amp;= \nabla_m S - 2 \nabla^k R_{mk}</p>
-<p>\end{align}</p>
+<p>$$
+\begin{align}
+0 &amp;= g^{ik} g^{jl} R_{ijkl|m} + g^{ik} g^{jl} R_{ijlm|k} + g^{ik} g^{jl} R_{ijmk|l}\\\<br>
+&amp;= g^{ik} R_{ik|m} - g^{ik}R_{im|k} - g^{jl} R_{jm|l} \\\<br>
+&amp;= \nabla_m S - 2 \nabla^k R_{mk}
+\end{align}
+$$</p>
 <p>So we see that the tensor</p>
 <p>$$ G_{ij} = R_{ij} - \frac{S}{2} g_{ij} $$</p>
 <p>is divergence free. This yields the Einstein field equations:</p>
 <p>$$ R_{ij} - \frac{S}{2} g_{ij} = c T_{ij}. $$</p>
-<p>Actually, there is another obvious divergence free tensor: $g_{ij}$ itself. So a more general form is</p>
+<p>Actually, there is another obvious divergence free tensor: $g_{ij}$ itself. So
+a more general form is</p>
 <p>$$ G_{ij} + \Lambda g_{ij} = c T_{ij} $$</p>
 <p>where $\Lambda$ is a constant called the cosmological constant.</p>
 
@@ -176,9 +228,11 @@
         
     </ul>
 </section>
+  
+    
     
         <section class="comments-block">
-      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments"></i> Add/View Comments</button>
 </section>
 
 <section id="disqus_thread"></section>
@@ -194,8 +248,19 @@
             var disqus_shortname = 'jmf1sh';
             var disqus_button = document.getElementById("show-comments");
 
+            var disqus_autoload =  null ;
+            var disable_comment =  null ;
+
+            if (disable_comment)
+                  return;
+
             disqus_button.style.display = "";
-            disqus_button.addEventListener("click", disqus, false);
+
+            if (disqus_autoload){
+                  disqus();
+            }else{
+                  disqus_button.addEventListener("click", disqus, false);
+            }
 
             function disqus() {
 
@@ -229,7 +294,9 @@
             }
       })();
 </script>
+
     
+  
 
 
 
@@ -239,11 +306,13 @@
     <footer>
         <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
-            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe </a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
 
+
 </body>
 
 </html>
+

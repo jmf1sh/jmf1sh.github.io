@@ -78,6 +78,18 @@
     <ul>
         
         <li>
+            <a class="" href="https://jmf1sh.github.io/categories">
+                <i class="fa-li fa  fa-lg"></i><span>Categories</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/tags">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+        <li>
             <a class="" href="https://jmf1sh.github.io/posts/">
                 <i class="fa-li fa  fa-lg"></i><span>Posts</span>
             </a>
@@ -92,6 +104,7 @@
     </ul>
 </nav>
 
+
       <main>
 
 
@@ -102,20 +115,43 @@
     <h1>Santalo Formula</h1>
 
     
-        <aside>
+      <aside>
     <ul>
         <li>
-            <time class="post-date" datetime="2015-09-15T00:00:00Z">Sep 15, 2015</time>
+            <time class="post-date" datetime="2015-09-15T00:00:00&#43;02:00">Sep 15, 2015</time>
+        </li>
+        
+        
+        <li>
+            Categories:
+            <em>
+                
+                    
+                    <a href="https://jmf1sh.github.io/categories/geometry">geometry</a>
+                
+            </em>
         </li>
         
 
         
+        <li>
+            <em>
+                
+                    
+                    <a href="https://jmf1sh.github.io/tags/inverse-problems">#inverse-problems</a>
+                
+            </em>
+        </li>
+        
 
-        <li>2 minutes read</li>
+        <li>2 minute read</li>
     </ul>
 </aside>
 
     
+
+    
+
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
 <p>Let $M$ be a simple Riemannian manifold with boundary $\partial M$. For $(x,v) \in SM$, let $\tau(x,v)$ denote the exit time of the geodesic starting at $x$ with tangent vector $v$, i.e. $\tau(x,v)$ is the (necessarily unique, and finite) time at which $\exp_x(tv) \in \partial M$.</p>
@@ -124,10 +160,10 @@
 <p>where $\nu$ denotes the inward unit normal to $\partial M$ in $M$. The exponential map identifies $SM$ with the set</p>
 <p>$$ \Omega = { (x,v,t) \in \partial_+(SM) \times \mathbf{R} \ | \ 0 \leq t \leq \tau(x,v)  }, $$</p>
 <p>via $(x,v,t) \mapsto \exp_x(tv)$. Let $\Phi: \Omega \to M$ denote this diffeomorphism. Then we have, for all $f \in C^\infty(SM)$</p>
-<p>\begin{align}</p>
-<p>\int_{SM} f dvol(SM) &amp;= \int_\Omega (\Phi^\ast f) (\Phi^\ast dvol(SM)) \\</p>
-<p>&amp;= \int_{\partial_+(SM)} \int_0^{\tau(x,v)} f(\phi_t(x,v)) \Phi^\ast dvol(SM).</p>
-<p>\end{align}</p>
+<p>\begin{align}
+\int_{SM} f dvol(SM) &amp;= \int_\Omega (\Phi^\ast f) (\Phi^\ast dvol(SM)) \\\<br>
+&amp;= \int_{\partial_+(SM)} \int_0^{\tau(x,v)} f(\phi_t(x,v)) \Phi^\ast dvol(SM).
+\end{align}</p>
 <p>Therefore, we can compute integrals of functions over $SM$ by integrating along geodesics, provided that we can cmopute $\Phi^\ast dvol(SM)$. This is the content of the Santalo formula.</p>
 <p>Theorem (Santalo formula). For all $f \in C^\infty(SM)$, we have</p>
 <p>$$ \int_{SM} f dvol(SM) = \int_{\partial_+(SM)} \int_0^{\tau(x,v)} f(\phi_t(x,v)) \langle v, \nu\rangle dt dvol(\partial(SM)) $$</p>
@@ -157,9 +193,11 @@
         
     </ul>
 </section>
+  
+    
     
         <section class="comments-block">
-      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments"></i> Add/View Comments</button>
 </section>
 
 <section id="disqus_thread"></section>
@@ -175,8 +213,19 @@
             var disqus_shortname = 'jmf1sh';
             var disqus_button = document.getElementById("show-comments");
 
+            var disqus_autoload =  null ;
+            var disable_comment =  null ;
+
+            if (disable_comment)
+                  return;
+
             disqus_button.style.display = "";
-            disqus_button.addEventListener("click", disqus, false);
+
+            if (disqus_autoload){
+                  disqus();
+            }else{
+                  disqus_button.addEventListener("click", disqus, false);
+            }
 
             function disqus() {
 
@@ -210,7 +259,9 @@
             }
       })();
 </script>
+
     
+  
 
 
 
@@ -220,11 +271,13 @@
     <footer>
         <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
-            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe </a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
 
+
 </body>
 
 </html>
+

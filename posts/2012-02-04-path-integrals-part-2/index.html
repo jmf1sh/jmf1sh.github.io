@@ -78,6 +78,18 @@
     <ul>
         
         <li>
+            <a class="" href="https://jmf1sh.github.io/categories">
+                <i class="fa-li fa  fa-lg"></i><span>Categories</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/tags">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+        <li>
             <a class="" href="https://jmf1sh.github.io/posts/">
                 <i class="fa-li fa  fa-lg"></i><span>Posts</span>
             </a>
@@ -92,6 +104,7 @@
     </ul>
 </nav>
 
+
       <main>
 
 
@@ -102,20 +115,24 @@
     <h1>Path integrals, part 3</h1>
 
     
-        <aside>
+      <aside>
     <ul>
         <li>
             <time class="post-date" datetime="2012-02-04T00:00:00Z">Feb 4, 2012</time>
         </li>
         
+        
 
         
 
-        <li>2 minutes read</li>
+        <li>2 minute read</li>
     </ul>
 </aside>
 
     
+
+    
+
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
 <p>Consider the heat equation</p>
@@ -152,9 +169,11 @@ ik_j a_j - \Delta t k_j^2/2m &amp;= -(-2mi k_j a_j / \Delta t + k_j^2) \Delta t/
         
     </ul>
 </section>
+  
+    
     
         <section class="comments-block">
-      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments"></i> Add/View Comments</button>
 </section>
 
 <section id="disqus_thread"></section>
@@ -170,8 +189,19 @@ ik_j a_j - \Delta t k_j^2/2m &amp;= -(-2mi k_j a_j / \Delta t + k_j^2) \Delta t/
             var disqus_shortname = 'jmf1sh';
             var disqus_button = document.getElementById("show-comments");
 
+            var disqus_autoload =  null ;
+            var disable_comment =  null ;
+
+            if (disable_comment)
+                  return;
+
             disqus_button.style.display = "";
-            disqus_button.addEventListener("click", disqus, false);
+
+            if (disqus_autoload){
+                  disqus();
+            }else{
+                  disqus_button.addEventListener("click", disqus, false);
+            }
 
             function disqus() {
 
@@ -205,7 +235,9 @@ ik_j a_j - \Delta t k_j^2/2m &amp;= -(-2mi k_j a_j / \Delta t + k_j^2) \Delta t/
             }
       })();
 </script>
+
     
+  
 
 
 
@@ -215,11 +247,13 @@ ik_j a_j - \Delta t k_j^2/2m &amp;= -(-2mi k_j a_j / \Delta t + k_j^2) \Delta t/
     <footer>
         <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
-            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe </a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
 
+
 </body>
 
 </html>
+

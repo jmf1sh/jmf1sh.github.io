@@ -78,6 +78,18 @@
     <ul>
         
         <li>
+            <a class="" href="https://jmf1sh.github.io/categories">
+                <i class="fa-li fa  fa-lg"></i><span>Categories</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/tags">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+        <li>
             <a class="" href="https://jmf1sh.github.io/posts/">
                 <i class="fa-li fa  fa-lg"></i><span>Posts</span>
             </a>
@@ -92,6 +104,7 @@
     </ul>
 </nav>
 
+
       <main>
 
 
@@ -102,20 +115,24 @@
     <h1>The Weyl and Wigner transforms</h1>
 
     
-        <aside>
+      <aside>
     <ul>
         <li>
             <time class="post-date" datetime="2012-12-13T00:00:00Z">Dec 13, 2012</time>
         </li>
         
+        
 
         
 
-        <li>4 minutes read</li>
+        <li>4 minute read</li>
     </ul>
 </aside>
 
     
+
+    
+
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
 <p>Today I&rsquo;d like to try to understand better how deformation quantization is related to the usual canonical quantization, and especially how the latter might be used to deduce the former, i.e., given an honest quantization (in the sense of operators), how might be reproduce the formula for the Moyal star product?</p>
@@ -133,37 +150,37 @@
 <p>Proof Using the &ldquo;ignore $2\pi$&rdquo; conventions, we have the formal identities</p>
 <p>$$ \int e^{ikx} dx = \delta(k), \ \ \int e^{ikx} dk = \delta(x). $$</p>
 <p>The theorem is a formal result of these:</p>
-<p>\begin{align} \Phi(\Psi(f))(q, k) &amp;= \int e^{-ikq'} \left\langle q + \frac{q'}{2} \right| \Psi(f) \left| q - \frac{q'}{2} \right\rangle \\</p>
-<p>&amp;= \int e^{-ikq'} e^{ik&rsquo;q'} f(q, k) dk' dq' \\</p>
-<p>&amp;= f(q,k).</p>
-<p>\end{align}</p>
+<p>\begin{align} \Phi(\Psi(f))(q, k) &amp;= \int e^{-ikq'} \left\langle q + \frac{q'}{2} \right| \Psi(f) \left| q - \frac{q'}{2} \right\rangle \\\<br>
+&amp;= \int e^{-ikq'} e^{ik&rsquo;q'} f(q, k) dk' dq' \\\<br>
+&amp;= f(q,k).
+\end{align}</p>
 <p>One may easily check that $\Psi(x) = x$ and $Psi(k) = -i\partial$, so this certainly gives a quantization. But why is it particularly natural? To see this, let $Q$ be the operator of multiplication by $x$, and let $P$ be the operator $-i\partial$. We&rsquo;d like to take $f(q,p)$ and replace it by $f(Q, P)$, but we can&rsquo;t literally substitute like this due to order ambiguity. However, we could work formally as follows:</p>
-<p>\begin{align}</p>
-<p>f(Q, P) &amp;= \int \delta(Q-q) \delta(P - p) f(q,p) dq dp \\</p>
-<p>&amp;= \int e^{ik(Q-q) + iq'(P-p)} f(q,p) dq dq' dp dk.</p>
-<p>\end{align}</p>
+<p>\begin{align}
+f(Q, P) &amp;= \int \delta(Q-q) \delta(P - p) f(q,p) dq dp \\\<br>
+&amp;= \int e^{ik(Q-q) + iq'(P-p)} f(q,p) dq dq' dp dk.
+\end{align}</p>
 <p>In this last expression, there is no order ambiguity in the argument of the exponential (since it is a sum and not a product), and furthermore the expression itself make sense since it is the exponential of a skew-adjoint operator. So let&rsquo;s check that this agrees with the Weyl transform. Using a special case of the Baker-Campbell-Hausdorff formula for the Heisenberg algebra, we have</p>
 <p>$$ e^{ik(Q-q) + iq'(P-p)} = e^{ik(Q-q)} e^{iq'(P-p)} e^{-ikq'/2} $$</p>
 <p>Let us compute the matrix element:</p>
-<p>\begin{align}</p>
-<p>\langle q_1 | P | q_2 \rangle &amp;= \int \langle q_1 | p_1 \rangle</p>
-<p>\langle p_1 | P | p_2 \rangle \langle p_2 | q_2 \rangle dp_1 dp_2 \\</p>
-<p>&amp;= \int e^{iq_1p_1 - iq_2 p_2} p_2 \delta(p_2 - p_1) dp_1 dp_2 \\</p>
-<p>&amp;= \int e^{i p(q_1-q_2)} p dp.</p>
-<p>\end{align}</p>
+<p>\begin{align}
+\langle q_1 | P | q_2 \rangle &amp;= \int \langle q_1 | p_1 \rangle
+\langle p_1 | P | p_2 \rangle \langle p_2 | q_2 \rangle dp_1 dp_2 \\\<br>
+&amp;= \int e^{iq_1p_1 - iq_2 p_2} p_2 \delta(p_2 - p_1) dp_1 dp_2 \\\<br>
+&amp;= \int e^{i p(q_1-q_2)} p dp.
+\end{align}</p>
 <p>Hence we find that the matrix element for the exponential is</p>
-<p>\begin{align} \langle q_1 |e^{ik(Q-q) + iq'(P-p)} | q_2 \rangle</p>
-<p>&amp;= e^{-ikq'/2 + ik(q_1-q)} \langle q_1 | e^{iq'(P-p)} | q_2 \rangle \\</p>
-<p>&amp;=  \int e^{-ikq'/2 + ik(q_1-q) -iq&rsquo;p} e^{iq&rsquo;p'' + ip''(q_1-q_2)} dp'' \\</p>
-<p>&amp;= \delta(q' + q_1 - q_2)  e^{-ikq'/2 + ik(q_1-q) -iq&rsquo;p}</p>
-<p>\end{align}</p>
+<p>\begin{align} \langle q_1 |e^{ik(Q-q) + iq'(P-p)} | q_2 \rangle
+&amp;= e^{-ikq'/2 + ik(q_1-q)} \langle q_1 | e^{iq'(P-p)} | q_2 \rangle \\\<br>
+&amp;=  \int e^{-ikq'/2 + ik(q_1-q) -iq&rsquo;p} e^{iq&rsquo;p'' + ip''(q_1-q_2)} dp'' \\\<br>
+&amp;= \delta(q' + q_1 - q_2)  e^{-ikq'/2 + ik(q_1-q) -iq&rsquo;p}
+\end{align}</p>
 <p>Plugging this back into the expression for $f(Q, P)$ we find</p>
-<p>\begin{align}</p>
-<p>\langle q_1 | f(Q. P) | q_2 \rangle &amp;= \int \delta(q' + q_1 - q_2)  e^{-ikq'/2 + ik(q_1-q) -iq&rsquo;p}</p>
-<p>f(q,p) dq dq' dp dk \\</p>
-<p>&amp;= \int  e^{ ik(q_1/2 +q_2/2-q) -ip(q_1-q_2)} f(q,p) dq dp dk \\</p>
-<p>&amp;= \int e^{ip(q_1-q_2)} f(\frac{q_1+q_2}{2}, p) dp,</p>
-<p>\end{align}</p>
+<p>\begin{align}
+\langle q_1 | f(Q. P) | q_2 \rangle &amp;= \int \delta(q' + q_1 - q_2)  e^{-ikq'/2 + ik(q_1-q) -iq&rsquo;p}
+f(q,p) dq dq' dp dk \\\<br>
+&amp;= \int  e^{ ik(q_1/2 +q_2/2-q) -ip(q_1-q_2)} f(q,p) dq dp dk \\\<br>
+&amp;= \int e^{ip(q_1-q_2)} f(\frac{q_1+q_2}{2}, p) dp,
+\end{align}</p>
 <p>which is the original expression we gave for the Weyl transform.</p>
 
 
@@ -184,9 +201,11 @@
         
     </ul>
 </section>
+  
+    
     
         <section class="comments-block">
-      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments"></i> Add/View Comments</button>
 </section>
 
 <section id="disqus_thread"></section>
@@ -202,8 +221,19 @@
             var disqus_shortname = 'jmf1sh';
             var disqus_button = document.getElementById("show-comments");
 
+            var disqus_autoload =  null ;
+            var disable_comment =  null ;
+
+            if (disable_comment)
+                  return;
+
             disqus_button.style.display = "";
-            disqus_button.addEventListener("click", disqus, false);
+
+            if (disqus_autoload){
+                  disqus();
+            }else{
+                  disqus_button.addEventListener("click", disqus, false);
+            }
 
             function disqus() {
 
@@ -237,7 +267,9 @@
             }
       })();
 </script>
+
     
+  
 
 
 
@@ -247,11 +279,13 @@
     <footer>
         <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
-            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe </a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
 
+
 </body>
 
 </html>
+

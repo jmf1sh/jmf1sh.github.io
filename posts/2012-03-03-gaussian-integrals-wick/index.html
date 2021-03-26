@@ -78,6 +78,18 @@
     <ul>
         
         <li>
+            <a class="" href="https://jmf1sh.github.io/categories">
+                <i class="fa-li fa  fa-lg"></i><span>Categories</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/tags">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+        <li>
             <a class="" href="https://jmf1sh.github.io/posts/">
                 <i class="fa-li fa  fa-lg"></i><span>Posts</span>
             </a>
@@ -92,6 +104,7 @@
     </ul>
 </nav>
 
+
       <main>
 
 
@@ -102,27 +115,33 @@
     <h1>Gaussian integrals and Wick&#39;s theorem</h1>
 
     
-        <aside>
+      <aside>
     <ul>
         <li>
             <time class="post-date" datetime="2012-03-03T15:00:00Z">Mar 3, 2012</time>
         </li>
         
+        
 
         
 
-        <li>2 minutes read</li>
+        <li>2 minute read</li>
     </ul>
 </aside>
 
     
 
-    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
-<p>We saw in the last update that the generating function $Z[J]$ can be expressed as</p>
+    
+
+
+    <p>This post has been migrated from my old blog, the
+<a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+<p>We saw in the last update that the generating function $Z[J]$ can be expressed
+as</p>
 <p>$$ Z[J] = e^{\frac{1}{2} J \cdot A^{-1} J} $$</p>
-<p>(at least as long as we&rsquo;ve normalize things so that $Z[0] = 1$. Now the wonderful thing is that this is something we can compute explicitly:</p>
-<p>$$ Z[J] = \sum_{n = 0}^{\infty} \frac{(\frac{1}{2} A^{-1}_{ij} J^i J^j)^n}{n!}</p>
-<p>= \sum_{n=0}^\infty \frac{(A^{-1}_{ij} J^i J^j)^n}{2^n n!} $$</p>
+<p>(at least as long as we&rsquo;ve normalize things so that $Z[0] = 1$. Now the
+wonderful thing is that this is something we can compute explicitly:</p>
+<p>$$ Z[J] = \sum_{n = 0}^{\infty} \frac{(\frac{1}{2} A^{-1}_{ij} J^i J^j)^n}{n!} = \sum_{n=0}^\infty \frac{(A^{-1}_{ij} J^i J^j)^n}{2^n n!} $$</p>
 <p>For example, in the one-dimensional case (taking $A = 1$) we get</p>
 <p>$$ Z[J] = \sum_{n=0}^\infty \frac{J^{2n}}{2^n n!} $$</p>
 <p>On the other hand, by the definition of the generating function we have</p>
@@ -140,7 +159,11 @@
 <p>Theorem (Wick&rsquo;s theorem, Isserlis' theorem) The expectation value</p>
 <p>$$ \langle x^{i_1} \cdots x^{i_{2n}} \rangle $$</p>
 <p>is the sum over all full contractions. There are $(2n)!/ 2^n n!$ terms in the sum.</p>
-<p>Proof This follows from our formula for the power series of the generating function. The reason is that the coefficient of  $J^I$ in $(\frac{1}{2} A^{-1}<em>{ij} J^i J^k)^n$ is exactly given by summing products of $A^{-1}</em>{ij}$ over partitions of $I$ into pairs, and the $n!$ in the denominator takes care of the overcounting.</p>
+<p>Proof This follows from our formula for the power series of the generating
+function. The reason is that the coefficient of  $$J^I$$ in
+$$(\frac{1}{2} A^{-1}_{ij} J^i J^k)^n$$ is exactly given by summing products
+of $$A^{-1}_{ij}$$ over partitions of $$I$$ into pairs, and the $n!$ in the
+denominator takes care of the overcounting.</p>
 <p>Next up: perturbation theory and Feynman diagrams.</p>
 
 
@@ -161,9 +184,11 @@
         
     </ul>
 </section>
+  
+    
     
         <section class="comments-block">
-      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments"></i> Add/View Comments</button>
 </section>
 
 <section id="disqus_thread"></section>
@@ -179,8 +204,19 @@
             var disqus_shortname = 'jmf1sh';
             var disqus_button = document.getElementById("show-comments");
 
+            var disqus_autoload =  null ;
+            var disable_comment =  null ;
+
+            if (disable_comment)
+                  return;
+
             disqus_button.style.display = "";
-            disqus_button.addEventListener("click", disqus, false);
+
+            if (disqus_autoload){
+                  disqus();
+            }else{
+                  disqus_button.addEventListener("click", disqus, false);
+            }
 
             function disqus() {
 
@@ -214,7 +250,9 @@
             }
       })();
 </script>
+
     
+  
 
 
 
@@ -224,11 +262,13 @@
     <footer>
         <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
-            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe </a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
 
+
 </body>
 
 </html>
+

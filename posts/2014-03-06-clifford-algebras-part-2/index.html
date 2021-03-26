@@ -78,6 +78,18 @@
     <ul>
         
         <li>
+            <a class="" href="https://jmf1sh.github.io/categories">
+                <i class="fa-li fa  fa-lg"></i><span>Categories</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/tags">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+        <li>
             <a class="" href="https://jmf1sh.github.io/posts/">
                 <i class="fa-li fa  fa-lg"></i><span>Posts</span>
             </a>
@@ -92,6 +104,7 @@
     </ul>
 </nav>
 
+
       <main>
 
 
@@ -102,20 +115,43 @@
     <h1>Clifford algebras and spinors, part 2: spin structures and Dirac operators</h1>
 
     
-        <aside>
+      <aside>
     <ul>
         <li>
-            <time class="post-date" datetime="2014-03-06T00:00:00Z">Mar 6, 2014</time>
+            <time class="post-date" datetime="2014-03-06T00:00:00&#43;01:00">Mar 6, 2014</time>
+        </li>
+        
+        
+        <li>
+            Categories:
+            <em>
+                
+                    
+                    <a href="https://jmf1sh.github.io/categories/geometry">geometry</a>
+                
+            </em>
         </li>
         
 
         
+        <li>
+            <em>
+                
+                    
+                    <a href="https://jmf1sh.github.io/tags/clifford-algebras">#clifford-algebras</a>
+                
+            </em>
+        </li>
+        
 
-        <li>4 minutes read</li>
+        <li>4 minute read</li>
     </ul>
 </aside>
 
     
+
+    
+
 
     <p><a href="https://jmf1sh.github.io/posts/2014-03-05-clifford-algebras-part-0/">Other articles in this series</a></p>
 <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
@@ -160,9 +196,11 @@
         
     </ul>
 </section>
+  
+    
     
         <section class="comments-block">
-      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments"></i> Add/View Comments</button>
 </section>
 
 <section id="disqus_thread"></section>
@@ -178,8 +216,19 @@
             var disqus_shortname = 'jmf1sh';
             var disqus_button = document.getElementById("show-comments");
 
+            var disqus_autoload =  null ;
+            var disable_comment =  null ;
+
+            if (disable_comment)
+                  return;
+
             disqus_button.style.display = "";
-            disqus_button.addEventListener("click", disqus, false);
+
+            if (disqus_autoload){
+                  disqus();
+            }else{
+                  disqus_button.addEventListener("click", disqus, false);
+            }
 
             function disqus() {
 
@@ -213,7 +262,9 @@
             }
       })();
 </script>
+
     
+  
 
 
 
@@ -223,11 +274,13 @@
     <footer>
         <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
-            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe </a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
 
+
 </body>
 
 </html>
+

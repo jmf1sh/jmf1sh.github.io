@@ -78,6 +78,18 @@
     <ul>
         
         <li>
+            <a class="" href="https://jmf1sh.github.io/categories">
+                <i class="fa-li fa  fa-lg"></i><span>Categories</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/tags">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+        <li>
             <a class="" href="https://jmf1sh.github.io/posts/">
                 <i class="fa-li fa  fa-lg"></i><span>Posts</span>
             </a>
@@ -92,6 +104,7 @@
     </ul>
 </nav>
 
+
       <main>
 
 
@@ -102,40 +115,66 @@
     <h1>KAM</h1>
 
     
-        <aside>
+      <aside>
     <ul>
         <li>
             <time class="post-date" datetime="2012-07-23T00:00:00Z">Jul 23, 2012</time>
         </li>
         
+        
 
         
 
-        <li>4 minutes read</li>
+        <li>4 minute read</li>
     </ul>
 </aside>
 
     
 
-    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
+    
+
+
+    <p>This post has been migrated from my old blog, the
+<a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
 <p>In this post I want to sketch the idea of KAM, following these lecture notes.</p>
-<p>Integrable Systems</p>
-<p>I don&rsquo;t want to worry too much about details, so for now we&rsquo;ll define an integrable system to be a Hamiltonian system $(M, \omega, H)$ for which we can choose local Darboux coordinates $(I, \phi)$ with $I \in \mathbb{R}^N$ and $\phi \in T^N$, such that the Hamiltonian is a function of $I$ only. Defining $\omega_j := \partial H / \partial I_j$, Hamilton&rsquo;s equations then read</p>
-<p>\begin{align}</p>
-<p>\dot{I}_j &amp;= 0, \\</p>
-<p>\dot{\phi}_j &amp;= \omega_j(I).</p>
-<p>\end{align}</p>
-<p>Hence we obtain linear motion on the torus as our dynamics. Note in particular that the sets ${I = \mathrm{const}}$ are tori, and that the dynamics are constrained to these tori. We call these tori &ldquo;invariant&rdquo;.</p>
+<h2 id="integrable-systems">Integrable Systems</h2>
+<p>I don&rsquo;t want to worry too much about details, so for now we&rsquo;ll define an
+integrable system to be a Hamiltonian system $(M, \omega, H)$ for which we can
+choose local Darboux coordinates $(I, \phi)$ with $I \in \mathbb{R}^N$ and
+$\phi \in T^N$, such that the Hamiltonian is a function of $I$ only. Defining
+$\omega_j := \partial H / \partial I_j$, Hamilton&rsquo;s equations then read</p>
+<p>$$
+\begin{align}
+\dot{I}_j &amp;= 0, \\\<br>
+\dot{\phi}_j &amp;= \omega_j(I).
+\end{align}
+$$</p>
+<p>Hence we obtain linear motion on the torus as our dynamics. Note in particular
+that the sets ${I = \mathrm{const}}$ are tori, and that the dynamics are
+constrained to these tori. We call these tori &ldquo;invariant&rdquo;.</p>
 <p>Now suppose that our Hamiltonian $H$ is of the form</p>
 <p>$$ H(I, \phi) = h(I) + f(I, \phi) $$</p>
-<p>with $f$ &ldquo;small&rdquo;. What can be said of the dynamics? Specifically, do there exist invariant tori? KAM theory lets us formulate this question in a precise way, and gives an explicit quantitative answer (as long as $f$ is nice enough, and small enough).</p>
-<p>I want to sketch the idea of the KAM theorem, completely ignoring analytical details.</p>
-<p>Constructing the Symplectomorphism</p>
-<p>Suppose we could find a symplectomorphism $\Phi$: (I, \phi) \mapsto (\tilde{I}, \tilde{\phi})$ such that $H(I, \phi) = H(\tilde{I}$. Then our system would still be integrable (just in new action-angle coordinates), and we&rsquo;d be done. There are two relatively easy ways of constructing symplectomorphisms: integrating symplectic vector fields, and generating functions. In the lecture notes, generating functions are used, so let&rsquo;s take a minute to discuss them.</p>
-<p>Proposition Let $\Sigma(\tilde{I}, \phi)$ be a smooth function and suppose that the transformation</p>
-<p>$$ I = \frac{\partial \Sigma}{\partial \phi}, \</p>
-<p>\tilde{\phi} = \frac{\partial \Sigma}{\partial \tilde{I}}$$</p>
-<p>can be inverted to produce a diffeomorphism $\Phi: (I, \phi) \mapsto (\tilde{I}, \tilde{\phi})$. Then $\Phi$ is a symplectomorphism.</p>
+<p>with $f$ &ldquo;small&rdquo;. What can be said of the dynamics? Specifically, do there exist
+invariant tori? KAM theory lets us formulate this question in a precise way, and
+gives an explicit quantitative answer (as long as $f$ is nice enough, and small
+enough).</p>
+<p>I want to sketch the idea of the KAM theorem, completely ignoring analytical
+details.</p>
+<h2 id="constructing-the-symplectomorphism">Constructing the Symplectomorphism</h2>
+<p>Suppose we could find a symplectomorphism
+$$\Phi: (I, \phi) \mapsto (\tilde{I}, \tilde{\phi})$$
+such that $H(I, \phi) = H(\tilde{I})$. Then our system would still be integrable
+(just in new action-angle coordinates), and we&rsquo;d be done. There are two
+relatively easy ways of constructing symplectomorphisms: integrating symplectic
+vector fields, and generating functions. In the lecture notes, generating
+functions are used, so let&rsquo;s take a minute to discuss them.</p>
+<p>Proposition Let $\Sigma(\tilde{I}, \phi)$ be a smooth function and suppose that
+the transformation</p>
+<p>$$ I = \frac{\partial \Sigma}{\partial \phi},<br>
+\tilde{\phi} = \frac{\partial \Sigma}{\partial \tilde{I}}$$</p>
+<p>can be inverted to produce a diffeomorphism
+$\Phi: (I, \phi) \mapsto (\tilde{I}, \tilde{\phi})$. Then $\Phi$ is a
+symplectomorphism.</p>
 <p>Proof</p>
 <p>$$ dI = \frac{\partial^2 \Sigma}{\partial \phi \partial \tilde{I}} d \tilde{I} $$</p>
 <p>$$ d\tilde{\phi} = \frac{\partial^2 \Sigma}{\partial \phi \partial \tilde{I}} d\phi $$</p>
@@ -147,23 +186,31 @@
 <p>$$ H(\frac{\partial \Sigma}{\partial \phi}, \phi) = \tilde{h}(\tilde{I}) $$</p>
 <p>Expanding things, we have</p>
 <p>$$ h(\frac{\partial \Sigma}{\partial \phi}) + f(\frac{\partial \Sigma}{\partial \phi}, \phi) = \tilde{h}(\tilde{I}). $$</p>
-<p>If $f$ is small, then we might expect $\Phi$ to be close to the identity, and hence $\Sigma$ ought to be close to the generating function for the identity (which is $\langle I, \phi \rangle$). So we take</p>
+<p>If $f$ is small, then we might expect $\Phi$ to be close to the identity, and
+hence $\Sigma$ ought to be close to the generating function for the identity
+(which is $\langle I, \phi \rangle$). So we take</p>
 <p>$$ \Sigma(\tilde{I}, \phi) = \langle \tilde{I}, \phi \rangle + S(\tilde{I}, \phi) $$</p>
 <p>where $S$ should be &ldquo;small&rdquo;. So we linearize the equation in $S$:</p>
-<p>$$ \langle \omega(\tilde{I}), \frac{\partial S}{\partial \phi} \rangle</p>
-<ul>
-<li>f(\tilde{I}, \phi)</li>
-</ul>
-<p>= \tilde{h}(\tilde{I}) - h(\tilde{I}) $$</p>
-<p>Now we can expand $S$ and $f$ in Fourier series and solve coefficient-wise. This gives a formal solution $S(\tilde{I}, \phi)$ of the equation</p>
+<p>$$ \langle \omega(\tilde{I}), \frac{\partial S}{\partial \phi} \rangle + f(\tilde{I}, \phi) = \tilde{h}(\tilde{I}) - h(\tilde{I}) $$</p>
+<p>Now we can expand $S$ and $f$ in Fourier series and solve coefficient-wise. This
+gives a formal solution $S(\tilde{I}, \phi)$ of the equation</p>
 <p>$$ \langle \omega, \frac{\partial S}{\partial \phi} \rangle + f(\tilde{I}, \phi) = 0. $$</p>
-<p>Getting it to Work</p>
-<p>Unfortunately, the Fourier series for $S$ has no chance to converge, so instead we take a finite truncation. If we assume $f$ is analytic, its Fourier coefficients decay exponentially fast, so this provides a very good approximate solution to the linearized equation (and we can give an explicit bound in terms of a certain norm of $f$). Call this function $S_1$. We then use $S_1$ to construct a symplectomorphism $\Phi_1$.</p>
+<h2 id="getting-it-to-work">Getting it to Work</h2>
+<p>Unfortunately, the Fourier series for $S$ has no chance to converge, so instead
+we take a finite truncation. If we assume $f$ is analytic, its Fourier
+coefficients decay exponentially fast, so this provides a very good approximate
+solution to the linearized equation (and we can give an explicit bound in terms
+of a certain norm of $f$). Call this function $S_1$. We then use $S_1$ to
+construct a symplectomorphism $\Phi_1$.</p>
 <p>Now we take</p>
 <p>$$ H_1(I, \phi) = H \circ \Phi_1(I, \phi) = h_1(I) + f_1(I, \phi). $$</p>
-<p>Some hard analysis then shows that $h - h_1$ is small, and $f_1$ is much smaller than f.</p>
-<p>The Induction Step</p>
-<p>The above arguments sketch a method to put the system &ldquo;closer&rdquo; to an integrable form. By carefully controlling $\epsilon$&rsquo;s and $\delta$&rsquo;s, one then shows that iterated sequence $\Phi_1, \Phi_2 \circ \Phi_1, \ldots$ converges to some limiting symplectomorphism $\Phi_\infty$.</p>
+<p>Some hard analysis then shows that $h - h_1$ is small, and $f_1$ is much smaller
+than f.</p>
+<h2 id="the-induction-step">The Induction Step</h2>
+<p>The above arguments sketch a method to put the system &ldquo;closer&rdquo; to an integrable
+form. By carefully controlling $\epsilon$&rsquo;s and $\delta$&rsquo;s, one then shows that
+iterated sequence $\Phi_1, \Phi_2 \circ \Phi_1, \ldots$ converges to some
+limiting symplectomorphism $\Phi_\infty$.</p>
 
 
 </article>
@@ -183,9 +230,11 @@
         
     </ul>
 </section>
+  
+    
     
         <section class="comments-block">
-      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments"></i> Add/View Comments</button>
 </section>
 
 <section id="disqus_thread"></section>
@@ -201,8 +250,19 @@
             var disqus_shortname = 'jmf1sh';
             var disqus_button = document.getElementById("show-comments");
 
+            var disqus_autoload =  null ;
+            var disable_comment =  null ;
+
+            if (disable_comment)
+                  return;
+
             disqus_button.style.display = "";
-            disqus_button.addEventListener("click", disqus, false);
+
+            if (disqus_autoload){
+                  disqus();
+            }else{
+                  disqus_button.addEventListener("click", disqus, false);
+            }
 
             function disqus() {
 
@@ -236,7 +296,9 @@
             }
       })();
 </script>
+
     
+  
 
 
 
@@ -246,11 +308,13 @@
     <footer>
         <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
-            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe </a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
 
+
 </body>
 
 </html>
+

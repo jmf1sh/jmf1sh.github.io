@@ -78,6 +78,18 @@
     <ul>
         
         <li>
+            <a class="" href="https://jmf1sh.github.io/categories">
+                <i class="fa-li fa  fa-lg"></i><span>Categories</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/tags">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+        <li>
             <a class="" href="https://jmf1sh.github.io/posts/">
                 <i class="fa-li fa  fa-lg"></i><span>Posts</span>
             </a>
@@ -92,6 +104,7 @@
     </ul>
 </nav>
 
+
       <main>
 
 
@@ -102,20 +115,24 @@
     <h1>The basic idea of the quantum BV complex</h1>
 
     
-        <aside>
+      <aside>
     <ul>
         <li>
             <time class="post-date" datetime="2014-05-14T00:00:00Z">May 14, 2014</time>
         </li>
         
+        
 
         
 
-        <li>4 minutes read</li>
+        <li>4 minute read</li>
     </ul>
 </aside>
 
     
+
+    
+
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>. This post was originally written by Dylan Butson.</p>
 <p>$ \newcommand{\h}{\hbar} \newcommand{\X}{\mathfrak{X}} \newcommand{\PV}{\text{PV}} \newcommand{\K}{{\mathbb K}} \newcommand{\R}{{\mathbb R}} \newcommand{\too}{\xrightarrow} \newcommand{\im}{\text{Im }} $ Let $M$ be an oriented $n$-dimensional manifold and $\X^\bullet(M):=\Gamma(M,\wedge^{-\bullet} TM)$, so that $\X^\bullet(M)$ is concentrated in non-positive degree. Let $\mu\in \Omega^n(M)$ a volume form on $M$. Then interior product with $\mu$ gives an isomorphism $\vee\mu: \X^k(M)\too{\cong}\Omega^{n-k}(M)$. From this, we induce a degree 1 differential $\Delta_\mu$ on $\X^\bullet(M)$ from the de Rham differential $d$ on $\Omega^\bullet(M)$, defined by $\Delta_\mu= (\vee\mu)^{-1}\circ d\circ\vee\mu$, making $\X^\bullet(M)$ into a cochain complex isomorphic to $\Omega^\bullet(M)[k]$; in particular $H^k(\X)=H^{n+k}(\Omega)$.</p>
@@ -123,8 +140,30 @@
 <p>Proposition Let $1\in C^\infty(M)$ be the constant function taking the value $1$. Then $[1]\in H^0(\X)$ is nontrivial and after choosing it as a basis the resulting map $\pi:C^\infty(M)\to \R$ is given by $$ f\mapsto\frac{ \int_M f\mu}{\int_M \mu}$$ Proof Let $f\in C^\infty(M)$ and suppose $f=\Delta_\mu(X)$ for $X\in\X^1(M)$. Then $$f\mu = f\vee \mu = \Delta_\mu(X)\vee\mu= d(X\vee \mu)$$ so that $f\mu$ is exact and by Stokes' theorem integrates to $0$ on $M$. Thus all $f\in \im \Delta_\mu$ integrate to zero against $\mu$ on $M$, so that the above map indeed descends to the quotient.</p>
 <p>The above arguement also implies that were $1\in\im\Delta_\mu$ then $\mu$ would integrate to zero, contradicting that $\mu$ is a volume form, so that $[1]\in H^0(\X)$ is indeed nontrivial. The map is thus well-defined, linear, and has the appropriate action on a basis so that it is correct as claimed. $\square$</p>
 <p>This recovers the standard definition of the expectation of an observable in the path integral picture of quantum field theory. The upshot is that having formulated the integration homologically, we can hope to extend this homological definition of expectation to situations where the integral itself is not well defined.</p>
-<p>Consider the case $M=V$ a vector space, which in particular described the situation in coordinates on $M$. We are interested in measures of the form $\mu=e^{-S/\h}\mu_0$ where $\mu_0$ is the Lesbesgue measure on $V$, given by $\mu_0=dx^1\wedge &hellip;\wedge dx^n$. Let $X\in \X^k(M)$, we have: \begin{align*} d(X\vee \mu) &amp; = d(e^{-S/\h}(X\vee\mu_0)) \ &amp; = de^{-S/\h}\wedge (X\vee \mu_0)+e^{-S/\h}d(X\vee \mu_0)\ &amp; = -\frac{1}{\h}e^{-S/\h} dS\wedge (X\vee \mu_0) + e^{-S/\h} (\Delta_{\mu_0}X)\vee \mu_0 \ &amp; = -\frac{1}{\h}e^{-S/\h} (dS\vee X)\vee \mu_0 + (\Delta_{\mu_0}X)\vee \mu\ &amp; = \left(-\frac{1}{\h}dS\vee X + \Delta_{\mu_0}X \right)\vee \mu \end{align*} so that $$\Delta_\mu=\Delta_{\mu_0}-\frac{1}{\h}\iota_{dS}$$ Further, we can explicitly compute $\Delta_{\mu_0}$: for $X\in\X^k(M)$ we have that $X=\sum_I X^I \partial_I$, where the sum is over increasing $k$-tuples $I\subset{1,&hellip;,n}$. We have \begin{align*} d(X\vee \mu_0) &amp; = d\left( \sum_I X^I \partial_I\vee(dx^1\wedge &hellip;\wedge dx^n)\right)\ &amp; = d\left( \sum_I X^I (-1)^?dx^1\wedge &hellip;\wedge \hat{dx^I} \wedge &hellip;\wedge dx^n \right)\ &amp; = \sum_I \sum_{i\in I} \partial_{x^i} X^I (-1)^?dx^i\wedge dx^1\wedge &hellip;\wedge \hat{ dx^I}\wedge &hellip;\wedge dx^n\ &amp; = \left( \sum_i \partial_{x^i} (dx^i\vee X) \right) \vee \mu \end{align*} so that $$\Delta_{\mu_0} = \sum_i \partial_{x^i} \iota_{dx^i}$$ To be slightly more careful about the formal variable $\h$ and allow the $\h\to 0$ limit to be more clear, we refine our complex to be: $$ \X^\bullet(M)[[\h]] \quad\quad\text{equipped with}\quad\quad \h \Delta_\mu= \h\Delta_{\mu_0} -\iota_{dS}$$ Next, we restrict consideration only to polynomial observables (functions), and vector fields with polynomial coefficients, denoting the resulting complex $\PV^\bullet$. One can check that $H^0(\PV)$ is still one dimensional, so that the above proposition holds and we maintain the integral intepretation of this cohomology.</p>
-<p>Now, we can identify $\PV^\bullet[[\h]]$ with the graded-commutative graded algebra $\K[[x^1,&hellip;,x^n,\xi_1,&hellip;,\xi_n,\h]]$ where $x^1,&hellip;,x^n,\h$ are in degree 0 and $\xi_1,&hellip;,\xi_n$ are in degree -1 as follows: $$ x^i \mapsto x^i \quad\quad \partial_i\mapsto \xi_i\quad\quad \partial_i\wedge\partial_j\mapsto \xi_i\xi_j \quad\quad \h\mapsto \h$$ Under this identification, the map $\iota_{dx^i}:PV^k(M)\to \PV^{k-1}(M)$ is identified with $\partial_{\xi_i}$. Now, we require our action function $S:M\to \R$ also be polynomial, and further, that $$S(x)=\frac{1}{2}\sum_{i,j} a_{ij}x^ix^j- b(x)$$ for $a_{ij}$ symmetric and non-degenerate and for $b\in I^3$ where $I=(x^1,&hellip;,x^n)\subset \K[[x^1,&hellip;,x^n]]$, that is, $b(x)$ a polynomial with no terms of degree less than 3. This implies that \begin{align*} \h\Delta_\mu &amp; = \h\Delta_{\mu_0} -\iota_{dS} \ &amp; = \h \sum_i \partial_{x^i} \iota_{dx^i} - \sum_i (\partial_{x^i}S) \iota_{dx^i} \ &amp; = \h \sum_i \partial_{x^i} \iota_{dx^i} + \sum_i (\partial_{x^i}b) \iota_{dx^i} - \sum_{i,j}a_{ij}x^i\iota_{dx^j}\ \end{align*} and under our identification this becomes $$\h\Delta_\mu = \h \sum_i \partial_{x^i}\partial_{\xi_i} + \sum_i (\partial_{x^i}b)\partial_{\xi_i} - \sum_{i,j}a_{ij}x^i\partial_{\xi_j}$$ The computation of the degree 0 cohomology of a given polynomial $f\in\K[[x_1,&hellip;,x_n]]$ under this differential is taken up in Gwilliam, Johnson-Freyd where it is shown the answer is precisely the Feynman diagram expansion for the expectation of $f$ which we expect.</p>
+<p>Consider the case $M=V$ a vector space, which in particular described the situation in coordinates on $M$. We are interested in measures of the form $\mu=e^{-S/\h}\mu_0$ where $\mu_0$ is the Lesbesgue measure on $V$, given by $\mu_0=dx^1\wedge &hellip;\wedge dx^n$. Let $X\in \X^k(M)$, we have:</p>
+<p>\begin{align*} d(X\vee \mu) &amp; = d(e^{-S/\h}(X\vee\mu_0)) \\\<br>
+&amp;= de^{-S/\h}\wedge (X\vee \mu_0)+e^{-S/\h}d(X\vee \mu_0)\\\<br>
+&amp;= -\frac{1}{\h}e^{-S/\h} dS\wedge (X\vee \mu_0) + e^{-S/\h} (\Delta_{\mu_0}X)\vee \mu_0 \\\<br>
+&amp;= -\frac{1}{\h}e^{-S/\h} (dS\vee X)\vee \mu_0 + (\Delta_{\mu_0}X)\vee \mu\\\<br>
+&amp;= \left(-\frac{1}{\h}dS\vee X + \Delta_{\mu_0}X \right)\vee \mu
+\end{align*}</p>
+<p>so that $$\Delta_\mu=\Delta_{\mu_0}-\frac{1}{\h}\iota_{dS}$$ Further, we can explicitly compute $\Delta_{\mu_0}$: for $X\in\X^k(M)$ we have that $X=\sum_I X^I \partial_I$, where the sum is over increasing $k$-tuples $I\subset{1,&hellip;,n}$. We have</p>
+<p>\begin{align*}
+d(X\vee \mu_0) &amp; = d\left( \sum_I X^I \partial_I\vee(dx^1\wedge &hellip;\wedge dx^n)\right)\\\<br>
+&amp; = d\left( \sum_I X^I (-1)^?dx^1\wedge &hellip;\wedge \hat{dx^I} \wedge &hellip;\wedge dx^n \right)\\\<br>
+&amp; = \sum_I \sum_{i\in I} \partial_{x^i} X^I (-1)^?dx^i\wedge dx^1\wedge &hellip;\wedge \hat{ dx^I}\wedge &hellip;\wedge dx^n\\\<br>
+&amp; = \left( \sum_i \partial_{x^i} (dx^i\vee X) \right) \vee \mu
+\end{align*}</p>
+<p>so that $$\Delta_{\mu_0} = \sum_i \partial_{x^i} \iota_{dx^i}$$ To be slightly more careful about the formal variable $\h$ and allow the $\h\to 0$ limit to be more clear, we refine our complex to be:
+$$ \X^\bullet(M)[[\h]] \quad\quad\text{equipped with}\quad\quad \h \Delta_\mu= \h\Delta_{\mu_0} -\iota_{dS}$$
+Next, we restrict consideration only to polynomial observables (functions), and vector fields with polynomial coefficients, denoting the resulting complex $\PV^\bullet$. One can check that $H^0(\PV)$ is still one dimensional, so that the above proposition holds and we maintain the integral intepretation of this cohomology.</p>
+<p>Now, we can identify $\PV^\bullet[[\h]]$ with the graded-commutative graded algebra $\K[[x^1,&hellip;,x^n,\xi_1,&hellip;,\xi_n,\h]]$ where $x^1,&hellip;,x^n,\h$ are in degree 0 and $\xi_1,&hellip;,\xi_n$ are in degree -1 as follows: $$ x^i \mapsto x^i \quad\quad \partial_i\mapsto \xi_i\quad\quad \partial_i\wedge\partial_j\mapsto \xi_i\xi_j \quad\quad \h\mapsto \h$$ Under this identification, the map $\iota_{dx^i}:PV^k(M)\to \PV^{k-1}(M)$ is identified with $\partial_{\xi_i}$. Now, we require our action function $S:M\to \R$ also be polynomial, and further, that $$S(x)=\frac{1}{2}\sum_{i,j} a_{ij}x^ix^j- b(x)$$ for $a_{ij}$ symmetric and non-degenerate and for $b\in I^3$ where $I=(x^1,&hellip;,x^n)\subset \K[[x^1,&hellip;,x^n]]$, that is, $b(x)$ a polynomial with no terms of degree less than 3. This implies that</p>
+<p>\begin{align*}
+\h\Delta_\mu &amp; = \h\Delta_{\mu_0} -\iota_{dS} \\\<br>
+&amp; = \h \sum_i \partial_{x^i} \iota_{dx^i} - \sum_i (\partial_{x^i}S) \iota_{dx^i} \\\<br>
+&amp; = \h \sum_i \partial_{x^i} \iota_{dx^i} + \sum_i (\partial_{x^i}b) \iota_{dx^i} - \sum_{i,j}a_{ij}x^i\iota_{dx^j}
+\end{align*}</p>
+<p>and under our identification this becomes $$\h\Delta_\mu = \h \sum_i \partial_{x^i}\partial_{\xi_i} + \sum_i (\partial_{x^i}b)\partial_{\xi_i} - \sum_{i,j}a_{ij}x^i\partial_{\xi_j}$$ The computation of the degree 0 cohomology of a given polynomial $f\in\K[[x_1,&hellip;,x_n]]$ under this differential is taken up in Gwilliam, Johnson-Freyd where it is shown the answer is precisely the Feynman diagram expansion for the expectation of $f$ which we expect.</p>
 
 
 </article>
@@ -144,9 +183,11 @@
         
     </ul>
 </section>
+  
+    
     
         <section class="comments-block">
-      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments"></i> Add/View Comments</button>
 </section>
 
 <section id="disqus_thread"></section>
@@ -162,8 +203,19 @@
             var disqus_shortname = 'jmf1sh';
             var disqus_button = document.getElementById("show-comments");
 
+            var disqus_autoload =  null ;
+            var disable_comment =  null ;
+
+            if (disable_comment)
+                  return;
+
             disqus_button.style.display = "";
-            disqus_button.addEventListener("click", disqus, false);
+
+            if (disqus_autoload){
+                  disqus();
+            }else{
+                  disqus_button.addEventListener("click", disqus, false);
+            }
 
             function disqus() {
 
@@ -197,7 +249,9 @@
             }
       })();
 </script>
+
     
+  
 
 
 
@@ -207,11 +261,13 @@
     <footer>
         <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
-            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe </a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
 
+
 </body>
 
 </html>
+

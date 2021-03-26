@@ -78,6 +78,18 @@
     <ul>
         
         <li>
+            <a class="" href="https://jmf1sh.github.io/categories">
+                <i class="fa-li fa  fa-lg"></i><span>Categories</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/tags">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+        <li>
             <a class="" href="https://jmf1sh.github.io/posts/">
                 <i class="fa-li fa  fa-lg"></i><span>Posts</span>
             </a>
@@ -92,6 +104,7 @@
     </ul>
 </nav>
 
+
       <main>
 
 
@@ -102,20 +115,24 @@
     <h1>Virasoro algebra from the free boson</h1>
 
     
-        <aside>
+      <aside>
     <ul>
         <li>
-            <time class="post-date" datetime="2014-12-11T00:00:00Z">Dec 11, 2014</time>
+            <time class="post-date" datetime="2014-12-11T00:00:00&#43;01:00">Dec 11, 2014</time>
         </li>
         
+        
 
         
 
-        <li>5 minutes read</li>
+        <li>5 minute read</li>
     </ul>
 </aside>
 
     
+
+    
+
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
 <p>Usual physics derivations of the Virasoro algebra from the free boson in two dimensions usually use some sort of regularization procedure to compute the central charge. Following these notes I&rsquo;d like to give a purely algebraic calculation of the central charge.</p>
@@ -126,7 +143,11 @@
 <p>For $k = 0$, we define $a_0$ to be multiplication by some fixed complex number (which by abuse of notation we also denote by $a_0$).</p>
 <p>Lemma. We have the commutation relation $[a_m, a_n] = m \delta_{m+n}$ as linear operators on $A$.</p>
 <p>For any monomial in the $a_k$, we define normal ordering $::$ to be the monomial obtained by reordering the terms so that the indices are increasing. (Mathematical interpretation: it is a section of the quotient map from the tensor algebra in the $a_k$ to the symmetric algebra, defined by lexicographic order.) For example,</p>
-<p>$$ :a_j a_k:\ = \left{ \begin{array}{rr} a_j a_k, &amp; j \leq k \ a_k a_j, &amp; j &gt; k \end{array} \right. $$</p>
+<p>$$ :a_j a_k:\ = \left\{
+\begin{array}{rr}
+a_j a_k, &amp; j \leq k \\<br>
+a_k a_j, &amp; j &gt; k
+\end{array} \right. $$</p>
 <p>Next we formally define a set of operators $L_k$ by</p>
 <p>$$ L_k = \frac{1}{2}\sum_j :a_j a_{k-j}: $$</p>
 <p>Proposition. The $L_k$ are well-defined as linear operators on $A$.</p>
@@ -139,23 +160,23 @@
 <p>where $L_m^N$ is the truncated operator</p>
 <p>$$ L_m^N = \frac{1}{2}\sum_{|j| &lt; N} :a_j a_{m-j}: $$</p>
 <p>Let us compute (noting that since $m \neq 0$, $:a_j a_{m-j}: = a_j a_{m-j}$)</p>
-<p>\begin{align}</p>
-<p>[L_m^N, L_n] &amp;= \frac{1}{2} \sum_{|j| &lt; N} [a_j a_{m-j}, L_n] \\</p>
-<p>&amp;= \frac{1}{2} \sum_{|j| &lt; N} (m-j) a_j a_{m+n-j} + \frac{1}{2} \sum_{|j| &lt; N}j a_{n+j} a_{m-j}</p>
-<p>\end{align}</p>
+<p>\begin{align}
+[L_m^N, L_n] &amp;= \frac{1}{2} \sum_{|j| &lt; N} [a_j a_{m-j}, L_n] \\\<br>
+&amp;= \frac{1}{2} \sum_{|j| &lt; N} (m-j) a_j a_{m+n-j} + \frac{1}{2} \sum_{|j| &lt; N}j a_{n+j} a_{m-j}
+\end{align}</p>
 <p>Denote the two sums above by $S_1$ and $S_2$. It is clear that these should be related to the operator $L_{m+n}$, but to see the exact relation we will have to normal order the terms. Let&rsquo;s start with $S_1$. Note that $a_j a_{m+n-j}$ is already normal ordered, unless $j &gt; m+n-j$. Hence</p>
-<p>\begin{align}</p>
-<p>S_1 &amp;= \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{1}{2} \sum_{m+n\lt2j\lt2N} (m-j) [a_j, a_{m+n-j}] \\</p>
-<p>&amp;= \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{\delta_{m+n}}{2} \sum_{m+n\lt2j\lt2N} j(m-j) \\</p>
-<p>&amp;= \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{\delta_{m+n}}{2} \sum_{0\lt j\lt N} j(m-j)</p>
-<p>\end{align}</p>
+<p>\begin{align}
+S_1 &amp;= \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{1}{2} \sum_{m+n\lt2j\lt2N} (m-j) [a_j, a_{m+n-j}] \\\<br>
+&amp;= \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{\delta_{m+n}}{2} \sum_{m+n\lt2j\lt2N} j(m-j) \\\<br>
+&amp;= \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{\delta_{m+n}}{2} \sum_{0\lt j\lt N} j(m-j)
+\end{align}</p>
 <p>Similarly, we normal order the terms in $S_2$:</p>
-<p>\begin{align}</p>
-<p>S_2 &amp;= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{1}{2} \sum_{m-n\lt2j\lt2N}j [a_{m-j}, a_{n+j}] \\</p>
-<p>&amp;= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{\delta_{m+n}}{2} \sum_{m\lt j\lt N}j (m-j) \\</p>
-<p>&amp;= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{\delta_{m+n}}{2} \sum_{m\lt j\lt N}j (m-j) \\</p>
-<p>&amp;= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{\delta_{m+n}}{2} \sum_{m\lt j\lt N}j (m-j)</p>
-<p>\end{align}</p>
+<p>\begin{align}
+S_2 &amp;= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{1}{2} \sum_{m-n\lt2j\lt2N}j [a_{m-j}, a_{n+j}] \\\<br>
+&amp;= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{\delta_{m+n}}{2} \sum_{m\lt j\lt N}j (m-j) \\\<br>
+&amp;= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{\delta_{m+n}}{2} \sum_{m\lt j\lt N}j (m-j) \\\<br>
+&amp;= \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: -\frac{\delta_{m+n}}{2} \sum_{m\lt j\lt N}j (m-j)
+\end{align}</p>
 <p>Hence we have</p>
 <p>$$ S_1 + S_2 = \frac{1}{2} \sum_{|j| &lt; N} (m-j) :a_j a_{m+n-j}: +  \frac{1}{2} \sum_{|j| &lt; N}j :a_{n+j} a_{m-j}: + \frac{\delta_{m+n}}{2} \sum_{0\lt j\leq m} j(m-j)  $$</p>
 <p>Now that everything is normal ordered, we can take the limit $N \to \infty$ without fear. After a simple cancellation, and explicitly summing the last term using well-known formulas for sums of powers of integers, we obtain:</p>
@@ -182,9 +203,11 @@
         
     </ul>
 </section>
+  
+    
     
         <section class="comments-block">
-      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments"></i> Add/View Comments</button>
 </section>
 
 <section id="disqus_thread"></section>
@@ -200,8 +223,19 @@
             var disqus_shortname = 'jmf1sh';
             var disqus_button = document.getElementById("show-comments");
 
+            var disqus_autoload =  null ;
+            var disable_comment =  null ;
+
+            if (disable_comment)
+                  return;
+
             disqus_button.style.display = "";
-            disqus_button.addEventListener("click", disqus, false);
+
+            if (disqus_autoload){
+                  disqus();
+            }else{
+                  disqus_button.addEventListener("click", disqus, false);
+            }
 
             function disqus() {
 
@@ -235,7 +269,9 @@
             }
       })();
 </script>
+
     
+  
 
 
 
@@ -245,11 +281,13 @@
     <footer>
         <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
-            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe </a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
 
+
 </body>
 
 </html>
+

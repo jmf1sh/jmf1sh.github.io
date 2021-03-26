@@ -78,6 +78,18 @@
     <ul>
         
         <li>
+            <a class="" href="https://jmf1sh.github.io/categories">
+                <i class="fa-li fa  fa-lg"></i><span>Categories</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/tags">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+        <li>
             <a class="" href="https://jmf1sh.github.io/posts/">
                 <i class="fa-li fa  fa-lg"></i><span>Posts</span>
             </a>
@@ -92,6 +104,7 @@
     </ul>
 </nav>
 
+
       <main>
 
 
@@ -102,74 +115,62 @@
     <h1>The Index Form</h1>
 
     
-        <aside>
+      <aside>
     <ul>
         <li>
-            <time class="post-date" datetime="2015-09-11T00:00:00Z">Sep 11, 2015</time>
+            <time class="post-date" datetime="2015-09-11T00:00:00&#43;02:00">Sep 11, 2015</time>
         </li>
         
+        
 
         
 
-        <li>3 minutes read</li>
+        <li>3 minute read</li>
     </ul>
 </aside>
 
     
+
+    
+
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
 <p>Let $f: [0,T] \times (-\epsilon, \epsilon) \to M$ be a family of parametrized curves in a Riemannian manifold $(M, g)$. To simplify this calculation, we assume that $f(0,s) = p, f(T, s) = q$ for some $p,q \in M$ and all $s \in (-\epsilon, \epsilon)$. (This assumption is not necessary, but without it our variational formulae will have additional boundary terms.)</p>
 <p>For convenience, set $\dot f = \partial f / \partial t$ and $f' = \partial f / \partial s$. For each $s \in (-\epsilon, \epsilon)$ we define the energy functional $E = E(s)$ to be</p>
 <p>$$ E(s) = \frac{1}{2} \int_0^T |\dot f|^2 dt. $$</p>
 <p>The first variation is</p>
-<p>\begin{align}</p>
-<p>\frac{dE}{ds} &amp;= \int_0^T \langle \nabla_{f'} \dot f, \dot f \rangle dt \\</p>
-<p>&amp;= \int_0^T \langle \nabla_{\dot f} f', \dot f \rangle dt \\</p>
-<p>&amp;= -\int_0^T \langle f', \nabla_{\dot f}\dot f \rangle dt</p>
-<p>\end{align}</p>
+<p>\begin{align}
+\frac{dE}{ds} &amp;= \int_0^T \langle \nabla_{f'} \dot f, \dot f \rangle dt \\\<br>
+&amp;= \int_0^T \langle \nabla_{\dot f} f', \dot f \rangle dt \\\<br>
+&amp;= -\int_0^T \langle f', \nabla_{\dot f}\dot f \rangle dt
+\end{align}</p>
 <p>Set $\gamma(t) := f(t,0)$ and $X(t) = f'(t)$ (thought of as a vector field supported on $\gamma$). Evaluating the above at $s=0$ we obtain</p>
 <p>$$ \left.\frac{dE}{ds}\right|<em>{s=0} = -\int_0^T \langle X, \nabla</em>{\dot \gamma} \dot \gamma \rangle dt, $$</p>
 <p>which shows immediately that</p>
 <p>Theorem. $\gamma$ is a critical point of the energy functional if and only if $\nabla_{\dot \gamma} \dot \gamma = 0$.</p>
 <p>The second variation is</p>
-<p>\begin{align}</p>
-<p>\frac{d^2 E}{ds^2}</p>
-<p>&amp;= -\int_0^T \langle \nabla_{f'}f', \nabla_{\dot f}\dot f \rangle</p>
-<ul>
-<li>\langle f', \nabla_{f'}\nabla_{\dot f}\dot f \rangle dt \\</li>
-</ul>
-<p>&amp;= -\int_0^T \langle \nabla_{f'}f', \nabla_{\dot f}\dot f \rangle</p>
-<ul>
-<li>
-<p>\langle f', \nabla_{\dot f}\nabla_{f'}\dot f \rangle dt</p>
-</li>
-<li>
-<p>\langle f', R(f', \dot f)\dot f \rangle dt \\</p>
-</li>
-</ul>
-<p>&amp;= -\int_0^T \langle \nabla_{f'}f', \nabla_{\dot f}\dot f \rangle</p>
-<ul>
-<li>\langle \nabla_{\dot f}f', \nabla_{f'}\dot f \rangle dt</li>
-</ul>
-<ul>
-<li>\langle f', R(f', \dot f)\dot f \rangle dt \\ &amp;= -\int_0^T \langle \nabla_{f'}f', \nabla_{\dot f}\dot f \rangle</li>
-</ul>
-<ul>
-<li>\langle \nabla_{\dot f} f', \nabla_{\dot f} f'\rangle dt</li>
-</ul>
-<ul>
-<li>\langle f', R(f', \dot f)\dot f \rangle dt</li>
-</ul>
-<p>\end{align}</p>
+<p>\begin{align}
+\frac{d^2 E}{ds^2}
+&amp;= -\int_0^T \langle \nabla_{f'}f', \nabla_{\dot f}\dot f \rangle
++ \langle f', \nabla_{f'}\nabla_{\dot f}\dot f \rangle dt \\\<br>
+&amp;= -\int_0^T \langle \nabla_{f'}f', \nabla_{\dot f}\dot f \rangle
++ \langle f', \nabla_{\dot f}\nabla_{f'}\dot f \rangle dt
++ \langle f', R(f', \dot f)\dot f \rangle dt \\\<br>
+&amp;= -\int_0^T \langle \nabla_{f'}f', \nabla_{\dot f}\dot f \rangle
+- \langle \nabla_{\dot f}f', \nabla_{f'}\dot f \rangle dt
++ \langle f', R(f', \dot f)\dot f \rangle dt \\\<br>
+&amp;= -\int_0^T \langle \nabla_{f'}f', \nabla_{\dot f}\dot f \rangle
+- \langle \nabla_{\dot f} f', \nabla_{\dot f} f'\rangle dt
++ \langle f', R(f', \dot f)\dot f \rangle dt
+\end{align}</p>
 <p>Assume now that $\gamma$ is a geodesic, i.e. $\nabla_{\dot \gamma} \dot \gamma = 0$. Then evaluating the above at $s=0$, we obtain</p>
 <p>$$ \frac{d^2 E}{ds^2} = \int_0^T |\nabla_{\dot \gamma} X|^2 - \langle X, R(X, \dot \gamma) \dot \gamma \rangle dt. $$</p>
 <p>Definition. Let $\gamma$ be a geodesic. The index form associated to variations $X,Y$ of $\gamma$ is</p>
-<p>\begin{align} I(X,Y) &amp;= \int_0^T \langle \nabla_{\dot \gamma} X, \nabla_{\dot \gamma} Y \rangle dt</p>
-<ul>
-<li>\langle Y, R(X, \dot \gamma) \dot \gamma \rangle \\</li>
-</ul>
-<p>&amp;= -\int_0^T \langle Y, \nabla_{\dot \gamma}^2 X + R(X, \dot\gamma)\dot \gamma \rangle</p>
-<p>\end{align}</p>
+<p>\begin{align}
+I(X,Y) &amp;= \int_0^T \langle \nabla_{\dot \gamma} X, \nabla_{\dot \gamma} Y \rangle dt
+- \langle Y, R(X, \dot \gamma) \dot \gamma \rangle \\\<br>
+&amp;= -\int_0^T \langle Y, \nabla_{\dot \gamma}^2 X + R(X, \dot\gamma)\dot \gamma \rangle
+\end{align}</p>
 <p>It follows from symmetries of the Riemann tensor that $I(X,Y) = I(Y, X)$ and also $I(X,X) = E''$ as above.</p>
 <p>Theorem. Suppose that $X$ is the infinitesimal variation of a family of affine geodesics about a fixed geodesic $\gamma$. Then</p>
 <p>$$ \nabla_{\dot \gamma}^2 X + R(X, \dot\gamma)\dot\gamma = 0. $$</p>
@@ -199,9 +200,11 @@
         
     </ul>
 </section>
+  
+    
     
         <section class="comments-block">
-      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments"></i> Add/View Comments</button>
 </section>
 
 <section id="disqus_thread"></section>
@@ -217,8 +220,19 @@
             var disqus_shortname = 'jmf1sh';
             var disqus_button = document.getElementById("show-comments");
 
+            var disqus_autoload =  null ;
+            var disable_comment =  null ;
+
+            if (disable_comment)
+                  return;
+
             disqus_button.style.display = "";
-            disqus_button.addEventListener("click", disqus, false);
+
+            if (disqus_autoload){
+                  disqus();
+            }else{
+                  disqus_button.addEventListener("click", disqus, false);
+            }
 
             function disqus() {
 
@@ -252,7 +266,9 @@
             }
       })();
 </script>
+
     
+  
 
 
 
@@ -262,11 +278,13 @@
     <footer>
         <h6> |
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
-            <a href="https://jmf1sh.github.io/index.xml">Subscribe</a></h6>
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe </a></h6>
     </footer>
 </div>
 <script src="https://jmf1sh.github.io/js/scripts.js"></script>
 
+
 </body>
 
 </html>
+
