@@ -22,6 +22,7 @@ disqusShortname = "jmf1sh"
 
 [params]
     tagline = "mathematics, physics, programming, and machine learning"
+    disableDarkModeCSS = true # disables css style for users using dark-mode
 
 menu = "main"
 meta = "false"
