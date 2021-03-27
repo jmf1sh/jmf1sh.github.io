@@ -51,71 +51,71 @@ and/or completely wrong. I will try to point out the points of confusion.
 
 We will start with some kind of family of susy gauge theories (or rather, a
 single  "theory" with a family of vacua, depending on what asymptotic boundary
-conditions we specify in the path integral). We let $\mathcal{B}$ be some kind
+conditions we specify in the path integral). We let \\(\mathcal{B}\\) be some kind
 of manifold (or variety, possibly with singularities?), and
-$\{\mathcal{H}\_u\}\_{u \in \mathcal{B}}$ a family (bundle) of Hilbert spaces,
-depending on $u \in \mathcal{B}$. Concretely, $\mathcal{B}$ will parametrize the
+\\(\{\mathcal{H}\_u\}\_{u \in \mathcal{B}}\\) a family (bundle) of Hilbert spaces,
+depending on \\(u \in \mathcal{B}\\). Concretely, \\(\mathcal{B}\\) will parametrize the
 vacuum expectation values (VEVs) of the scalar fields of the theory. (Note, for
 non-scalar fields we can typically expect VEVs to vanish, for example by looking
-at the action of the Lorentz group.) Actually, to be more precise, $\mathcal{B}$
+at the action of the Lorentz group.) Actually, to be more precise, \\(\mathcal{B}\\)
 parametrizes the Coulomb branch--where the VEVs break the gauge symmetry to a
 maximal torus (as opposed to the Higgs branch, where the VEVs just break the
 gauge group to a smaller subgroup).
 
 
-The next ingredient is a lattice $\Gamma$, the charge lattice, which is supposed
+The next ingredient is a lattice \\(\Gamma\\), the charge lattice, which is supposed
 to parametrize all possible electric and magnetic charges. Since electric and
 magnetic charges are dual, this lattice has a pairing
-$\Gamma \otimes \Gamma \to \mathbb{Z}$ which is symplectic (or possibly just
-Poisson?). (Actually, maybe we should think of $\Gamma$ as being a bundle of
-lattices over $\mathcal{B}$, but this isn't completely clear to me.) The lattice
-gives a grading of $\mathcal{H}$:
+\\(\Gamma \otimes \Gamma \to \mathbb{Z}\\) which is symplectic (or possibly just
+Poisson?). (Actually, maybe we should think of \\(\Gamma\\) as being a bundle of
+lattices over \\(\mathcal{B}\\), but this isn't completely clear to me.) The lattice
+gives a grading of \\(\mathcal{H}\\):
 
-$$ \mathcal{H} = \bigoplus\_{\gamma \in \Gamma} \mathcal{H}\_\gamma $$.
+\\[ \mathcal{H} = \bigoplus\_{\gamma \in \Gamma} \mathcal{H}\_\gamma \\].
 
-Now, the Hilbert spaces $\mathcal{H}\_u$ are supposed to carry representations of
-the $\mathcal{N}=2$ susy algebra, with central charge $Z$. On any state of
-charge $\gamma$ above the point $u \in \mathcal{B}$, the central charge $Z$ acts
-as a scalar, which we denote by $Z\_\gamma(u)$. Manipulations with the susy
-algebra show the BPS bound $M \geq |Z\_\gamma(u)|$, where $M$ is the mass of a
-state with charge $\gamma$. A state is called BPS if it saturates this bound.
+Now, the Hilbert spaces \\(\mathcal{H}\_u\\) are supposed to carry representations of
+the \\(\mathcal{N}=2\\) susy algebra, with central charge \\(Z\\). On any state of
+charge \\(\gamma\\) above the point \\(u \in \mathcal{B}\\), the central charge \\(Z\\) acts
+as a scalar, which we denote by \\(Z\_\gamma(u)\\). Manipulations with the susy
+algebra show the BPS bound \\(M \geq |Z\_\gamma(u)|\\), where \\(M\\) is the mass of a
+state with charge \\(\gamma\\). A state is called BPS if it saturates this bound.
 
 Finally, I'll end this post by attempting to define (or at least motivate) the
 walls of marginal stability. In all known examples, we have
 
-$$ |Z_{\gamma_1 + \gamma_2}(u)|^2 = |Z_{\gamma_1}(u)|^2 + |Z_{\gamma_2}(u)|^2 +2 \mathrm{Re}(Z_{\gamma_1}(u) \bar{Z}_{\gamma_2}(u) ) $$
+\\[ |Z_{\gamma_1 + \gamma_2}(u)|^2 = |Z_{\gamma_1}(u)|^2 + |Z_{\gamma_2}(u)|^2 +2 \mathrm{Re}(Z_{\gamma_1}(u) \bar{Z}_{\gamma_2}(u) ) \\]
 
 If the cross-term is negative, then it is possible to form stable bound states
-(since the mass of a BPS state of charge $\gamma_1+\gamma_2$ is strictly less
+(since the mass of a BPS state of charge \\(\gamma_1+\gamma_2\\) is strictly less
 than the sum of the corresponding masses); and it is impossible to form stable
 bound states if the cross-term is positive. This (naive!) dichotomy tells us
 that there is something very special about the intermediate case. For a pair of
-charges $\gamma_1, \gamma_2$ we define a wall in $\mathcal{B}$ by
+charges \\(\gamma_1, \gamma_2\\) we define a wall in \\(\mathcal{B}\\) by
 
-$$ W(\gamma_1, \gamma_2) = \{u \in \mathcal{B} \ | \ \mathrm{Re}(Z_{\gamma_1}(u)\bar{Z}_{\gamma_2}(u)) = 0 \} $$
+\\[ W(\gamma_1, \gamma_2) = \{u \in \mathcal{B} \ | \ \mathrm{Re}(Z_{\gamma_1}(u)\bar{Z}_{\gamma_2}(u)) = 0 \} \\]
 
-and we define $W \subset \mathcal{B}$ to be the union of all the walls.
+and we define \\(W \subset \mathcal{B}\\) to be the union of all the walls.
 
 The idea of wall-crossing is the following. We define some functions
-$\Omega(\gamma; u)$ on $\mathcal{B} \setminus W$ which are locally constant.
+\\(\Omega(\gamma; u)\\) on \\(\mathcal{B} \setminus W\\) which are locally constant.
 These functions are supposed to count the number of BPS states of charge
-$\gamma$ (where count really means take the trace of a particular operator over
-$\mathcal{H}\_{\gamma, \mathrm{BPS}}$). The wall-crossing formula is an explicit
-formula that relates $\Omega(\gamma; u\_+)$ and $\Omega(\gamma; u\_-)$ for
-$u\_+, u\_-$ on opposite sides of a wall in $\mathcal{B}$. There are two
+\\(\gamma\\) (where count really means take the trace of a particular operator over
+\\(\mathcal{H}\_{\gamma, \mathrm{BPS}}\\)). The wall-crossing formula is an explicit
+formula that relates \\(\Omega(\gamma; u\_+)\\) and \\(\Omega(\gamma; u\_-)\\) for
+\\(u\_+, u\_-\\) on opposite sides of a wall in \\(\mathcal{B}\\). There are two
 applications of WCF:
 
-1. We pick some particular $u \in \mathcal{B}$ for which $\Omega$ is
+1. We pick some particular \\(u \in \mathcal{B}\\) for which \\(\Omega\\) is
 particularly easy to calculate ("extreme stability"). Then by KSWCF we actually
-know how to compute $\Omega$ on all of $\mathcal{B} \setminus W$.
+know how to compute \\(\Omega\\) on all of \\(\mathcal{B} \setminus W\\).
 
 
 2. Gaiotto-Moore-Neitzke study a certain QFT whose low energy effective action
-is a sigma model with target space $\mathcal{M}$, the moduli space of Higgs
-bundles over a Riemann surface. The invariants $\Omega(\gamma; u)$ together with
+is a sigma model with target space \\(\mathcal{M}\\), the moduli space of Higgs
+bundles over a Riemann surface. The invariants \\(\Omega(\gamma; u)\\) together with
 KSWCF allow them to compute the low energy effective action explicitly, giving
-an explicit construction of holomorphic Darboux coordinates on $\mathcal{M}$.
-This is enough to recover the full hyperkahler metric on $\mathcal{M}$, in local
+an explicit construction of holomorphic Darboux coordinates on \\(\mathcal{M}\\).
+This is enough to recover the full hyperkahler metric on \\(\mathcal{M}\\), in local
 coordinates!
 
 
@@ -123,7 +123,7 @@ Tasklist (incomplete!):
 
     Define susy algebra, derive BPS bound
     Understand/construct the charge lattice and its pairing
-    Sketch that 3d sigma model with $\mathcal{N}=4$ has a hyperkahler target
+    Sketch that 3d sigma model with \\(\mathcal{N}=4\\) has a hyperkahler target
     Sketch/understand why the low energy effective action has target Higgs
     Understand computation of effective action: Seiberg-Witten curves and all that
     Understand how KSWCF implies consistency of the Darboux coordinates

@@ -28,9 +28,9 @@ It turns out that question (1) is related to the Yang-Mills equations over \\(\m
 
 Question (2) is close to my own research interests. The hyperkahler quotient is similar to but different from the symplectic quotient. In symplectic quotients, the most basic tool we have is Morse theory using the momentum map. In hyperkahler geometry, we have 3 moment maps, and it's not obvious what to do with them. Frequently, we encode them as a pair \\((\mu_\mathbb{R}, \mu_\mathbb{C})\\), where
 
-$$ \mu_\mathbb{R} = \mu_1 $$
+\\[ \mu_\mathbb{R} = \mu_1 \\]
 
-$$ \mu_\mathbb{C} = \mu_2 + i \mu_3 $$
+\\[ \mu_\mathbb{C} = \mu_2 + i \mu_3 \\]
 
 It turns out that \\(\mu_\mathbb{C}\\) is holomorphic, and the corresponding form \\(\omega_\mathbb{C} = \omega_2 + i \omega_3\\) is holomorphic symplectic. It's not really clear what the best way of packaging the momentum maps is, and this is an important question because we would like to do Morse theory in some way using the momentum maps.
 
@@ -46,7 +46,7 @@ First, we have the projection \\(p: Z \to \mathbb{CP}^1\\). This is holomorphic 
 
 Second, we need the symplectic forms. Let \\(T_F\\) be the vertical subbundle of the tangent bundle to \\(Z\\). Let \\(\zeta\\) be a complex coordinate on \\(\mathbb{CP}^1\\) Now define
 
-$$ \omega = (\omega_2 + i\omega_3) + 2\zeta \omega_1 - \zeta^2 (\omega_2 - i\omega_3).$$
+\\[ \omega = (\omega_2 + i\omega_3) + 2\zeta \omega_1 - \zeta^2 (\omega_2 - i\omega_3).\\]
 
 This definition makes sense at least locally, and it makes sense globally thinking of \\(\omega\\) as a holomorphic seciton of \\(\Lambda^2 T_F^\ast \otimes p^\ast O(2)\\). It is also symplectic along the fibers.
 
