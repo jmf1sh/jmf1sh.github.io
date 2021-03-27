@@ -1,8 +1,10 @@
----
-title: "Classical partition function"
-date: 2015-08-18
-draft: false
----
++++
+title = "Classical partition function"
+date = 2015-08-18
+draft = false
+categories = ["uncategorized"]
+tags = []
++++
 
 This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
 
@@ -73,6 +75,3 @@ Corollary. At thermodynamic equilibrium, the average energy is given by
 and the entropy is given by
 
 \\[ S = \beta U + \log Z.\\]
-
-
-

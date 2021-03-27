@@ -2,11 +2,15 @@
 title = "Legendre transform"
 date = 2010-01-27
 draft = false
-categories = ["physics"]
-tags = ["classical-mechanics", "calculus-of-variatons"]
+categories = ["physics", "geometry"]
+tags = [
+    "classical-mechanics",
+    "calculus-of-variations",
+    "symplectic-geometry"
+]
 +++
 
-This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
+This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/). The original post can still be found [here](https://mathphysseminar.blogspot.com/2010/01/legendre-transform.html).
 
 
 Yesterday, I gave an introductory talk on Hamiltonian mechanics and symplectic geometry. The starting point is the Legendre transform. First, begin with a configuration space \\(Q\\). The Lagrangian \\(\mathcal{L}\\) is a smooth function on \\(TQ\\). In local coordinates \\(q^i\\) on \\(Q\\), we have coordinates \\((q_i, v_i)\\) on \\(TQ\\), where the \\(v^i\\) are the components of the tangent vector

@@ -1,8 +1,10 @@
----
-title: "In the beginning..."
-date: 2008-08-09
-draft: false
----
++++
+title = "In the beginning..."
+date = 2008-08-09
+draft = false
+categories = ["uncategorized"]
+tags = []
++++
 
 This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
 

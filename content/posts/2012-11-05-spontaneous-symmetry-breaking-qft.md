@@ -1,8 +1,10 @@
----
-title: "Spontaneous symmetry breaking in QFT"
-date: 2012-11-05
-draft: false
----
++++
+title = "Spontaneous symmetry breaking in QFT"
+date = 2012-11-05
+draft = false
+categories = ["uncategorized"]
+tags = []
++++
 
 This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
 

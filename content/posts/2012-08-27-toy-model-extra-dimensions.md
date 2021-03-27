@@ -1,8 +1,10 @@
----
-title: "A toy model for effective theory from extra dimensions"
-date: 2012-08-27
-draft: false
----
++++
+title = "A toy model for effective theory from extra dimensions"
+date = 2012-08-27
+draft = false
+categories = ["uncategorized"]
+tags = []
++++
 
 This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
 

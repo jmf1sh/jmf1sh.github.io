@@ -1,8 +1,10 @@
----
-title: "Geometry of curved spacetime, part 2"
-date: 2012-01-26
-draft: false
----
++++
+title = "Geometry of curved spacetime, part 2"
+date = 2012-01-26
+draft = false
+categories = ["uncategorized"]
+tags = []
++++
 
 This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
 
@@ -14,7 +16,7 @@ The Energy Functional
 
 \\[ S = \int_0^T |\dot{\gamma}|^2 dt \\]
 
-Letting \\(V^i = \dot{\gamma}^i\\), this is 
+Letting \\(V^i = \dot{\gamma}^i\\), this is
 
 \\[ S = \int_0^T g_{ij}(\gamma(t)) V^i V^j dt = \int_0^T L dt \\]
 
@@ -22,15 +24,15 @@ where the Lagrangian \\(L\\) is
 
 \\[ L = g_{ij} V^i V^j \\]
 
-Now, 
+Now,
 
 \\[ \frac{\partial L}{\partial x^k} = (\partial_k g_{ij}) V^i V^j \\]
 
-and 
+and
 
 \\[ \frac{\partial L}{\partial V^k} = g_{ij} \delta^i_k V^j + g_{ij} V^i \delta^i_k = 2 g_{jk} V^j \\]
 
-Now, 
+Now,
 
 \\[ \frac{d}{dt} \frac{\partial L}{\partial V^k} = 2 (\partial_i g_{jk}) V^i V^j + 2 g_{jk} \dot{V}^j \\]
 
@@ -101,16 +103,16 @@ Antisymmetry means fewer independent components. In this language, the curvature
 
 Gaussian Coordinates
 
-Via Wald. Suppose \\(S \subset M\\) is a codimension 1 submanifold. If \\(S\\) is not null, we can find a normal vector field \\(n^a\\) which is everywhere orthogonal to \\(S\\) and has unit length. (Probably also need orientation to make it unique!) We can pick any coordinates \\(x^1, \cdots, x^{n-1}\\) on \\(S\\), and we pick the last coordinate to be the distance to \\(S\\), measured along a geodesic with initial tangent vector \\(n^a\\) (i.e. we use exponential coordinates in the normal direction). 
+Via Wald. Suppose \\(S \subset M\\) is a codimension 1 submanifold. If \\(S\\) is not null, we can find a normal vector field \\(n^a\\) which is everywhere orthogonal to \\(S\\) and has unit length. (Probably also need orientation to make it unique!) We can pick any coordinates \\(x^1, \cdots, x^{n-1}\\) on \\(S\\), and we pick the last coordinate to be the distance to \\(S\\), measured along a geodesic with initial tangent vector \\(n^a\\) (i.e. we use exponential coordinates in the normal direction).
 
 
 Once we pick these coordinates, we obtain a family of hypersurfaces \\(S_t\\) given by
 
 \\(x^n = t\\). These have the property that they are orthogonal to the normal geodesics through \\(S\\). Proof: (X are vector fields which are tangent to \\(S_t\\))
 
-\\[ n^b \nabla_b (n_a X^a) = n_a n^b \nabla_b X^a \\] 
+\\[ n^b \nabla_b (n_a X^a) = n_a n^b \nabla_b X^a \\]
 
-\\[= n_a X^b \nabla_b n^a \\] 
+\\[= n_a X^b \nabla_b n^a \\]
 
 \\[= \frac{1}{2}X^b \nabla_b (n^a n_a) = 0 \\]
 
@@ -152,6 +154,3 @@ Definition (Cut Locus in Riemannian Signature) For \\(p \in M\\), we define the 
 
 
 eg. Sphere, antipodes.
-
-
-

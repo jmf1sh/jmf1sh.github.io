@@ -1,8 +1,10 @@
----
-title: "BPS states and wall-crossing"
-date: 2012-10-29
-draft: false
----
++++
+title = "BPS states and wall-crossing"
+date = 2012-10-29
+draft = false
+categories = ["uncategorized"]
+tags = []
++++
 
 This post has been migrated from my old blog, the
 [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
@@ -21,25 +23,21 @@ Gaiotto-Moore-Neitzke.
 
 
 References:
-
-
-    Witten's lectures on dynamics of QFT
-    Gaiotto-Moore-Neitzke
-    Kontsevich-Soibelman
-    Seiberg and Witten
-    Distler's blogpost, and
-     This post on the n-Category cafe (note: Bridgeland's talk relates quadratic differentials to stability conditions).
+* Witten's lectures on dynamics of QFT
+* Gaiotto-Moore-Neitzke
+* Kontsevich-Soibelman
+* Seiberg and Witten
+* Distler's blogpost, and
+* This post on the n-Category cafe (note: Bridgeland's talk relates quadratic differentials to stability conditions).
 
 
 
 Video Lectures:
-
-
-    IHES Lectures by Neitzke and Kontsevich
-    Lectures by Moore on the (2,0) d=6 superconformal theory
-    PITP 2010 (Gaiotto, Moore, Witten, Seiberg, others!)
-    Neitzke: What is a BPS state?
-    Gauge fields and strings
+* IHES Lectures by Neitzke and Kontsevich
+* Lectures by Moore on the (2,0) d=6 superconformal theory
+* PITP 2010 (Gaiotto, Moore, Witten, Seiberg, others!)
+* Neitzke: What is a BPS state?
+* Gauge fields and strings
 
 
 Physics Setup:
@@ -120,10 +118,9 @@ coordinates!
 
 
 Tasklist (incomplete!):
-
-    Define susy algebra, derive BPS bound
-    Understand/construct the charge lattice and its pairing
-    Sketch that 3d sigma model with \\(\mathcal{N}=4\\) has a hyperkahler target
-    Sketch/understand why the low energy effective action has target Higgs
-    Understand computation of effective action: Seiberg-Witten curves and all that
-    Understand how KSWCF implies consistency of the Darboux coordinates
+* Define susy algebra, derive BPS bound
+* Understand/construct the charge lattice and its pairing
+* Sketch that 3d sigma model with \\(\mathcal{N}=4\\) has a hyperkahler target
+* Sketch/understand why the low energy effective action has target Higgs
+* Understand computation of effective action: Seiberg-Witten curves and all that
+* Understand how KSWCF implies consistency of the Darboux coordinates

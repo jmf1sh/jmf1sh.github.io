@@ -1,8 +1,10 @@
----
-title: "Lattice quantum mechanics in 1d"
-date: 2011-11-12
-draft: false
----
++++
+title = "Lattice quantum mechanics in 1d"
+date = 2011-11-12
+draft = false
+categories = ["uncategorized"]
+tags = []
++++
 
 This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
 

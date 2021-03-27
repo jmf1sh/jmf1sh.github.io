@@ -1,8 +1,11 @@
----
-title: "Classical mechanics, part 1"
-date: 2011-08-19 09:00:00Z
-draft: false
----
++++
+title = "Classical mechanics, part 1"
+date = 2011-08-19T09:00:00Z
+draft = false
+categories = ["uncategorized"]
+tags = []
++++
+
 Articles in this series
 * [Part 1]({{< relref "2011-08-19-classical-mechanics-part-1.md" >}})
 * [Part 2]({{< relref "2011-08-19-classical-mechanics-part-2.md" >}})

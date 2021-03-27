@@ -1,10 +1,12 @@
----
-title: "Classical mechanics, part 4"
-date: 2011-08-23
-draft: false
----
++++
+title = "Classical mechanics, part 4"
+date = 2011-08-23
+draft = false
+categories = ["physics"]
+tags = ["classical-mechanics"]
++++
 
-This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
+This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/). The original post can be found [here](https://mathphysseminar.blogspot.com/2011/08/classical-mechanics-4-hamiltons.html).
 
 
 Recall from last time that a classical mechanical system consists of a manifold \\(M\\) (the configuration space) and a function \\(L\\) on the tangent bundle \\(TM\\). The equations of motion for a path \\(x(t)\\) in \\(M\\) are the 2nd order Euler-Lagrange equations:

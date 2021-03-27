@@ -1,10 +1,19 @@
----
-title: "The basic idea of the quantum BV complex"
-date: 2014-05-14
-draft: false
----
++++
+title = "The basic idea of the quantum BV complex"
+date = 2014-05-14
+draft = false
+categories = ["physics", "geometry"]
+tags = ["qft", "symmetry", "bv-brst"]
++++
 
-This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/). This post was originally written by Dylan Butson.
+
+This post has been migrated from my old blog, the
+[math-physics learning seminar](https://mathphysseminar.blogspot.com/). The
+original post can still be found
+[here](https://mathphysseminar.blogspot.com/2014/05/the-basic-idea-of-quantum-bv-complex.html).
+
+
+This post was originally written by [Dylan Butson](https://www.math.toronto.edu/dbutson/) ([arxiv](https://arxiv.org/search/?searchtype=author&query=Butson%2C+D)).
 
 Let \\(M\\) be an oriented \\(n\\)-dimensional manifold and \\(\mathfrak{X}^\bullet(M):=\Gamma(M,\wedge^{-\bullet} TM)\\), so that \\(\mathfrak{X}^\bullet(M)\\) is concentrated in non-positive degree. Let \\(\mu\in \Omega^n(M)\\) a volume form on \\(M\\). Then interior product with \\(\mu\\) gives an isomorphism \\(\vee\mu: \mathfrak{X}^k(M)\xrightarrow{\cong}\Omega^{n-k}(M)\\). From this, we induce a degree 1 differential \\(\Delta_\mu\\) on \\(\mathfrak{X}^\bullet(M)\\) from the de Rham differential \\(d\\) on \\(\Omega^\bullet(M)\\), defined by \\(\Delta_\mu= (\vee\mu)^{-1}\circ d\circ\vee\mu\\), making \\(\mathfrak{X}^\bullet(M)\\) into a cochain complex isomorphic to \\(\Omega^\bullet(M)[k]\\); in particular \\(H^k(\mathfrak{X})=H^{n+k}(\Omega)\\).
 
@@ -47,3 +56,8 @@ Now, we can identify \\(\text{PV}^\bullet[[\hbar]]\\) with the graded-commutativ
 \\end{aligned} \\]
 
 and under our identification this becomes \\[\hbar\Delta_\mu = \hbar \sum_i \partial_{x^i}\partial_{\xi_i} + \sum_i (\partial_{x^i}b)\partial_{\xi_i} - \sum_{i,j}a_{ij}x^i\partial_{\xi_j}\\] The computation of the degree 0 cohomology of a given polynomial \\(f\in\mathbb{K}[[x_1,...,x_n]]\\) under this differential is taken up in Gwilliam, Johnson-Freyd where it is shown the answer is precisely the Feynman diagram expansion for the expectation of \\(f\\) which we expect.
+
+
+References
+-------------------------------------------------------------------------------
+* [A note on the anti-bracket formalism](https://inspirehep.net/literature/294397)

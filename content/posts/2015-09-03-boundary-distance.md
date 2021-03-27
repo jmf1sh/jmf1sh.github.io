@@ -1,8 +1,10 @@
----
-title: "Boundary Distance"
-date: 2015-09-03
-draft: false
----
++++
+title = "Boundary Distance"
+date = 2015-09-03
+draft = false
+categories = ["uncategorized"]
+tags = []
++++
 
 This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
 

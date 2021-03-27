@@ -6,7 +6,7 @@ categories = ["physics"]
 tags = ["classical-mechanics"]
 +++
 
-This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
+This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/). The original post can be found [here](https://mathphysseminar.blogspot.com/2011/08/classical-mechanics-2-euler-lagrange.html).
 
 
 After the previous post, we are now familiar with Newton's 2nd law

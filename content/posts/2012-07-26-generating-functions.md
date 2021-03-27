@@ -1,14 +1,16 @@
----
-title: "Generating functions"
-date: 2012-07-26
-draft: false
----
++++
+title = "Generating functions"
+date = 2012-07-26
+draft = false
+categories = ["geometry", "physics"]
+tags = ["classical-mechanics", "symplectic-geometry"]
++++
 
-This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
+This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/). The original post can be found [here](https://mathphysseminar.blogspot.com/2012/07/generating-functions.html).
 
 
- Method of Generating Functions
-
+Method of Generating Functions
+-------------------------------------------------------------------------------
 
 Let \\(X\\) and \\(Y\\) be two smooth manifolds, and let \\(M = T^\ast X, N = T^\ast Y\\) with corresponding symplectic forms \\(\omega_M\\) and \\(\omega_N\\).
 
@@ -50,6 +52,7 @@ Note the simlarity to Hamilton's equations. By the implicit function theorem, we
 
 
 Different Types of Generating Functions
+-------------------------------------------------------------------------------
 
 We now concentrate on the special case of \\(M = T^\ast \mathbb{R} = \mathbb{R} \times \mathbb{R}^\ast\\). Note that this is a cotangent bundle in two ways: \\(T^\ast \mathbb{R} \cong T^\ast \mathbb{R}^\ast\\). Hence we can construct local diffeomorphisms \\(T^\ast \mathbb{R} \to T^\ast \mathbb{R}\\) in four ways, by taking functions of the forms
 

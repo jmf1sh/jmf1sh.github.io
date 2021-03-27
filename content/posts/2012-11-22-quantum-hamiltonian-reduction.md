@@ -1,8 +1,10 @@
----
-title: "An exercise in quantum Hamiltonian reduction"
-date: 2012-11-22
-draft: false
----
++++
+title = "An exercise in quantum Hamiltonian reduction"
+date = 2012-11-22
+draft = false
+categories = ["uncategorized"]
+tags = []
++++
 
 This post has been migrated from my old blog, the
 [math-physics learning seminar](https://mathphysseminar.blogspot.com/).

@@ -1,8 +1,10 @@
----
-title: "Geometry of curved spacetime, part 3"
-date: 2012-02-04
-draft: false
----
++++
+title = "Geometry of curved spacetime, part 3"
+date = 2012-02-04
+draft = false
+categories = ["uncategorized"]
+tags = []
++++
 
 This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
 

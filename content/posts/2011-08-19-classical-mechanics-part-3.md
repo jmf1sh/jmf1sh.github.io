@@ -6,7 +6,7 @@ categories = ["physics"]
 tags = ["classical-mechanics"]
 +++
 
-This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
+This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/). The original post can be found [here](https://mathphysseminar.blogspot.com/2011/08/classical-mechanics-3-hamiltons-action.html).
 
 
 We saw before that Newton's 2nd law can be written in a more general form as

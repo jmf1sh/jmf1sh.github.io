@@ -1,8 +1,10 @@
----
-title: "The Weyl and Wigner transforms"
-date: 2012-12-13
-draft: false
----
++++
+title = "The Weyl and Wigner transforms"
+date = 2012-12-13
+draft = false
+categories = ["uncategorized"]
+tags = []
++++
 
 This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
 

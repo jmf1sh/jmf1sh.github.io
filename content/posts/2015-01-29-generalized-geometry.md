@@ -1,9 +1,10 @@
-
----
-title: "What is generalized geometry?"
-date: 2015-01-29
-draft: false
----
++++
+title = "What is generalized geometry?"
+date = 2015-01-29
+draft = false
+categories = ["uncategorized"]
+tags = []
++++
 
 This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
 

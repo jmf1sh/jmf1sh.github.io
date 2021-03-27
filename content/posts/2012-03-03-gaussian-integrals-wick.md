@@ -1,8 +1,10 @@
----
-title: "Gaussian integrals and Wick's theorem"
-date: 2012-03-03 15:00:00Z
-draft: false
----
++++
+title = "Gaussian integrals and Wick's theorem"
+date = 2012-03-03T15:00:00Z
+draft = false
+categories = ["uncategorized"]
+tags = []
++++
 
 This post has been migrated from my old blog, the
 [math-physics learning seminar](https://mathphysseminar.blogspot.com/).

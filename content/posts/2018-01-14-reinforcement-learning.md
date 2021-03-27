@@ -1,8 +1,10 @@
----
-title: "Introduction to Reinforcement Learning"
-date: 2018-01-14
-draft: false
----
++++
+title = "Introduction to Reinforcement Learning"
+date = 2018-01-14
+draft = false
+categories = ["uncategorized"]
+tags = []
++++
 
 I would like to record the basic formalism of reinforcement learning. Hopefully,
 this will lead to a post or series of posts giving a basic tensorflow

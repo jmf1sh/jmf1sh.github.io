@@ -1,8 +1,10 @@
----
-title: "Hamilton-Jacobi equation and Riemannian distance"
-date: 2015-08-31
-draft: false
----
++++
+title = "Hamilton-Jacobi equation and Riemannian distance"
+date = 2015-08-31
+draft = false
+categories = ["uncategorized"]
+tags = []
++++
 
 This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
 

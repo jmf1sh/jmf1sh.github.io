@@ -1,8 +1,10 @@
----
-title: "Fadeev-Popov ghosts"
-date: 2012-12-21
-draft: false
----
++++
+title = "Fadeev-Popov ghosts"
+date = 2012-12-21
+draft = false
+categories = ["uncategorized"]
+tags = []
++++
 
 This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
 

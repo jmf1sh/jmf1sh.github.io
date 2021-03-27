@@ -1,10 +1,12 @@
----
-title: "Classical mechanics, part 5"
-date: 2011-08-25
-draft: false
----
++++
+title = "Classical mechanics, part 5"
+date = 2011-08-25
+draft = false
+categories = ["phyics"]
+tags = ["classical-mechanics"]
++++
 
-This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
+This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/). The original post can be found [here](https://mathphysseminar.blogspot.com/2011/08/classical-mechanics-5-symplectic.html).
 
 
 As we saw in the previous post, the equations of motion for a mechanical system can be cast into a 1st order form called Hamilton's equations, which are naturally interpreted as describing a path in the phase space \\(T^\ast M\\) associated to the configuration space \\(M\\). Let us investigate the geometry of \\(T^\ast M\\) see why Hamilton's equations are so nice.

@@ -1,8 +1,10 @@
----
-title: "Euler beta function and Dirichlet distribution"
-date: 2018-07-10
-draft: false
----
++++
+title = "Euler beta function and Dirichlet distribution"
+date = 2018-07-10
+draft = false
+categories = ["uncategorized"]
+tags = []
++++
 
 Let's remind ourselves how about the Euler beta function, defined as
 

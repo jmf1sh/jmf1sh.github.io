@@ -1,9 +1,10 @@
----
-
-title: "Introduction to Gaussian integrals"
-date: 2012-03-03 09:00:00Z
-draft: false
----
++++
+title = "Introduction to Gaussian integrals"
+date = 2012-03-03T09:00:00Z
+draft = false
+categories = ["uncategorized"]
+tags = []
++++
 
 This post has been migrated from my old blog, the
 [math-physics learning seminar](https://mathphysseminar.blogspot.com/).

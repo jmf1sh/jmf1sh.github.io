@@ -1,8 +1,10 @@
----
-title: "Circle diffeomorphisms"
-date: 2012-07-13
-draft: false
----
++++
+title = "Circle diffeomorphisms"
+date = 2012-07-13
+draft = false
+categories = ["uncategorized"]
+tags = []
++++
 
 This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
 
