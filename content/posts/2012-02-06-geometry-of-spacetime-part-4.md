@@ -1,8 +1,10 @@
----
-title: "Geometry of curved spacetime, part 4"
-date: 2012-02-06
-draft: false
----
++++
+title = "Geometry of curved spacetime, part 4"
+date = 2012-02-06
+draft = false
+categories = ["geometry", "phyics"]
+tags = ["general-relativity"]
++++
 
 This post has been migrated from my old blog, the [math-physics learning seminar](https://mathphysseminar.blogspot.com/).
 
