@@ -2,7 +2,7 @@
 title = "Geometry of curved spacetime, part 4"
 date = 2012-02-06
 draft = false
-categories = ["geometry", "phyics"]
+categories = ["geometry", "physics"]
 tags = ["general-relativity"]
 +++
 
