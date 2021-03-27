@@ -2,7 +2,7 @@
 title = "Susskind on string theory"
 date = 2011-10-05
 draft = false
-categories = ["phyics"]
+categories = ["physics"]
 tags = ["string-theory"]
 +++
 

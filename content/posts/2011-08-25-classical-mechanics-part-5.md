@@ -2,7 +2,7 @@
 title = "Classical mechanics, part 5"
 date = 2011-08-25
 draft = false
-categories = ["phyics"]
+categories = ["physics"]
 tags = ["classical-mechanics"]
 +++
 
