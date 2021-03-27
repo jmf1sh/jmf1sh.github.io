@@ -2,78 +2,73 @@
 
 <html lang="en-us">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>jonathan&#39;s blog</title>
-    <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="Jonathan Fisher">
-    <meta name="generator" content="Hugo 0.81.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+<head>
+  <title>Generating functions - jonathan&#39;s blog</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="The HTML5 Herald" />
+<meta name="author" content="Jonathan Fisher" /><meta property="og:title" content="Generating functions" />
+<meta property="og:description" content="This post has been migrated from my old blog, the math-physics learning seminar.
+Method of Generating Functions
+Let \(X\) and \(Y\) be two smooth manifolds, and let \(M = T^\ast X, N = T^\ast Y\) with corresponding symplectic forms \(\omega_M\) and \(\omega_N\)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jmf1sh.github.io/posts/2012-07-26-generating-functions/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2012-07-26T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2012-07-26T00:00:00&#43;00:00" />
 
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Generating functions"/>
+<meta name="twitter:description" content="This post has been migrated from my old blog, the math-physics learning seminar.
+Method of Generating Functions
+Let \(X\) and \(Y\) be two smooth manifolds, and let \(M = T^\ast X, N = T^\ast Y\) with corresponding symplectic forms \(\omega_M\) and \(\omega_N\)."/>
+
+<meta name="generator" content="Hugo 0.81.0" />
     
-   <script>
-  MathJax = {
-    loader: {load: ['[tex]/ams']},
-    tex: {
-      packages: {'[+]': ['ams']},
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$','$$'], ['\\[', '\\]']],
-      processEscapes: true,
-      processEnvironments: true
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-    }
-  };
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
 
-  window.addEventListener('load', (event) => {
-      document.querySelectorAll("mjx-container").forEach(function(x){
-          x.parentElement.classList += 'has-jax'})
-  });
-
-</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script type="text/javascript" id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://jmf1sh.github.io/fontawesome/css/all.min.css" />
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles-light.css" />
   </head>
 
-  <body>
-    <div id="container">
-      <header>
-        <h1>
-          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
-        </h1>
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+            </h1>
 
-        <ul id="social-media">
-          
-
-          
-          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-          
-
-          
-          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
-          
-
-          
-          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
-          
-
-          
-
-          
-        </ul>
-        
-        <p><em>mathematics, physics, programming, and machine learning</em></p>
-        
-      </header>
-
+      <ul id="social-media">
+             <li>
+               <a href="https://github.com/jmf1sh" title="GitHub">
+               <i class="fab fa-github fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://gitlab.com/jmf1sh" title="GitLab">
+               <i class="fab fa-gitlab fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://linkedin.com/in/jonathanfisher10" title="LinkedIn">
+               <i class="fab fa-linkedin fa-lg"></i>
+               </a>
+             </li>
+      </ul>
       
+      <p><em>mathematics, physics, programming, and machine learning</em></p>
+      
+    </header>
+
+    
 <nav>
     <ul>
         
@@ -105,7 +100,7 @@
 </nav>
 
 
-      <main>
+    <main>
 
 
 
@@ -136,44 +131,44 @@
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
 <p>Method of Generating Functions</p>
-<p>Let $X$ and $Y$ be two smooth manifolds, and let $M = T^\ast X, N = T^\ast Y$ with corresponding symplectic forms $\omega_M$ and $\omega_N$.</p>
-<p>Question: How can we produce symplectomorphisms $\phi: M \to N$?</p>
+<p>Let \(X\) and \(Y\) be two smooth manifolds, and let \(M = T^\ast X, N = T^\ast Y\) with corresponding symplectic forms \(\omega_M\) and \(\omega_N\).</p>
+<p>Question: How can we produce symplectomorphisms \(\phi: M \to N\)?</p>
 <p>The most important construction from classical mechanics is the method of generating functions. I will outline this method, shameless stolen from Ana Cannas da Silva&rsquo;s lecture notes.</p>
-<p>Suppose we have a smooth function $f \in C^\infty(X \times Y)$. Then its graph $\Gamma$ is a submanifold of $M \times N$: $ \Gamma = { (x,y, df_{x,y}) \in M \times N }$. Since $M \times N$ is a product, we have projections $\pi_M, \pi_N$, and this allows us to write the graph as</p>
-<p>$$ \Gamma = { (x, y, df_x, df_y) }$$</p>
-<p>Now there is a not-so-obvious trick: we consider the twisted graph $\Gamma^\sigma$ given by</p>
-<p>$$ \Gamma^\sigma =  {(x,y, df_x, -df_y) } $$</p>
+<p>Suppose we have a smooth function \(f \in C^\infty(X \times Y)\). Then its graph \(\Gamma\) is a submanifold of \(M \times N\): \( \Gamma = { (x,y, df_{x,y}) \in M \times N }\). Since \(M \times N\) is a product, we have projections \(\pi_M, \pi_N\), and this allows us to write the graph as</p>
+<p>\[ \Gamma = { (x, y, df_x, df_y) }\]</p>
+<p>Now there is a not-so-obvious trick: we consider the twisted graph \(\Gamma^\sigma\) given by</p>
+<p>\[ \Gamma^\sigma =  {(x,y, df_x, -df_y) } \]</p>
 <p>Note the minus sign.</p>
-<p>Proposition If $\Gamma^\sigma$ is the graph of a diffeomorphism $\phi: M \to N$, then $\phi$ is a symplectomorphism.</p>
-<p>Proof By construction, $\Gamma^\sigma$ is a Lagrangian submanifold of $M \times N$ with respect to the twisted symplectic form $\pi_M^\ast \omega_M - \pi_N^\ast \omega_N$. It is a standard fact that a diffeomorphism is a symplectomorphism iff its graph is Lagrangian with respect to the twisted symplectic form, so we&rsquo;re done.</p>
+<p>Proposition If \(\Gamma^\sigma\) is the graph of a diffeomorphism \(\phi: M \to N\), then \(\phi\) is a symplectomorphism.</p>
+<p>Proof By construction, \(\Gamma^\sigma\) is a Lagrangian submanifold of \(M \times N\) with respect to the twisted symplectic form \(\pi_M^\ast \omega_M - \pi_N^\ast \omega_N\). It is a standard fact that a diffeomorphism is a symplectomorphism iff its graph is Lagrangian with respect to the twisted symplectic form, so we&rsquo;re done.</p>
 <p>Now we have:</p>
-<p>Modified question: Given $f \in C^\infty(M \times N)$, when is its graph the graph of a diffeomorphism $\phi: M \to N$?</p>
-<p>Pick coordinates $x$ on $X$ and $y$ on $Y$, with corresponding momenta $\xi$ and $\eta$. Then if $\phi(x,\xi) = (y,\eta)$, we obtain</p>
-<p>$$ \xi = d_x f, \ \eta = -d_y f $$</p>
-<p>Note the simlarity to Hamilton&rsquo;s equations. By the implicit function theorem, we can construct a (local) diffeomorphism $\phi$ as long as $f$ is sufficiently non-degenerate.</p>
+<p>Modified question: Given \(f \in C^\infty(M \times N)\), when is its graph the graph of a diffeomorphism \(\phi: M \to N\)?</p>
+<p>Pick coordinates \(x\) on \(X\) and \(y\) on \(Y\), with corresponding momenta \(\xi\) and \(\eta\). Then if \(\phi(x,\xi) = (y,\eta)\), we obtain</p>
+<p>\[ \xi = d_x f, \ \eta = -d_y f \]</p>
+<p>Note the simlarity to Hamilton&rsquo;s equations. By the implicit function theorem, we can construct a (local) diffeomorphism \(\phi\) as long as \(f\) is sufficiently non-degenerate.</p>
 <p>Different Types of Generating Functions</p>
-<p>We now concentrate on the special case of $M = T^\ast \mathbb{R} = \mathbb{R} \times \mathbb{R}^\ast$. Note that this is a cotangent bundle in two ways: $T^\ast \mathbb{R} \cong T^\ast \mathbb{R}^\ast$. Hence we can construct local diffeomorphisms $T^\ast \mathbb{R} \to T^\ast \mathbb{R}$ in four ways, by taking functions of the forms</p>
-<p>$$ f(x_1, x_2), \ f(x_1, p_2), \ f(p_1, x_2), \ f(p_1, p_2) $$
+<p>We now concentrate on the special case of \(M = T^\ast \mathbb{R} = \mathbb{R} \times \mathbb{R}^\ast\). Note that this is a cotangent bundle in two ways: \(T^\ast \mathbb{R} \cong T^\ast \mathbb{R}^\ast\). Hence we can construct local diffeomorphisms \(T^\ast \mathbb{R} \to T^\ast \mathbb{R}\) in four ways, by taking functions of the forms</p>
+<p>\[ f(x_1, x_2), \ f(x_1, p_2), \ f(p_1, x_2), \ f(p_1, p_2) \]
 Origins from the Action Principle, and Hamilton-Jacobi</p>
 <p>Suppose that we have two actions</p>
-<p>$$ S_1 = \int p_1 \dot{q}_1 - H_1 dt, \ S_2 = \int p_2 \dot{q}_2 - H_2 dt $$</p>
+<p>\[ S_1 = \int p_1 \dot{q}_1 - H_1 dt, \ S_2 = \int p_2 \dot{q}_2 - H_2 dt \]</p>
 <p>which give rise to the same dynamics. Then the Lagrangians must differ by a total derivative, i.e.</p>
-<p>$$ p_1 \dot{q}_1 - H_1 = p_2 \dot{q}_2 - H_2  + \frac{d f}{dt} $$</p>
-<p>Suppose that $f = -q_2 p_2 + g(q_1, p_2, t)$. Then we have</p>
-<p>$$ p_1 \dot{q}_1 - H_1 = -q_2 \dot{p}_2 - H_2 + \frac{\partial g}{\partial t} + \frac{\partial g}{\partial q_1}\dot{q}_1 + \frac{\partial g}{\partial p_2} \dot{p_2} $$</p>
+<p>\[ p_1 \dot{q}_1 - H_1 = p_2 \dot{q}_2 - H_2  + \frac{d f}{dt} \]</p>
+<p>Suppose that \(f = -q_2 p_2 + g(q_1, p_2, t)\). Then we have</p>
+<p>\[ p_1 \dot{q}_1 - H_1 = -q_2 \dot{p}_2 - H_2 + \frac{\partial g}{\partial t} + \frac{\partial g}{\partial q_1}\dot{q}_1 + \frac{\partial g}{\partial p_2} \dot{p_2} \]</p>
 <p>Comparing coefficients, we find</p>
-<p>$$ p_1 = \frac{\partial g}{\partial q_1}, \ q_2 = \frac{\partial g}{\partial p_2}, \ H_2 = H_1 + \frac{\partial g}{\partial t} $$</p>
-<p>Now suppose that the coordinates $(q_2, p_2)$ are chosen so that Hamilton&rsquo;s equations become</p>
-<p>$$ \dot{q_2} = 0, \ \dot{p}_2 = 0 $$</p>
-<p>Then we must have $H_2 = 0$, i.e.</p>
-<p>$$ H_1 + \frac{\partial g}{\partial t} = 0 $$</p>
-<p>Now we also have $\partial H_2 / \partial p_2 = 0$, so this tells us that $g$ is independent of $p_2$, i.e. $g = g(q_1, t)$. Since $p_1 = \partial g / \partial q_1$, we obtain</p>
-<p>$$ \frac{\partial g}{\partial t} + H_1(q_1, \frac{\partial g}{\partial q_1}) = 0 $$</p>
+<p>\[ p_1 = \frac{\partial g}{\partial q_1}, \ q_2 = \frac{\partial g}{\partial p_2}, \ H_2 = H_1 + \frac{\partial g}{\partial t} \]</p>
+<p>Now suppose that the coordinates \((q_2, p_2)\) are chosen so that Hamilton&rsquo;s equations become</p>
+<p>\[ \dot{q_2} = 0, \ \dot{p}_2 = 0 \]</p>
+<p>Then we must have \(H_2 = 0\), i.e.</p>
+<p>\[ H_1 + \frac{\partial g}{\partial t} = 0 \]</p>
+<p>Now we also have \(\partial H_2 / \partial p_2 = 0\), so this tells us that \(g\) is independent of \(p_2\), i.e. \(g = g(q_1, t)\). Since \(p_1 = \partial g / \partial q_1\), we obtain</p>
+<p>\[ \frac{\partial g}{\partial t} + H_1(q_1, \frac{\partial g}{\partial q_1}) = 0 \]</p>
 <p>This is the Hamilton-Jacobi equation, usually written as</p>
-<p>$$ \frac{\partial S}{\partial t} + H(x, \frac{\partial S}{\partial x}) = 0 $$</p>
+<p>\[ \frac{\partial S}{\partial t} + H(x, \frac{\partial S}{\partial x}) = 0 \]</p>
 <p>Note the similarity to the Schrodinger equation! In fact, one can derive the Hamilton-Jacobi equation from the Schrodinger equation by taking a wavefunction of the form</p>
-<p>$$ \psi(x,t) = A(x,t) \exp({\frac{i}{\hbar} S(x,t)}) $$</p>
-<p>and expanding in powers of $\hbar$. This also helps to motivate the path integral formulation of quantum theory.</p>
+<p>\[ \psi(x,t) = A(x,t) \exp({\frac{i}{\hbar} S(x,t)}) \]</p>
+<p>and expanding in powers of \(\hbar\). This also helps to motivate the path integral formulation of quantum theory.</p>
 
 
 </article>

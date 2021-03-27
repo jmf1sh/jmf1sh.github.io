@@ -2,78 +2,73 @@
 
 <html lang="en-us">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>jonathan&#39;s blog</title>
-    <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="Jonathan Fisher">
-    <meta name="generator" content="Hugo 0.81.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+<head>
+  <title>Classical mechanics, part 2 - jonathan&#39;s blog</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="The HTML5 Herald" />
+<meta name="author" content="Jonathan Fisher" /><meta property="og:title" content="Classical mechanics, part 2" />
+<meta property="og:description" content="This post has been migrated from my old blog, the math-physics learning seminar.
+After the previous post, we are now familiar with Newton&rsquo;s 2nd law
+\[ \mathbf{F} = m\mathbf{a}, \]" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jmf1sh.github.io/posts/2011-08-19-classical-mechanics-part-2/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2011-08-19T15:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2011-08-19T15:00:00&#43;00:00" />
 
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Classical mechanics, part 2"/>
+<meta name="twitter:description" content="This post has been migrated from my old blog, the math-physics learning seminar.
+After the previous post, we are now familiar with Newton&rsquo;s 2nd law
+\[ \mathbf{F} = m\mathbf{a}, \]"/>
+
+<meta name="generator" content="Hugo 0.81.0" />
     
-   <script>
-  MathJax = {
-    loader: {load: ['[tex]/ams']},
-    tex: {
-      packages: {'[+]': ['ams']},
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$','$$'], ['\\[', '\\]']],
-      processEscapes: true,
-      processEnvironments: true
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-    }
-  };
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
 
-  window.addEventListener('load', (event) => {
-      document.querySelectorAll("mjx-container").forEach(function(x){
-          x.parentElement.classList += 'has-jax'})
-  });
-
-</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script type="text/javascript" id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://jmf1sh.github.io/fontawesome/css/all.min.css" />
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles-light.css" />
   </head>
 
-  <body>
-    <div id="container">
-      <header>
-        <h1>
-          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
-        </h1>
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+            </h1>
 
-        <ul id="social-media">
-          
-
-          
-          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-          
-
-          
-          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
-          
-
-          
-          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
-          
-
-          
-
-          
-        </ul>
-        
-        <p><em>mathematics, physics, programming, and machine learning</em></p>
-        
-      </header>
-
+      <ul id="social-media">
+             <li>
+               <a href="https://github.com/jmf1sh" title="GitHub">
+               <i class="fab fa-github fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://gitlab.com/jmf1sh" title="GitLab">
+               <i class="fab fa-gitlab fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://linkedin.com/in/jonathanfisher10" title="LinkedIn">
+               <i class="fab fa-linkedin fa-lg"></i>
+               </a>
+             </li>
+      </ul>
       
+      <p><em>mathematics, physics, programming, and machine learning</em></p>
+      
+    </header>
+
+    
 <nav>
     <ul>
         
@@ -105,7 +100,7 @@
 </nav>
 
 
-      <main>
+    <main>
 
 
 
@@ -122,7 +117,26 @@
         </li>
         
         
+        <li>
+            Categories:
+            <em>
+                
+                    
+                    <a href="https://jmf1sh.github.io/categories/physics">physics</a>
+                
+            </em>
+        </li>
+        
 
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="https://jmf1sh.github.io/tags/classical-mechanics">#classical-mechanics</a>
+                
+            </em>
+        </li>
         
 
         <li>3 minute read</li>
@@ -136,37 +150,35 @@
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
 <p>After the previous post, we are now familiar with Newton&rsquo;s 2nd law</p>
-<p>$$
-\mathbf{F} = m\mathbf{a},
-$$</p>
-<p>which (suitably interpreted) holds for any system of $N$ particles. However, this equation requires the use of cartesian coordinates, which for many systems may not be the most convenient choice. Suppose we have some other coordinates $q^i = q^i(x^j)$. What is the correct analogue of Newton&rsquo;s 2nd law for the $q$-coordinates?</p>
-<p>To make life easier, we will assume for now that the force $\mathbf{F}$ is conservative; i.e.</p>
-<p>$$ \mathbf{F} = -\nabla V(x) $$</p>
-<p>for some potential function $V(x)$. Under this assumption, Newton&rsquo;s 2nd law is</p>
-<p>$$ m\mathbf{a} + \nabla V(x) = 0. $$</p>
-<p>Let us define the function $T$ by</p>
-<p>$$ T(x,v) = \frac{1}{2}m |v|^2, $$</p>
-<p>and define the function $L$ as</p>
-<p>$$ L(x,v) = T(x,v) - V(x). $$</p>
+<p>\[ \mathbf{F} = m\mathbf{a}, \]</p>
+<p>which (suitably interpreted) holds for any system of \(N\) particles. However, this equation requires the use of cartesian coordinates, which for many systems may not be the most convenient choice. Suppose we have some other coordinates \(q^i = q^i(x^j)\). What is the correct analogue of Newton&rsquo;s 2nd law for the \(q\)-coordinates?</p>
+<p>To make life easier, we will assume for now that the force \(\mathbf{F}\) is conservative; i.e.</p>
+<p>\[ \mathbf{F} = -\nabla V(x) \]</p>
+<p>for some potential function \(V(x)\). Under this assumption, Newton&rsquo;s 2nd law is</p>
+<p>\[ m\mathbf{a} + \nabla V(x) = 0. \]</p>
+<p>Let us define the function \(T\) by</p>
+<p>\[ T(x,v) = \frac{1}{2}m |v|^2, \]</p>
+<p>and define the function \(L\) as</p>
+<p>\[ L(x,v) = T(x,v) - V(x). \]</p>
 <p>Then we have immediately that Newton&rsquo;s 2nd law is equivalent to</p>
-<p>$$ \frac{d}{dt}\frac{\partial L}{\partial v}(x, \dot{x}) - \frac{\partial L}{\partial x}(x,\dot{x})  = 0. $$</p>
+<p>\[ \frac{d}{dt}\frac{\partial L}{\partial v}(x, \dot{x}) - \frac{\partial L}{\partial x}(x,\dot{x})  = 0. \]</p>
 <p>Why go through the trouble of introducing these auxiliary functions and rewriting Newton&rsquo;s 2nd law in this way? The answer lies in the following theorem.</p>
-<p>Theorem For any choice of coordinates $y = y(x)$, Newton&rsquo;s 2nd law is equivalent to the equations</p>
-<p>$$ \frac{d}{dt}\frac{\partial \tilde{L}}{\partial w}(y, \dot{y}) - \frac{\partial \tilde{L}}{\partial y}(y,\dot{y})  = 0, $$</p>
-<p>where $w = dY_x(v)$ and $\tilde{L}(y,w) = L(x(y,w), v(y,w)$. These equations are called the Euler-Lagrange equations.</p>
-<p>The proof of this theorem is a straightforward calculation using the chain rule. Let $M$ denote the manifold $\mathbb{R}^{3N}$ (or some open subset thereof). The coordinate change $y = y(x) $ can be thought of as a diffeomorphism $Y: M \to M$ given by $x \mapsto y(x) $. The differential $ dY: TM \to TM$ is also a diffeomorphism. In coordinates, we have</p>
-<p>$$ y = y(x) $$</p>
-<p>$$ w = dY_x(v)  = Jv $$</p>
-<p>where $y,w$ are coordinates on the target $TM$.</p>
-<p>Now we need to compute the derivatives of $\tilde{L}$.</p>
-<p>$$ \frac{\partial L}{\partial x} = \frac{\partial \tilde{L}}{\partial y}\frac{\partial y}{\partial x} + \frac{\partial \tilde{L}}{\partial w}\frac{\partial w}{\partial x} = \tilde{L}_y J + \tilde{L}_w H v $$</p>
-<p>where $J$ is the matrix of mixed partials and $H$ is the Hessian matrix.</p>
-<p>$$ \frac{\partial L}{\partial v} = \frac{\partial \tilde{L}}{\partial y} \frac{\partial y}{\partial v} + \frac{\partial \tilde{L}}{\partial w} \frac{\partial w}{\partial v} = \tilde{L}_w J $$</p>
+<p>Theorem For any choice of coordinates \(y = y(x)\), Newton&rsquo;s 2nd law is equivalent to the equations</p>
+<p>\[ \frac{d}{dt}\frac{\partial \tilde{L}}{\partial w}(y, \dot{y}) - \frac{\partial \tilde{L}}{\partial y}(y,\dot{y})  = 0, \]</p>
+<p>where \(w = dY_x(v)\) and \(\tilde{L}(y,w) = L(x(y,w), v(y,w)\). These equations are called the Euler-Lagrange equations.</p>
+<p>The proof of this theorem is a straightforward calculation using the chain rule. Let \(M\) denote the manifold \(\mathbb{R}^{3N}\) (or some open subset thereof). The coordinate change \(y = y(x) \) can be thought of as a diffeomorphism \(Y: M \to M\) given by \(x \mapsto y(x) \). The differential \( dY: TM \to TM\) is also a diffeomorphism. In coordinates, we have</p>
+<p>\[ y = y(x) \]</p>
+<p>\[ w = dY_x(v)  = Jv \]</p>
+<p>where \(y,w\) are coordinates on the target \(TM\).</p>
+<p>Now we need to compute the derivatives of \(\tilde{L}\).</p>
+<p>\[ \frac{\partial L}{\partial x} = \frac{\partial \tilde{L}}{\partial y}\frac{\partial y}{\partial x} + \frac{\partial \tilde{L}}{\partial w}\frac{\partial w}{\partial x} = \tilde{L}_y J + \tilde{L}_w H v \]</p>
+<p>where \(J\) is the matrix of mixed partials and \(H\) is the Hessian matrix.</p>
+<p>\[ \frac{\partial L}{\partial v} = \frac{\partial \tilde{L}}{\partial y} \frac{\partial y}{\partial v} + \frac{\partial \tilde{L}}{\partial w} \frac{\partial w}{\partial v} = \tilde{L}_w J \]</p>
 <p>Then we have</p>
-<p>$$ \frac{d}{dt}\left( \tilde{L}_w J \right) = \frac{d}{dt}\tilde{L}_w J + \tilde{L}_w H \dot{x}  $$</p>
-<p>Subtracting $\frac{\partial L}{\partial x}$ from this and using the calculation above, we obtain</p>
-<p>$$ \left( \frac{d}{dt} \tilde{L}_w - \tilde{L}_y \right) J $$</p>
-<p>and since $J$ is invertible, this is $0$ if and only if $\frac{d}{dt} \tilde{L}_w - \tilde{L}_y$ is.</p>
+<p>\[ \frac{d}{dt}\left( \tilde{L}_w J \right) = \frac{d}{dt}\tilde{L}_w J + \tilde{L}_w H \dot{x}  \]</p>
+<p>Subtracting \(\frac{\partial L}{\partial x}\) from this and using the calculation above, we obtain</p>
+<p>\[ \left( \frac{d}{dt} \tilde{L}_w - \tilde{L}_y \right) J \]</p>
+<p>and since \(J\) is invertible, this is \(0\) if and only if \(\frac{d}{dt} \tilde{L}_w - \tilde{L}_y\) is.</p>
 <p>But this is exactly what we wanted to prove!</p>
 
 

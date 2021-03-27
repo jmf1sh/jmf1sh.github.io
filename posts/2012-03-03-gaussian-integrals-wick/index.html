@@ -2,78 +2,73 @@
 
 <html lang="en-us">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>jonathan&#39;s blog</title>
-    <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="Jonathan Fisher">
-    <meta name="generator" content="Hugo 0.81.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+<head>
+  <title>Gaussian integrals and Wick&#39;s theorem - jonathan&#39;s blog</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="The HTML5 Herald" />
+<meta name="author" content="Jonathan Fisher" /><meta property="og:title" content="Gaussian integrals and Wick&#39;s theorem" />
+<meta property="og:description" content="This post has been migrated from my old blog, the math-physics learning seminar.
+We saw in the last update that the generating function \(Z[J]\) can be expressed as
+\[ Z[J] = e^{\frac{1}{2} J \cdot A^{-1} J} \]" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jmf1sh.github.io/posts/2012-03-03-gaussian-integrals-wick/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2012-03-03T15:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2012-03-03T15:00:00&#43;00:00" />
 
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Gaussian integrals and Wick&#39;s theorem"/>
+<meta name="twitter:description" content="This post has been migrated from my old blog, the math-physics learning seminar.
+We saw in the last update that the generating function \(Z[J]\) can be expressed as
+\[ Z[J] = e^{\frac{1}{2} J \cdot A^{-1} J} \]"/>
+
+<meta name="generator" content="Hugo 0.81.0" />
     
-   <script>
-  MathJax = {
-    loader: {load: ['[tex]/ams']},
-    tex: {
-      packages: {'[+]': ['ams']},
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$','$$'], ['\\[', '\\]']],
-      processEscapes: true,
-      processEnvironments: true
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-    }
-  };
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
 
-  window.addEventListener('load', (event) => {
-      document.querySelectorAll("mjx-container").forEach(function(x){
-          x.parentElement.classList += 'has-jax'})
-  });
-
-</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script type="text/javascript" id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://jmf1sh.github.io/fontawesome/css/all.min.css" />
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles-light.css" />
   </head>
 
-  <body>
-    <div id="container">
-      <header>
-        <h1>
-          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
-        </h1>
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+            </h1>
 
-        <ul id="social-media">
-          
-
-          
-          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-          
-
-          
-          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
-          
-
-          
-          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
-          
-
-          
-
-          
-        </ul>
-        
-        <p><em>mathematics, physics, programming, and machine learning</em></p>
-        
-      </header>
-
+      <ul id="social-media">
+             <li>
+               <a href="https://github.com/jmf1sh" title="GitHub">
+               <i class="fab fa-github fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://gitlab.com/jmf1sh" title="GitLab">
+               <i class="fab fa-gitlab fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://linkedin.com/in/jonathanfisher10" title="LinkedIn">
+               <i class="fab fa-linkedin fa-lg"></i>
+               </a>
+             </li>
+      </ul>
       
+      <p><em>mathematics, physics, programming, and machine learning</em></p>
+      
+    </header>
+
+    
 <nav>
     <ul>
         
@@ -105,7 +100,7 @@
 </nav>
 
 
-      <main>
+    <main>
 
 
 
@@ -136,33 +131,33 @@
 
     <p>This post has been migrated from my old blog, the
 <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
-<p>We saw in the last update that the generating function $Z[J]$ can be expressed
+<p>We saw in the last update that the generating function \(Z[J]\) can be expressed
 as</p>
-<p>$$ Z[J] = e^{\frac{1}{2} J \cdot A^{-1} J} $$</p>
-<p>(at least as long as we&rsquo;ve normalize things so that $Z[0] = 1$. Now the
+<p>\[ Z[J] = e^{\frac{1}{2} J \cdot A^{-1} J} \]</p>
+<p>(at least as long as we&rsquo;ve normalize things so that \(Z[0] = 1\). Now the
 wonderful thing is that this is something we can compute explicitly:</p>
-<p>$$ Z[J] = \sum_{n = 0}^{\infty} \frac{(\frac{1}{2} A^{-1}_{ij} J^i J^j)^n}{n!} = \sum_{n=0}^\infty \frac{(A^{-1}_{ij} J^i J^j)^n}{2^n n!} $$</p>
-<p>For example, in the one-dimensional case (taking $A = 1$) we get</p>
-<p>$$ Z[J] = \sum_{n=0}^\infty \frac{J^{2n}}{2^n n!} $$</p>
+<p>\[ Z[J] = \sum_{n = 0}^{\infty} \frac{(\frac{1}{2} A^{-1}_{ij} J^i J^j)^n}{n!} = \sum_{n=0}^\infty \frac{(A^{-1}_{ij} J^i J^j)^n}{2^n n!} \]</p>
+<p>For example, in the one-dimensional case (taking \(A = 1\)) we get</p>
+<p>\[ Z[J] = \sum_{n=0}^\infty \frac{J^{2n}}{2^n n!} \]</p>
 <p>On the other hand, by the definition of the generating function we have</p>
-<p>$$ Z[J] = \sum_{n=0}^\infty \frac{\langle x^n \rangle}{n!} J^n $$</p>
+<p>\[ Z[J] = \sum_{n=0}^\infty \frac{\langle x^n \rangle}{n!} J^n \]</p>
 <p>Comparing coefficients, we find</p>
-<p>$$ \frac{\langle x^{2n} \rangle}{(2n)!} = \frac{1}{2^n n!} $$</p>
+<p>\[ \frac{\langle x^{2n} \rangle}{(2n)!} = \frac{1}{2^n n!} \]</p>
 <p>so that</p>
-<p>$$ \langle x^{2n} \rangle = \frac{(2n)!}{2^n n!}. $$</p>
-<p>Let&rsquo;s give a combinatorial description. Given $2n$ objects, in how many ways can we divide them into pairs? If we care about the order in which we pick the pairs, then we have</p>
-<p>$$ {2n \choose 2}{2n - 2 \choose 2} \cdots {2n-(2n-2) \choose 2} = \frac{(2n)!}{2^n} $$</p>
-<p>Of course, there are $n!$ ways of ordering the $n$ pairs, so after dividing by this (to account for the overcounting) we get exactly the expression for $\langle x^{2n} \rangle$. This is the first case of Wick&rsquo;s theorem.</p>
-<p>Now consider the general multidimensional case. Given $I = (i_1, \cdots, i_{2n})$, we define a contraction to be</p>
-<p>$$ \langle x^{j_1} x^{k_1} \rangle \cdots \langle x^{j_n} x^{k_n} \rangle $$</p>
-<p>where $j_1, k_1, \cdots, j_n, k_n$ is a choice of parition of $I$ into pairs.</p>
+<p>\[ \langle x^{2n} \rangle = \frac{(2n)!}{2^n n!}. \]</p>
+<p>Let&rsquo;s give a combinatorial description. Given \(2n\) objects, in how many ways can we divide them into pairs? If we care about the order in which we pick the pairs, then we have</p>
+<p>\[ {2n \choose 2}{2n - 2 \choose 2} \cdots {2n-(2n-2) \choose 2} = \frac{(2n)!}{2^n} \]</p>
+<p>Of course, there are \(n!\) ways of ordering the \(n\) pairs, so after dividing by this (to account for the overcounting) we get exactly the expression for \(\langle x^{2n} \rangle\). This is the first case of Wick&rsquo;s theorem.</p>
+<p>Now consider the general multidimensional case. Given \(I = (i_1, \cdots, i_{2n})\), we define a contraction to be</p>
+<p>\[ \langle x^{j_1} x^{k_1} \rangle \cdots \langle x^{j_n} x^{k_n} \rangle \]</p>
+<p>where \(j_1, k_1, \cdots, j_n, k_n\) is a choice of parition of \(I\) into pairs.</p>
 <p>Theorem (Wick&rsquo;s theorem, Isserlis' theorem) The expectation value</p>
-<p>$$ \langle x^{i_1} \cdots x^{i_{2n}} \rangle $$</p>
-<p>is the sum over all full contractions. There are $(2n)!/ 2^n n!$ terms in the sum.</p>
+<p>\[ \langle x^{i_1} \cdots x^{i_{2n}} \rangle \]</p>
+<p>is the sum over all full contractions. There are \((2n)!/ 2^n n!\) terms in the sum.</p>
 <p>Proof This follows from our formula for the power series of the generating
-function. The reason is that the coefficient of  $$J^I$$ in
-$$(\frac{1}{2} A^{-1}_{ij} J^i J^k)^n$$ is exactly given by summing products
-of $$A^{-1}_{ij}$$ over partitions of $$I$$ into pairs, and the $n!$ in the
+function. The reason is that the coefficient of  \(J^I\) in
+\((\frac{1}{2} A^{-1}_{ij} J^i J^k)^n\) is exactly given by summing products
+of \(A^{-1}_{ij}\) over partitions of \(I\) into pairs, and the \(n!\) in the
 denominator takes care of the overcounting.</p>
 <p>Next up: perturbation theory and Feynman diagrams.</p>
 

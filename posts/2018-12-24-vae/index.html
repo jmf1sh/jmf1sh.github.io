@@ -2,78 +2,71 @@
 
 <html lang="en-us">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>jonathan&#39;s blog</title>
-    <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="Jonathan Fisher">
-    <meta name="generator" content="Hugo 0.81.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+<head>
+  <title>Variational autoencoders - jonathan&#39;s blog</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="The HTML5 Herald" />
+<meta name="author" content="Jonathan Fisher" /><meta property="og:title" content="Variational autoencoders" />
+<meta property="og:description" content="See Autoencoding variational Bayes
+Evidence lower bound Suppose we have a probability space \(X\) from which we can sample, but whose probability density \(p(x)\) is unknown. How can we try to estimate \(p(x)\)?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jmf1sh.github.io/posts/2018-12-24-vae/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2018-12-24T00:00:00&#43;01:00" />
+<meta property="article:modified_time" content="2018-12-24T00:00:00&#43;01:00" />
 
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Variational autoencoders"/>
+<meta name="twitter:description" content="See Autoencoding variational Bayes
+Evidence lower bound Suppose we have a probability space \(X\) from which we can sample, but whose probability density \(p(x)\) is unknown. How can we try to estimate \(p(x)\)?"/>
+
+<meta name="generator" content="Hugo 0.81.0" />
     
-   <script>
-  MathJax = {
-    loader: {load: ['[tex]/ams']},
-    tex: {
-      packages: {'[+]': ['ams']},
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$','$$'], ['\\[', '\\]']],
-      processEscapes: true,
-      processEnvironments: true
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-    }
-  };
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
 
-  window.addEventListener('load', (event) => {
-      document.querySelectorAll("mjx-container").forEach(function(x){
-          x.parentElement.classList += 'has-jax'})
-  });
-
-</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script type="text/javascript" id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://jmf1sh.github.io/fontawesome/css/all.min.css" />
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles-light.css" />
   </head>
 
-  <body>
-    <div id="container">
-      <header>
-        <h1>
-          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
-        </h1>
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+            </h1>
 
-        <ul id="social-media">
-          
-
-          
-          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-          
-
-          
-          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
-          
-
-          
-          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
-          
-
-          
-
-          
-        </ul>
-        
-        <p><em>mathematics, physics, programming, and machine learning</em></p>
-        
-      </header>
-
+      <ul id="social-media">
+             <li>
+               <a href="https://github.com/jmf1sh" title="GitHub">
+               <i class="fab fa-github fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://gitlab.com/jmf1sh" title="GitLab">
+               <i class="fab fa-gitlab fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://linkedin.com/in/jonathanfisher10" title="LinkedIn">
+               <i class="fab fa-linkedin fa-lg"></i>
+               </a>
+             </li>
+      </ul>
       
+      <p><em>mathematics, physics, programming, and machine learning</em></p>
+      
+    </header>
+
+    
 <nav>
     <ul>
         
@@ -105,7 +98,7 @@
 </nav>
 
 
-      <main>
+    <main>
 
 
 
@@ -118,14 +111,39 @@
       <aside>
     <ul>
         <li>
-            <time class="post-date" datetime="2018-12-24T00:00:00Z">Dec 24, 2018</time>
+            <time class="post-date" datetime="2018-12-24T00:00:00&#43;01:00">Dec 24, 2018</time>
         </li>
         
         
-
+        <li>
+            Categories:
+            <em>
+                
+                    
+                    <a href="https://jmf1sh.github.io/categories/statistics">statistics</a>
+                
+                    , 
+                    <a href="https://jmf1sh.github.io/categories/machine-learning">machine-learning</a>
+                
+            </em>
+        </li>
         
 
-        <li>2 minute read</li>
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="https://jmf1sh.github.io/tags/vae">#vae</a>
+                
+                    , 
+                    <a href="https://jmf1sh.github.io/tags/generative-models">#generative-models</a>
+                
+            </em>
+        </li>
+        
+
+        <li>4 minute read</li>
     </ul>
 </aside>
 
@@ -135,38 +153,97 @@
 
 
     <p>See <a href="https://arxiv.org/abs/1312.6114">Autoencoding variational Bayes</a></p>
-<p>Suppose we have set $X$ with (<em>a priori</em> unknown) probability density function $p(x)$.
-We would like to find a lower-dimensional representation of $X$ in some latent space
-$Z$ by imposing a joint probability density $p(x, z)$.</p>
-<p><em>Assumptions.</em></p>
-<ol>
-<li>The marginal $p(x)$ is unknown but we can sample from $X$.</li>
-<li>We are free to choose the marginal $p(z)$.</li>
-<li>We are free to choose the <em>decoder</em> $p(x|z)$.</li>
-</ol>
-<p>The relationship between $X$ and $Z$ is encoded in the conditional probability
-densities $p(x|z)$ (the decoder) and $p(z|x)$ (the encoder). From Bayes' theorem,</p>
-<p>$$ p(z|x) = \frac{p(x|z) p(z)}{p(x)} $$</p>
-<p>So once we have specified the prior $p(z)$ and the decoder $p(x|z)$, we have no freedom
-to choose $p(z|x)$. Furthermore, without access to $p(x)$, we have no way to recover
-$p(x|z)$ analytically. To get around this problem, we introduce another probability
-density $q(z|x)$, the <em>approximate posterior</em>, which is intended to be a tractable
-approximation to the intractable $p(z|x)$. We can quantify the difference between
-the true posterior and approximate posterior with the Kullback-Leiber divergence,</p>
-<p>$$
-\begin{align*}
-D_{KL}(q(z|x)||p(z|x))
-&amp;= E_{z \sim q(z|x)}\left(\frac{\log q(z|x)}{\log p(z|x)}\right) \\\<br>
-&amp;=E_{z \sim q(z|x)}\left(\log q(z|x)-\log p(z|x)\right) \\\<br>
-&amp;=E_{z \sim q(z|x)}\left(\log q(z|x)-\log p(x,z)+\log p(x)\right) \\\<br>
-&amp;=E_{z \sim q(z|x)}\left(\log q(z|x)-\log p(x|z) - \log p(z) +\log p(x)\right) \\\<br>
+<h2 id="evidence-lower-bound">Evidence lower bound</h2>
+<p>Suppose we have a probability space \(X\) from which we can sample, but whose
+probability density \(p(x)\) is unknown. How can we try to estimate \(p(x)\)?
+Imagine that \(X\) is the set of all possible natural images, or the set of all
+English sentences. How do we assign probabilities to such objects?</p>
+<p>We can try to model \(X\) as follows. Let&rsquo;s suppose that there is some generative
+process \(Z \to X\) from some <em>latent variable</em> \(z\). We assume the following</p>
+<ul>
+<li>There is some process \(Z \to X\) with <em>tractable</em> condtional density
+\(p(x|z)\)</li>
+<li>There is some tractable prior \(p(z)\)
+In this setup, we are free to choose \(p(z)\) and \(p(x|z)\). However, once we have
+fixed these densities, the posterior \(p(z|x)\) is completely determined by Bayes'
+rule
+\[ p(z|x) = \frac{p(x|z)p(z)}{p(x)}, \]
+and is typically intractible.</li>
+</ul>
+<p>So once we have specified the prior \(p(z)\) and the decoder \(p(x|z)\), we have no
+freedom to choose \(p(z|x)\). Furthermore, without access to \(p(x)\), we have no
+way to recover \(p(x|z)\) analytically. To get around this problem, we introduce
+another probability density \(q(z|x)\), the <em>approximate posterior</em>, which is
+intended to be a tractable approximation to the intractable \(p(z|x)\). We can
+quantify the difference between the true posterior and approximate posterior
+with the Kullback-Leiber divergence,</p>
+<p>\[
+\begin{aligned}
+&amp; D_{KL}(q(z|x)||p(z|x)) \cr
+&amp;= E_{z \sim q(z|x)}\left(\frac{\log q(z|x)}{\log p(z|x)}\right) \cr
+&amp;=E_{z \sim q(z|x)}\left(\log q(z|x)-\log p(z|x)\right) \cr
+&amp;=E_{z \sim q(z|x)}\left(\log q(z|x)-\log p(x,z)+\log p(x)\right) \cr
+&amp;=E_{z \sim q(z|x)}\left(\log q(z|x)-\log p(x|z) - \log p(z) +\log p(x)\right) \cr
 &amp;=\log p(x)  + D_{KL}(q(z|x)||p(z)) - E_{z \sim q(z|x)}\left(\log p(x|z) \right)
-\end{align*}
-$$</p>
+\end{aligned}
+\]</p>
 <p>Rearranging this expression, we have</p>
-<p>$ \log p(x) = D_{KL}(q(z|x)||p(z|x)) + L $</p>
-<p>where $L$ is the <em>variational lower bound</em>,</p>
-<p>$$ L = -D_{KL}(q(z|x)||p(z)) + E_{z \sim q(z|x)}(\log p(x|z)) $$</p>
+<p>\[ \log p(x) = D_{KL}(q(z|x)||p(z|x)) + L \]</p>
+<p>where \(L\) is the <em>variational lower bound</em>,</p>
+<p>\[ L = -D_{KL}(q(z|x)||p(z)) + E_{z \sim q(z|x)}(\log p(x|z)) \]</p>
+<p>Since the Kullback-Leibler divergence is non-negative, we can we obtain the
+<em>evidence lower bound</em> (ELBO)</p>
+<p>\[ \log p(x) \geq -D_{KL}(q(z|x)||p(z)) + E_{z \sim q(z|x)}(\log p(x|z)) \]</p>
+<p>This inequality is true for <em>any</em> choice of \(p(z)\), \(q(z|x)\), and \(p(x|z)\). This
+gives us a natural optimization objective. Given a sample from \(X\), we typically
+try to maximize the likelihood of the observed data. Since the intractible
+\(\log p(x)\) is bounded by ELBO, we can maximize the ELBO as a proxy for the true
+log-likelihood.</p>
+<h2 id="reparametrization-trick">Reparametrization trick</h2>
+<p>The second term in the RHS of ELBO is an expectation over \(z \sim q(z|x)\).
+Suppose that our model \(q(z|x)\) depends differentiably on some parameters
+\(\phi\). The expectation can be approximated by taking a sample of \(z\) values.
+The question is, can we make this expression <em>differentiable</em> in \(\phi\)?
+Differentiability is a necessary conditon to be able to solve this problem using
+gradient descent/ascent.</p>
+<p>To obtain a differentiable expression, we assume that there is some <em>fixed</em>
+random variable \(\epsilon\), and that \(z\) is a <em>deterministic</em> function of
+\(\epsilon\) and \(x\):
+\[ z = g_\phi(\epsilon, x) \]
+Then we have
+\begin{aligned}
+E_{z \sim q(z|x)}[f(z)]
+&amp;= \int f(z) q(z|x) dz \cr
+&amp;= \int f(g_\phi(\epsilon, x)) p(\epsilon) d\epsilon
+\end{aligned}
+The latter expression can be approximated using a finite sample
+\(\epsilon \sim p(\epsilon)\), which is independent of \(\phi\), and therefore the
+approximation will be differentiable in \(\phi\).</p>
+<p>The mapping \(g_\phi: (x, \epsilon) \mapsto z\) can be interpreted as an
+<em>encoder</em> from \(X\) to \(Z\).</p>
+<h2 id="variational-autoencoder">Variational autoencoder</h2>
+<p>By making a few simplifications, including the reparametrization trick above,
+we can reinterpret aforementioned ELBO optimization problem as an autoencoder.
+Let us consider the following setup:</p>
+<ul>
+<li>\(p(\epsilon)\) is standard normal in \(d\) dimensions</li>
+<li>\(p(z)\) is standard normal in \(d\) dimensions
+dimensions</li>
+<li>\(q(z|x)\) is determined implictly by
+\(z = \mu_\phi(x) + \sigma_\phi(x) \cdot \epsilon\) via the reparametrization
+trick</li>
+<li>We have a <em>decoder</em> map \(f_\theta: Z \to X\)</li>
+<li>The conditional probability density \(p(x|z)\) is modeled as a Gaussian
+distribution centered on \(f(z)\) with some fixed covariance matrix</li>
+</ul>
+<p>Then in this case, the RHS of ELBO can be approximated by an expression that
+is <em>differentiable</em> in \((\phi, \theta)\). The expectation term involving
+\(p(x|z)\) simplifies to the sample-wise (negative) MSE between \(x\) and \(f(z)\),
+i.e. it is a kind of reconstruction error, and the KL-divergence term acts as a
+regularizer for the latent embedding. In summary, under the above
+simplifcations, <em>maximizing ELBO corresponds to training and autoencoder with a
+regularization term that encourages the distribution of observed data in latent
+space to be consistent with a fixed prior distribution</em> \(p(z)\).</p>
 
 
 </article>

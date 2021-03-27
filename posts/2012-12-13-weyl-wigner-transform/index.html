@@ -2,78 +2,71 @@
 
 <html lang="en-us">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>jonathan&#39;s blog</title>
-    <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="Jonathan Fisher">
-    <meta name="generator" content="Hugo 0.81.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+<head>
+  <title>The Weyl and Wigner transforms - jonathan&#39;s blog</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="The HTML5 Herald" />
+<meta name="author" content="Jonathan Fisher" /><meta property="og:title" content="The Weyl and Wigner transforms" />
+<meta property="og:description" content="This post has been migrated from my old blog, the math-physics learning seminar.
+Today I&rsquo;d like to try to understand better how deformation quantization is related to the usual canonical quantization, and especially how the latter might be used to deduce the former, i." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jmf1sh.github.io/posts/2012-12-13-weyl-wigner-transform/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2012-12-13T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2012-12-13T00:00:00&#43;00:00" />
 
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Weyl and Wigner transforms"/>
+<meta name="twitter:description" content="This post has been migrated from my old blog, the math-physics learning seminar.
+Today I&rsquo;d like to try to understand better how deformation quantization is related to the usual canonical quantization, and especially how the latter might be used to deduce the former, i."/>
+
+<meta name="generator" content="Hugo 0.81.0" />
     
-   <script>
-  MathJax = {
-    loader: {load: ['[tex]/ams']},
-    tex: {
-      packages: {'[+]': ['ams']},
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$','$$'], ['\\[', '\\]']],
-      processEscapes: true,
-      processEnvironments: true
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-    }
-  };
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
 
-  window.addEventListener('load', (event) => {
-      document.querySelectorAll("mjx-container").forEach(function(x){
-          x.parentElement.classList += 'has-jax'})
-  });
-
-</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script type="text/javascript" id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://jmf1sh.github.io/fontawesome/css/all.min.css" />
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles-light.css" />
   </head>
 
-  <body>
-    <div id="container">
-      <header>
-        <h1>
-          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
-        </h1>
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+            </h1>
 
-        <ul id="social-media">
-          
-
-          
-          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-          
-
-          
-          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
-          
-
-          
-          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
-          
-
-          
-
-          
-        </ul>
-        
-        <p><em>mathematics, physics, programming, and machine learning</em></p>
-        
-      </header>
-
+      <ul id="social-media">
+             <li>
+               <a href="https://github.com/jmf1sh" title="GitHub">
+               <i class="fab fa-github fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://gitlab.com/jmf1sh" title="GitLab">
+               <i class="fab fa-gitlab fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://linkedin.com/in/jonathanfisher10" title="LinkedIn">
+               <i class="fab fa-linkedin fa-lg"></i>
+               </a>
+             </li>
+      </ul>
       
+      <p><em>mathematics, physics, programming, and machine learning</em></p>
+      
+    </header>
+
+    
 <nav>
     <ul>
         
@@ -105,7 +98,7 @@
 </nav>
 
 
-      <main>
+    <main>
 
 
 
@@ -136,51 +129,51 @@
 
     <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
 <p>Today I&rsquo;d like to try to understand better how deformation quantization is related to the usual canonical quantization, and especially how the latter might be used to deduce the former, i.e., given an honest quantization (in the sense of operators), how might be reproduce the formula for the Moyal star product?</p>
-<p>We&rsquo;ll fix our symplectic manifold once and for all to be $\mathbb{R}^2$ with its standard symplectic structure, with Darboux coordinates $x$ and $p$. Let $\mathcal{A}$ be the algebra of observables on $\mathbb{R}^2$. For technical reasons, we&rsquo;ll restrict to those smooth functions that are polynomially bounded in the momentum coordinate (but of course the star product makes sense in general). Let $\mathcal{D}$ be the algebra of pseudodifferential operators on $\mathbb{R}$. We want to define a quantization map</p>
-<p>$$ \Psi: \mathcal{A} \to \mathcal{D} $$</p>
+<p>We&rsquo;ll fix our symplectic manifold once and for all to be \(\mathbb{R}^2\) with its standard symplectic structure, with Darboux coordinates \(x\) and \(p\). Let \(\mathcal{A}\) be the algebra of observables on \(\mathbb{R}^2\). For technical reasons, we&rsquo;ll restrict to those smooth functions that are polynomially bounded in the momentum coordinate (but of course the star product makes sense in general). Let \(\mathcal{D}\) be the algebra of pseudodifferential operators on \(\mathbb{R}\). We want to define a quantization map</p>
+<p>\[ \Psi: \mathcal{A} \to \mathcal{D} \]</p>
 <p>such that</p>
-<p>$$ \Psi(x) = x \in \mathcal{D} $$</p>
-<p>$$ \Psi(p) = -i\hbar \partial $$</p>
+<p>\[ \Psi(x) = x \in \mathcal{D} \]</p>
+<p>\[ \Psi(p) = -i\hbar \partial \]</p>
 <p>Out of thin air, let us define</p>
-<p>$$ \langle q| \Psi(f) |q' \rangle = \int e^{ik(q-q')} f(\frac{q+q'}{2}, k) dk $$</p>
+<p>\[ \langle q| \Psi(f) |q' \rangle = \int e^{ik(q-q')} f(\frac{q+q'}{2}, k) dk \]</p>
 <p>This is the Weyl transform. Its inverse is the Wigner transform, given by</p>
-<p>$$ \Phi(A, q, k) = \int e^{-ikq'} \left\langle q+\frac{q'}{2} \right| A \left| q - \frac{q'}{2} \right\rangle dq' $$</p>
-<p>Note: I am (intentionally) ignoring all factors of $2\pi$ involved. It&rsquo;s not hard to work out what they are, but annoying to keep track of them in calculations, so I won&rsquo;t.</p>
-<p>Theorem For suitably well-behaved $f$, we have $ \Phi(\Psi(f)) = f$.</p>
-<p>Proof Using the &ldquo;ignore $2\pi$&rdquo; conventions, we have the formal identities</p>
-<p>$$ \int e^{ikx} dx = \delta(k), \ \ \int e^{ikx} dk = \delta(x). $$</p>
+<p>\[ \Phi(A, q, k) = \int e^{-ikq'} \left\langle q+\frac{q'}{2} \right| A \left| q - \frac{q'}{2} \right\rangle dq' \]</p>
+<p>Note: I am (intentionally) ignoring all factors of \(2\pi\) involved. It&rsquo;s not hard to work out what they are, but annoying to keep track of them in calculations, so I won&rsquo;t.</p>
+<p>Theorem For suitably well-behaved \(f\), we have \( \Phi(\Psi(f)) = f\).</p>
+<p>Proof Using the &ldquo;ignore \(2\pi\)&rdquo; conventions, we have the formal identities</p>
+<p>\[ \int e^{ikx} dx = \delta(k), \ \ \int e^{ikx} dk = \delta(x). \]</p>
 <p>The theorem is a formal result of these:</p>
-<p>\begin{align} \Phi(\Psi(f))(q, k) &amp;= \int e^{-ikq'} \left\langle q + \frac{q'}{2} \right| \Psi(f) \left| q - \frac{q'}{2} \right\rangle \\\<br>
-&amp;= \int e^{-ikq'} e^{ik&rsquo;q'} f(q, k) dk' dq' \\\<br>
+<p>\[ \begin{aligned} \Phi(\Psi(f))(q, k) &amp;= \int e^{-ikq'} \left\langle q + \frac{q'}{2} \right| \Psi(f) \left| q - \frac{q'}{2} \right\rangle \cr
+&amp;= \int e^{-ikq'} e^{ik&rsquo;q'} f(q, k) dk' dq' \cr
 &amp;= f(q,k).
-\end{align}</p>
-<p>One may easily check that $\Psi(x) = x$ and $Psi(k) = -i\partial$, so this certainly gives a quantization. But why is it particularly natural? To see this, let $Q$ be the operator of multiplication by $x$, and let $P$ be the operator $-i\partial$. We&rsquo;d like to take $f(q,p)$ and replace it by $f(Q, P)$, but we can&rsquo;t literally substitute like this due to order ambiguity. However, we could work formally as follows:</p>
-<p>\begin{align}
-f(Q, P) &amp;= \int \delta(Q-q) \delta(P - p) f(q,p) dq dp \\\<br>
+\end{aligned} \]</p>
+<p>One may easily check that \(\Psi(x) = x\) and \(Psi(k) = -i\partial\), so this certainly gives a quantization. But why is it particularly natural? To see this, let \(Q\) be the operator of multiplication by \(x\), and let \(P\) be the operator \(-i\partial\). We&rsquo;d like to take \(f(q,p)\) and replace it by \(f(Q, P)\), but we can&rsquo;t literally substitute like this due to order ambiguity. However, we could work formally as follows:</p>
+<p>\[ \begin{aligned}
+f(Q, P) &amp;= \int \delta(Q-q) \delta(P - p) f(q,p) dq dp \cr
 &amp;= \int e^{ik(Q-q) + iq'(P-p)} f(q,p) dq dq' dp dk.
-\end{align}</p>
+\end{aligned} \]</p>
 <p>In this last expression, there is no order ambiguity in the argument of the exponential (since it is a sum and not a product), and furthermore the expression itself make sense since it is the exponential of a skew-adjoint operator. So let&rsquo;s check that this agrees with the Weyl transform. Using a special case of the Baker-Campbell-Hausdorff formula for the Heisenberg algebra, we have</p>
-<p>$$ e^{ik(Q-q) + iq'(P-p)} = e^{ik(Q-q)} e^{iq'(P-p)} e^{-ikq'/2} $$</p>
+<p>\[ e^{ik(Q-q) + iq'(P-p)} = e^{ik(Q-q)} e^{iq'(P-p)} e^{-ikq'/2} \]</p>
 <p>Let us compute the matrix element:</p>
-<p>\begin{align}
+<p>\[ \begin{aligned}
 \langle q_1 | P | q_2 \rangle &amp;= \int \langle q_1 | p_1 \rangle
-\langle p_1 | P | p_2 \rangle \langle p_2 | q_2 \rangle dp_1 dp_2 \\\<br>
-&amp;= \int e^{iq_1p_1 - iq_2 p_2} p_2 \delta(p_2 - p_1) dp_1 dp_2 \\\<br>
+\langle p_1 | P | p_2 \rangle \langle p_2 | q_2 \rangle dp_1 dp_2 \cr
+&amp;= \int e^{iq_1p_1 - iq_2 p_2} p_2 \delta(p_2 - p_1) dp_1 dp_2 \cr
 &amp;= \int e^{i p(q_1-q_2)} p dp.
-\end{align}</p>
+\end{aligned} \]</p>
 <p>Hence we find that the matrix element for the exponential is</p>
-<p>\begin{align} \langle q_1 |e^{ik(Q-q) + iq'(P-p)} | q_2 \rangle
-&amp;= e^{-ikq'/2 + ik(q_1-q)} \langle q_1 | e^{iq'(P-p)} | q_2 \rangle \\\<br>
-&amp;=  \int e^{-ikq'/2 + ik(q_1-q) -iq&rsquo;p} e^{iq&rsquo;p'' + ip''(q_1-q_2)} dp'' \\\<br>
+<p>\[ \begin{aligned} \langle q_1 |e^{ik(Q-q) + iq'(P-p)} | q_2 \rangle
+&amp;= e^{-ikq'/2 + ik(q_1-q)} \langle q_1 | e^{iq'(P-p)} | q_2 \rangle \cr
+&amp;=  \int e^{-ikq'/2 + ik(q_1-q) -iq&rsquo;p} e^{iq&rsquo;p'' + ip''(q_1-q_2)} dp'' \cr
 &amp;= \delta(q' + q_1 - q_2)  e^{-ikq'/2 + ik(q_1-q) -iq&rsquo;p}
-\end{align}</p>
-<p>Plugging this back into the expression for $f(Q, P)$ we find</p>
-<p>\begin{align}
+\end{aligned} \]</p>
+<p>Plugging this back into the expression for \(f(Q, P)\) we find</p>
+<p>\[ \begin{aligned}
 \langle q_1 | f(Q. P) | q_2 \rangle &amp;= \int \delta(q' + q_1 - q_2)  e^{-ikq'/2 + ik(q_1-q) -iq&rsquo;p}
-f(q,p) dq dq' dp dk \\\<br>
-&amp;= \int  e^{ ik(q_1/2 +q_2/2-q) -ip(q_1-q_2)} f(q,p) dq dp dk \\\<br>
+f(q,p) dq dq' dp dk \cr
+&amp;= \int  e^{ ik(q_1/2 +q_2/2-q) -ip(q_1-q_2)} f(q,p) dq dp dk \cr
 &amp;= \int e^{ip(q_1-q_2)} f(\frac{q_1+q_2}{2}, p) dp,
-\end{align}</p>
+\end{aligned} \]</p>
 <p>which is the original expression we gave for the Weyl transform.</p>
 
 

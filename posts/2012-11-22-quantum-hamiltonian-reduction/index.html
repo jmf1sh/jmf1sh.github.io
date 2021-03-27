@@ -2,78 +2,71 @@
 
 <html lang="en-us">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>jonathan&#39;s blog</title>
-    <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="Jonathan Fisher">
-    <meta name="generator" content="Hugo 0.81.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles.css" />
+<head>
+  <title>An exercise in quantum Hamiltonian reduction - jonathan&#39;s blog</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="The HTML5 Herald" />
+<meta name="author" content="Jonathan Fisher" /><meta property="og:title" content="An exercise in quantum Hamiltonian reduction" />
+<meta property="og:description" content="This post has been migrated from my old blog, the math-physics learning seminar.
+Semiclassical Setup Let the group \(GL(2)\) act on \(V = \mathrm{Mat}_{2\times n}\) and consider the induced symplectic action on \(T^\ast V\)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jmf1sh.github.io/posts/2012-11-22-quantum-hamiltonian-reduction/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2012-11-22T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2012-11-22T00:00:00&#43;00:00" />
 
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="An exercise in quantum Hamiltonian reduction"/>
+<meta name="twitter:description" content="This post has been migrated from my old blog, the math-physics learning seminar.
+Semiclassical Setup Let the group \(GL(2)\) act on \(V = \mathrm{Mat}_{2\times n}\) and consider the induced symplectic action on \(T^\ast V\)."/>
+
+<meta name="generator" content="Hugo 0.81.0" />
     
-   <script>
-  MathJax = {
-    loader: {load: ['[tex]/ams']},
-    tex: {
-      packages: {'[+]': ['ams']},
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$','$$'], ['\\[', '\\]']],
-      processEscapes: true,
-      processEnvironments: true
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-    }
-  };
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
 
-  window.addEventListener('load', (event) => {
-      document.querySelectorAll("mjx-container").forEach(function(x){
-          x.parentElement.classList += 'has-jax'})
-  });
-
-</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script type="text/javascript" id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://jmf1sh.github.io/fontawesome/css/all.min.css" />
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles-light.css" />
   </head>
 
-  <body>
-    <div id="container">
-      <header>
-        <h1>
-          <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
-        </h1>
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+            </h1>
 
-        <ul id="social-media">
-          
-
-          
-          <li><a href="https://www.linkedin.com/in/jonathanfisher10"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-          
-
-          
-          <li><a href="https://github.com/jmf1sh"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
-          
-
-          
-          <li><a href="https://gitlab.com/jmf1sh"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
-          
-
-          
-
-          
-        </ul>
-        
-        <p><em>mathematics, physics, programming, and machine learning</em></p>
-        
-      </header>
-
+      <ul id="social-media">
+             <li>
+               <a href="https://github.com/jmf1sh" title="GitHub">
+               <i class="fab fa-github fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://gitlab.com/jmf1sh" title="GitLab">
+               <i class="fab fa-gitlab fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://linkedin.com/in/jonathanfisher10" title="LinkedIn">
+               <i class="fab fa-linkedin fa-lg"></i>
+               </a>
+             </li>
+      </ul>
       
+      <p><em>mathematics, physics, programming, and machine learning</em></p>
+      
+    </header>
+
+    
 <nav>
     <ul>
         
@@ -105,7 +98,7 @@
 </nav>
 
 
-      <main>
+    <main>
 
 
 
@@ -137,75 +130,75 @@
     <p>This post has been migrated from my old blog, the
 <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
 <h2 id="semiclassical-setup">Semiclassical Setup</h2>
-<p>Let the group $GL(2)$ act on $V = \mathrm{Mat}_{2\times n}$ and consider the
-induced symplectic action on $T^\ast V$. If we use variables $(x,p)$ with $x$
-a $2 \times n$ matrix and $p$ an $n \times 2$ matrix, then the classical moment
-map $\mu$ is given by</p>
-<p>$$ \mu(x,p) = xp $$</p>
+<p>Let the group \(GL(2)\) act on \(V = \mathrm{Mat}_{2\times n}\) and consider the
+induced symplectic action on \(T^\ast V\). If we use variables \((x,p)\) with \(x\)
+a \(2 \times n\) matrix and \(p\) an \(n \times 2\) matrix, then the classical moment
+map \(\mu\) is given by</p>
+<p>\[ \mu(x,p) = xp \]</p>
 <p>This is equivariant with respect to the adjoint action, so we can form the
-$GL(2)$-invariant functions</p>
-<p>$$ Z_1 = \mathrm{Tr} \mu $$</p>
-<p>$$ Z_2 = \mathrm{Tr} (\mu)^2 $$</p>
-<p>If we think of $x$ as being made of column vectors</p>
-<p>$$ x = ( x_1 \cdots x_n ) $$</p>
-<p>and similarly think of $p$ as being made of row vectors, then there are actually
-many more $GL(2)$ invariants, given by</p>
-<p>$$ f_{ij} = \mathrm{Tr} x_i p_j = p_j x_i $$</p>
-<p>In terms of the invariants, the $Z$ functions are</p>
-<p>$$ Z_1 = \sum_k f_{kk} $$</p>
-<p>$$ Z_2 = \sum_{jk} f_{jk} f_{kj} $$</p>
+\(GL(2)\)-invariant functions</p>
+<p>\[ Z_1 = \mathrm{Tr} \mu \]</p>
+<p>\[ Z_2 = \mathrm{Tr} (\mu)^2 \]</p>
+<p>If we think of \(x\) as being made of column vectors</p>
+<p>\[ x = ( x_1 \cdots x_n ) \]</p>
+<p>and similarly think of \(p\) as being made of row vectors, then there are actually
+many more \(GL(2)\) invariants, given by</p>
+<p>\[ f_{ij} = \mathrm{Tr} x_i p_j = p_j x_i \]</p>
+<p>In terms of the invariants, the \(Z\) functions are</p>
+<p>\[ Z_1 = \sum_k f_{kk} \]</p>
+<p>\[ Z_2 = \sum_{jk} f_{jk} f_{kj} \]</p>
 <p>Let us compute Poisson brackets:</p>
-<p>\begin{align}
-{f_{ij}, f_{kl}} &amp;= {p_j^\mu x_i^\mu, p_l^\nu x_k^\nu} \\\<br>
-&amp;= x_i^\mu p_l^\nu \delta_{jk} \delta^{\mu\nu} - p_j^\mu x_k^\nu \delta_{il} \delta^{\mu\nu} \\\<br>
+<p>\[ \begin{aligned}
+{f_{ij}, f_{kl}} &amp;= {p_j^\mu x_i^\mu, p_l^\nu x_k^\nu} \cr
+&amp;= x_i^\mu p_l^\nu \delta_{jk} \delta^{\mu\nu} - p_j^\mu x_k^\nu \delta_{il} \delta^{\mu\nu} \cr
 &amp;= f_{il} \delta_{jk} - f_{kj} \delta_{il}.
-\end{align}</p>
+\end{aligned} \]</p>
 <p>So we see that the invariants form a Poisson subalgebra (as they should!). Let&rsquo;s
 compute:</p>
-<p>\begin{align}
-\{Z_1, f_{ij}\} &amp;= \sum_k \{ f_{kk}, f_{ij} \} \\\<br>
-&amp;= \sum_k \left( f_{kj} \delta_{ki} - f_{ik} \delta_{kj} \right) \\\<br>
+<p>\[ \begin{aligned}
+\{Z_1, f_{ij}\} &amp;= \sum_k \{ f_{kk}, f_{ij} \} \cr
+&amp;= \sum_k \left( f_{kj} \delta_{ki} - f_{ik} \delta_{kj} \right) \cr
 &amp;= f_{ij} - f_{ij} = 0.
-\end{align}</p>
-<p>Hence $Z_1$ is central with respect to the invariant functions $f_{ij}$. Similarly,</p>
-<p>\begin{align}
-{Z_2, f_{kl}} &amp;= \sum_{ij} {f_{ij} f_{ji}, f_{kl}} \\\<br>
-&amp;= \sum_{ij} f_{ij} \left(f_{jl} \delta_{ik} - f_{ki} \delta_{jl} \right) + f_{ji} \left(f_{il} \delta_{jk} - f_{kj} \delta_{il} \right) \\\<br>
-&amp;= \sum_j f_{kj} f_{jl} - \sum_i f_{il} f_{ki} + \sum_i f_{ki} f_{il} - \sum_j f_{jl} f_{kj} \\\<br>
+\end{aligned} \]</p>
+<p>Hence \(Z_1\) is central with respect to the invariant functions \(f_{ij}\). Similarly,</p>
+<p>\[ \begin{aligned}
+{Z_2, f_{kl}} &amp;= \sum_{ij} {f_{ij} f_{ji}, f_{kl}} \cr
+&amp;= \sum_{ij} f_{ij} \left(f_{jl} \delta_{ik} - f_{ki} \delta_{jl} \right) + f_{ji} \left(f_{il} \delta_{jk} - f_{kj} \delta_{il} \right) \cr
+&amp;= \sum_j f_{kj} f_{jl} - \sum_i f_{il} f_{ki} + \sum_i f_{ki} f_{il} - \sum_j f_{jl} f_{kj} \cr
 &amp;= 0.
-\end{align}</p>
-<p>So we see that the $Z_i$ are in the center of the invariant algebra. In fact,
-they generate it, so we&rsquo;ll denote by $Z$ the algebra generated by $Z_1, Z_2$.
-Let $A$ be the algebra generated by the $f_{ij}$. The inclusion
-$Z \hookrightarrow A$ can be thought of as a purely algebraic version of the
-moment map. In particular, given any character $\lambda: Z \to \mathbb{C}$, we
-can define the Hamiltonian reduction of $A$ to be</p>
-<p>$$ A_\lambda := A / A\langle \ker \lambda \rangle $$</p>
-<p>The corresponding space is of course $\mathrm{Spec} A$.</p>
+\end{aligned} \]</p>
+<p>So we see that the \(Z_i\) are in the center of the invariant algebra. In fact,
+they generate it, so we&rsquo;ll denote by \(Z\) the algebra generated by \(Z_1, Z_2\).
+Let \(A\) be the algebra generated by the \(f_{ij}\). The inclusion
+\(Z \hookrightarrow A\) can be thought of as a purely algebraic version of the
+moment map. In particular, given any character \(\lambda: Z \to \mathbb{C}\), we
+can define the Hamiltonian reduction of \(A\) to be</p>
+<p>\[ A_\lambda := A / A\langle \ker \lambda \rangle \]</p>
+<p>The corresponding space is of course \(\mathrm{Spec} A\).</p>
 <h2 id="the-cartan-algebra-and-the-center">The Cartan Algebra and the Center</h2>
 <p>Define functions</p>
-<p>$$ h_1 = Z_1 = \sum_i f_{ii} $$</p>
-<p>$$ h_2 = Z_2 = \sum_{ij} f_{ij} f_{ji} $$</p>
-<p>$$ h_3 = \sum_{ijk} f_{ij} f_{jk} f_{ki} $$</p>
-<p>$$ h_k = \sum_{i_1, i_2, \ldots, i_k} f_{i_1 i_2} f_{i_2 i_3} \cdots f_{i_k i_1} $$</p>
-<p>These are just the traces of various powers of the $n \times n$ matrix $px$. In
-particular, $h_k$ for $k&gt;n$ may be expressed as a function of the $h_i$ for
-$i \leq n$. The algebra generated by the $H$ plays the role of a Cartan
+<p>\[ h_1 = Z_1 = \sum_i f_{ii} \]</p>
+<p>\[ h_2 = Z_2 = \sum_{ij} f_{ij} f_{ji} \]</p>
+<p>\[ h_3 = \sum_{ijk} f_{ij} f_{jk} f_{ki} \]</p>
+<p>\[ h_k = \sum_{i_1, i_2, \ldots, i_k} f_{i_1 i_2} f_{i_2 i_3} \cdots f_{i_k i_1} \]</p>
+<p>These are just the traces of various powers of the \(n \times n\) matrix \(px\). In
+particular, \(h_k\) for \(k&gt;n\) may be expressed as a function of the \(h_i\) for
+\(i \leq n\). The algebra generated by the \(H\) plays the role of a Cartan
 subalgebra. So we have inclusions</p>
-<p>$$ Z \subset H \subset A $$
+<p>\[ Z \subset H \subset A \]
 Quantization</p>
-<p>Now we wish to construct a quantization of $A$ and $A_\lambda$. The
-quantization of $A$ is obvious: we quantize $T^\ast V$ by taking the algebraic
-differential operators on $V$. Denote this algebra by $\mathbb{D}$. It is
-generated by $x_i$ and (\partial_i$ satisfying the relation</p>
-<p>$$ [\partial_i, x_j] = \delta_{ij} $$</p>
-<p>Then we simply the subalgebra of $GL(2)$-invariant differential operators as
-our quantization of $A$. Call this subalgebra $U$. We can define Hamiltonian
+<p>Now we wish to construct a quantization of \(A\) and \(A_\lambda\). The
+quantization of \(A\) is obvious: we quantize \(T^\ast V\) by taking the algebraic
+differential operators on \(V\). Denote this algebra by \(\mathbb{D}\). It is
+generated by \(x_i\) and (\partial_i\( satisfying the relation</p>
+<p>\[ [\partial_i, x_j] = \delta_{ij} \]</p>
+<p>Then we simply the subalgebra of \(GL(2)\)-invariant differential operators as
+our quantization of \(A\). Call this subalgebra \(U\). We can define Hamiltonian
 reduction analogously by taking central quotients. So we need to understand
-the center $Z(U)$, but this is just the subalgebra generated by
-quantizations of $Z_1$ and $Z_2$, i.e. the subalgebra of all elements whose
-associated graded lies in $Z(A)$.</p>
-<p>More to come: stability conditions, $\mathbb{D}$-affineness, and maybe proofs
+the center \(Z(U)\), but this is just the subalgebra generated by
+quantizations of \(Z_1\) and \(Z_2\), i.e. the subalgebra of all elements whose
+associated graded lies in \(Z(A)\).</p>
+<p>More to come: stability conditions, \(\mathbb{D}\)-affineness, and maybe proofs
 of some of my claims.</p>
 
 
