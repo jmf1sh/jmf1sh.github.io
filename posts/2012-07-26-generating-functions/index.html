@@ -8,20 +8,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="The HTML5 Herald" />
 <meta name="author" content="Jonathan Fisher" /><meta property="og:title" content="Generating functions" />
-<meta property="og:description" content="This post has been migrated from my old blog, the math-physics learning seminar.
-Method of Generating Functions
-Let \(X\) and \(Y\) be two smooth manifolds, and let \(M = T^\ast X, N = T^\ast Y\) with corresponding symplectic forms \(\omega_M\) and \(\omega_N\)." />
+<meta property="og:description" content="This post has been migrated from my old blog, the math-physics learning seminar. The original post can be found here.
+Method of Generating Functions Let \(X\) and \(Y\) be two smooth manifolds, and let \(M = T^\ast X, N = T^\ast Y\) with corresponding symplectic forms \(\omega_M\) and \(\omega_N\)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jmf1sh.github.io/posts/2012-07-26-generating-functions/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2012-07-26T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2012-07-26T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2012-07-26T00:00:00&#43;02:00" />
+<meta property="article:modified_time" content="2012-07-26T00:00:00&#43;02:00" />
 
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Generating functions"/>
-<meta name="twitter:description" content="This post has been migrated from my old blog, the math-physics learning seminar.
-Method of Generating Functions
-Let \(X\) and \(Y\) be two smooth manifolds, and let \(M = T^\ast X, N = T^\ast Y\) with corresponding symplectic forms \(\omega_M\) and \(\omega_N\)."/>
+<meta name="twitter:description" content="This post has been migrated from my old blog, the math-physics learning seminar. The original post can be found here.
+Method of Generating Functions Let \(X\) and \(Y\) be two smooth manifolds, and let \(M = T^\ast X, N = T^\ast Y\) with corresponding symplectic forms \(\omega_M\) and \(\omega_N\)."/>
 
 <meta name="generator" content="Hugo 0.81.0" />
     
@@ -113,11 +111,36 @@ Let \(X\) and \(Y\) be two smooth manifolds, and let \(M = T^\ast X, N = T^\ast 
       <aside>
     <ul>
         <li>
-            <time class="post-date" datetime="2012-07-26T00:00:00Z">Jul 26, 2012</time>
+            <time class="post-date" datetime="2012-07-26T00:00:00&#43;02:00">Jul 26, 2012</time>
         </li>
         
         
+        <li>
+            Categories:
+            <em>
+                
+                    
+                    <a href="https://jmf1sh.github.io/categories/geometry">geometry</a>
+                
+                    , 
+                    <a href="https://jmf1sh.github.io/categories/physics">physics</a>
+                
+            </em>
+        </li>
+        
 
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="https://jmf1sh.github.io/tags/classical-mechanics">#classical-mechanics</a>
+                
+                    , 
+                    <a href="https://jmf1sh.github.io/tags/symplectic-geometry">#symplectic-geometry</a>
+                
+            </em>
+        </li>
         
 
         <li>4 minute read</li>
@@ -129,8 +152,8 @@ Let \(X\) and \(Y\) be two smooth manifolds, and let \(M = T^\ast X, N = T^\ast 
     
 
 
-    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>.</p>
-<p>Method of Generating Functions</p>
+    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>. The original post can be found <a href="https://mathphysseminar.blogspot.com/2012/07/generating-functions.html">here</a>.</p>
+<h2 id="method-of-generating-functions">Method of Generating Functions</h2>
 <p>Let \(X\) and \(Y\) be two smooth manifolds, and let \(M = T^\ast X, N = T^\ast Y\) with corresponding symplectic forms \(\omega_M\) and \(\omega_N\).</p>
 <p>Question: How can we produce symplectomorphisms \(\phi: M \to N\)?</p>
 <p>The most important construction from classical mechanics is the method of generating functions. I will outline this method, shameless stolen from Ana Cannas da Silva&rsquo;s lecture notes.</p>
@@ -146,7 +169,7 @@ Let \(X\) and \(Y\) be two smooth manifolds, and let \(M = T^\ast X, N = T^\ast 
 <p>Pick coordinates \(x\) on \(X\) and \(y\) on \(Y\), with corresponding momenta \(\xi\) and \(\eta\). Then if \(\phi(x,\xi) = (y,\eta)\), we obtain</p>
 <p>\[ \xi = d_x f, \ \eta = -d_y f \]</p>
 <p>Note the simlarity to Hamilton&rsquo;s equations. By the implicit function theorem, we can construct a (local) diffeomorphism \(\phi\) as long as \(f\) is sufficiently non-degenerate.</p>
-<p>Different Types of Generating Functions</p>
+<h2 id="different-types-of-generating-functions">Different Types of Generating Functions</h2>
 <p>We now concentrate on the special case of \(M = T^\ast \mathbb{R} = \mathbb{R} \times \mathbb{R}^\ast\). Note that this is a cotangent bundle in two ways: \(T^\ast \mathbb{R} \cong T^\ast \mathbb{R}^\ast\). Hence we can construct local diffeomorphisms \(T^\ast \mathbb{R} \to T^\ast \mathbb{R}\) in four ways, by taking functions of the forms</p>
 <p>\[ f(x_1, x_2), \ f(x_1, p_2), \ f(p_1, x_2), \ f(p_1, p_2) \]
 Origins from the Action Principle, and Hamilton-Jacobi</p>

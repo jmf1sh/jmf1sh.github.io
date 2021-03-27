@@ -8,18 +8,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="The HTML5 Herald" />
 <meta name="author" content="Jonathan Fisher" /><meta property="og:title" content="The basic idea of the quantum BV complex" />
-<meta property="og:description" content="This post has been migrated from my old blog, the math-physics learning seminar. This post was originally written by Dylan Butson.
-Let \(M\) be an oriented \(n\)-dimensional manifold and \(\mathfrak{X}^\bullet(M):=\Gamma(M,\wedge^{-\bullet} TM)\), so that \(\mathfrak{X}^\bullet(M)\) is concentrated in non-positive degree." />
+<meta property="og:description" content="This post has been migrated from my old blog, the math-physics learning seminar. The original post can still be found here.
+This post was originally written by Dylan Butson (arxiv)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jmf1sh.github.io/posts/2014-05-14-quantum-bv-complex/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2014-05-14T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2014-05-14T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2014-05-14T00:00:00&#43;02:00" />
+<meta property="article:modified_time" content="2014-05-14T00:00:00&#43;02:00" />
 
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="The basic idea of the quantum BV complex"/>
-<meta name="twitter:description" content="This post has been migrated from my old blog, the math-physics learning seminar. This post was originally written by Dylan Butson.
-Let \(M\) be an oriented \(n\)-dimensional manifold and \(\mathfrak{X}^\bullet(M):=\Gamma(M,\wedge^{-\bullet} TM)\), so that \(\mathfrak{X}^\bullet(M)\) is concentrated in non-positive degree."/>
+<meta name="twitter:description" content="This post has been migrated from my old blog, the math-physics learning seminar. The original post can still be found here.
+This post was originally written by Dylan Butson (arxiv)."/>
 
 <meta name="generator" content="Hugo 0.81.0" />
     
@@ -111,11 +111,39 @@ Let \(M\) be an oriented \(n\)-dimensional manifold and \(\mathfrak{X}^\bullet(M
       <aside>
     <ul>
         <li>
-            <time class="post-date" datetime="2014-05-14T00:00:00Z">May 14, 2014</time>
+            <time class="post-date" datetime="2014-05-14T00:00:00&#43;02:00">May 14, 2014</time>
         </li>
         
         
+        <li>
+            Categories:
+            <em>
+                
+                    
+                    <a href="https://jmf1sh.github.io/categories/physics">physics</a>
+                
+                    , 
+                    <a href="https://jmf1sh.github.io/categories/geometry">geometry</a>
+                
+            </em>
+        </li>
+        
 
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="https://jmf1sh.github.io/tags/qft">#qft</a>
+                
+                    , 
+                    <a href="https://jmf1sh.github.io/tags/symmetry">#symmetry</a>
+                
+                    , 
+                    <a href="https://jmf1sh.github.io/tags/bv-brst">#bv-brst</a>
+                
+            </em>
+        </li>
         
 
         <li>4 minute read</li>
@@ -127,7 +155,11 @@ Let \(M\) be an oriented \(n\)-dimensional manifold and \(\mathfrak{X}^\bullet(M
     
 
 
-    <p>This post has been migrated from my old blog, the <a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>. This post was originally written by Dylan Butson.</p>
+    <p>This post has been migrated from my old blog, the
+<a href="https://mathphysseminar.blogspot.com/">math-physics learning seminar</a>. The
+original post can still be found
+<a href="https://mathphysseminar.blogspot.com/2014/05/the-basic-idea-of-quantum-bv-complex.html">here</a>.</p>
+<p>This post was originally written by <a href="https://www.math.toronto.edu/dbutson/">Dylan Butson</a> (<a href="https://arxiv.org/search/?searchtype=author&amp;query=Butson%2C+D">arxiv</a>).</p>
 <p>Let \(M\) be an oriented \(n\)-dimensional manifold and \(\mathfrak{X}^\bullet(M):=\Gamma(M,\wedge^{-\bullet} TM)\), so that \(\mathfrak{X}^\bullet(M)\) is concentrated in non-positive degree. Let \(\mu\in \Omega^n(M)\) a volume form on \(M\). Then interior product with \(\mu\) gives an isomorphism \(\vee\mu: \mathfrak{X}^k(M)\xrightarrow{\cong}\Omega^{n-k}(M)\). From this, we induce a degree 1 differential \(\Delta_\mu\) on \(\mathfrak{X}^\bullet(M)\) from the de Rham differential \(d\) on \(\Omega^\bullet(M)\), defined by \(\Delta_\mu= (\vee\mu)^{-1}\circ d\circ\vee\mu\), making \(\mathfrak{X}^\bullet(M)\) into a cochain complex isomorphic to \(\Omega^\bullet(M)[k]\); in particular \(H^k(\mathfrak{X})=H^{n+k}(\Omega)\).</p>
 <p>If \(M\) is compact and connected, then \(H^0(\mathfrak{X})=H^n(\Omega)\) is one dimensional, and upon fixing a basis to identify \(H^0(\mathfrak{X})\xrightarrow{\cong}\mathbb{R}\), the quotient map gives a map \(\pi:C^\infty(M)\to \mathbb{R}\). We have the following:</p>
 <p>Proposition Let \(1\in C^\infty(M)\) be the constant function taking the value \(1\). Then \([1]\in H^0(\mathfrak{X})\) is nontrivial and after choosing it as a basis the resulting map \(\pi:C^\infty(M)\to \mathbb{R}\) is given by \[ f\mapsto\frac{ \int_M f\mu}{\int_M \mu}\] Proof Let \(f\in C^\infty(M)\) and suppose \(f=\Delta_\mu(X)\) for \(X\in\mathfrak{X}^1(M)\). Then \[f\mu = f\vee \mu = \Delta_\mu(X)\vee\mu= d(X\vee \mu)\] so that \(f\mu\) is exact and by Stokes' theorem integrates to \(0\) on \(M\). Thus all \(f\in \text{Im } \Delta_\mu\) integrate to zero against \(\mu\) on \(M\), so that the above map indeed descends to the quotient.</p>
@@ -157,6 +189,10 @@ Next, we restrict consideration only to polynomial observables (functions), and 
 &amp; = \hbar \sum_i \partial_{x^i} \iota_{dx^i} + \sum_i (\partial_{x^i}b) \iota_{dx^i} - \sum_{i,j}a_{ij}x^i\iota_{dx^j}
 \end{aligned} \]</p>
 <p>and under our identification this becomes \[\hbar\Delta_\mu = \hbar \sum_i \partial_{x^i}\partial_{\xi_i} + \sum_i (\partial_{x^i}b)\partial_{\xi_i} - \sum_{i,j}a_{ij}x^i\partial_{\xi_j}\] The computation of the degree 0 cohomology of a given polynomial \(f\in\mathbb{K}[[x_1,&hellip;,x_n]]\) under this differential is taken up in Gwilliam, Johnson-Freyd where it is shown the answer is precisely the Feynman diagram expansion for the expectation of \(f\) which we expect.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://inspirehep.net/literature/294397">A note on the anti-bracket formalism</a></li>
+</ul>
 
 
 </article>
