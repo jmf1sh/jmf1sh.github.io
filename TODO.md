@@ -26,3 +26,5 @@ To do
 * Polygon spaces
 * Playing with Spacenet in QGIS
 * Q-learning for Atari
+* Something with NLP
+* Visual transformers
