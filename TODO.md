@@ -5,3 +5,20 @@ To do
 * Notes for DeepMind's RL course
 * Hoeffding's inequality for bounds when val=test [link](https://people.orie.cornell.edu/mru8/orie4741/lectures/generalization.pdf)
 * Comparison of Hamilton-Jacobi equation with Bellman equation
+* Toy autograd engine
+* Epistemic and aleatoric uncertainty
+* Active learning, BALD
+* [Universal approximation theorem](https://en.wikipedia.org/wiki/Universal_approximation_theorem)
+* Neural tangent kernel
+* Gaussian processes
+* Relation of GPs to quantum field theory
+* [Hopfield networks](https://arxiv.org/abs/2008.02217)
+* Self attention & transformers
+* Restricted Boltzmann machine and Ising model
+* Information bottleneck
+* Basics of information theory
+* Kolmogorov complexity
+* Manifold learning
+* Information geometry
+* Gromov-Hausdorff distance
+* Complex analysis eye candy
