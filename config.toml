@@ -19,11 +19,13 @@ disqusShortname = "jmf1sh"
     github = "jmf1sh"
     gitlab = "jmf1sh"
     linkedin = "jonathanfisher10"
+    twitter = "jono_bon"
 
 [params]
     tagline = "mathematics, physics, programming, and machine learning"
     disableDarkModeCSS = true # disables css style for users using dark-mode
     katex = true
+    favicon = "favicon_io/favicon.ico"
 
 menu = "main"
 meta = "false"

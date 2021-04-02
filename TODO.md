@@ -22,3 +22,7 @@ To do
 * Information geometry
 * Gromov-Hausdorff distance
 * Complex analysis eye candy
+* Imitation learning
+* Polygon spaces
+* Playing with Spacenet in QGIS
+* Q-learning for Atari
