@@ -1,10 +1,20 @@
 jonathan's blog
 ----------------
 
-This is the raw source for my blog, hosted on github pages. The site is intended
-to be generated with [Hugo](https://gohugo.io/). We use git submodules (mainly
-for the Hugo theme [kiera](https://github.com/funkydan2/hugo-kiera)), so clone the
-repository via `git clone --recursive`. The repository contains two branches
+This is the raw source for my blog, currently hosted
+[here on github pages](https://github.com/jmf1sh/jmf1sh.github.io).
+Content from around 2017 and earlier has been migrated from my old blog, the
+[math-physics learning seminar](http://mathphysseminar.blogspot.com/), which is
+no longer being maintained. The old blog served as notes for a seminar that I
+was running as a graduate student at the
+[Department of Mathematics](https://www.math.toronto.edu) at the University of
+Toronto and later while I was a postdoc in
+[GRK 1670](https://grk1670.math.uni-hamburg.de/) at Universität Hamburg.
+
+The site is intended to be generated with [Hugo](https://gohugo.io/). We use git
+submodules for the Hugo theme
+[kiera](https://github.com/funkydan2/hugo-kiera), so clone the repository via
+`git clone --recursive`. The repository contains two branches
 * `master` the (mostly plain-text) content and themes
 * `generated` the Hugo-generated content, not intended to be read or modified by
   hand
@@ -18,6 +28,6 @@ git checkout master
 git worktree add -B generated public origin/generated
 ```
 
-Most of the older content has been migrated from my old blog, the
-[math-physics learning seminar](http://mathphysseminar.blogspot.com/). The old
-blog is no longer being maintained.
+You can find a list of ideas/topics for potential posts [here](TODO.md).
+If you'd like to contribute a guest post, please feel free to submit a pull
+request!

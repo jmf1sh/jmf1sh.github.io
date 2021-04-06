@@ -19,7 +19,7 @@ To do
 * Basics of information theory
 * Kolmogorov complexity
 * Manifold learning
-* Information geometry
+* Information geometry (https://arxiv.org/abs/1808.08271)
 * Gromov-Hausdorff distance
 * Complex analysis eye candy
 * Imitation learning
@@ -40,3 +40,31 @@ To do
 * Categorical machine learning
 * Giry monad
 * No free lunch theorem
+* Jeffreys prior
+* Conjugate prior
+* Flat minima and natural gradients
+* Relation between natural gradients and neural tangent kernel
+* Linear approximation of DNN (e.g. https://arxiv.org/abs/2103.01439)
+* Fast transformers
+* RNNs, LSTM, GRU
+* Relation between transformers and RNNs (https://arxiv.org/abs/2006.16236)
+* Representation learning, SimCLR, MoCo, BYOL, etc.
+* Efficient market hypothesis
+* Financial derivatives
+* Portfolio management theory
+* Mathematical finance
+* Random walks
+* Chaos
+* Perturbation theory in quantum mechanics
+* Schwinger-Dyson equation
+* Born approximation, DWBA
+* Theory of crystal diffraction
+* geometric optics
+* Rendering equation, ray tracing
+* Marching cubes
+* Neural radiance fields
+* Some demos with shadertoy
+* Minimal lisp implementation
+* Black hole thermodynamics and Bekenstein bound
+* Causal sets
+* Loop quantum gravity (or something related)
