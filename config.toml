@@ -26,6 +26,7 @@ disqusShortname = "jmf1sh"
     disableDarkModeCSS = true # disables css style for users using dark-mode
     katex = true
     favicon = "favicon_io/favicon.ico"
+    #images = ["img/transfer.jpg"]
 
 menu = "main"
 meta = "false"
