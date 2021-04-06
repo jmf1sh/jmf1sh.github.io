@@ -28,3 +28,15 @@ To do
 * Q-learning for Atari
 * Something with NLP
 * Visual transformers
+* Play with rlstructures https://github.com/facebookresearch/rlstructures
+* Instance segmentation
+* NAND to Tetris
+* Microarchitecture design
+* CUDA programming
+* Pytorch for scientific computing
+* Bayesian NNs
+* Hamiltonian Monte-Carlo
+* Stochastic weight averaging
+* Categorical machine learning
+* Giry monad
+* No free lunch theorem
