@@ -6,10 +6,19 @@
    <description>Recent content in Tags on jonathan&#39;s blog</description>
    <generator>Hugo -- gohugo.io</generator>
    <language>en-us</language>
-   <lastBuildDate>Mon, 24 Dec 2018 00:00:00 +0100</lastBuildDate>
+   <lastBuildDate>Sun, 04 Apr 2021 00:00:00 +0200</lastBuildDate>
    
        <atom:link href="https://jmf1sh.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
    
+   
+     <item>
+       <title>Variational autoencoders</title>
+       <link>https://jmf1sh.github.io/posts/2021-04-02-em-confusion/</link>
+       <pubDate>Sun, 04 Apr 2021 00:00:00 +0200</pubDate>
+       
+       <guid>https://jmf1sh.github.io/posts/2021-04-02-em-confusion/</guid>
+       <description>&lt;p&gt;See &lt;a href=&#34;https://www.semanticscholar.org/paper/Maximum-Likelihood-Estimation-of-Observer-Using-the-Dawid-Skene/c80c7ab615b2fad5148a7848dbdd26a2dc50dd3d&#34;&gt;Maximum Likelihood Estimation of Observer Error‐Rates Using the EM Algorithm&lt;/a&gt;and&lt;/p&gt;&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1902.03680&#34;&gt;Learning From Noisy Labels By Regularized Estimation Of Annotator Confusion&lt;/a&gt;&lt;/p&gt;&lt;h2 id=&#34;blah&#34;&gt;Blah&lt;/h2&gt;&lt;p&gt;Suppose we have a probability space \(X\) from which we can sample, but whoseprobability density \(p(x)\) is unknown. How can we try to estimate \(p(x)\)?Imagine that \(X\) is the set of all possible natural images, or the set of allEnglish sentences. How do we assign probabilities to such objects?&lt;/p&gt;&lt;p&gt;We can try to model \(X\) as follows. Let&amp;rsquo;s suppose that there is some generativeprocess \(Z \to X\) from some &lt;em&gt;latent variable&lt;/em&gt; \(z\). We assume the following&lt;/p&gt;&lt;ul&gt;&lt;li&gt;There is some process \(Z \to X\) with &lt;em&gt;tractable&lt;/em&gt; condtional density\(p(x|z)\)&lt;/li&gt;&lt;li&gt;There is some tractable prior \(p(z)\)In this setup, we are free to choose \(p(z)\) and \(p(x|z)\). However, once we havefixed these densities, the posterior \(p(z|x)\) is completely determined by Bayes&#39;rule\[ p(z|x) = \frac{p(x|z)p(z)}{p(x)}, \]and is typically intractible.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;So once we have specified the prior \(p(z)\) and the decoder \(p(x|z)\), we have nofreedom to choose \(p(z|x)\). Furthermore, without access to \(p(x)\), we have noway to recover \(p(x|z)\) analytically. To get around this problem, we introduceanother probability density \(q(z|x)\), the &lt;em&gt;approximate posterior&lt;/em&gt;, which isintended to be a tractable approximation to the intractable \(p(z|x)\). We canquantify the difference between the true posterior and approximate posteriorwith the Kullback-Leiber divergence,&lt;/p&gt;&lt;p&gt;\[\begin{aligned}&amp;amp; D_{KL}(q(z|x)||p(z|x)) \cr&amp;amp;= E_{z \sim q(z|x)}\left(\frac{\log q(z|x)}{\log p(z|x)}\right) \cr&amp;amp;=E_{z \sim q(z|x)}\left(\log q(z|x)-\log p(z|x)\right) \cr&amp;amp;=E_{z \sim q(z|x)}\left(\log q(z|x)-\log p(x,z)+\log p(x)\right) \cr&amp;amp;=E_{z \sim q(z|x)}\left(\log q(z|x)-\log p(x|z) - \log p(z) +\log p(x)\right) \cr&amp;amp;=\log p(x)  + D_{KL}(q(z|x)||p(z)) - E_{z \sim q(z|x)}\left(\log p(x|z) \right)\end{aligned}\]&lt;/p&gt;</description>
+     </item>
    
      <item>
        <title>Variational autoencoders</title>

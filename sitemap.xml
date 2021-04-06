@@ -3,27 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jmf1sh.github.io/posts/</loc>
-    <lastmod>2018-12-24T00:00:00+01:00</lastmod>
+    <lastmod>2021-04-04T00:00:00+02:00</lastmod>
   </url><url>
     <loc>https://jmf1sh.github.io/about/</loc>
     <lastmod>2017-12-19T13:43:10+01:00</lastmod>
   </url><url>
     <loc>https://jmf1sh.github.io/categories/</loc>
-    <lastmod>2018-12-24T00:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://jmf1sh.github.io/tags/generative-models/</loc>
-    <lastmod>2018-12-24T00:00:00+01:00</lastmod>
+    <lastmod>2021-04-04T00:00:00+02:00</lastmod>
   </url><url>
     <loc>https://jmf1sh.github.io/</loc>
-    <lastmod>2018-12-24T00:00:00+01:00</lastmod>
+    <lastmod>2021-04-04T00:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://jmf1sh.github.io/tags/label-noise/</loc>
+    <lastmod>2021-04-04T00:00:00+02:00</lastmod>
   </url><url>
     <loc>https://jmf1sh.github.io/categories/machine-learning/</loc>
-    <lastmod>2018-12-24T00:00:00+01:00</lastmod>
+    <lastmod>2021-04-04T00:00:00+02:00</lastmod>
   </url><url>
     <loc>https://jmf1sh.github.io/categories/statistics/</loc>
-    <lastmod>2018-12-24T00:00:00+01:00</lastmod>
+    <lastmod>2021-04-04T00:00:00+02:00</lastmod>
   </url><url>
     <loc>https://jmf1sh.github.io/tags/</loc>
+    <lastmod>2021-04-04T00:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://jmf1sh.github.io/posts/2021-04-02-em-confusion/</loc>
+    <lastmod>2021-04-04T00:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://jmf1sh.github.io/tags/generative-models/</loc>
     <lastmod>2018-12-24T00:00:00+01:00</lastmod>
   </url><url>
     <loc>https://jmf1sh.github.io/tags/vae/</loc>
