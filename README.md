@@ -2,7 +2,7 @@ jonathan's blog
 ----------------
 
 This is the raw source for my blog, currently hosted
-[here on github pages](https://github.com/jmf1sh/jmf1sh.github.io).
+[here on github pages](https://jmf1sh.github.io).
 Content from around 2017 and earlier has been migrated from my old blog, the
 [math-physics learning seminar](http://mathphysseminar.blogspot.com/), which is
 no longer being maintained. The old blog served as notes for a seminar that I
