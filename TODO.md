@@ -68,3 +68,16 @@ To do
 * Black hole thermodynamics and Bekenstein bound
 * Causal sets
 * Loop quantum gravity (or something related)
+* C*-algebras and QM (https://arxiv.org/abs/2104.02038)
+* Optimal transport
+* Control theory
+* Non-commutative geometry, spectral triples
+* Resurgence in QM/QFT
+* Decoherence
+* Bethe Ansatz
+* Quantum information theory
+* It from Bit program
+* Lambda calculus and Y combinator
+* Hawking radiation
+* Conformal field theory
+* KdV & integrability
