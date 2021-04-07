@@ -49,7 +49,7 @@ googleAnalytics = "UA-193643455-1"
     disableDarkModeCSS = true # disables css style for users using dark-mode
     katex = true
     favicon = "favicon_io/favicon.ico"
-    #images = ["img/transfer.jpg"]
+    images = ["img/transfer.jpg"] # twitter card / opengraph
 
 menu = "main"
 meta = "false"
