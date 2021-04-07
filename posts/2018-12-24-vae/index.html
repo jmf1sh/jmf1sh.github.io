@@ -8,8 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="The HTML5 Herald" />
 <meta name="author" content="Jonathan Fisher" /><meta property="og:title" content="Variational autoencoders" />
-<meta property="og:description" content="See Autoencoding variational Bayes
-Evidence lower bound Suppose we have a probability space \(X\) from which we can sample, but whose probability density \(p(x)\) is unknown. How can we try to estimate \(p(x)\)?" />
+<meta property="og:description" content="The following is a summary of some of the results of KW2013.
+Evidence lower bound Suppose we have a probability space \(X\) from which we can sample, but whose probability density \(p(x)\) is unknown." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jmf1sh.github.io/posts/2018-12-24-vae/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2018-12-24T00:00:00&#43;01:00" />
@@ -18,8 +18,8 @@ Evidence lower bound Suppose we have a probability space \(X\) from which we can
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Variational autoencoders"/>
-<meta name="twitter:description" content="See Autoencoding variational Bayes
-Evidence lower bound Suppose we have a probability space \(X\) from which we can sample, but whose probability density \(p(x)\) is unknown. How can we try to estimate \(p(x)\)?"/>
+<meta name="twitter:description" content="The following is a summary of some of the results of KW2013.
+Evidence lower bound Suppose we have a probability space \(X\) from which we can sample, but whose probability density \(p(x)\) is unknown."/>
 
 <meta name="generator" content="Hugo 0.81.0" />
     
@@ -172,7 +172,7 @@ Evidence lower bound Suppose we have a probability space \(X\) from which we can
     
 
 
-    <p>See <a href="https://arxiv.org/abs/1312.6114">Autoencoding variational Bayes</a></p>
+    <p>The following is a summary of some of the results of <a href="https://arxiv.org/abs/1312.6114" title="Autoencoding variational Bayes">KW2013</a>.</p>
 <h2 id="evidence-lower-bound">Evidence lower bound</h2>
 <p>Suppose we have a probability space \(X\) from which we can sample, but whose
 probability density \(p(x)\) is unknown. How can we try to estimate \(p(x)\)?
@@ -231,11 +231,11 @@ random variable \(\epsilon\), and that \(z\) is a <em>deterministic</em> functio
 \(\epsilon\) and \(x\):
 \[ z = g_\phi(\epsilon, x) \]
 Then we have
-\begin{aligned}
+\[ \begin{aligned}
 E_{z \sim q(z|x)}[f(z)]
 &amp;= \int f(z) q(z|x) dz \cr
 &amp;= \int f(g_\phi(\epsilon, x)) p(\epsilon) d\epsilon
-\end{aligned}
+\end{aligned} \]
 The latter expression can be approximated using a finite sample
 \(\epsilon \sim p(\epsilon)\), which is independent of \(\phi\), and therefore the
 approximation will be differentiable in \(\phi\).</p>
@@ -264,6 +264,10 @@ regularizer for the latent embedding. In summary, under the above
 simplifcations, <em>maximizing ELBO corresponds to training and autoencoder with a
 regularization term that encourages the distribution of observed data in latent
 space to be consistent with a fixed prior distribution</em> \(p(z)\).</p>
+<h2 id="references">References</h2>
+<ul>
+<li>KW2013: <a href="https://arxiv.org/abs/1312.6114" title="Autoencoding variational Bayes">Autoencoding variational bayes</a></li>
+</ul>
 
 
 </article>
