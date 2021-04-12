@@ -80,4 +80,7 @@ To do
 * Lambda calculus and Y combinator
 * Hawking radiation
 * Conformal field theory
+* Lax pairs, integrability
+* Nahm's equations & Lax pair formulation with spectral curve (https://en.wikipedia.org/wiki/Nahm_equations, https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-89/issue-2/On-the-construction-of-monopoles/cmp/1103922679.full)
 * KdV & integrability
+* Pentagram map
