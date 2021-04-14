@@ -38,7 +38,6 @@ To do
 * Hamiltonian Monte-Carlo
 * Stochastic weight averaging
 * Categorical machine learning
-* Giry monad
 * No free lunch theorem
 * Jeffreys prior
 * Conjugate prior
