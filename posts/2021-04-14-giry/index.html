@@ -1,0 +1,525 @@
+<!doctype html>
+
+<html lang="en-us">
+
+<head>
+  <title>Stochastic functions and the Giry monad - jonathan&#39;s blog</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="The HTML5 Herald" />
+<meta name="author" content="Jonathan Fisher" /><meta property="og:title" content="Stochastic functions and the Giry monad" />
+<meta property="og:description" content="A quick overview of stochastic functions and the Giry monad" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jmf1sh.github.io/posts/2021-04-14-giry/" /><meta property="og:image" content="https://jmf1sh.github.io/img/transfer.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-04-14T00:00:00&#43;02:00" />
+<meta property="article:modified_time" content="2021-04-14T00:00:00&#43;02:00" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jmf1sh.github.io/img/transfer.jpg"/>
+
+<meta name="twitter:title" content="Stochastic functions and the Giry monad"/>
+<meta name="twitter:description" content="A quick overview of stochastic functions and the Giry monad"/>
+
+<meta name="generator" content="Hugo 0.81.0" />
+    
+    <link rel="shortcut icon" href="favicon_io/favicon.ico" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+  
+
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="1ff964cc-4598-433a-9ae0-91e0322c72c7" data-blockingmode="auto" type="text/javascript"></script>
+
+  
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://jmf1sh.github.io/fontawesome/css/all.min.css" />
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://jmf1sh.github.io/css/styles-light.css" />
+  </head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://jmf1sh.github.io/">jonathan&rsquo;s blog</a>
+            </h1>
+
+      <ul id="social-media">
+             <li>
+               <a href="https://github.com/jmf1sh" title="GitHub">
+               <i class="fab fa-github fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://gitlab.com/jmf1sh" title="GitLab">
+               <i class="fab fa-gitlab fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://twitter.com/jono_bon" title="Twitter">
+               <i class="fab fa-twitter fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://linkedin.com/in/jonathanfisher10" title="LinkedIn">
+               <i class="fab fa-linkedin fa-lg"></i>
+               </a>
+             </li>
+      </ul>
+      
+      <p><em>mathematics, physics, programming, and machine learning</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/categories">
+                <i class="fa-li fa  fa-lg"></i><span>Categories</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/tags">
+                <i class="fa-li fa  fa-lg"></i><span>Tags</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://jmf1sh.github.io/privacy/">
+                <i class="fa-li fa  fa-lg"></i><span>Privacy Statement</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Stochastic functions and the Giry monad</h1>
+
+    
+      <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2021-04-14T00:00:00&#43;02:00">Apr 14, 2021</time>
+        </li>
+        
+        
+        <li>
+            Categories:
+            <em>
+                
+                    
+                    <a href="https://jmf1sh.github.io/categories/statistics">statistics</a>
+                
+                    , 
+                    <a href="https://jmf1sh.github.io/categories/category-theory">category-theory</a>
+                
+            </em>
+        </li>
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="https://jmf1sh.github.io/tags/monad">#monad</a>
+                
+            </em>
+        </li>
+        
+
+        <li>10 minute read</li>
+    </ul>
+</aside>
+
+    
+
+    
+
+
+    <h2 id="stochastic-functions">Stochastic functions</h2>
+<p>A <em>function</em> \(f\) between sets \(X\) and \(Y\) is a mapping
+\[\begin{aligned}
+f &amp;:&amp; X &amp;\to&amp; Y \cr
+f &amp;:&amp; x &amp;\mapsto&amp; f(y)
+\end{aligned}\]
+and one of the most important properties of functions is that they <em>compose</em>,
+i.e. if we have \(f: X \to Y\) and \(g: Y \to Z\) then we can construct
+a mapping \(g \circ f: X \to Z\) defined by \((g\circ f)(x) = g(f(x))\).
+When the sets involved have additional structure (topology, smooth structure,
+etc.), composition often preserves nice properties of the involved functions,
+e.g. continuity, differentiability, etc. This allows one to construct
+interesting categories of &ldquo;nice&rdquo; functions between &ldquo;nice&rdquo; spaces.</p>
+<p>What about the real world? In practice, very few &ldquo;functions&rdquo; are true
+functions in the mathematical sense. Among others, there are some obvious
+examples of non-functions</p>
+<ul>
+<li>\(f(x)\) is a <em>measurement</em>, and necessarily comes with error bars</li>
+<li>\(f(x)\) is unknown but approximated by some known function \(\hat{f}(x)\)</li>
+</ul>
+<p>In the first case, repeated measurements could produce different values, and
+we would like to capture the <em>distribution</em> of possible values upon repeated
+measurements. In the second case, we would like to have some way to capture
+the <em>uncertainty</em> in the estimated values. So the question is, what kind of
+mathematical objects are these not-quite-functions?</p>
+<p>Let&rsquo;s start with a simple example. Let&rsquo;s suppose that we are measuring some
+function \(f: X \to \mathbb R\). Suppose that for repeated measurements
+at a point \(x \in X\), the distribution of observed values is approximately
+normal with mean \(\mu(x)\) and standard deviation \(\sigma(x)\). So for
+each \(x\), we have a random variable
+\[f(x) \sim \mathcal{N}(\mu(x), \sigma(x)).\]
+Fine. But what is \(f\) as a <em>map</em>? Rewriting the above, we have
+\[f: x \mapsto \mathcal{N}(\mu(x), \sigma(x)) \in P(\mathbb R) \]
+where \(P(\mathbb R)\) denotes the set of probability measures on
+\(\mathbb R\). In other words, we can model the distribution of possible
+measurements as a map
+\[ f: X \to P(\mathbb R). \]
+Taking inspiration from this, we can define a <em>stochastic function</em> from \(X\)
+to \(Y\) to be a map \(X \to P(Y)\). Now here is the problem: how do
+stochastic functions <em>compose</em>?</p>
+<h2 id="compostion-of-stochastic-functions">Compostion of stochastic functions</h2>
+<p>Suppose then that we have stochastic functions \(f: X \to P(Y)\) and
+\(g: Y \to P(Z)\). We would like to contruct \(g \circ f: X \to P(Z)\).
+Is there any reasonable way to do this?</p>
+<p>First, let&rsquo;s think about it from the point of view of sampling. Given
+\(x \in X\), \(f\) gives us a probability measure \(\mu_{f(x)}\) on
+\(Y\), from which we can sample some \(y \in Y\). Given a sampled \(y\),
+the stochastic map \(g\) produces a probability measure \(\mu_{g(y)}\) on
+\(Z\), but of course this depends on the sampled point \(y\). How do we
+produce something that depends only on \(\mu_{f(x)}\) and not on the
+particular sampled point \(y\)? We can take the expectation! We can define
+the probability measure \(\mu_{(g \circ f)(x)}\) by defining what it does
+on a measurable set \(A \subset Z\):
+\[ \mu_{(g \circ f)(x)}(A) := \int_Y \mu_{g(y)}(A) d\mu_{f(x)} \]
+To make this a little bit more explicit, we can take a special case and unwind
+the definitions. Suppose that \(X = \mathbb{R}^m\), \(Y = \mathbb{R}^n\),
+and \(Z=\mathbb{R}^k\). Suppose that \(f\) can be represented as a
+conditional probability density \(p_f(y|x)\) and that \(g\) can likewise
+be represented by a conditionall probability density \(p_g(z|y)\) (all taken
+with respect to the usual Lebesgue measure). Then
+what is \(p_{g\circ f}(z|x)\)? Let&rsquo;s expand the right hand side of the above
+definition:
+\[\begin{aligned}
+&amp; \int_Y \mu_{g(y)}(A) d\mu_{f(x)} \cr
+=&amp; \int_Y \left[\int_A p_g(z|y) dz \right] p_f(y|x) dy \cr
+=&amp; \int_A \left[\int_Y p_g(z|y) p_f(y|x) dy \right] dz
+\end{aligned}\]
+from which we deduce that
+\[ p_{g \circ f}(z|x) = \int_Y p_g(z|y) p_f(y|x) dy. \]
+In other words, compostion of stochastic functions is just a fancy way to talk
+about conditional probability!</p>
+<h2 id="the-giry-monad">The Giry monad</h2>
+<p>The above construction turns out to be <em>monadic</em>. Recall that a monad on a
+category \(\mathcal{C}\) is a tuple \((T, \eta, \mu)\) satisfying</p>
+<ul>
+<li>\(T\) is an endofunctor \(\mathcal{C} \to \mathcal{C}\)</li>
+<li>\(\eta\) is a natural transformation \(1_{\mathcal{C}} \to T\)</li>
+<li>\(\mu\) is a natural transformation \(T^2 \to T\)</li>
+<li>\(\mu \circ T\mu = \mu \circ \mu T\) as natural transformations
+\(T^3 \to T\)</li>
+<li>\(\mu \circ T \eta = \mu \circ \eta T = 1_T \)
+as natural transformations \(T \to T\)</li>
+</ul>
+<p>(Note carefully that now \(\mu\) refers to the multiplication operation,
+no longer a measure. In what follows below, we&rsquo;ll use \(\nu\) to denote
+measures, to avoid overloading.)
+If you&rsquo;ve never seen this definition before, it may seem a bit abstract. But
+if we think about it in terms of function composition, it is <em>exactly</em> the
+kind of structure that we have described above.</p>
+<p>First, what is the functor \(T\) in our case? Given a reasonable space
+\(X\), we can take \(T(X)\) to be the set of probability measures on
+\(X\). To make this into a functor, we need to define how \(T\) acts
+on maps \(f \in \mathrm{Hom}_{\mathcal{C}}(X, Y)\). There is a
+natural choice here, the <em>pushforward measure</em>. Suppose we have
+\(f \in \mathrm{Hom}_{\mathcal{C}}(X, Y)\) and \(\nu \in T(X)\).
+Then the pushforward measure \(f_\ast\nu \in T(Y)\) is defined by
+\((f_\ast\nu)(A) := \nu(f^{-1}(A))\). This yields the desired lift
+\(Tf \in \mathrm{Hom}_{\mathcal{C}}(TX, TY)\).</p>
+<p>Second, we need to define the embedding \(\eta: 1_\mathcal{C} \to T \).
+This is actually very simple: there is a natural map \(X \to TX\) defined
+by mapping \(x \in X\) to the Dirac measure \(\delta_x\) on \(X\).</p>
+<p>And finally, we have to define the multiplication map \(\mu\). For a space
+\(X\), we need to define \(\mu_X: T(T(X)) \to T(X)\), where \(T\) denotes
+the operation of taking probability measures, i.e. we need a map from the
+set of probability measures on the set of probability measures on \(X\), to
+the set of probability measures on \(X\). This is effectively just an
+expectation. Let \(M \in T(T(X))\) be a measure on the space of probability
+measures. We need to define a measure \(\mu M\) on \(X\). We can define
+this for \(A \subset X\) as
+\[ (\mu M)(A) := \mathbb{E}_{\nu \sim M}\left[\nu(A) \right], \]
+i.e. the expected measure of \(A\) with respect to the distribution \(M\)
+on the space of probability measures.</p>
+<p>Under suitable assumptions on spaces and maps under consideration, one can
+prove that the above operations are well-defined and indeed satisfy the monad
+laws.</p>
+<p><strong>Theorem.</strong> Let \(\mathrm{Meas}\) be the category of measurable spaces and
+measurable maps. Then the operations \((T, \eta, \mu)\) described above
+are well-defined and satisfy the monad laws. We call this the <em>Giry monad</em>.</p>
+<h2 id="the-kleisli-category-of-a-monad">The Kleisli category of a monad</h2>
+<p>Let&rsquo;s recall monadic compostion. Assume that \((T, \eta, \mu)\) is a monad
+on some category \(\mathcal{C}\). For \(X, Y \in \mathrm{Ob}(\mathcal{C})\),
+it makes sense to talk about the set of maps
+\(\mathrm{Hom}_\mathcal{C}(X, T(Y))\), since \(T\) is an endofunctor.
+What if we have \(f \in \mathrm{Hom}_\mathcal{C}(X, T(Y))\) and
+\(g \in \mathrm{Hom}_\mathcal{C}(Y, T(Z))\)? The ordinary rules of category
+do not allow composing \(f\) and \(g\). A monad is exactly the kind of
+structure that we need to make the composition well-defined!</p>
+<p>Recall that a natural transformation between functors \(F\) and \(G\) is a
+family of maps \(F(X) \to G(X)\) parametrized by
+\(X \in \mathrm{Ob}(\mathcal{C})\) that makes the obvious diagram commute.
+In the monad case, this means that we have maps \(\eta_X: X \to T(X)\) and
+\(\mu_X: T(T(X)) \to T(X)\). In particular, \(\mu\) allows us to define
+a <em>monadic lift</em> operation
+\[(-)^\ast: \mathrm{Hom}_\mathcal{C}(X, T(Y)) \to \mathrm{Hom}_\mathcal{C}(T(X), T(Y))\]
+by \(f^\ast := \mu_Y \circ Tf\). Then for functions
+\(f \in \mathrm{Hom}_\mathcal{C}(X, T(Y))\) and
+\(g \in \mathrm{Hom}_\mathcal{C}(Y, T(Z))\), we can define <em>monadic
+composition</em>
+\[ g \circ_T f := g^\ast \circ f. \]
+Now comes the question: is monadic composition associative? For functions
+\(f\), \(g\), and \(h\), we have
+\[ h \circ_T (g \circ_T f) = h^\ast \circ g^\ast \circ f, \]
+and
+\[ (h \circ_T g) \circ_T f = (h^\ast \circ g)^\ast \circ f. \]
+So associativity amounts to the condition
+\((h^\ast \circ g)^\ast \stackrel{?}{=} h^\ast \circ g^\ast\).
+Explicitly, we suppose that \(g: Y \to T(Z)\) and \(h: Z \to T(W)\).
+Expanding definitions and using the monad laws, we have
+\[\begin{aligned}
+(h^\ast \circ g)^\ast
+&amp;= \mu_W \circ T(\mu_W \circ Th \circ g) \cr
+&amp;= \mu_W \circ T\mu_W \circ T^2 h \circ Tg \cr
+&amp;= \mu_W \circ \mu_{T(W)} \circ T^2 h \circ Tg \cr
+&amp;= \mu_W \circ Th \circ \mu_Z \circ Tg \cr
+&amp;= (\mu_W \circ Th) \circ (\mu_Z \circ Tg) \cr
+&amp;= h^\ast \circ g^\ast.
+\end{aligned}\]</p>
+<p><strong>Theorem.</strong> Let \(\mathcal{C}\) be a category and let \((T, \eta, \mu)\) be
+a monad on \(\mathcal{C}\). Then we define a new category \(\mathcal{C}_T\)
+as the category with
+$$ \mathrm{Ob}(\mathcal{C}_T) := \mathrm{Ob}(\mathcal{C}) $$
+$$ \mathrm{Hom}_{\mathcal{C}_T}(X, Y) := \mathrm{Hom}_{\mathcal{C}}(X, T(Y)) $$
+with identity function \(1_{X_T} := \eta_X\) and compostion defined by
+$$g \circ_T f := g^\ast \circ f.$$
+Then these objects and morphisms indeed form a category. We call this the
+<em>Kleisli category of the monad</em>.</p>
+<h2 id="composition-of-stochastic-functions-is-monadic">Composition of stochastic functions is monadic</h2>
+<p>Now we can apply the Kleisli category construction to the Giry monad \(G\).
+Spelling things out explicitly, we have a category \(\mathcal{C}_G\) whose
+objects are measurable spaces, and whose morphisms are stochastic maps.
+Then composition of stochastic functions as we defined above is simply monadic
+composition as we defined it in the previous section.</p>
+<p>Let&rsquo;s spell it out
+explicitly. Suppose that \(f: X \to P(Y)\) is a stochastic map, which we
+can think of as being represented by a probability density \(p_f(y|x)\).
+What is the monadic lift of \(f\)? This is a map \(P(X) \to P(Y)\).
+How does it act on a measure \(\nu_X \in P(X)\) represented by a
+probability density \(p_{\nu_X}(x)\)? I.e. how do we combine
+\(p_f(y|x)\) and \(p_{\nu_X}(x)\) to produce a probability density
+\(p(y)\) on \(Y\)? The answer should be obvious, so let&rsquo;s see how it follows
+from the Kleisli construction.</p>
+<p>Recall that the Giry monad acts on functions by taking the pushfoward measure,
+and that the monad multiplication \(\mu\) is the operation of taking
+expectation. If we have a function \(h: Y \to \mathbb R\), then its
+expectation with respect to the monadic lift
+\(f^\ast := \mu_Y \circ f_\ast \nu_X\) is
+\[\begin{aligned}
+&amp;\int_Y h(y) d(\mu_Y \circ f_\ast \nu_X) \cr
+&amp;= \int_{P(Y)} \left[\int_Y h(y) d\nu \right] d(f_\ast \nu_X)
+\end{aligned}\]
+The expression in the square brackets can the thought of as a function
+\(\tilde{h}: P(Y) \to \mathbb R\) mapping a measure \(\nu\) to the
+expectation of \(h\) with respect to \(\nu\). Rewriting and using the change
+of variables formula, we have
+\[\begin{aligned}
+&amp; \int_{P(Y)} \left[\int_Y h(y) d\nu \right] d(f_\ast \nu_X) \cr
+&amp;= \int_X \tilde{h} \circ f d\nu_X \cr
+&amp;= \int_X \tilde{h}(p_f(-|x)) p_{\nu_X}(x) dx
+\end{aligned}\]
+What does the integrand look like in coordinates? By definition,
+\(\tilde{h}(p_f(-|x))\) is just the expectation of \(h\) with respect to
+the measure on \(Y\) defined by the density \(p_f(y|x)\), i.e.
+\[ \tilde{h}(p_f(-|x)) = \int_Y h(y) p_f(y|x) dy\]
+Combining this with with the above calculation, we see that
+\(\mu_Y \circ f_\ast \nu_X\) is the map
+\[ f^\ast: p_{\nu_X}(x) \mapsto \int_X p_f(y|x) p_{\nu_X}(x)dx \]
+In other words, the monadic lift operation is simply the operation that,
+given a conditional probability \(p(y|x)\) and an unconditional probability
+\(p(x)\) on \(X\), and produces an unconditional probability density
+\(p(y)\) on \(Y\) by integrating over \(X\).</p>
+<p>Now suppose that we have stochastic functions \(f: X \to P(Y)\) and
+\(g: Y \to P(Z)\) represented by conditional probability densities
+\(p(y|x)\) and \(p(z|y)\). Then we can compute that the monadic composition
+\( g^\ast \circ f: X \to P(Z)\) is represented by the probability density
+\[ p(z|x) = \int_Y p(z|y) p(y|x) dx, \]
+so we find that the previously defined composition of stochastic functions
+coincides with monadic composition with respect to the Giry monad.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Pushforward_measure">Pushforward measure</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Natural_transformation">Natural transformation</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Monad_(category_theory)">Monad</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Kleisli_category">Kleisli category</a></li>
+<li><a href="https://ncatlab.org/nlab/show/Giry+monad">Giry monad</a></li>
+<li><a href="https://golem.ph.utexas.edu/category/2014/10/where_do_probability_measures.html">Where do probability measures come from?</a></li>
+</ul>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://jmf1sh.github.io/posts/2018-12-24-vae/"><i class="fa fa-chevron-circle-left"></i> Variational autoencoders</a>
+        </li>
+        
+        
+    </ul>
+</section>
+  
+    
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'jmf1sh';
+            var disqus_button = document.getElementById("show-comments");
+
+            var disqus_autoload =  null ;
+            var disable_comment =  null ;
+
+            if (disable_comment)
+                  return;
+
+            disqus_button.style.display = "";
+
+            if (disqus_autoload){
+                  disqus();
+            }else{
+                  disqus_button.addEventListener("click", disqus, false);
+            }
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+
+    
+  
+
+
+
+
+
+</main>
+    <footer>
+        <h6> |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://jmf1sh.github.io/index.xml">Subscribe </a></h6>
+    </footer>
+</div>
+<script src="https://jmf1sh.github.io/js/scripts.js"></script>
+
+  
+<script type="application/javascript">
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	if (window.sessionStorage) {
+		var GA_SESSION_STORAGE_KEY = 'ga:clientId';
+		ga('create', 'UA-193643455-1', {
+	    'storage': 'none',
+	    'clientId': sessionStorage.getItem(GA_SESSION_STORAGE_KEY)
+	   });
+	   ga(function(tracker) {
+	    sessionStorage.setItem(GA_SESSION_STORAGE_KEY, tracker.get('clientId'));
+	   });
+   }
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+</body>
+
+</html>
+
