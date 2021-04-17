@@ -84,3 +84,4 @@ To do
 * KdV & integrability
 * Pentagram map
 * Gromov non-squeezing theorem as analogue of Heisenberg uncertainty relation
+* Information closure theory of consciousness (https://www.frontiersin.org/articles/10.3389/fpsyg.2020.01504/full)
