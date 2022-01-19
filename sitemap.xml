@@ -1,260 +1,425 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
   <url>
     <loc>https://jmf1sh.github.io/posts/</loc>
-    <lastmod>2021-04-14T00:00:00+02:00</lastmod>
-  </url><url>
-    <loc>https://jmf1sh.github.io/privacy/</loc>
-    <lastmod>2021-04-06T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2021-04-14T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/about/</loc>
     <lastmod>2017-12-19T13:43:10+01:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/categories/</loc>
-    <lastmod>2021-04-14T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2021-04-14T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/categories/category-theory/</loc>
-    <lastmod>2021-04-14T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2021-04-14T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/</loc>
-    <lastmod>2021-04-14T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2021-04-14T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/tags/monad/</loc>
-    <lastmod>2021-04-14T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2021-04-14T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/categories/statistics/</loc>
-    <lastmod>2021-04-14T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2021-04-14T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2021-04-14-giry/</loc>
-    <lastmod>2021-04-14T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2021-04-14T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/tags/</loc>
-    <lastmod>2021-04-14T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2021-04-14T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/tags/generative-models/</loc>
-    <lastmod>2018-12-24T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2018-12-24T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/categories/machine-learning/</loc>
-    <lastmod>2018-12-24T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2018-12-24T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/tags/vae/</loc>
-    <lastmod>2018-12-24T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2018-12-24T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2018-12-24-vae/</loc>
-    <lastmod>2018-12-24T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2018-12-24T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2018-07-10-beta-function/</loc>
-    <lastmod>2018-07-10T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2018-07-10T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/categories/uncategorized/</loc>
-    <lastmod>2018-07-10T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2018-07-10T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2018-01-14-reinforcement-learning/</loc>
-    <lastmod>2018-01-14T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2018-01-14T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/tags/data-analysis/</loc>
     <lastmod>2017-12-19T13:49:09+01:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2017-12-19-variance-stabilizing/</loc>
     <lastmod>2017-12-19T13:49:09+01:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/categories/geometry/</loc>
-    <lastmod>2015-09-15T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2015-09-15T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/tags/inverse-problems/</loc>
-    <lastmod>2015-09-15T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2015-09-15T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2015-09-15-santalo-formula/</loc>
-    <lastmod>2015-09-15T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2015-09-15T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2015-09-11-index-form/</loc>
-    <lastmod>2015-09-11T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2015-09-11T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2015-09-03-boundary-distance/</loc>
-    <lastmod>2015-09-03T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2015-09-03T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2015-08-31-hamilton-jacobi-distance/</loc>
-    <lastmod>2015-08-31T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2015-08-31T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2015-08-18-classical-partition-function/</loc>
-    <lastmod>2015-08-18T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2015-08-18T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2015-01-29-generalized-geometry/</loc>
-    <lastmod>2015-01-29T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2015-01-29T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2014-12-11-virasoro-algebra-free-boson/</loc>
-    <lastmod>2014-12-11T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2014-12-11T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/tags/bv-brst/</loc>
-    <lastmod>2014-05-14T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2014-05-14T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/categories/physics/</loc>
-    <lastmod>2014-05-14T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2014-05-14T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/tags/qft/</loc>
-    <lastmod>2014-05-14T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2014-05-14T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/tags/symmetry/</loc>
-    <lastmod>2014-05-14T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2014-05-14T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2014-05-14-quantum-bv-complex/</loc>
-    <lastmod>2014-05-14T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2014-05-14T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2014-03-18-clifford-algebras-part-3/</loc>
-    <lastmod>2014-03-18T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2014-03-18T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/tags/clifford-algebras/</loc>
-    <lastmod>2014-03-18T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2014-03-18T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2014-03-06-clifford-algebras-part-2/</loc>
-    <lastmod>2014-03-06T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2014-03-06T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2014-03-05-clifford-algebras-part-1/</loc>
-    <lastmod>2014-03-05T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2014-03-05T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2014-03-05-clifford-algebras-part-0/</loc>
-    <lastmod>2014-03-05T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2014-03-05T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2014-02-23-virasoro-algebra/</loc>
-    <lastmod>2014-02-23T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2014-02-23T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-12-28-brst-lie-algebra/</loc>
-    <lastmod>2012-12-28T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2012-12-28T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-12-23-brst/</loc>
-    <lastmod>2012-12-23T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2012-12-23T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-12-23-fadeev-popov-ghosts-continued/</loc>
-    <lastmod>2012-12-23T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2012-12-23T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-12-21-fadeev-popov-ghosts/</loc>
-    <lastmod>2012-12-21T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2012-12-21T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-12-13-weyl-wigner-transform/</loc>
-    <lastmod>2012-12-13T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2012-12-13T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-11-29-equations-of-motion-noether/</loc>
-    <lastmod>2012-11-29T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2012-11-29T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-11-24-moyal-product/</loc>
-    <lastmod>2012-11-24T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2012-11-24T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-11-22-quantum-hamiltonian-reduction/</loc>
-    <lastmod>2012-11-22T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2012-11-22T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-11-07-1pi-effective-action/</loc>
-    <lastmod>2012-11-07T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2012-11-07T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-11-05-spontaneous-symmetry-breaking-qft/</loc>
-    <lastmod>2012-11-05T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2012-11-05T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-11-04-seiberg-witten-riemann-hilbert/</loc>
-    <lastmod>2012-11-04T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2012-11-04T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-10-29-bps-wall-crossing/</loc>
-    <lastmod>2012-10-29T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2012-10-29T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-10-22-seiberg-witten-video-lectures/</loc>
-    <lastmod>2012-10-22T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2012-10-22T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-08-27-toy-model-extra-dimensions/</loc>
-    <lastmod>2012-08-27T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2012-08-27T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/tags/classical-mechanics/</loc>
-    <lastmod>2012-07-26T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2012-07-26T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-07-26-generating-functions/</loc>
-    <lastmod>2012-07-26T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2012-07-26T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/tags/symplectic-geometry/</loc>
-    <lastmod>2012-07-26T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2012-07-26T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-07-23-kam-1/</loc>
-    <lastmod>2012-07-23T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2012-07-23T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-07-13-circle-diffeomorphisms-1/</loc>
-    <lastmod>2012-07-13T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2012-07-13T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-03-03-gaussian-integrals-wick/</loc>
     <lastmod>2012-03-03T15:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-03-03-introduction-to-gaussian/</loc>
     <lastmod>2012-03-03T09:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-02-25-geometry-of-spacetime-part-5/</loc>
-    <lastmod>2012-02-25T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2012-02-25T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/tags/general-relativity/</loc>
-    <lastmod>2012-02-06T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2012-02-06T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-02-06-geometry-of-spacetime-part-4/</loc>
-    <lastmod>2012-02-06T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2012-02-06T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-02-04-geometry-of-spacetime-part-3/</loc>
-    <lastmod>2012-02-04T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2012-02-04T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-02-04-path-integrals-part-2/</loc>
-    <lastmod>2012-02-04T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2012-02-04T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-02-04-path-integrals-part-3/</loc>
-    <lastmod>2012-02-04T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2012-02-04T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-01-26-geometry-of-spacetime-part-2/</loc>
-    <lastmod>2012-01-26T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2012-01-26T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-01-19-geometry-of-spacetime-part-1/</loc>
-    <lastmod>2012-01-19T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2012-01-19T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2012-01-16-path-integrals-part-1/</loc>
-    <lastmod>2012-01-16T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2012-01-16T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2011-11-12-lattice-quantum-mechanics-1d/</loc>
-    <lastmod>2011-11-12T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2011-11-12T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/tags/string-theory/</loc>
-    <lastmod>2011-10-05T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2011-10-05T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2011-10-05-susskind-string-theory/</loc>
-    <lastmod>2011-10-05T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2011-10-05T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2011-09-01-classical-mechanics-part-6/</loc>
-    <lastmod>2011-09-01T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2011-09-01T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2011-08-25-classical-mechanics-part-5/</loc>
-    <lastmod>2011-08-25T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2011-08-25T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2011-08-23-classical-mechanics-part-4/</loc>
-    <lastmod>2011-08-23T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2011-08-23T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2011-08-19-classical-mechanics-part-3/</loc>
     <lastmod>2011-08-19T21:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2011-08-19-classical-mechanics-part-2/</loc>
     <lastmod>2011-08-19T15:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2011-08-19-classical-mechanics-part-1/</loc>
     <lastmod>2011-08-19T09:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/categories/overview/</loc>
-    <lastmod>2011-08-17T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2011-08-17T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2011-08-17-updated-outline/</loc>
-    <lastmod>2011-08-17T00:00:00+02:00</lastmod>
-  </url><url>
+    <lastmod>2011-08-17T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/tags/calculus-of-variations/</loc>
-    <lastmod>2010-01-27T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2010-01-27T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2010-01-27-legendre-transform/</loc>
-    <lastmod>2010-01-27T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2010-01-27T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2010-01-08-hyperkaehler-reduction/</loc>
-    <lastmod>2010-01-08T00:00:00+01:00</lastmod>
-  </url><url>
+    <lastmod>2010-01-08T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jmf1sh.github.io/posts/2010-01-04-first-day-of-2010/</loc>
     <lastmod>2010-01-04T09:26:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jmf1sh.github.io/posts/2008-08-09-in-the-beginning/</loc>
-    <lastmod>2008-08-09T00:00:00+02:00</lastmod>
   </url>
+  
+  <url>
+    <loc>https://jmf1sh.github.io/posts/2008-08-09-in-the-beginning/</loc>
+    <lastmod>2008-08-09T00:00:00-04:00</lastmod>
+  </url>
+  
 </urlset>
