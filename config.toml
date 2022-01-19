@@ -19,7 +19,7 @@ googleAnalytics = "UA-193643455-1"
     disable = false
   [privacy.googleAnalytics]
     anonymizeIP = true
-    disable = false
+    disable = true
     respectDoNotTrack = true
     useSessionStorage = true
   [privacy.instagram]
@@ -53,8 +53,6 @@ googleAnalytics = "UA-193643455-1"
 
 menu = "main"
 meta = "false"
-
-
 
 
 # uncomment to enable the Tags link on the main toolbar
